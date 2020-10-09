@@ -1,0 +1,8 @@
+lab2.o
+timer.o
+utils.o
+utils.h
+lab2.h
+timer.h
+trace.txt
+output.txt
