@@ -7,6 +7,7 @@
 #include "timer.h"
 
 int counter = 0;
+int hook = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
@@ -48,16 +49,14 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-
-
-  return 1;
+  *bit_no=BIT(hook);
+  sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook);
+  return 0;
 }
 
 int (timer_unsubscribe_int)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  sys_irqrmpolicy(&hook);
+  return 0;
 }
 
 void (timer_int_handler)() {
