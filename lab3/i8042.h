@@ -11,6 +11,8 @@
  * Constants for programming the i8042 Keyboard Controller (and useful i8254 Timer constants).
  * */
 
+#define KBC_BRK_ESC_KEY 0x81 /**< @brief scancode (breakcode) of ESC key*/
+#define KBC_MSB_SCNCD BIT(7) /**< @brief scancode diff (make or break) in BIT 7*/
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
 #define KBC_IRQ 1 /**< @brief KBC IRQ line */
@@ -54,6 +56,6 @@
 
 /* KBC scancode type */
 
-#define KBC_BREAK_CODE 0xE0 /**< @brief the byte corresponding to a break code */
+#define KBC_2BYTE_CODE 0xE0 /**< @brief the first byte of a 2 byte scancode*/
 
 #endif //LAB3_I8042_H

@@ -1,3 +1,7 @@
 lab3
 lab3.h
 lab3.o
+kbc.o
+output.txt
+trace.txt
+utils.o

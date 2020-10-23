@@ -1,9 +1,11 @@
 //
 // Created by biromiro on 23/10/20.
 //
-#include "utils.h"
+#include <lcom/lcf.h>
 
+#ifdef LAB3
 int cnt = 0;
+#endif
 
 int (util_sys_inb)(int port, uint8_t *value) {
 

@@ -5,9 +5,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "i8042.h"
-#include "utils.c"
+#include "kbc.h"
 
-extern int counter;
+extern int counter, cnt;
 extern uint8_t scancode;
 extern bool make;
 
@@ -48,7 +48,7 @@ int(kbd_test_scan)() {
     return 1;
   }
 
-  while(1) { /* Run until it has exceeeded time*/
+  while(scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
     /* Get a request message */
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
       printf("driver_receive failed with: %d", r);
@@ -59,15 +59,18 @@ int(kbd_test_scan)() {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts &irq_set) { /* subscribed interrupt */
             kbc_ih();
-            if(scancode == KBC_BREAK_CODE){
-              bytes[i] = KBC_BREAK_CODE;
+            if(scancode == KBC_2BYTE_CODE){
+              bytes[i] = KBC_2BYTE_CODE;
               i++;
               continue;
-              // assert make code
+            }
+            if((scancode & KBC_MSB_SCNCD) == 0){
+              make = false;
             }
             bytes[i] = scancode;
-            kbc_print_scancode(make,i,bytes);
+            kbd_print_scancode(make,i,bytes);
             i=0;
+            make = true;
           }
           break;
         default:
@@ -79,6 +82,7 @@ int(kbd_test_scan)() {
   }
 
   kbc_unsubscribe_int();
+  kbc_restore_interrupts();
 
   return 1;
 }

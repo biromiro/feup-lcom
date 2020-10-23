@@ -79,7 +79,7 @@ int (kbc_write_cmd)(uint8_t cmd);
  * @param data The variable to store the read data
  * @return Return 0 upon success and non-zero otherwise
  */
-int (kbc_read_data)(uint_t* data);
+int (kbc_read_data)(uint8_t* data);
 
 /**
  * @brief Restores the Minix Interrupt Handler for KBC
