@@ -5,3 +5,5 @@ kbc.o
 output.txt
 trace.txt
 utils.o
+timer.o
+i8254.h

@@ -60,18 +60,20 @@ int (kbc_get_status)(uint8_t *st);
 /**
  * @brief Reads the output buffer of KBC
  *
+ * @param port  Buffer to read
  * @param data    Address of memory position to be filled with the output buffer byte
  * @return Return 0 upon success and non-zero otherwise
  */
-int (kbc_read_out_buffer)(uint8_t *data);
+int (kbc_read_buffer)(int port, uint8_t *data);
 
 /**
  * @brief Writes (issues) a command to the KBC
  *
+ * @param port Buffer to write
  * @param cmd The command to output to the KBC
  * @return Return 0 upon success and non-zero otherwise
  */
-int (kbc_write_cmd)(uint8_t cmd);
+int (kbc_write_cmd)(int port, uint8_t cmd);
 
 /**
  * @brief Reads the value of the OBF of the KBC
