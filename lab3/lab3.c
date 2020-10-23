@@ -4,6 +4,12 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "i8042.h"
+#include "utils.c"
+
+extern int counter;
+extern uint8_t scancode;
+extern bool make;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -31,7 +37,48 @@ int main(int argc, char *argv[]) {
 
 int(kbd_test_scan)() {
   /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+
+  int ipc_status,r,i=0;
+  uint8_t irq_set;
+  message msg;
+  uint8_t bytes[2];
+
+  if(kbc_subscribe_int(&irq_set)!=0) {
+    printf("Error subscribing timer\n");
+    return 1;
+  }
+
+  while(1) { /* Run until it has exceeeded time*/
+    /* Get a request message */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts &irq_set) { /* subscribed interrupt */
+            kbc_ih();
+            if(scancode == KBC_BREAK_CODE){
+              bytes[i] = KBC_BREAK_CODE;
+              i++;
+              continue;
+              // assert make code
+            }
+            bytes[i] = scancode;
+            kbc_print_scancode(make,i,bytes);
+            i=0;
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    } else { /* received a standard message, not a notification */
+      /* no standard messages expected: do nothing */
+    }
+  }
+
+  kbc_unsubscribe_int();
 
   return 1;
 }
