@@ -60,14 +60,6 @@ int(kbd_test_scan)() {
           if (msg.m_notify.interrupts &irq_set) { /* subscribed interrupt */
             kbc_ih();
             if(scancode == KBC_2BYTE_CODE){
-              if(first)
-                first = false;
-              else
-                first = true;
-              scancode = 0;
-              continue;
-            }
-            if(first){
               bytes[i] = scancode;
               i++;
               continue;
@@ -93,7 +85,7 @@ int(kbd_test_scan)() {
 int(kbd_test_poll)() {
 
   int i=0;
-  bool first = false;
+  //bool first = false;
   uint8_t bytes[2];
 
   do{
@@ -102,14 +94,6 @@ int(kbd_test_poll)() {
       continue;
     }
     if(scancode == KBC_2BYTE_CODE){
-      if(first)
-        first = false;
-      else
-        first = true;
-      scancode = 0;
-      continue;
-    }
-    if(first){
       bytes[i] = scancode;
       i++;
       continue;
@@ -158,14 +142,6 @@ int(kbd_test_timed_scan)(uint8_t n) {
           if (msg.m_notify.interrupts &irq_set_kbc) { /* subscribed interrupt */
             kbc_ih();
             if(scancode == KBC_2BYTE_CODE){
-              if(first)
-                first = false;
-              else
-                first = true;
-              scancode = 0;
-              continue;
-            }
-            if(first){
               bytes[i] = scancode;
               i++;
               continue;
