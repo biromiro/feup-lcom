@@ -56,33 +56,26 @@ int(kbc_write_cmd)(int port, uint8_t cmd) {
 
 
 int(kbc_read_data)(uint8_t *data) {
-  uint8_t st = 0, timeout_cnt = 0;
+  uint8_t st = 0;
 
-  /* loops while 8042 input buffer is not empty */
-  do {
+  /* checks if it is possible to read the status of KBC */
+  if (kbc_get_status(&st) != 0) {
+    printf("Error getting KBC status");
+    return -1;
+  }
 
-    /* checks if it is possible to read the status of KBC */
-    if (kbc_get_status(&st) != 0) {
-      printf("Error getting KBC status");
+  /* checks if the output buffer is full */
+  if (KBC_OBF & st) {
+    if (kbc_read_buffer(KBC_OUT_BUF, data) != 0) {
+      printf("Error getting KBC data with full buffer");
       return -1;
     }
 
-    /* checks if the output buffer is full */
-    if (KBC_OBF & st) {
-      if (kbc_read_buffer(KBC_OUT_BUF, data) != 0) {
-        printf("Error getting KBC data with full buffer");
-        return -1;
-      }
-
-      if (((st & (KBC_PARITY | KBC_TIMEOUT)) == 0) || ((st & KBC_AUX) == 0))
-        return 0;
-      else
-        return -1;
-    }
-    /* delays the next iteration and increases the timeout counter */
-    //tickdelay(micros_to_ticks(DELAY_US));
-    timeout_cnt++;
-  } while (timeout_cnt < 5);
+    if (((st & (KBC_PARITY | KBC_TIMEOUT)) == 0) || ((st & KBC_AUX) == 0))
+      return 0;
+    else
+      return -1;
+  }
 
   return -1;
 }

@@ -40,7 +40,6 @@ int(kbd_test_scan)() {
   int ipc_status,r,i=0;
   uint8_t irq_set;
   message msg;
-  bool first = false;
   uint8_t bytes[2];
 
   if(kbc_subscribe_int(&irq_set)!=0) {
@@ -85,7 +84,6 @@ int(kbd_test_scan)() {
 int(kbd_test_poll)() {
 
   int i=0;
-  //bool first = false;
   uint8_t bytes[2];
 
   do{
