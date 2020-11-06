@@ -16,6 +16,7 @@
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
 #define KBC_IRQ 1 /**< @brief KBC IRQ line */
+#define MOUSE_IRQ 12 /**< @brief Mouse IRQ line */
 
 /* I/O port addresses */
 
@@ -57,5 +58,16 @@
 /* KBC scancode type */
 
 #define KBC_2BYTE_CODE 0xE0 /**< @brief the first byte of a 2 byte scancode*/
+
+/* Mouse acknowledgment bytes*/
+
+#define KBC_ACK 0xFA /** @brief acknowledgment byte if everything OK*/
+#define KBC_NACK 0xFE /** @brief acknowledgment byte if invalid byte (may be because of a serial communication error)*/
+#define KBC_ERROR 0xFC /** @brief acknowledgment byte if second consecutive invalid byte*/
+#define MOUSE_EN_DATA_REP 0xF4
+#define MOUSE_DIS_DATA_REP 0xF5
+#define MOUSE_STREAM_MODE 0xEA
+#define MOUSE_REMOTE_MODE 0xF0
+#define MOUSE_READ_DATA 0xEB
 
 #endif //LAB3_I8042_H

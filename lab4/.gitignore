@@ -1,4 +1,9 @@
 lab4
-lab4.c
 output.txt
 trace.txt
+kbc.o
+lab3
+lab4.h
+lab4.o
+timer.o
+utils.o

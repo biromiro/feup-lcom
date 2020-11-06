@@ -71,7 +71,7 @@ int(kbc_read_data)(uint8_t *data) {
       return -1;
     }
 
-    if (((st & (KBC_PARITY | KBC_TIMEOUT)) == 0) || ((st & KBC_AUX) == 0))
+    if (((st & (KBC_PARITY | KBC_TIMEOUT)) == 0) && ((st & KBC_AUX) == 0))
       return 0;
     else
       return -1;

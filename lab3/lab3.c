@@ -112,7 +112,6 @@ int(kbd_test_timed_scan)(uint8_t n) {
   int ipc_status,r,i=0;
   uint8_t irq_set_kbc, irq_set_timer;
   message msg;
-  bool first = false;
   uint8_t bytes[2];
 
   if(timer_subscribe_int(&irq_set_timer)){
