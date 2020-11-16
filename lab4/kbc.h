@@ -10,6 +10,14 @@
 
 #define DELAY_US 20000
 
+enum state{
+  INITIAL,
+  FIRST_SLOPE,
+  VERTEX,
+  SECOND_SLOPE,
+  COMPLETE
+};
+
 /**
  * @brief Subscribes and enables Timer 0 interrupts
  *
@@ -99,6 +107,8 @@ int (mouse_unsubscribe_int)();
 int (mouse_read_data)(uint8_t *data);
 
 int (mouse_write_cmd)(uint8_t cmd);
+
+bool (mouse_handle_gesture)(struct mouse_ev *event,uint8_t x_len, uint8_t tolerance);
 
 void (mouse_parse_packet)(struct packet* pp);
 

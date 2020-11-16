@@ -60,6 +60,7 @@ int (mouse_test_packet)(uint32_t cnt) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts &irq_set) { /* subscribed interrupt */
+
             mouse_ih();
             if(packetByte & BIT(3)) {
               startPacket = true;
@@ -68,7 +69,7 @@ int (mouse_test_packet)(uint32_t cnt) {
               pp.bytes[counter_mouse] = packetByte;
               counter_mouse++;
             }
-            if(counter == 3){
+            if(counter_mouse == 3){
               mouse_parse_packet(&pp);
               mouse_print_packet(&pp);
               startPacket = false;
@@ -154,9 +155,60 @@ int (mouse_test_async)(uint8_t idle_time) {
 }
 
 int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
-    /* To be completed */
-    printf("%s: under construction\n", __func__);
+  int ipc_status,r,counter_mouse=0;
+  uint8_t irq_set;
+  message msg;
+  bool startPacket, gestureHandled = false;
+  struct packet pp;
+  struct mouse_ev* event;
+
+  mouse_write_cmd(MOUSE_EN_DATA_REP);
+
+  if(mouse_subscribe_int(&irq_set)!=0) {
+    printf("Error subscribing timer\n");
     return 1;
+  }
+
+  while(!gestureHandled) { /* Run until it has exceeded time*/
+    /* Get a request message */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts &irq_set) { /* subscribed interrupt */
+            mouse_ih();
+            if(packetByte & BIT(3)) {
+              startPacket = true;
+            }
+            if(startPacket) {
+              pp.bytes[counter_mouse] = packetByte;
+              counter_mouse++;
+            }
+            if(counter_mouse == 3){
+              mouse_parse_packet(&pp);
+
+              event = mouse_detect_event(&pp);
+              gestureHandled = mouse_handle_gesture(event,x_len,tolerance);
+
+              mouse_print_packet(&pp);
+              startPacket = false;
+              counter_mouse = 0;
+            }
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    } else { /* received a standard message, not a notification */
+      /* no standard messages expected: do nothing */
+    }
+  }
+  mouse_unsubscribe_int();
+  mouse_write_cmd(MOUSE_DIS_DATA_REP);
+  return 0;
 }
 
 int (mouse_test_remote)(uint16_t period, uint8_t cnt) {

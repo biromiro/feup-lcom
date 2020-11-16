@@ -8,7 +8,8 @@ int hook_kbc = 1;
 int hook_mouse = 2;
 uint8_t scancode = 0;
 uint8_t packetByte = 0;
-
+static enum state currentState = INITIAL;
+int16_t delta_x = 0, delta_y = 0;
 
 int(kbc_subscribe_int)(uint8_t *bit_no) {
   *bit_no = BIT(hook_kbc);
@@ -170,4 +171,94 @@ void (mouse_parse_packet)(struct packet* pp){
 void (mouse_ih)(void) {
   if (mouse_read_data(&packetByte) != 0)
     printf("Unable to read packetByte!");
+}
+
+bool (mouse_handle_gesture)(struct mouse_ev *event,uint8_t x_len, uint8_t tolerance){
+  switch (currentState) {
+    case INITIAL:
+      delta_x = 0;
+      delta_y = 0;
+      printf("\nINITIAL\n");
+      if(event->type == LB_PRESSED)
+        currentState = FIRST_SLOPE;
+      break;
+    case FIRST_SLOPE:
+      printf("\nFIRST_SLOPE\n");
+      if(event->type == LB_RELEASED){
+        if((delta_x >= x_len) && (delta_y/delta_x) > 1) {
+          delta_x = 0;
+          delta_y = 0;
+          currentState = VERTEX;
+        }
+        else
+          currentState = INITIAL;
+      }else if(event->type == MOUSE_MOV){
+        if(event->delta_x <= 0 || event->delta_y <= 0)
+          if(abs(event->delta_x) > tolerance || abs(event->delta_y) > tolerance){
+            currentState = INITIAL;
+            break;
+          }
+        if(event->delta_x != 0 && (event->delta_y)/(event->delta_x) <= 1)
+          currentState = INITIAL;
+        else {
+          delta_x += event->delta_x;
+          delta_y += event->delta_y;
+        }
+      }else
+        currentState = INITIAL;
+      break;
+    case VERTEX:
+      printf("\nVERTEX\n");
+      if(event->type == RB_PRESSED){
+        if(abs(delta_x) > tolerance || abs(delta_y) > tolerance)
+          currentState = INITIAL;
+        else {
+          delta_x = 0;
+          delta_y = 0;
+          currentState = SECOND_SLOPE;
+        }
+      }
+      else if(event->type == MOUSE_MOV){
+        delta_x += event->delta_x;
+        delta_y += event->delta_y;
+      }
+      else if(event->type == LB_PRESSED) {
+        delta_x = 0;
+        delta_y = 0;
+        currentState = FIRST_SLOPE;
+      }
+      else{
+        currentState = INITIAL;
+      }
+      break;
+    case SECOND_SLOPE:
+      printf("\nSECOND_SLOPE\n");
+      if(event->type == RB_RELEASED){
+        if((delta_x >= x_len) && (delta_y/delta_x) < -1) {
+          currentState = COMPLETE;
+          return true;
+        }else
+          currentState = INITIAL;
+      }else if(event->type == MOUSE_MOV){
+        if(event->delta_x <= 0 || event->delta_y >= 0)
+          if(abs(event->delta_x) > tolerance || abs(event->delta_y) > tolerance){
+            currentState = INITIAL;
+            break;
+          }
+        if(event->delta_x != 0 && (event->delta_y)/(event->delta_x) >= -1)
+          currentState = INITIAL;
+        else {
+          delta_x += event->delta_x;
+          delta_y += event->delta_y;
+        }
+      }else
+        currentState = INITIAL;
+      break;
+    case COMPLETE:
+      printf("\nCOMPLETE\n");
+      return true;
+    default:
+      break;
+  }
+  return false;
 }
