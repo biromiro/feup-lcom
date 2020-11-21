@@ -25,8 +25,9 @@
                 "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": ""
             },
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "clang-x64",
+            "cppStandard": "gnu++14"
         }
     ],
-    "version": 3
+    "version": 4
 }

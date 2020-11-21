@@ -7,6 +7,7 @@
 #include <stdio.h>
 
 #include "kbc.h"
+#include "video_gr.h"
 
 extern uint8_t scancode;
 // Any header files included below this line should have been created by you
@@ -79,7 +80,6 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
               continue;
             }
             bytes[i] = scancode;
-            kbd_print_scancode(!(scancode & KBC_MSB_SCNCD),i+1,bytes);
             i=0;
           }
           break;
@@ -97,11 +97,51 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
-         mode, no_rectangles, first, step);
+  int ipc_status,r,i=0;
+  uint8_t irq_set;
+  message msg;
+  uint8_t bytes[2];
 
-  return 1;
+  if(kbc_subscribe_int(&irq_set)!=0) {
+    printf("Error subscribing timer\n");
+    return 1;
+  }
+
+  vg_init(mode);
+
+  vg_print_matrix(mode == 0x105, no_rectangles,first,step);
+
+  while(scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
+    /* Get a request message */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts &irq_set) { /* subscribed interrupt */
+            kbc_ih();
+            if(scancode == KBC_2BYTE_CODE){
+              bytes[i] = scancode;
+              i++;
+              continue;
+            }
+            bytes[i] = scancode;
+            i=0;
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    } else { /* received a standard message, not a notification */
+      /* no standard messages expected: do nothing */
+    }
+  }
+  vg_exit();
+  kbc_unsubscribe_int();
+
+  return 0;
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
