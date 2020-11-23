@@ -6,11 +6,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "kbc.h"
-#include "video_gr.h"
-
 extern uint8_t scancode;
 // Any header files included below this line should have been created by you
+#include "kbc.h"
+#include "video_gr.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)

@@ -1,5 +1,7 @@
 #include <lcom/lcf.h>
 
+int (_vbe_get_mode_info)(uint16_t mode, vbe_mode_info_t* vm);
+
 /**
  * @brief Draws a given pixel with a given color
  *
@@ -68,6 +70,28 @@ uint8_t (getAlpha) (uint32_t color);
  */
 void vg_print_matrix(bool indexed, uint8_t no_rectangles, uint32_t first, uint8_t step);
 
-uint32_t getIndexedColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);
+/**
+ * @brief Gets the corresponding indexed color given parameters
+ * 
+ * @param row the current row of the rectangle
+ * @param col the current column of the rectangle
+ * @param no_rectangles the number of rectangles in both x and y directions
+ * @param first the color of the first rectangle of the matrix
+ * @param step a value to calculate following rectangle's color
+ * 
+ * @return Return 0 upon success and non-zero otherwise
+ */
+uint8_t getIndexedColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);
 
+/**
+ * @brief Gets the corresponding color (in RGB format) given parametersr
+ *
+ * @param row the current row of the rectangle
+ * @param col the current column of the rectangled
+ * @param no_rectangles the number of rectangles in both x and y directions
+ * @param first the color of the first rectangle of the matrix
+ * @param step a value to calculate following rectangle's color
+ * 
+ * @return Return 0 upon success and non-zero otherwise
+ */
 uint32_t getColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);

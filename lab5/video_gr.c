@@ -4,9 +4,33 @@ vbe_mode_info_t vmi_p;
 static void *video_mem;         /* frame-buffer VM addres (static global variable*/ 
 static unsigned bytesPerPixel;
            
+int (_vbe_get_mode_info)(uint16_t mode, vbe_mode_info_t* vm){
+    struct reg86 r;
+    mmap_t map;
+
+    lm_alloc(sizeof(vbe_mode_info_t), &map);
+
+    memset(&r, 0, sizeof(r));	/* zero the structure */
+
+    r.ax = 0x4F01;
+    r.cx = mode;
+    r.es = PB2BASE(map.phys);
+    r.di = PB2OFF(map.phys);
+    r.intno = 0x10;
+
+    if( sys_int86(&r) != OK ) { 
+      printf("\tvbe_get_mode_info(): sys_int86() failed \n");
+      return -1;
+    }
+
+    *vm = *(vbe_mode_info_t*) map.virt;
+    lm_free(&map);
+    return 0;
+}
+
 void* (vg_init)(uint16_t mode) {
 
-  vbe_get_mode_info(mode,&vmi_p);
+  _vbe_get_mode_info(mode,&vmi_p);
 
   struct minix_mem_range mr;
   unsigned int vram_base;  /* VRAM's physical addresss */
@@ -39,7 +63,7 @@ void* (vg_init)(uint16_t mode) {
   }
 
   struct reg86 r86;
-   
+
   /* Specify the appropriate register values */
   
   memset(&r86, 0, sizeof(r86));	/* zero the structure */
@@ -128,7 +152,7 @@ void vg_print_matrix( bool indexed, uint8_t no_rectangles, uint32_t first, uint8
 
 }
 
-uint32_t getIndexedColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step){
+uint8_t getIndexedColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step){
     return (first + (row * no_rectangles + col) * step) % (1 << vmi_p.BitsPerPixel);
 }
 
