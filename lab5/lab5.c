@@ -61,6 +61,9 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
 
 
   vg_draw_rectangle(x, y, width, height, color);
+  if(OK != swap_buffer()){
+    return 1;
+  }
 
   while(scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
     /* Get a request message */
@@ -109,6 +112,9 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
   vg_init(mode);
 
   vg_print_matrix(mode == 0x105, no_rectangles,first,step);
+  if(OK != swap_buffer()){
+    return 1;
+  }
 
   while(scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
     /* Get a request message */

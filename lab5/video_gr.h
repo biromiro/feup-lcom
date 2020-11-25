@@ -20,7 +20,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
  * 
  * @return the 16 bit approximation
  */
-uint16_t (get16BitColor) (uint32_t color);
+uint16_t (get_16_bit_color) (uint32_t color);
 
 /**
  * @brief Gets the 8 bit red color component from a 32 bit RGB color
@@ -29,7 +29,7 @@ uint16_t (get16BitColor) (uint32_t color);
  * 
  * @return the red component
  */
-uint8_t (getRed) (uint32_t color);
+uint8_t (get_red) (uint32_t color);
 
 /**
  * @brief Gets the 8 bit green color component from a 32 bit RGB color
@@ -38,7 +38,7 @@ uint8_t (getRed) (uint32_t color);
  * 
  * @return the green component
  */
-uint8_t (getGreen) (uint32_t color);
+uint8_t (get_green) (uint32_t color);
 
 /**
  * @brief Gets the 8 bit blue color component from a 32 bit RGB color
@@ -47,7 +47,7 @@ uint8_t (getGreen) (uint32_t color);
  * 
  * @return the blue component
  */
-uint8_t (getBlue) (uint32_t color);
+uint8_t (get_blue) (uint32_t color);
 
 /**
  * @brief Gets the 8 bit alpha color component from a 32 bit RGB color
@@ -56,7 +56,7 @@ uint8_t (getBlue) (uint32_t color);
  * 
  * @return the alpha component
  */
-uint8_t (getAlpha) (uint32_t color);
+uint8_t (get_alpha) (uint32_t color);
 
 /**
  * @brief Prints a 'rainbow' matrix filling the screen given a number of rectanges and its first * color
@@ -81,7 +81,7 @@ void vg_print_matrix(bool indexed, uint8_t no_rectangles, uint32_t first, uint8_
  * 
  * @return Return 0 upon success and non-zero otherwise
  */
-uint8_t getIndexedColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);
+uint8_t get_indexed_color(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);
 
 /**
  * @brief Gets the corresponding color (in RGB format) given parametersr
@@ -94,4 +94,12 @@ uint8_t getIndexedColor(unsigned row, unsigned col, uint32_t first, uint8_t no_r
  * 
  * @return Return 0 upon success and non-zero otherwise
  */
-uint32_t getColor(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);
+uint32_t get_color(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step);
+
+uint16_t get_h_resolution();
+
+uint16_t get_v_resolution();
+
+int swap_buffer();
+
+int get_current_buffer(struct reg86 *r);
