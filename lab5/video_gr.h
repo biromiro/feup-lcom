@@ -104,4 +104,8 @@ int swap_buffer();
 
 int get_current_buffer(struct reg86 *r);
 
-void print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y, enum xpm_image_type type);
+uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img);
+
+void print_xpm(uint16_t x, uint16_t y,  uint8_t* map, xpm_image_t *img);
+
+void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img);

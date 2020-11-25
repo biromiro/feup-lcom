@@ -237,16 +237,25 @@ int get_current_buffer(struct reg86 *r){
   return 0;
 }
 
-void print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y, enum xpm_image_type type){
-  xpm_image_t img;
-  uint8_t* map;
+uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img) {
+  return xpm_load(xpm,type,img);
+}
 
-  map = xpm_load(xpm,type,&img);
-
-  for(size_t i=0; i<img.height; i++){
+void print_xpm(uint16_t x, uint16_t y,  uint8_t* map, xpm_image_t *img){
+  for(size_t i=0; i<img->height; i++){
       //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
-      for(size_t j=0; j<img.width; j++){
-        vg_draw_pixel(x+j, y+i,*(map + (j+i*img.width)*bytes_per_pixel));
+      for(size_t j=0; j<img->width; j++){
+        vg_draw_pixel(x+j, y+i,*(map + (j+i*img->width)*bytes_per_pixel));
+      }
+  }
+}
+
+void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img){
+
+  for(size_t i=0; i<img->height; i++){
+      //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
+      for(size_t j=0; j<img->width; j++){
+        vg_draw_pixel(x+j, y+i,xpm_transparency_color(img->type));
       }
   }
 }
