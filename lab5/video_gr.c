@@ -113,6 +113,7 @@ int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len,uint32_t color) {
 }
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+  if(x>h_res || y>v_res) return 1;
   char* buffer = (char*) video_mem_sec;
   uint8_t color_byte;
   if(bytes_per_pixel == 2) color = get_16_bit_color(color);
@@ -218,7 +219,7 @@ int swap_buffer(){
   void* temp = video_mem;
   video_mem = video_mem_sec;
   video_mem_sec = temp;
-
+  memcpy(video_mem_sec,video_mem,h_res*v_res*bytes_per_pixel);
   return 0;
 }
 
@@ -234,4 +235,18 @@ int get_current_buffer(struct reg86 *r){
     }
 
   return 0;
+}
+
+void print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y, enum xpm_image_type type){
+  xpm_image_t img;
+  uint8_t* map;
+
+  map = xpm_load(xpm,type,&img);
+
+  for(size_t i=0; i<img.height; i++){
+      //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
+      for(size_t j=0; j<img.width; j++){
+        vg_draw_pixel(x+j, y+i,*(map + (j+i*img.width)*bytes_per_pixel));
+      }
+  }
 }

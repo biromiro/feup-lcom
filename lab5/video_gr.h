@@ -103,3 +103,5 @@ uint16_t get_v_resolution();
 int swap_buffer();
 
 int get_current_buffer(struct reg86 *r);
+
+void print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y, enum xpm_image_type type);
