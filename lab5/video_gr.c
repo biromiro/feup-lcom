@@ -56,10 +56,9 @@ void* (vg_init)(uint16_t mode) {
   /* Allow memory mapping */
 
   mr.mr_base = (phys_bytes) vram_base;	
-  mr.mr_limit = mr.mr_base + vram_size;  
+  mr.mr_limit = mr.mr_base + vram_size*2;  
 
   mr_secondary.mr_base = (phys_bytes) vram_base_secondary_buffer;
-  mr_secondary.mr_limit = mr_secondary.mr_base + vram_size;
 
   if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)))
     panic("sys_privctl (ADD_MEM) failed: %d\n", r);
@@ -68,15 +67,15 @@ void* (vg_init)(uint16_t mode) {
 
   video_mem = vm_map_phys(SELF, (void *)mr.mr_base, vram_size);
 
-  if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr_secondary)))
-    panic("sys_privctl (ADD_MEM_SEC) failed: %d\n", r);
-
   video_mem_sec = vm_map_phys(SELF, (void *)mr_secondary.mr_base, vram_size);
 
   if(video_mem == MAP_FAILED || video_mem_sec == MAP_FAILED) {
     panic("couldn't map video memory");
     return NULL;
   }
+
+  memset(video_mem,0,vram_size);
+  memset(video_mem_sec,0,vram_size);
 
   struct reg86 r86;
 
@@ -194,16 +193,22 @@ int swap_buffer(){
 
   struct reg86 r;
 
+  memset(&r,0,sizeof(struct reg86));
+  
   get_current_buffer(&r);
 
   if(r.dx == 0){
+    memset(&r,0,sizeof(struct reg86));
     r.dx = v_res;
-  }else r.dx = 0;
+  }else{
+    memset(&r,0,sizeof(struct reg86));
+    r.dx = 0;
+  }
 
   r.ax = 0x4F07;
-  r.bh = 0x00;
-  r.bl = 0x00;
+  r.bx = 0x80;
   r.cx = 0x00;
+  r.intno = 0x10;
 
   if( sys_int86(&r) != OK ) { 
       printf("\tsetCurrentBUffer(): sys_int86() failed \n");
@@ -220,8 +225,8 @@ int swap_buffer(){
 int get_current_buffer(struct reg86 *r){
 
   r->ax = 0x4F07;  
-  r->bh = 0x00;
-  r->bl = 0x01;
+  r->bx = 0x01;
+  r->intno = 0x10;
 
    if( sys_int86(r) != OK ) { 
       printf("\tsetCurrentBUffer(): sys_int86() failed \n");
