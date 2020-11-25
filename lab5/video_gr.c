@@ -206,7 +206,7 @@ int swap_buffer(){
   }
 
   r.ax = 0x4F07;
-  r.bx = 0x80;
+  r.bx = 0x00;
   r.cx = 0x00;
   r.intno = 0x10;
 
