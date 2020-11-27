@@ -1,5 +1,6 @@
 #include <lcom/lcf.h>
 #include "img/character.xpm"
+#include "img/character1.xpm"
 
 /**
  * @brief Struct to store our XPM objects
@@ -8,7 +9,7 @@
 struct xpm_object{
   char *ID; ///< ID of xpm_object
   uint8_t *map; ///< Video Mem alocated for XPM 
-  xpm_image_t *img; ///< Image of XPM
+  xpm_image_t img; ///< Image of XPM
 };
 
 
@@ -122,8 +123,6 @@ void print_xpm(uint16_t x, uint16_t y,  uint8_t* map, xpm_image_t *img);
 
 void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img);
 
-
-
-void loadXPMs(xpm_object* objects);
+struct xpm_object *loadXPMs();
 
 

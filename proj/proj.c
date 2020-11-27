@@ -41,12 +41,12 @@ int main(int argc, char *argv[]) {
 }
 int (proj_main_loop)(int argc, char *argv[]) {
   int ipc_status, r, counter_mouse=0;
-  uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, idle_time = 5, i=0;
+  uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, i=0;
   message msg;
   bool startPacket;
   struct packet pp;
   uint8_t bytes[2];
-
+  struct xpm_object *objects = loadXPMs();  
 
   mouse_write_cmd(MOUSE_EN_DATA_REP);
 
@@ -65,9 +65,9 @@ int (proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  vg_init(0x115);
+  vg_init(0x14C);
 
-  while(counter/sys_hz() < idle_time && scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
+  while(scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
 
     /* Get a request message */
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
@@ -79,6 +79,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts & irq_set_timer){
             timer_int_handler();
+            print_xpm(100,100,objects[0].map,&objects[0].img);
             if(OK != swap_buffer()){
                 return 1;
             }

@@ -1,5 +1,5 @@
 /* XPM */
-static char * character_xpm[] = {
+static const char * character_xpm[] = {
 "474 474 17151 3",
 "   	c #000000",
 ".  	c #B2B2B2",

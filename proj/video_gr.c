@@ -260,14 +260,17 @@ void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img){
   }
 }
 
-void loadXPMs(xpm_object* objects){
+struct xpm_object *loadXPMs(){
+
+  struct  xpm_object *objects = malloc(sizeof(struct xpm_object)*20);
+
   xpm_map_t character=character_xpm;
   xpm_image_t img;
-  uint8_t* map = loadXPM(character,XPM_8_8_8,&img);
+  uint8_t* map = loadXPM(character,XPM_8_8_8_8,&img);
 
-  objects[0] = {
-    .ID = "Character",
-    .map = map,
-    .img = &img
-  };
+  objects[0].ID = "Character"; objects[0].map = map;
+  objects[0].img = img;
+
+
+  return objects;
 }
