@@ -1,4 +1,16 @@
 #include <lcom/lcf.h>
+#include "img/character.xpm"
+
+/**
+ * @brief Struct to store our XPM objects
+ * 
+ */
+struct xpm_object{
+  char *ID; ///< ID of xpm_object
+  uint8_t *map; ///< Video Mem alocated for XPM 
+  xpm_image_t *img; ///< Image of XPM
+};
+
 
 int (_vbe_get_mode_info)(uint16_t mode, vbe_mode_info_t* vm);
 
@@ -109,3 +121,9 @@ uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img);
 void print_xpm(uint16_t x, uint16_t y,  uint8_t* map, xpm_image_t *img);
 
 void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img);
+
+
+
+void loadXPMs(xpm_object* objects);
+
+
