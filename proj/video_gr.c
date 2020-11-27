@@ -259,3 +259,15 @@ void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img){
       }
   }
 }
+
+void loadXPMs(xpm_object* objects){
+  xpm_map_t character=character_xpm;
+  xpm_image_t img;
+  uint8_t* map = loadXPM(character,XPM_8_8_8,&img);
+
+  objects[0] = {
+    .ID = "Character",
+    .map = map,
+    .img = &img
+  };
+}
