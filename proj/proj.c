@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 int (proj_main_loop)(int argc, char *argv[]) {
-  int ipc_status, r, counter_mouse=0;
+  int ipc_status, r, counter_mouse=0, x = 0, y = 0;
   uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, i=0;
   message msg;
   bool startPacket;
@@ -79,7 +79,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts & irq_set_timer){
             timer_int_handler();
-            print_xpm(100,100,objects[0].map,&objects[0].img);
+            print_xpm(x,y,objects[0].map,&objects[0].img);
             if(OK != swap_buffer()){
                 return 1;
             }
@@ -110,8 +110,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
             }
             bytes[i] = scancode;
             kbd_print_scancode(!(scancode & KBC_MSB_SCNCD),i+1,bytes);
-            if(scancode == KBC_A_KEY){
-                //printxpm
+            if(scancode == KBC_D_KEY){
+                x+=10;
+            }else if(scancode == KBC_A_KEY){
+                x-=10;
+            }else if(scancode == KBC_S_KEY){
+                y+=10;
+            }else if(scancode == KBC_W_KEY){
+                y-=10;
             }
             i=0;
             counter = 0;

@@ -245,7 +245,11 @@ void print_xpm(uint16_t x, uint16_t y,  uint8_t* map, xpm_image_t *img){
   for(size_t i=0; i<img->height; i++){
       //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
       for(size_t j=0; j<img->width; j++){
-        vg_draw_pixel(x+j, y+i,*(map + (j+i*img->width)*bytes_per_pixel));
+        uint32_t color = 0;
+        for(size_t byte=0; byte <= bytes_per_pixel; byte++){
+            color |= (*(map + (j+i*img->width)*bytes_per_pixel + byte)) << (byte*8);
+        }
+        vg_draw_pixel(x+j, y+i, color);
       }
   }
 }
