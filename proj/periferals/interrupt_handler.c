@@ -9,7 +9,7 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
-static struct xpm_object *objects ;  
+static struct xpm_object *objects;  
 
 int subscribe_interrupts(){
 
