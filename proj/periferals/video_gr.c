@@ -219,7 +219,6 @@ int swap_buffer(){
   void* temp = video_mem;
   video_mem = video_mem_sec;
   video_mem_sec = temp;
-  memcpy(video_mem_sec,video_mem,h_res*v_res*bytes_per_pixel);
   return 0;
 }
 
@@ -241,40 +240,85 @@ uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img) {
   return xpm_load(xpm,type,img);
 }
 
-void print_xpm(uint16_t x, uint16_t y,  uint8_t* map, xpm_image_t *img){
-  for(size_t i=0; i<img->height; i++){
+void print_xpm(xpm_object* xpm){
+  for(size_t i=0; i<(xpm->img).height; i++){
       //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
-      for(size_t j=0; j<img->width; j++){
+      for(size_t j=0; j<(xpm->img).width; j++){
         uint32_t color = 0;
         for(size_t byte=0; byte <= bytes_per_pixel; byte++){
-            color |= (*(map + (j+i*img->width)*bytes_per_pixel + byte)) << (byte*8);
+            color |= (*(xpm->map + (j+i*(xpm->img).width)*bytes_per_pixel + byte)) << (byte*8);
         }
-        vg_draw_pixel(x+j, y+i, color);
+        vg_draw_pixel(xpm->x+j, xpm->y+i, color);
       }
   }
 }
 
-void erase_xpm(uint16_t x, uint16_t y, uint8_t* map, xpm_image_t *img){
+void erase_xpm(xpm_object* xpm){
 
-  for(size_t i=0; i<img->height; i++){
+  for(size_t i=0; i<(xpm->img).height; i++){
       //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
-      for(size_t j=0; j<img->width; j++){
-        vg_draw_pixel(x+j, y+i,xpm_transparency_color(img->type));
+      for(size_t j=0; j<(xpm->img).width; j++){
+        vg_draw_pixel(xpm->x+j, xpm->y+i,xpm_transparency_color((xpm->img).type));
       }
   }
 }
 
-struct xpm_object *loadXPMs(){
+xpm_object *create_sprite(xpm_map_t sprite,char *ID, int x, int y){
 
-  struct  xpm_object *objects = malloc(sizeof(struct xpm_object)*20);
+  xpm_object *object = malloc(sizeof(xpm_object));
 
-  xpm_map_t character=character_xpm;
   xpm_image_t img;
-  uint8_t* map = loadXPM(character,XPM_8_8_8_8,&img);
+  uint8_t* map = loadXPM(sprite,XPM_8_8_8_8,&img);
 
-  objects[0].ID = "Character"; objects[0].map = map;
-  objects[0].img = img;
+  object->ID = ID;
+  object->map = map;
+  object->img = img;
+  object->x = x;
+  object->y = y;
+
+  return object;
+}
+
+animated_xpm_object* create_animated_sprite(xpm_map_t* xpms, int num_of_sprites, char *ID,int x, int y, int aspeed){
+
+  animated_xpm_object* animated_sprite = malloc(sizeof(animated_xpm_object));
 
 
-  return objects;
+  animated_sprite->obj = create_sprite(xpms[0],ID, x, y);
+
+  animated_sprite->map = malloc(sizeof(char*)*num_of_sprites);
+
+  animated_sprite->map[0] = (char*) animated_sprite->obj->map;
+
+  animated_sprite->aspeed = aspeed;
+  animated_sprite->num_fig = num_of_sprites;
+  animated_sprite->cur_speed = 0;
+  animated_sprite->cur_fig = 0;
+
+  for(size_t i = 0; i < (size_t) num_of_sprites; i++){
+    xpm_map_t view = xpms[i];
+    xpm_image_t imgView;
+    uint8_t* map = loadXPM(view,XPM_8_8_8_8, &imgView);
+    
+    animated_sprite->map[i] = (char*) map;
+  }
+
+  return animated_sprite;
+}
+
+void print_animated_sprite(animated_xpm_object* animated_sprite){
+  xpm_object current_sprite;
+
+  if(animated_sprite->cur_speed == animated_sprite->aspeed){
+    animated_sprite->cur_speed = 0;
+    animated_sprite->cur_fig = (animated_sprite->cur_fig + 1) % animated_sprite->num_fig;
+  }
+
+  current_sprite.x = animated_sprite->obj->x;
+  current_sprite.y = animated_sprite->obj->y;
+  current_sprite.img = animated_sprite->obj->img;
+  current_sprite.map = (uint8_t*) animated_sprite->map[animated_sprite->cur_fig];
+  
+  print_xpm(&current_sprite);
+
 }
