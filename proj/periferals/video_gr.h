@@ -1,40 +1,5 @@
 #include <lcom/lcf.h>
-#include "img/character.xpm"
-#include "img/character1.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_000.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_001.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_002.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_003.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_004.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_005.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_006.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_007.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_008.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_009.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_010.xpm"
-#include "img/Wraith_01/Idle/Wraith_01_Idle_011.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_000.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_001.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_002.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_003.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_004.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_005.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_006.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_007.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_008.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_009.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_010.xpm"
-#include "img/Wraith_01/Walking/Wraith_01_Moving_Forward_011.xpm"
 
-static xpm_map_t wraithIdle[] = {Wraith_01_Idle_000, Wraith_01_Idle_001, Wraith_01_Idle_002,
-                          Wraith_01_Idle_003, Wraith_01_Idle_004, Wraith_01_Idle_005,
-                          Wraith_01_Idle_006, Wraith_01_Idle_007, Wraith_01_Idle_008,
-                          Wraith_01_Idle_009, Wraith_01_Idle_010, Wraith_01_Idle_011};
-
-static xpm_map_t wraithWalking[] = {Wraith_01_Moving_Forward_000, Wraith_01_Moving_Forward_001, Wraith_01_Moving_Forward_002,
-                                    Wraith_01_Moving_Forward_003, Wraith_01_Moving_Forward_004, Wraith_01_Moving_Forward_005,
-                                    Wraith_01_Moving_Forward_006, Wraith_01_Moving_Forward_007, Wraith_01_Moving_Forward_008,
-                                    Wraith_01_Moving_Forward_009, Wraith_01_Moving_Forward_010, Wraith_01_Moving_Forward_011};
 
 /**
  * @brief Struct to store our XPM objects
@@ -44,7 +9,7 @@ struct {
   char *ID; ///< ID of xpm_object
   uint8_t *map; ///< Video Mem alocated for XPM 
   xpm_image_t img; ///< Image of XPM
-  int x,y;
+  int x,y, speed;
 }typedef xpm_object;
 
 /**
@@ -163,7 +128,7 @@ int get_current_buffer(struct reg86 *r);
 
 uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img);
 
-void print_xpm(xpm_object* xpm);
+void print_xpm(xpm_object* xpm, bool mirrored);
 
 void erase_xpm(xpm_object* xpm);
 
@@ -171,4 +136,4 @@ xpm_object *create_sprite(xpm_map_t sprite, char *ID, int x, int y);
 
 animated_xpm_object* create_animated_sprite(xpm_map_t* xpms, int num_of_sprites , char *ID,int x, int y, int aspeed);
 
-void print_animated_sprite(animated_xpm_object* animated_sprite);
+void print_animated_sprite(animated_xpm_object* animated_sprite, bool mirrored);

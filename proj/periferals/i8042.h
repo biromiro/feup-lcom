@@ -13,10 +13,14 @@
 
 #define KBC_BRK_ESC_KEY 0x81 /**< @brief scancode (breakcode) of ESC key*/
 #define KBC_MSB_SCNCD BIT(7) /**< @brief scancode diff (make or break) in BIT 7*/
-#define KBC_A_KEY 0x1E
-#define KBC_S_KEY 0x1F
-#define KBC_D_KEY 0x20
-#define KBC_W_KEY 0x11
+#define KBC_MK_A_KEY 0x1e
+#define KBC_BRK_A_KEY 0x9e
+#define KBC_MK_S_KEY 0x1F
+#define KBC_BRK_S_KEY 0x9f
+#define KBC_MK_D_KEY 0x20
+#define KBC_BRK_D_KEY 0xa0
+#define KBC_MK_W_KEY 0x11
+#define KBC_BRK_W_KEY 0x91
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
 #define KBC_IRQ 1 /**< @brief KBC IRQ line */

@@ -3,6 +3,7 @@
 #include "kbc.h"
 #include "timer.h"
 #include "video_gr.h"
+#include "../game/character_movement.h"
 
 enum {MOUSE,TIMER,KBD} typedef irq_type;
 

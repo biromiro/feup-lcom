@@ -9,8 +9,6 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
-static animated_xpm_object **object;
-static animated_xpm_object *current_sprite;
 
 int subscribe_interrupts(){
 
@@ -40,12 +38,9 @@ int initialize(){
     return 1;
   }
   vg_init(0x14C);
+  timer_set_frequency(0,120);
 
-  object = malloc(sizeof(animated_xpm_object*)*2);
-  object[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle)/sizeof(const char *), "Wraith Idle", 400, 400, 6);
-  object[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking)/sizeof(const char *), "Wraith Walking", 0, 0, 6);
-
-  current_sprite = object[0];
+  create_game_objects();
   return 0;
 }
 
@@ -125,18 +120,7 @@ void interrupt_call_receiver(){
 void timer_handler(){
   timer_int_handler();
   
-  if(counter%2 == 0){
-    current_sprite->cur_speed += 2;
-    erase_xpm(current_sprite->obj);
-    print_animated_sprite(current_sprite);
-
-    if(OK != swap_buffer()){
-     printf("Unable to swap buffers!");
-     finished = true;;
-    }
-
-  }
-    
+  if(OK != update_character_movement(counter)) finished = true;
 }
 
 void mouse_handler(){
@@ -150,7 +134,7 @@ void mouse_handler(){
   }
   if(counter_mouse == 3){
     mouse_parse_packet(&pp);
-    mouse_print_packet(&pp);
+    //mouse_print_packet(&pp);
     startPacket = false;
     counter_mouse = 0;
   }
@@ -165,21 +149,8 @@ void kbd_handler(){
     return;
   }
   bytes[i] = scancode;
-  kbd_print_scancode(!(scancode & KBC_MSB_SCNCD),i+1,bytes);
-  if(scancode == KBC_D_KEY){
-      object[1]->obj->x = current_sprite->obj->x;
-      object[1]->obj->y = current_sprite->obj->y;
-
-      current_sprite = object[1];
-
-      current_sprite->obj->x+=10;
-  }else if(scancode == KBC_A_KEY){
-      current_sprite->obj->x-=10;
-  }else if(scancode == KBC_S_KEY){
-      current_sprite->obj->y+=10;
-  }else if(scancode == KBC_W_KEY){
-      current_sprite->obj->y-=10;
-  }
+  
+  handle_button_presses(scancode);
   i=0;
   counter = 0;
   if(scancode == KBC_BRK_ESC_KEY) finished = true;

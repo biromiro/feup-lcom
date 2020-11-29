@@ -229,7 +229,7 @@ int get_current_buffer(struct reg86 *r){
   r->intno = 0x10;
 
    if( sys_int86(r) != OK ) { 
-      printf("\tsetCurrentBUffer(): sys_int86() failed \n");
+      printf("\tgetCurrentBUffer(): sys_int86() failed \n");
       return -1;
     }
 
@@ -240,17 +240,18 @@ uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img) {
   return xpm_load(xpm,type,img);
 }
 
-void print_xpm(xpm_object* xpm){
-  for(size_t i=0; i<(xpm->img).height; i++){
-      //memset(buffer + (x+(y+i)*h_res)*bytes_per_pixel,*(map+(i*img.width)*bytes_per_pixel),img.width*bytes_per_pixel);
+void print_xpm(xpm_object* xpm, bool mirrored){
+    for(size_t i=0; i<(xpm->img).height; i++){
       for(size_t j=0; j<(xpm->img).width; j++){
         uint32_t color = 0;
         for(size_t byte=0; byte <= bytes_per_pixel; byte++){
             color |= (*(xpm->map + (j+i*(xpm->img).width)*bytes_per_pixel + byte)) << (byte*8);
         }
-        vg_draw_pixel(xpm->x+j, xpm->y+i, color);
+        if(mirrored) vg_draw_pixel(xpm->x+((xpm->img).width-j), xpm->y+i, color);
+        else vg_draw_pixel(xpm->x+j, xpm->y+i, color);
       }
-  }
+    }
+  
 }
 
 void erase_xpm(xpm_object* xpm){
@@ -306,7 +307,7 @@ animated_xpm_object* create_animated_sprite(xpm_map_t* xpms, int num_of_sprites,
   return animated_sprite;
 }
 
-void print_animated_sprite(animated_xpm_object* animated_sprite){
+void print_animated_sprite(animated_xpm_object* animated_sprite, bool mirrored){
   xpm_object current_sprite;
 
   if(animated_sprite->cur_speed == animated_sprite->aspeed){
@@ -319,6 +320,6 @@ void print_animated_sprite(animated_xpm_object* animated_sprite){
   current_sprite.img = animated_sprite->obj->img;
   current_sprite.map = (uint8_t*) animated_sprite->map[animated_sprite->cur_fig];
   
-  print_xpm(&current_sprite);
+  print_xpm(&current_sprite, mirrored);
 
 }
