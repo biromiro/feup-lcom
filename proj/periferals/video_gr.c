@@ -276,6 +276,7 @@ xpm_object *create_sprite(xpm_map_t sprite,char *ID, int x, int y){
   object->img = img;
   object->x = x;
   object->y = y;
+  object->speed = 0;
 
   return object;
 }

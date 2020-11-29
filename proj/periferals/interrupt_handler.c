@@ -134,7 +134,6 @@ void mouse_handler(){
   }
   if(counter_mouse == 3){
     mouse_parse_packet(&pp);
-    //mouse_print_packet(&pp);
     startPacket = false;
     counter_mouse = 0;
   }

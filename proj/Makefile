@@ -5,7 +5,7 @@ PROG=proj
 SRCS = proj.c utils.c periferals/kbc.c periferals/timer.c periferals/video_gr.c periferals/interrupt_handler.c game/character_movement.c
 
 # __LCOM_OPTIMIZED__ disables most of the LCF's overhead (and functionality!)
-CPPFLAGS += -pedantic -O3
+CPPFLAGS += -pedantic -D __LCOM_OPTIMIZED__
 
 DPADD += ${LIBLCF}
 LDADD += -llcf

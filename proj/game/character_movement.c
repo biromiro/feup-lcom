@@ -17,6 +17,8 @@ void create_game_objects(){
 int update_character_movement(int counter){
     if(counter%2 == 0){
         current_sprite->cur_speed += 1;
+
+        if(current_sprite->obj->speed != 0) current_sprite->obj->x += current_sprite->obj->speed;
         print_animated_sprite(current_sprite, mirrored);
 
         if(OK != swap_buffer()){
@@ -35,7 +37,7 @@ void handle_button_presses(uint8_t scancode){
       object[1]->obj->y = current_sprite->obj->y;
 
       current_sprite = object[1];
-      current_sprite->obj->x+=20;
+      current_sprite->obj->speed = 4;
       mirrored = false;      
       break;
 
@@ -44,7 +46,7 @@ void handle_button_presses(uint8_t scancode){
       object[1]->obj->y = current_sprite->obj->y;
 
       current_sprite = object[1];
-      current_sprite->obj->x-=20;
+      current_sprite->obj->speed = -4;
       mirrored = true;
       break;
   case KBC_BRK_A_KEY:
@@ -53,6 +55,7 @@ void handle_button_presses(uint8_t scancode){
       object[0]->obj->y = current_sprite->obj->y;
 
       current_sprite = object[0];
+      current_sprite->obj->speed = 0;
       break;
   default:
       break;
