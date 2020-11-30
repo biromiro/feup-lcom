@@ -9,6 +9,8 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
+static xpm_object* igcursor;
+static xpm_object* background_img;
 
 int subscribe_interrupts(){
 
@@ -41,6 +43,10 @@ int initialize(){
   timer_set_frequency(0,120);
 
   create_game_objects();
+  set_magic_blasts_available();
+
+  igcursor = create_sprite(cursor,"cursor",200,200);
+  background_img = create_sprite(background,"background", 0,0);
   return 0;
 }
 
@@ -102,7 +108,7 @@ void interrupt_call_receiver(){
             timer_handler();
           }
           if (msg.m_notify.interrupts & get_irq_set(MOUSE)) { /* subscribed interrupt */
-            mouse_handler();
+              mouse_handler();
           }
           if (msg.m_notify.interrupts & get_irq_set(KBD)){
             kbd_handler(); 
@@ -119,8 +125,17 @@ void interrupt_call_receiver(){
 
 void timer_handler(){
   timer_int_handler();
-  
-  if(OK != update_character_movement(counter)) finished = true;
+
+  if(counter%2 == 0){
+    print_xpm(background_img,false);
+    if(OK != update_character_movement(counter)) finished = true;
+    print_magic_blasts();
+    print_xpm(igcursor,false);
+    if(OK != swap_buffer()){
+        printf("Unable to swap buffers!");
+        return;
+     }
+  }
 }
 
 void mouse_handler(){
@@ -136,8 +151,10 @@ void mouse_handler(){
     mouse_parse_packet(&pp);
     startPacket = false;
     counter_mouse = 0;
+    igcursor->x += pp.delta_x;
+    igcursor->y -= pp.delta_y;
   }
-  counter = 0;
+  handle_mouse_packet(igcursor, &pp);
 }
 
 void kbd_handler(){
@@ -151,6 +168,5 @@ void kbd_handler(){
   
   handle_button_presses(scancode);
   i=0;
-  counter = 0;
   if(scancode == KBC_BRK_ESC_KEY) finished = true;
 }

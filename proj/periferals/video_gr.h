@@ -1,6 +1,7 @@
 #include <lcom/lcf.h>
 
-
+#ifndef XPM_OBJECTS
+#define XPM_OBJECTS
 /**
  * @brief Struct to store our XPM objects
  * 
@@ -9,7 +10,7 @@ struct {
   char *ID; ///< ID of xpm_object
   uint8_t *map; ///< Video Mem alocated for XPM 
   xpm_image_t img; ///< Image of XPM
-  int x,y, speed;
+  int x,y, x_speed,y_speed;
 }typedef xpm_object;
 
 /**
@@ -20,7 +21,7 @@ struct{
   int aspeed, cur_speed, num_fig, cur_fig;
   char **map;
 }typedef animated_xpm_object;
-
+#endif
 
 int (_vbe_get_mode_info)(uint16_t mode, vbe_mode_info_t* vm);
 

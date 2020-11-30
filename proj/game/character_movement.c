@@ -1,31 +1,32 @@
 #include "character_movement.h"
-#include "../periferals/video_gr.h"
-#include "../periferals/i8042.h"
+#include "magic_blast.h"
 
 static animated_xpm_object **object;
 static animated_xpm_object *current_sprite;
-static bool mirrored = false;
+static bool mirrored = false, sent = false, attackAnimation = false;
 
 void create_game_objects(){
-  object = malloc(sizeof(animated_xpm_object*)*2);
+  object = malloc(sizeof(animated_xpm_object*)*3);
   object[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle)/sizeof(const char *), "Wraith Idle", 400, 400, 4);
   object[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking)/sizeof(const char *), "Wraith Walking", 0, 0, 4);
-
+  object[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack)/sizeof(const char *), "Wraith Attacking", 0, 0,4);
   current_sprite = object[0];
 }
 
 int update_character_movement(int counter){
-    if(counter%2 == 0){
-        current_sprite->cur_speed += 1;
+    current_sprite->cur_speed += 1;
 
-        if(current_sprite->obj->speed != 0) current_sprite->obj->x += current_sprite->obj->speed;
-        print_animated_sprite(current_sprite, mirrored);
+    if(attackAnimation && ((current_sprite->cur_fig + 1) == current_sprite->num_fig)){
+      current_sprite->cur_fig = 0;
+      object[0]->obj->x = current_sprite->obj->x;
+      object[0]->obj->y = current_sprite->obj->y;
 
-        if(OK != swap_buffer()){
-            printf("Unable to swap buffers!");
-            return 1;
-        }
+      current_sprite = object[0];
+      attackAnimation = false;
     }
+    if(current_sprite->obj->x_speed != 0) current_sprite->obj->x += current_sprite->obj->x_speed;
+    print_animated_sprite(current_sprite, mirrored);
+
     return 0;
 }
 
@@ -37,7 +38,7 @@ void handle_button_presses(uint8_t scancode){
       object[1]->obj->y = current_sprite->obj->y;
 
       current_sprite = object[1];
-      current_sprite->obj->speed = 4;
+      current_sprite->obj->x_speed = 4;
       mirrored = false;      
       break;
 
@@ -46,7 +47,7 @@ void handle_button_presses(uint8_t scancode){
       object[1]->obj->y = current_sprite->obj->y;
 
       current_sprite = object[1];
-      current_sprite->obj->speed = -4;
+      current_sprite->obj->x_speed = -4;
       mirrored = true;
       break;
   case KBC_BRK_A_KEY:
@@ -55,9 +56,29 @@ void handle_button_presses(uint8_t scancode){
       object[0]->obj->y = current_sprite->obj->y;
 
       current_sprite = object[0];
-      current_sprite->obj->speed = 0;
+      current_sprite->obj->x_speed = 0;
       break;
   default:
       break;
   }
+}
+
+void handle_mouse_packet(xpm_object* cursor, struct packet *pp){
+    if(pp->lb){
+        if(!sent){
+            throw_magic_blast(cursor, get_current_character());
+            object[2]->obj->x = current_sprite->obj->x;
+            object[2]->obj->y = current_sprite->obj->y;
+
+            current_sprite = object[2];
+            sent = true;
+            attackAnimation = true;
+        }
+    }else{
+        sent = false;
+    }
+}
+
+xpm_object* get_current_character(){
+    return current_sprite->obj;
 }

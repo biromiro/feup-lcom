@@ -4,6 +4,9 @@
 #include "timer.h"
 #include "video_gr.h"
 #include "../game/character_movement.h"
+#include "../game/magic_blast.h"
+#include "../img/cursor.xpm"
+#include "../img/background.xpm"
 
 enum {MOUSE,TIMER,KBD} typedef irq_type;
 
