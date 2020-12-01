@@ -32,12 +32,14 @@ void reindex_enemies(size_t positions);
 
 /**
  * @brief Checks collisions between active blasts and active enemies
+ * and active enemies and main character
  * 
  * Frees the allocated memory of the respective blasts and enemies,
  * if there was in fact a collision
  * 
+ * @return 0 if there is no collision between player&  enemy, 1 if there is  
  */
-void checking_collision(xpm_object **magic_blasts);
+int checking_collision(xpm_object **magic_blasts);
 
 /**
  * @brief Checks if there was a collision between an enemy and 
@@ -48,4 +50,4 @@ void checking_collision(xpm_object **magic_blasts);
  * 
  * @return 0 if there is no collision, 1 if there is 
  */
-int blast_collision(xpm_object *magic_blast, xpm_object *enemy);
+int enemy_collision(xpm_object *magic_blast, xpm_object *enemy);

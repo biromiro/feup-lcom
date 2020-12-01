@@ -129,7 +129,7 @@ void timer_handler() {
   timer_int_handler();
 
   if (counter % 2 == 0) {
-    checking_collision(get_magic_blasts());
+    if(checking_collision(get_magic_blasts())) finished=true;
     print_xpm(background_img, false);
     if (counter % 120 == 0)
       throw_enemies();

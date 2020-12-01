@@ -50,56 +50,63 @@ void reindex_enemies(size_t position) {
   available_enemies++;
 }
 
-void checking_collision(xpm_object **magic_blasts) {
+int checking_collision(xpm_object **magic_blasts) {
 
   bool collided = false;
-
-  for (size_t blastIndex = 0; blastIndex < (get_total_blasts() - get_available_blasts()); blastIndex++) {
-    for (size_t enemiesIndex = 0; enemiesIndex < total_enemies - available_enemies; enemiesIndex++) {
-      if (blast_collision(magic_blasts[blastIndex], enemies[enemiesIndex])) {
-        free(enemies[enemiesIndex]);
-        reindex_enemies(enemiesIndex);
+  for (size_t enemiesIndex = 0; enemiesIndex < total_enemies - available_enemies; enemiesIndex++) {
+    for (size_t blastIndex = 0; blastIndex < (get_total_blasts() - get_available_blasts()); blastIndex++) {
+      if (enemy_collision(magic_blasts[blastIndex], enemies[enemiesIndex])) {
+        free(magic_blasts[blastIndex]);
+        reindex_magic_blasts(blastIndex);
         collided = true;
         break;
       }
     }
+
     if (collided) {
-      free(magic_blasts[blastIndex]);
-      reindex_magic_blasts(blastIndex);
+      free(enemies[enemiesIndex]);
+      reindex_enemies(enemiesIndex);
       collided = false;
-      blastIndex--;
+      enemiesIndex--;
+      continue;
+    }
+    if (enemy_collision(get_current_character(), enemies[enemiesIndex])) {
+      free(enemies[enemiesIndex]);
+      reindex_enemies(enemiesIndex);
+      return 1;
     }
   }
+  return 0;
 }
 
-int blast_collision(xpm_object *magic_blast, xpm_object *enemy) {
+int enemy_collision(xpm_object *object, xpm_object *enemy) {
 
   if ( // condition where there will be no collision from the get go
-    magic_blast->x + (magic_blast->img).width < enemy->x ||
-    enemy->x + (enemy->img).width < magic_blast->x ||
-    magic_blast->y + (magic_blast->img).height < enemy->y ||
-    enemy->y + (enemy->img).height < magic_blast->y)
+    object->x + (object->img).width < enemy->x ||
+    enemy->x + (enemy->img).width < object->x ||
+    object->y + (object->img).height < enemy->y ||
+    enemy->y + (enemy->img).height < object->y)
     return 0;
 
   // Calculating search area (for optimization purposes)
 
   size_t offsetX_magic = 0, offsetY_magic = 0, offsetX_enemy = 0, offsetY_enemy = 0, search_width = 0, search_height = 0;
 
-  if ((magic_blast->x <= enemy->x) && magic_blast->x + (magic_blast->img).width > enemy->x) { // Start of X of enemy is inside of blast
-    search_width = magic_blast->x + (magic_blast->img).width - enemy->x;
-    offsetX_magic = (magic_blast->img).width - search_width;
+  if ((object->x <= enemy->x) && object->x + (object->img).width > enemy->x) { // Start of X of enemy is inside of blast
+    search_width = object->x + (object->img).width - enemy->x;
+    offsetX_magic = (object->img).width - search_width;
   }
-  else if ((enemy->x <= magic_blast->x) && enemy->x + (enemy->img).width > magic_blast->x) { // Start of X of blast is inside of enemy
-    search_width = enemy->x + (enemy->img).width - magic_blast->x;
+  else if ((enemy->x <= object->x) && enemy->x + (enemy->img).width > object->x) { // Start of X of blast is inside of enemy
+    search_width = enemy->x + (enemy->img).width - object->x;
     offsetX_enemy = (enemy->img).width - search_width;
   }
 
-  if ((magic_blast->y <= enemy->y) && magic_blast->y + (magic_blast->img).height > enemy->y) { // Start of Y of enemy is inside of blast
-    search_height = magic_blast->y + (magic_blast->img).height - enemy->y;
-    offsetY_magic = (magic_blast->img).height - search_height;
+  if ((object->y <= enemy->y) && object->y + (object->img).height > enemy->y) { // Start of Y of enemy is inside of blast
+    search_height = object->y + (object->img).height - enemy->y;
+    offsetY_magic = (object->img).height - search_height;
   }
-  else if ((enemy->y <= magic_blast->y) && enemy->y + (enemy->img).height > magic_blast->y) { // Start of Y of blast is inside of enemy
-    search_height = enemy->y + (enemy->img).height - magic_blast->y;
+  else if ((enemy->y <= object->y) && enemy->y + (enemy->img).height > object->y) { // Start of Y of blast is inside of enemy
+    search_height = enemy->y + (enemy->img).height - object->y;
     offsetY_enemy = (enemy->img).height - search_height;
   }
 
@@ -107,10 +114,10 @@ int blast_collision(xpm_object *magic_blast, xpm_object *enemy) {
     for (size_t j = 0; j < search_width; j++) {
       uint32_t color_blast = 0, color_enemy = 0;
       for (size_t byte = 0; byte <= get_bytes_per_pixel(); byte++) {
-        color_blast |= (*(magic_blast->map + ((j + offsetX_magic) + (i + offsetY_magic) * (magic_blast->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
+        color_blast |= (*(object->map + ((j + offsetX_magic) + (i + offsetY_magic) * (object->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
         color_enemy |= (*(enemy->map + ((j + offsetX_enemy) + (i + offsetY_enemy) * (enemy->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
       }
-      if (color_blast != xpm_transparency_color((magic_blast->img).type) &&
+      if (color_blast != xpm_transparency_color((object->img).type) &&
           color_enemy != xpm_transparency_color((enemy->img).type))
         return 1;
     }
