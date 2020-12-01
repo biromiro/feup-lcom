@@ -190,6 +190,10 @@ uint16_t get_v_resolution(){
   return v_res;
 }
 
+unsigned get_bytes_per_pixel(){
+  return bytes_per_pixel;
+}
+
 int swap_buffer(){
 
   struct reg86 r;
