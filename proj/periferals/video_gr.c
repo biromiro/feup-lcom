@@ -247,11 +247,11 @@ void print_xpm(xpm_object* xpm, bool mirrored){
         for(size_t byte=0; byte <= bytes_per_pixel; byte++){
             color |= (*(xpm->map + (j+i*(xpm->img).width)*bytes_per_pixel + byte)) << (byte*8);
         }
+        if(color == xpm_transparency_color((xpm->img).type)) continue;
         if(mirrored) vg_draw_pixel(xpm->x+((xpm->img).width-j), xpm->y+i, color);
         else vg_draw_pixel(xpm->x+j, xpm->y+i, color);
       }
     }
-  
 }
 
 void erase_xpm(xpm_object* xpm){
