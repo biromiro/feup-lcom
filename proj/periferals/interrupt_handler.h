@@ -5,6 +5,7 @@
 #include "video_gr.h"
 #include "../game/character_movement.h"
 #include "../game/magic_blast.h"
+#include "../game/enemies.h"
 #include "../img/cursor.xpm"
 #include "../img/background.xpm"
 

@@ -34,18 +34,18 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
-int (proj_main_loop)(int argc, char *argv[]) {
+int(proj_main_loop)(int argc, char *argv[]) {
 
-  if(OK != initialize()){
+  if (OK != initialize()) {
     printf("Could not initialize video mode and/or interrupts!");
     return 1;
   }
 
-  while(!finished) {
+  while (!finished) {
     interrupt_call_receiver();
   }
 
-  if(OK != finish()){
+  if (OK != finish()) {
     printf("Could not fully reset the state of Minix!");
     return 1;
   }

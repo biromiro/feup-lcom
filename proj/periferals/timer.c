@@ -8,25 +8,25 @@
 int counter = 0;
 int hook = 0;
 
-int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
+int(timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
   //checking for valid frequency
-  if(freq < 19 || freq > TIMER_FREQ)
+  if (freq < 19 || freq > TIMER_FREQ)
     return 1;
 
-  uint16_t div = TIMER_FREQ/freq;
+  uint16_t div = TIMER_FREQ / freq;
 
   uint8_t msb = 0;
   uint8_t lsb = 0;
 
   //loading msb and lsb of frequency to the respective variables
-  util_get_MSB(div,&msb);
-  util_get_LSB(div,&lsb);
+  util_get_MSB(div, &msb);
+  util_get_LSB(div, &lsb);
 
   uint8_t conf_timer = 0;
 
   //checks if it was not possible to get the timer's configuration
-  if(timer_get_conf(timer, &conf_timer) == 1){
+  if (timer_get_conf(timer, &conf_timer) == 1) {
     printf("Invalid configuration on timer");
     return 1;
   }
@@ -49,37 +49,37 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return (sys_outb(TIMER_CTRL, conf_timer) || sys_outb(TIMER_0 + timer, lsb) || sys_outb(TIMER_0 + timer, msb));
 }
 
-int (timer_subscribe_int)(uint8_t *bit_no) {
-  *bit_no=BIT(hook);
+int(timer_subscribe_int)(uint8_t *bit_no) {
+  *bit_no = BIT(hook);
   sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook);
   return 0;
 }
 
-int (timer_unsubscribe_int)() {
+int(timer_unsubscribe_int)() {
   sys_irqrmpolicy(&hook);
   return 0;
 }
 
-void (timer_int_handler)() {
+void(timer_int_handler)() {
   counter++;
 }
 
-int (timer_get_conf)(uint8_t timer, uint8_t *st) {
+int(timer_get_conf)(uint8_t timer, uint8_t *st) {
 
   //checks if the timer chosen is valid
-  if(timer > 2 || timer < 0)
+  if (timer > 2 || timer < 0)
     return 1;
 
   //building the readback command and checking if it was possible to send it to the control port
   uint8_t readBackComm = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer));
-  if(sys_outb(TIMER_CTRL, readBackComm))
+  if (sys_outb(TIMER_CTRL, readBackComm))
     return 1;
 
   //checks if it was possible to get the configuration of the timer
   return util_sys_inb(TIMER_0 + timer, st);
 }
 
-enum timer_init initializationMode(uint8_t *st){
+enum timer_init initializationMode(uint8_t *st) {
 
   *st = *st >> 4;
   *st &= 0x03;
@@ -95,10 +95,9 @@ enum timer_init initializationMode(uint8_t *st){
     default:
       return INVAL_val;
   }
-
 }
 
-uint8_t countMode(uint8_t st){
+uint8_t countMode(uint8_t st) {
 
   //defines the count mode (0 through 5)
   switch (st) {
@@ -109,10 +108,9 @@ uint8_t countMode(uint8_t st){
     default:
       return st;
   }
-
 }
 
-int (timer_display_conf)(uint8_t timer, uint8_t st,
+int(timer_display_conf)(uint8_t timer, uint8_t st,
                         enum timer_status_field field) {
 
   union timer_status_field_val status;

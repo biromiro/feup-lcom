@@ -22,16 +22,16 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb) {
   return 0;
 }
 
-int (util_sys_inb)(int port, uint8_t *value) {
+int(util_sys_inb)(int port, uint8_t *value) {
 
   //getting word from designated port
   uint32_t val = 0;
   int res = sys_inb(port, &val);
-  #ifdef LAB3
+#ifdef LAB3
   cnt++;
-  #endif
+#endif
   //checks if the read was valid
-  if(res != 0){
+  if (res != 0) {
     printf("Invalid sys_inb");
   }
 
@@ -39,5 +39,3 @@ int (util_sys_inb)(int port, uint8_t *value) {
 
   return res;
 }
-
-

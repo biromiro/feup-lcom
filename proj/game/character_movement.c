@@ -25,8 +25,8 @@ int update_character_movement(int counter) {
     attackAnimation = false;
   }
   if (current_sprite->obj->x_speed != 0)
-    if(!wall_collision(current_sprite))
-        current_sprite->obj->x += current_sprite->obj->x_speed;
+    if (!wall_collision(current_sprite))
+      current_sprite->obj->x += current_sprite->obj->x_speed;
   print_animated_sprite(current_sprite, mirrored);
 
   return 0;
@@ -86,18 +86,21 @@ xpm_object *get_current_character() {
   return current_sprite->obj;
 }
 
-int wall_collision(animated_xpm_object *current_sprite){
-    for(size_t i=0; i<(current_sprite->obj->img).height; i++){
-      for(size_t j=0; j<(current_sprite->obj->img).width; j++){
-        uint32_t color = 0;
-        for(size_t byte=0; byte <= get_bytes_per_pixel(); byte++){
-            color |= (*(current_sprite->obj->map + (j+i*(current_sprite->obj->img).width)*(get_bytes_per_pixel()) + byte)) << (byte*8);
-        }
-        if(color == xpm_transparency_color((current_sprite->obj->img).type)) continue;
-        if((j+current_sprite->obj->x)+current_sprite->obj->x_speed > get_h_resolution()) return 1;
-        if((j+current_sprite->obj->x)+current_sprite->obj->x_speed <= 0) return 1;
+int wall_collision(animated_xpm_object *current_sprite) {
+  for (size_t i = 0; i < (current_sprite->obj->img).height; i++) {
+    for (size_t j = 0; j < (current_sprite->obj->img).width; j++) {
+      uint32_t color = 0;
+      for (size_t byte = 0; byte <= get_bytes_per_pixel(); byte++) {
+        color |= (*(current_sprite->obj->map + (j + i * (current_sprite->obj->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
       }
+      if (color == xpm_transparency_color((current_sprite->obj->img).type))
+        continue;
+      if ((j + current_sprite->obj->x) + current_sprite->obj->x_speed > get_h_resolution())
+        return 1;
+      if ((j + current_sprite->obj->x) + current_sprite->obj->x_speed <= 0)
+        return 1;
     }
+  }
 
-    return 0;
-};
+  return 0;
+}
