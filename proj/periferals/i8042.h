@@ -12,7 +12,6 @@
  * */
 
 #define KBC_BRK_ESC_KEY 0x81 /**< @brief scancode (breakcode) of ESC key*/
-#define KBC_MSB_SCNCD BIT(7) /**< @brief scancode diff (make or break) in BIT 7*/
 #define KBC_MK_A_KEY 0x1e
 #define KBC_BRK_A_KEY 0x9e
 #define KBC_MK_S_KEY 0x1F
@@ -21,10 +20,13 @@
 #define KBC_BRK_D_KEY 0xa0
 #define KBC_MK_W_KEY 0x11
 #define KBC_BRK_W_KEY 0x91
+#define KBC_MSB_SCNCD BIT(7) /**< @brief scancode diff (make or break) in BIT 7*/
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
 #define KBC_IRQ 1 /**< @brief KBC IRQ line */
 #define MOUSE_IRQ 12 /**< @brief Mouse IRQ line */
+#define RTC_IRQ 8 /**< @brief RTC IRQ line */
+
 
 /* I/O port addresses */
 
@@ -77,5 +79,39 @@
 #define MOUSE_STREAM_MODE 0xEA
 #define MOUSE_REMOTE_MODE 0xF0
 #define MOUSE_READ_DATA 0xEB
+
+/* RTC I/O adreses */
+
+#define RTC_ADDR_REG 0x70
+#define RTC_DATA_REG 0x71
+#define RTC_REG_SEC 0x00
+#define RTC_REG_SEC_ALRM 0x01
+#define RTC_REG_MIN 0x02
+#define RTC_REG_MIN_ALRM 0x03
+#define RTC_REG_HOUR 0x04
+#define RTC_REG_HOUR_ALRM 0x05
+#define RTC_REG_DAY_WEEK 0x06
+#define RTC_REG_DAY_MONTH 0x07
+#define RTC_REG_MONTH 0x08
+#define RTC_REG_YEAR 0x09
+#define RTC_REG_A 0x10
+#define RTC_REG_B 0x11
+#define RTC_REG_C 0x12
+#define RTC_REG_D 0x13
+
+/* RTC REGISTER FLAGS */
+
+#define RTC_UIP BIT(7)
+#define RTC_SET BIT(7)
+#define RTC_PIE BIT(6)
+#define RTC_AIE BIT(5)
+#define RTC_UIE BIT(4)
+#define RTC_SQWE BIT(3)
+#define RTC_IRQF BIT(7)
+#define RTC_PF BIT(6)
+#define RTC_AF BIT(5)
+#define RTC_UF BIT(4)
+
+#define UPDATE_TIME_MICRO 244
 
 #endif //LAB3_I8042_H

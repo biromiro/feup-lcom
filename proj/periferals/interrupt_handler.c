@@ -35,19 +35,23 @@ int subscribe_interrupts() {
 }
 
 int initialize() {
-  if (OK != subscribe_interrupts()) {
-    printf("Could not subscribe all interrupts!\n");
-    return 1;
-  }
+
   vg_init(0x14C);
-  timer_set_frequency(0, 120);
+  timer_set_frequency(0, 30);
 
   create_game_objects();
   set_magic_blasts_available();
   set_enemies_available();
 
+
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
+
+  if (OK != subscribe_interrupts()) {
+    printf("Could not subscribe all interrupts!\n");
+    return 1;
+  }
+  
   return 0;
 }
 
@@ -105,14 +109,14 @@ void interrupt_call_receiver() {
   if (is_ipc_notify(ipc_status)) { /* received notification */
     switch (_ENDPOINT_P(msg.m_source)) {
       case HARDWARE: /* hardware interrupt notification */
-        if (msg.m_notify.interrupts & get_irq_set(TIMER)) {
-          timer_handler();
-        }
         if (msg.m_notify.interrupts & get_irq_set(MOUSE)) { /* subscribed interrupt */
           mouse_handler();
         }
         if (msg.m_notify.interrupts & get_irq_set(KBD)) {
           kbd_handler();
+        }
+        if (msg.m_notify.interrupts & get_irq_set(TIMER)) {
+          timer_handler();
         }
         break;
       default:
@@ -127,21 +131,19 @@ void interrupt_call_receiver() {
 
 void timer_handler() {
   timer_int_handler();
-
-  if (counter % 2 == 0) {
-    if(checking_collision(get_magic_blasts())) finished=true;
-    print_xpm(background_img, false);
-    if (counter % 120 == 0)
-      throw_enemies();
-    if (OK != update_character_movement(counter))
-      finished = true;
-    print_magic_blasts();
-    print_enemies();
-    print_xpm(igcursor, false);
-    if (OK != swap_buffer()) {
-      printf("Unable to swap buffers!");
-      return;
-    }
+  printf("counter: %d\n", counter);
+  if(checking_collision(get_magic_blasts())) finished=true;
+  print_xpm(background_img, false);
+  if (counter % 60 == 0)
+    throw_enemies();
+  if (OK != update_character_movement(counter))
+    finished = true;
+  print_magic_blasts();
+  print_enemies();
+  print_xpm(igcursor, false);
+  if (OK != swap_buffer()) {
+    printf("Unable to swap buffers!");
+    return;
   }
 }
 

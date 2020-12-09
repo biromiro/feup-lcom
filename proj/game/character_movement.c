@@ -14,7 +14,7 @@ void create_game_objects() {
 }
 
 int update_character_movement(int counter) {
-  current_sprite->cur_speed += 1;
+  current_sprite->cur_speed += 2;
 
   if (attackAnimation && ((current_sprite->cur_fig + 1) == current_sprite->num_fig)) {
     current_sprite->cur_fig = 0;

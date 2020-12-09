@@ -2,10 +2,10 @@
 PROG=proj
 
 # source code files to be compiled
-SRCS = proj.c utils.c periferals/kbc.c periferals/timer.c periferals/video_gr.c periferals/interrupt_handler.c game/character_movement.c game/magic_blast.c game/enemies.c
+SRCS = proj.c utils.c periferals/kbc.c periferals/timer.c periferals/video_gr.c periferals/interrupt_handler.c periferals/rtc.c game/character_movement.c game/magic_blast.c game/enemies.c
 
 # __LCOM_OPTIMIZED__ disables most of the LCF's overhead (and functionality!)
-CPPFLAGS += -pedantic -D __LCOM_OPTIMIZED__
+CPPFLAGS += -pedantic #-D __LCOM_OPTIMIZED__
 
 DPADD += ${LIBLCF}
 LDADD += -llcf
@@ -17,7 +17,9 @@ periferals/kbc.o: periferals/kbc.c periferals/kbc.h
 periferals/timer.o: periferals/timer.c periferals/timer.h
 		cc $(CFLAGS) -o periferals/timer.o -c periferals/timer.c 
 periferals/video_gr.o: periferals/video_gr.c periferals/video_gr.h
-		cc $(CFLAGS) -o periferals/video_gr.o -c periferals/video_gr.c 
+		cc $(CFLAGS) -o periferals/video_gr.o -c periferals/video_gr.c
+periferals/rtc.o: periferals/rtc.c periferals/rtc.h
+		cc $(CFLAGS) -o periferals/rtc.o -c periferals/rtc.c 
 periferals/interrupt_handler.o: periferals/interrupt_handler.c periferals/interrupt_handler.h
 		cc $(CFLAGS) -o periferals/interrupt_handler.o -c periferals/interrupt_handler.c 
 game/character_movement.o: game/character_movement.c game/character_movement.h 
