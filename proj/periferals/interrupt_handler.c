@@ -40,13 +40,19 @@ int subscribe_interrupts() {
 }
 
 int initialize() {
+
   if (OK != subscribe_interrupts()) {
     printf("Could not subscribe all interrupts!\n");
     return 1;
   }
+
+  set_rtc_interrupts(ALARM, true);
+  set_rtc_interrupts(UPDATE, false);
+  set_rtc_interrupts(PERIODIC, false);
+
   vg_init(0x14C);
   timer_set_frequency(0, 120);
-  set_rtc_interrupts(UPDATE, true);
+  
 
   create_game_objects();
   set_magic_blasts_available();
@@ -54,6 +60,7 @@ int initialize() {
 
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
+  set_power_up_alarm();
   return 0;
 }
 
@@ -69,12 +76,12 @@ int unsubscribe_interrupts() {
     return 1;
   }
 
-  mouse_write_cmd(MOUSE_DIS_DATA_REP);
-
   if (kbc_unsubscribe_int() != 0) {
     printf("Error unsubscribing kbc\n");
     return 1;
   }
+
+  mouse_write_cmd(MOUSE_DIS_DATA_REP);
 
   if (rtc_unsubscribe_int() != 0){
     printf("Error unsubscribing rtc\n");
@@ -145,7 +152,7 @@ void timer_handler() {
   timer_int_handler();
 
   if (counter % 2 == 0) {
-    if(checking_collision(get_magic_blasts())) finished=true;
+    if(checking_collision(get_magic_blasts())) finished=false;
     print_xpm(background_img, false);
     if (counter % 120 == 0)
       throw_enemies();
@@ -196,7 +203,7 @@ void kbd_handler() {
 }
 
 void rtc_handler(){
-  printf("here");
+  printf("called!");
   rtc_ih();
   char* date = print_date();
   printf("%s", date);

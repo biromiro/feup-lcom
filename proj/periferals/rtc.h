@@ -13,7 +13,13 @@ int (wait_until_finished_update)();
 
 void (rtc_ih)();
 
+int disable_update();
+
+int enable_update();
+
 int (rtc_read_info)(uint8_t reg, uint8_t* value);
+
+void set_power_up_alarm();
 
 int (bcd_to_decimal)(uint8_t hex);
 

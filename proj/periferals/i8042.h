@@ -93,10 +93,10 @@
 #define RTC_REG_DAY_MONTH 0x07
 #define RTC_REG_MONTH 0x08
 #define RTC_REG_YEAR 0x09
-#define RTC_REG_A 0x10
-#define RTC_REG_B 0x11
-#define RTC_REG_C 0x12
-#define RTC_REG_D 0x13
+#define RTC_REG_A 0x0A
+#define RTC_REG_B 0x0B
+#define RTC_REG_C 0x0C
+#define RTC_REG_D 0x0D
 
 /* RTC REGISTER FLAGS */
 
@@ -110,6 +110,7 @@
 #define RTC_PF BIT(6)
 #define RTC_AF BIT(5)
 #define RTC_UF BIT(4)
+#define RTC_DONT_CARE 0xFF
 
 #define UPDATE_TIME_MICRO 244
 

@@ -36,28 +36,42 @@ int (wait_until_finished_update)(){
   return OK;
 }
 
+int enable_update(){
+    uint8_t reg;
+    if( OK != sys_outb(RTC_ADDR_REG,RTC_REG_B)) return !OK;
+    if( OK != util_sys_inb(RTC_DATA_REG,&reg)) return !OK;
+    reg = (reg & ~RTC_SET) | RTC_UIE;
+    return sys_outb(RTC_DATA_REG,reg);
+}
+
+int disable_update(){
+    uint8_t reg;
+    if( OK != sys_outb(RTC_ADDR_REG,RTC_REG_B)) return !OK;
+    if( OK != util_sys_inb(RTC_DATA_REG,&reg)) return !OK;
+    reg |= RTC_SET;
+    return sys_outb(RTC_DATA_REG,reg);
+}
+
+
 int set_rtc_interrupts(interruptType interrupt, bool value){
     uint8_t reg;
     sys_outb(RTC_ADDR_REG, RTC_REG_B);
-
+    util_sys_inb(RTC_DATA_REG, &reg);
+    printf("%x\n", reg);
     switch(interrupt){
         case UPDATE:
-            util_sys_inb(RTC_DATA_REG, &reg);
-            if(value) reg |= RTC_UIE;
-            sys_outb(RTC_DATA_REG, reg);
+            reg = value ? (RTC_UIE | reg) : (reg & (~RTC_UIE));
             break;
         case ALARM:
-            util_sys_inb(RTC_DATA_REG, &reg);
-            printf("%d", reg);
-            if(value) reg |= RTC_AIE;
-            sys_outb(RTC_DATA_REG, reg);
+            reg = value ? (RTC_AIE | reg) : (reg & (~RTC_AIE));
             break;
         case PERIODIC:
-            util_sys_inb(RTC_DATA_REG, &reg);
-            if(value) reg |= RTC_PIE;
-            sys_outb(RTC_DATA_REG, reg);
+            reg = value ? (RTC_PIE | reg) : (reg & (~RTC_PIE));
             break;
     }
+    sys_outb(RTC_ADDR_REG, RTC_REG_B);
+    sys_outb(RTC_DATA_REG, reg);
+    printf("%x\n", reg);
     return 0;
 }
 
@@ -66,15 +80,15 @@ void (rtc_ih)(){
     uint8_t reg;
 
     sys_outb(RTC_ADDR_REG, RTC_REG_C);
-    int interrupt_called = util_sys_inb(RTC_DATA_REG, &reg);
+    util_sys_inb(RTC_DATA_REG, &reg);
 
-    if(interrupt_called & RTC_UF)
+    if(reg & RTC_UF)
        rtc_updater();
     
-    if(interrupt_called & RTC_AF)
+    if(reg & RTC_AF)
         rtc_alarm();
     
-    if(interrupt_called & RTC_PF)
+    if(reg & RTC_PF)
         rtc_periodic();
 }
 
@@ -104,8 +118,26 @@ int (bcd_to_decimal)(uint8_t hex){
 
 }
 
+void set_power_up_alarm(){
+    uint8_t sec_to_alarm;
+
+    if(rtc_read_info(RTC_REG_SEC, &sec_to_alarm)){
+        printf("Could not read the second to alarm!");
+    }
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_SEC_ALRM);
+    sys_outb(RTC_DATA_REG, sec_to_alarm);
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_MIN_ALRM);
+    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_HOUR_ALRM);
+    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
+}
+
 void (rtc_updater)(){
 
+    disable_update();
 
     if(rtc_read_info(RTC_REG_HOUR, &hour) || rtc_read_info(RTC_REG_MIN, &minute) || rtc_read_info(RTC_REG_SEC, &second)){
         printf("Could not update the time!");
@@ -124,14 +156,17 @@ void (rtc_updater)(){
     sprintf(month, "%s", months[bcd_to_decimal(month_val)-1]);
     year = bcd_to_decimal(year8bit) + 2000;
     sprintf(day_of_the_week, "%s", days_of_the_week[bcd_to_decimal(day_of_the_week_val)-1]);
+
+    enable_update();
 }
 
 void (rtc_alarm)(){
-    wait_until_finished_update();
+    //wait_until_finished_update();
+    printf("Hello!");
 }
 
 void (rtc_periodic)(){
-    wait_until_finished_update();
+    //wait_until_finished_update();
 }
 
 char* (print_date)(){
