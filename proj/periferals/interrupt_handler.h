@@ -3,13 +3,14 @@
 #include "kbc.h"
 #include "timer.h"
 #include "video_gr.h"
+#include "rtc.h"
 #include "../game/character_movement.h"
 #include "../game/magic_blast.h"
 #include "../game/enemies.h"
 #include "../img/cursor.xpm"
 #include "../img/background.xpm"
 
-enum {MOUSE,TIMER,KBD} typedef irq_type;
+enum {MOUSE,TIMER,KBD,RTC} typedef irq_type;
 
 /**
  * @brief Subscribes all the peripherals
@@ -69,3 +70,9 @@ void mouse_handler();
  * 
  */
 void kbd_handler();
+
+/**
+ * @brief Handles the real time clock 
+ * 
+ */
+void rtc_handler();

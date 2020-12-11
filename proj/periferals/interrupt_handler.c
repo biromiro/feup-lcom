@@ -1,6 +1,6 @@
 #include "interrupt_handler.h"
 
-static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, i = 0;
+static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, irq_set_rtc, i = 0;
 extern int counter, cnt;
 extern uint8_t scancode, packetByte;
 bool finished;
@@ -13,6 +13,11 @@ static xpm_object *igcursor;
 static xpm_object *background_img;
 
 int subscribe_interrupts() {
+
+  if (rtc_subscribe_int(&irq_set_rtc) != 0){
+    printf("Error subscribing rtc\n");
+    return 1;
+  }
 
   mouse_write_cmd(MOUSE_EN_DATA_REP);
 
@@ -41,6 +46,7 @@ int initialize() {
   }
   vg_init(0x14C);
   timer_set_frequency(0, 120);
+  set_rtc_interrupts(UPDATE, true);
 
   create_game_objects();
   set_magic_blasts_available();
@@ -70,6 +76,11 @@ int unsubscribe_interrupts() {
     return 1;
   }
 
+  if (rtc_unsubscribe_int() != 0){
+    printf("Error unsubscribing rtc\n");
+    return 1;
+  }
+
   return 0;
 }
 
@@ -93,6 +104,8 @@ uint8_t get_irq_set(irq_type type) {
       return irq_set_timer;
     case KBD:
       return irq_set_kbc;
+    case RTC:
+      return irq_set_rtc;
   }
 }
 
@@ -113,6 +126,9 @@ void interrupt_call_receiver() {
         }
         if (msg.m_notify.interrupts & get_irq_set(KBD)) {
           kbd_handler();
+        }
+        if (msg.m_notify.interrupts & get_irq_set(RTC)) {
+          rtc_handler();
         }
         break;
       default:
@@ -177,4 +193,11 @@ void kbd_handler() {
   i = 0;
   if (scancode == KBC_BRK_ESC_KEY)
     finished = true;
+}
+
+void rtc_handler(){
+  printf("here");
+  rtc_ih();
+  char* date = print_date();
+  printf("%s", date);
 }

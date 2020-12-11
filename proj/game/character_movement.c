@@ -7,9 +7,9 @@ static bool mirrored = false, sent = false, attackAnimation = false;
 
 void create_game_objects() {
   object = malloc(sizeof(animated_xpm_object *) * 3);
-  object[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle) / sizeof(const char *), "Wraith Idle", 400, 400, 4);
-  object[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking) / sizeof(const char *), "Wraith Walking", 0, 0, 4);
-  object[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack) / sizeof(const char *), "Wraith Attacking", 0, 0, 4);
+  object[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle) / sizeof(const char *), "Wraith Idle", 400, 400, 2);
+  object[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking) / sizeof(const char *), "Wraith Walking", 0, 0, 2);
+  object[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack) / sizeof(const char *), "Wraith Attacking", 0, 0, 2);
   current_sprite = object[0];
 }
 
