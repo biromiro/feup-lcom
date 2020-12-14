@@ -12,6 +12,8 @@ static char date[] = "Wednesday, 31 of September of 2000, 23:59:59";
 char * days_of_the_week[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 char * months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
+bool alarmInterrupt = false;
+
 int (rtc_subscribe_int)(uint8_t *bit_no) {
   *bit_no=BIT(hook_rtc);
   return sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &hook_rtc);
@@ -57,7 +59,6 @@ int set_rtc_interrupts(interruptType interrupt, bool value){
     uint8_t reg;
     sys_outb(RTC_ADDR_REG, RTC_REG_B);
     util_sys_inb(RTC_DATA_REG, &reg);
-    printf("%x\n", reg);
     switch(interrupt){
         case UPDATE:
             reg = value ? (RTC_UIE | reg) : (reg & (~RTC_UIE));
@@ -71,7 +72,6 @@ int set_rtc_interrupts(interruptType interrupt, bool value){
     }
     sys_outb(RTC_ADDR_REG, RTC_REG_B);
     sys_outb(RTC_DATA_REG, reg);
-    printf("%x\n", reg);
     return 0;
 }
 
@@ -118,12 +118,18 @@ int (bcd_to_decimal)(uint8_t hex){
 
 }
 
-void set_power_up_alarm(){
+int (decimal_to_bcd)(uint8_t dec){
+    return ((dec%10)) | ((dec/10) << 4);
+}
+
+void set_power_up_alarm(uint8_t powerupDelay){
     uint8_t sec_to_alarm;
 
     if(rtc_read_info(RTC_REG_SEC, &sec_to_alarm)){
         printf("Could not read the second to alarm!");
     }
+
+    sec_to_alarm = decimal_to_bcd((bcd_to_decimal(sec_to_alarm) + powerupDelay) % 60);
 
     sys_outb(RTC_ADDR_REG, RTC_REG_SEC_ALRM);
     sys_outb(RTC_DATA_REG, sec_to_alarm);
@@ -134,6 +140,22 @@ void set_power_up_alarm(){
     sys_outb(RTC_ADDR_REG, RTC_REG_HOUR_ALRM);
     sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
 }
+
+
+void set_enemy_throw(uint8_t div){
+
+    uint8_t reg;
+
+    if(rtc_read_info(RTC_REG_A, &reg)){
+        printf("Could not read register A for periodic interrupts!");
+    }
+
+    reg = ((div & 0x0F) | (reg & 0xF0));
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_A);
+    sys_outb(RTC_DATA_REG, reg);
+}
+
 
 void (rtc_updater)(){
 
@@ -161,12 +183,11 @@ void (rtc_updater)(){
 }
 
 void (rtc_alarm)(){
-    //wait_until_finished_update();
-    printf("Hello!");
+    printf("alarm! ");
+    alarmInterrupt = true;
 }
 
 void (rtc_periodic)(){
-    //wait_until_finished_update();
 }
 
 char* (print_date)(){

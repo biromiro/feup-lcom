@@ -11,6 +11,7 @@ static struct packet pp;
 static uint8_t bytes[2];
 static xpm_object *igcursor;
 static xpm_object *background_img;
+extern bool alarmInterrupt;
 
 int subscribe_interrupts() {
 
@@ -48,7 +49,7 @@ int initialize() {
 
   set_rtc_interrupts(ALARM, true);
   set_rtc_interrupts(UPDATE, false);
-  set_rtc_interrupts(PERIODIC, false);
+  set_rtc_interrupts(PERIODIC, true);
 
   vg_init(0x14C);
   timer_set_frequency(0, 120);
@@ -60,7 +61,8 @@ int initialize() {
 
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
-  set_power_up_alarm();
+
+  set_power_up_alarm(3);
   return 0;
 }
 
@@ -154,8 +156,6 @@ void timer_handler() {
   if (counter % 2 == 0) {
     if(checking_collision(get_magic_blasts())) finished=false;
     print_xpm(background_img, false);
-    if (counter % 120 == 0)
-      throw_enemies();
     if (OK != update_character_movement(counter))
       finished = true;
     print_magic_blasts();
@@ -203,8 +203,6 @@ void kbd_handler() {
 }
 
 void rtc_handler(){
-  printf("called!");
   rtc_ih();
-  char* date = print_date();
-  printf("%s", date);
+  handle_rtc_ingame_changes(&alarmInterrupt);
 }

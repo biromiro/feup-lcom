@@ -1,3 +1,5 @@
+#pragma once
+
 #include <lcom/lcf.h>
 #include "i8042.h"
 
@@ -19,7 +21,9 @@ int enable_update();
 
 int (rtc_read_info)(uint8_t reg, uint8_t* value);
 
-void set_power_up_alarm();
+void set_power_up_alarm(uint8_t powerupDelay);
+
+void set_enemy_throw(uint8_t div);
 
 int (bcd_to_decimal)(uint8_t hex);
 
