@@ -54,7 +54,6 @@ int disable_update(){
     return sys_outb(RTC_DATA_REG,reg);
 }
 
-
 int set_rtc_interrupts(interruptType interrupt, bool value){
     uint8_t reg;
     sys_outb(RTC_ADDR_REG, RTC_REG_B);
@@ -74,7 +73,6 @@ int set_rtc_interrupts(interruptType interrupt, bool value){
     sys_outb(RTC_DATA_REG, reg);
     return 0;
 }
-
 
 void (rtc_ih)(){
     uint8_t reg;
@@ -141,7 +139,6 @@ void set_power_up_alarm(uint8_t powerupDelay){
     sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
 }
 
-
 void set_enemy_throw(uint8_t div){
 
     uint8_t reg;
@@ -155,7 +152,6 @@ void set_enemy_throw(uint8_t div){
     sys_outb(RTC_ADDR_REG, RTC_REG_A);
     sys_outb(RTC_DATA_REG, reg);
 }
-
 
 void (rtc_updater)(){
 
