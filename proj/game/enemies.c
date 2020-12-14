@@ -37,7 +37,7 @@ void print_enemies() {
       i--;
       continue;
     }
-    print_xpm(enemies[i], false);
+    print_xpm(enemies[i]);
 
     enemies[i]->x += enemies[i]->x_speed;
     enemies[i]->y += enemies[i]->y_speed;
@@ -113,7 +113,7 @@ int enemy_collision(xpm_object *object, xpm_object *enemy) {
   for (size_t i = 0; i < search_height; i++) {
     for (size_t j = 0; j < search_width; j++) {
       uint32_t color_blast = 0, color_enemy = 0;
-      for (size_t byte = 0; byte <= get_bytes_per_pixel(); byte++) {
+      for (size_t byte = 0; byte <  get_bytes_per_pixel(); byte++) {
         color_blast |= (*(object->map + ((j + offsetX_magic) + (i + offsetY_magic) * (object->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
         color_enemy |= (*(enemy->map + ((j + offsetX_enemy) + (i + offsetY_enemy) * (enemy->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
       }

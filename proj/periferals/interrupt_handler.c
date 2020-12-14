@@ -62,7 +62,7 @@ int initialize() {
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
 
-  set_power_up_alarm(3);
+  set_power_up_alarm(0);
   return 0;
 }
 
@@ -155,12 +155,12 @@ void timer_handler() {
 
   if (counter % 2 == 0) {
     if(checking_collision(get_magic_blasts())) finished=false;
-    print_xpm(background_img, false);
+    print_xpm(background_img);
     if (OK != update_character_movement(counter))
       finished = true;
     print_magic_blasts();
     print_enemies();
-    print_xpm(igcursor, false);
+    print_xpm(igcursor);
     if (OK != swap_buffer()) {
       printf("Unable to swap buffers!");
       return;

@@ -33,7 +33,7 @@ void print_magic_blasts() {
       i--;
       continue;
     }
-    print_xpm(magic_blasts[i], false);
+    print_xpm(magic_blasts[i]);
 
     magic_blasts[i]->x += magic_blasts[i]->x_speed;
     magic_blasts[i]->y += magic_blasts[i]->y_speed;

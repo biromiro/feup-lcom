@@ -3,7 +3,7 @@
 
 static animated_xpm_object **object;
 static animated_xpm_object *current_sprite;
-static bool mirrored = false, sent = false, attackAnimation = false;
+static bool sent = false, attackAnimation = false;
 
 void create_game_objects() {
   object = malloc(sizeof(animated_xpm_object *) * 3);
@@ -20,6 +20,7 @@ int update_character_movement(int counter) {
     current_sprite->cur_fig = 0;
     object[0]->obj->x = current_sprite->obj->x;
     object[0]->obj->y = current_sprite->obj->y;
+    object[0]->obj->mirrored = current_sprite->obj->mirrored;
 
     current_sprite = object[0];
     attackAnimation = false;
@@ -27,7 +28,7 @@ int update_character_movement(int counter) {
   if (current_sprite->obj->x_speed != 0)
     if (!wall_collision(current_sprite))
       current_sprite->obj->x += current_sprite->obj->x_speed;
-  print_animated_sprite(current_sprite, mirrored);
+  print_animated_sprite(current_sprite);
 
   return 0;
 }
@@ -41,7 +42,7 @@ void handle_button_presses(uint8_t scancode) {
 
       current_sprite = object[1];
       current_sprite->obj->x_speed = 4;
-      mirrored = false;
+      current_sprite->obj->mirrored = false;
       break;
 
     case KBC_MK_A_KEY:
@@ -50,12 +51,13 @@ void handle_button_presses(uint8_t scancode) {
 
       current_sprite = object[1];
       current_sprite->obj->x_speed = -4;
-      mirrored = true;
+      current_sprite->obj->mirrored = true;
       break;
     case KBC_BRK_A_KEY:
     case KBC_BRK_D_KEY:
       object[0]->obj->x = current_sprite->obj->x;
       object[0]->obj->y = current_sprite->obj->y;
+      object[0]->obj->mirrored = current_sprite->obj->mirrored;
 
       current_sprite = object[0];
       current_sprite->obj->x_speed = 0;
@@ -90,7 +92,7 @@ int wall_collision(animated_xpm_object *current_sprite) {
   for (size_t i = 0; i < (current_sprite->obj->img).height; i++) {
     for (size_t j = 0; j < (current_sprite->obj->img).width; j++) {
       uint32_t color = 0;
-      for (size_t byte = 0; byte <= get_bytes_per_pixel(); byte++) {
+      for (size_t byte = 0; byte < get_bytes_per_pixel(); byte++) {
         color |= (*(current_sprite->obj->map + (j + i * (current_sprite->obj->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
       }
       if (color == xpm_transparency_color((current_sprite->obj->img).type))
