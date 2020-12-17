@@ -63,6 +63,7 @@ int initialize() {
   background_img = create_sprite(background, "background", 0, 0);
 
   set_power_up_alarm(0);
+  set_enemy_throw(0xF);
   return 0;
 }
 
@@ -96,6 +97,12 @@ int unsubscribe_interrupts() {
 int finish() {
 
   vg_exit();
+
+  free_game_objects();
+
+  free_enemies();
+
+  free_magic_blasts();
 
   if (OK != unsubscribe_interrupts()) {
     printf("Could not unsubscribe all interrupts!\n");
@@ -154,8 +161,8 @@ void timer_handler() {
   timer_int_handler();
 
   if (counter % 2 == 0) {
-    if(checking_collision(get_magic_blasts())) finished=false;
     print_xpm(background_img);
+    if(checking_collision(get_magic_blasts())) finished=false;
     if (OK != update_character_movement(counter))
       finished = true;
     print_magic_blasts();

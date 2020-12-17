@@ -9,6 +9,11 @@
 void set_magic_blasts_available();
 
 /**
+ * @brief Frees all memory related to the magic blasts
+ * 
+ */
+void free_magic_blasts();
+/**
  * @brief Creates a "Magic Blast" XPM, calculates its speed and
  * updates the available blasts
  * @param cursor Mouse cursor

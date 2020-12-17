@@ -176,6 +176,8 @@ void (rtc_updater)(){
     sprintf(day_of_the_week, "%s", days_of_the_week[bcd_to_decimal(day_of_the_week_val)-1]);
 
     enable_update();
+    //date = print_date();
+    //printf("%s",date);
 }
 
 void (rtc_alarm)(){

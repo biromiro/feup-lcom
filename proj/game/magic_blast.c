@@ -11,13 +11,23 @@ void set_magic_blasts_available() {
   magic_blasts = malloc(sizeof(xpm_object *) * total_blasts);
 }
 
+void free_magic_blasts(){
+  for(size_t i=0; i<(total_blasts-available_blasts); i++){
+    free(magic_blasts[i]);
+  }
+  free(magic_blasts);
+}
+
 void throw_magic_blast(xpm_object *cursor, xpm_object *character) {
   if (available_blasts == 0)
     return;
-  xpm_object *new_magic_blast = create_sprite(Spells_Effect, "Magic Blast", character->x + 320, character->y + 265);
 
-  new_magic_blast->x_speed = (cursor->x - (character->x + 320)) / (PROJECTILE_VELOCITY);
-  new_magic_blast->y_speed = (cursor->y - (character->y + 265)) / (PROJECTILE_VELOCITY);
+  int x_offset = (character->mirrored) ? 90 : (160);
+  int y_offset = 215; 
+  xpm_object *new_magic_blast = create_sprite(Spells_Effect, "Magic Blast", character->x + x_offset, character->y + y_offset);
+
+  new_magic_blast->x_speed = (cursor->x - (character->x + x_offset)) / (PROJECTILE_VELOCITY);
+  new_magic_blast->y_speed = (cursor->y - (character->y + y_offset)) / (PROJECTILE_VELOCITY);
 
   magic_blasts[total_blasts - available_blasts] = new_magic_blast;
   available_blasts--;

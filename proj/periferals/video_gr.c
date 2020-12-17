@@ -258,7 +258,7 @@ void print_xpm(xpm_object *xpm) {
       if (color == xpm_transparency_color((xpm->img).type))
         continue;
       if (xpm->mirrored)
-        vg_draw_pixel(xpm->x + ((xpm->img).width - j), xpm->y + i, color);
+        vg_draw_pixel(xpm->x + ((xpm->img).width - j-1), xpm->y + i, color);
       else
         vg_draw_pixel(xpm->x + j, xpm->y + i, color);
     }
