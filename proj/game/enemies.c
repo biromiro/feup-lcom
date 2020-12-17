@@ -14,6 +14,13 @@ void set_enemies_available() {
   enemies = malloc(sizeof(xpm_object *) * total_enemies);
 }
 
+void free_enemies(){
+  for(size_t i=0; i<(total_enemies-available_enemies); i++){
+    free(enemies[i]);
+  }
+  free(enemies);
+}
+
 void throw_enemies() {
   if (available_enemies == 0)
     return;
@@ -37,7 +44,7 @@ void print_enemies() {
       i--;
       continue;
     }
-    print_xpm(enemies[i], false);
+    print_xpm(enemies[i]);
 
     enemies[i]->x += enemies[i]->x_speed;
     enemies[i]->y += enemies[i]->y_speed;
@@ -111,11 +118,17 @@ int enemy_collision(xpm_object *object, xpm_object *enemy) {
   }
 
   for (size_t i = 0; i < search_height; i++) {
-    for (size_t j = 0; j < search_width; j++) {
+    for (size_t k = 0; k < search_width; k++) {
       uint32_t color_blast = 0, color_enemy = 0;
-      for (size_t byte = 0; byte <= get_bytes_per_pixel(); byte++) {
+      size_t j = 0;
+      if(object->mirrored){
+        j = (object->img).width - k - 1;
+        offsetX_magic = -offsetX_magic;
+      }
+      else j = k; 
+      for (size_t byte = 0; byte <  get_bytes_per_pixel(); byte++) {
         color_blast |= (*(object->map + ((j + offsetX_magic) + (i + offsetY_magic) * (object->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
-        color_enemy |= (*(enemy->map + ((j + offsetX_enemy) + (i + offsetY_enemy) * (enemy->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
+        color_enemy |= (*(enemy->map + ((k + offsetX_enemy) + (i + offsetY_enemy) * (enemy->img).width) * (get_bytes_per_pixel()) + byte)) << (byte * 8);
       }
       if (color_blast != xpm_transparency_color((object->img).type) &&
           color_enemy != xpm_transparency_color((enemy->img).type))

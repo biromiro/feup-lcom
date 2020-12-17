@@ -13,6 +13,12 @@
 void create_game_objects();
 
 /**
+ * @brief Free memory related to the game objects
+ * 
+ */
+void free_game_objects();
+
+/**
  * @brief Updates the character movement
  * 
  * @param counter 

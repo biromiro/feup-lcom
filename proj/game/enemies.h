@@ -11,6 +11,12 @@
 void set_enemies_available();
 
 /**
+ * @brief Free memory related to the enemies
+ * 
+ */
+void free_enemies();
+
+/**
  * @brief Creates a "Magic Blast" XPM, calculates its speed and
  * updates the available blasts
  */

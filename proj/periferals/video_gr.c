@@ -248,17 +248,17 @@ uint8_t *loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img) {
   return xpm_load(xpm, type, img);
 }
 
-void print_xpm(xpm_object *xpm, bool mirrored) {
+void print_xpm(xpm_object *xpm) {
   for (size_t i = 0; i < (xpm->img).height; i++) {
     for (size_t j = 0; j < (xpm->img).width; j++) {
       uint32_t color = 0;
-      for (size_t byte = 0; byte <= bytes_per_pixel; byte++) {
+      for (size_t byte = 0; byte < bytes_per_pixel; byte++) {
         color |= (*(xpm->map + (j + i * (xpm->img).width) * bytes_per_pixel + byte)) << (byte * 8);
       }
       if (color == xpm_transparency_color((xpm->img).type))
         continue;
-      if (mirrored)
-        vg_draw_pixel(xpm->x + ((xpm->img).width - j), xpm->y + i, color);
+      if (xpm->mirrored)
+        vg_draw_pixel(xpm->x + ((xpm->img).width - j-1), xpm->y + i, color);
       else
         vg_draw_pixel(xpm->x + j, xpm->y + i, color);
     }
@@ -289,6 +289,7 @@ xpm_object *create_sprite(xpm_map_t sprite, char *ID, int x, int y) {
   object->y = y;
   object->x_speed = 0;
   object->y_speed = 0;
+  object->mirrored = false;
 
   return object;
 }
@@ -319,7 +320,7 @@ animated_xpm_object *create_animated_sprite(xpm_map_t *xpms, int num_of_sprites,
   return animated_sprite;
 }
 
-void print_animated_sprite(animated_xpm_object *animated_sprite, bool mirrored) {
+void print_animated_sprite(animated_xpm_object *animated_sprite) {
   xpm_object current_sprite;
 
   if (animated_sprite->cur_speed == animated_sprite->aspeed) {
@@ -329,8 +330,9 @@ void print_animated_sprite(animated_xpm_object *animated_sprite, bool mirrored) 
 
   current_sprite.x = animated_sprite->obj->x;
   current_sprite.y = animated_sprite->obj->y;
+  current_sprite.mirrored = animated_sprite->obj->mirrored;
   current_sprite.img = animated_sprite->obj->img;
   current_sprite.map = (uint8_t *) animated_sprite->map[animated_sprite->cur_fig];
 
-  print_xpm(&current_sprite, mirrored);
+  print_xpm(&current_sprite);
 }

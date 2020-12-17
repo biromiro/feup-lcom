@@ -1,6 +1,6 @@
 #include "interrupt_handler.h"
 
-static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, i = 0;
+static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, irq_set_rtc, i = 0;
 extern int counter, cnt;
 extern uint8_t scancode, packetByte;
 bool finished;
@@ -11,8 +11,14 @@ static struct packet pp;
 static uint8_t bytes[2];
 static xpm_object *igcursor;
 static xpm_object *background_img;
+extern bool alarmInterrupt;
 
 int subscribe_interrupts() {
+
+  if (rtc_subscribe_int(&irq_set_rtc) != 0){
+    printf("Error subscribing rtc\n");
+    return 1;
+  }
 
   mouse_write_cmd(MOUSE_EN_DATA_REP);
 
@@ -35,12 +41,19 @@ int subscribe_interrupts() {
 }
 
 int initialize() {
+
   if (OK != subscribe_interrupts()) {
     printf("Could not subscribe all interrupts!\n");
     return 1;
   }
+
+  set_rtc_interrupts(ALARM, true);
+  set_rtc_interrupts(UPDATE, false);
+  set_rtc_interrupts(PERIODIC, true);
+
   vg_init(0x14C);
   timer_set_frequency(0, 120);
+  
 
   create_game_objects();
   set_magic_blasts_available();
@@ -48,6 +61,9 @@ int initialize() {
 
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
+
+  set_power_up_alarm(0);
+  set_enemy_throw(0xF);
   return 0;
 }
 
@@ -63,10 +79,15 @@ int unsubscribe_interrupts() {
     return 1;
   }
 
-  mouse_write_cmd(MOUSE_DIS_DATA_REP);
-
   if (kbc_unsubscribe_int() != 0) {
     printf("Error unsubscribing kbc\n");
+    return 1;
+  }
+
+  mouse_write_cmd(MOUSE_DIS_DATA_REP);
+
+  if (rtc_unsubscribe_int() != 0){
+    printf("Error unsubscribing rtc\n");
     return 1;
   }
 
@@ -76,6 +97,12 @@ int unsubscribe_interrupts() {
 int finish() {
 
   vg_exit();
+
+  free_game_objects();
+
+  free_enemies();
+
+  free_magic_blasts();
 
   if (OK != unsubscribe_interrupts()) {
     printf("Could not unsubscribe all interrupts!\n");
@@ -93,6 +120,8 @@ uint8_t get_irq_set(irq_type type) {
       return irq_set_timer;
     case KBD:
       return irq_set_kbc;
+    case RTC:
+      return irq_set_rtc;
   }
 }
 
@@ -114,6 +143,9 @@ void interrupt_call_receiver() {
         if (msg.m_notify.interrupts & get_irq_set(KBD)) {
           kbd_handler();
         }
+        if (msg.m_notify.interrupts & get_irq_set(RTC)) {
+          rtc_handler();
+        }
         break;
       default:
         break; /* no other notifications expected: do nothing */
@@ -129,15 +161,13 @@ void timer_handler() {
   timer_int_handler();
 
   if (counter % 2 == 0) {
-    if(checking_collision(get_magic_blasts())) finished=true;
-    print_xpm(background_img, false);
-    if (counter % 120 == 0)
-      throw_enemies();
+    print_xpm(background_img);
+    if(checking_collision(get_magic_blasts())) finished=false;
     if (OK != update_character_movement(counter))
       finished = true;
     print_magic_blasts();
     print_enemies();
-    print_xpm(igcursor, false);
+    print_xpm(igcursor);
     if (OK != swap_buffer()) {
       printf("Unable to swap buffers!");
       return;
@@ -177,4 +207,9 @@ void kbd_handler() {
   i = 0;
   if (scancode == KBC_BRK_ESC_KEY)
     finished = true;
+}
+
+void rtc_handler(){
+  rtc_ih();
+  handle_rtc_ingame_changes(&alarmInterrupt);
 }

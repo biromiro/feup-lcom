@@ -11,6 +11,7 @@ struct {
   uint8_t *map; ///< Video Mem allocated for XPM 
   xpm_image_t img; ///< Image of XPM
   int x,y, x_speed,y_speed; ///< Position and Speeds
+  bool mirrored;
 }typedef xpm_object;
 
 /**
@@ -180,7 +181,7 @@ uint8_t* loadXPM(xpm_map_t xpm, enum xpm_image_type type, xpm_image_t *img);
  * @param xpm XPM object to be printed
  * @param mirrored Control flag, for displaying mirrored XPMs
  */
-void print_xpm(xpm_object* xpm, bool mirrored);
+void print_xpm(xpm_object* xpm);
 
 /**
  * @brief Prints over a XPM with the transparent colour
@@ -217,6 +218,5 @@ animated_xpm_object* create_animated_sprite(xpm_map_t* xpms, int num_of_sprites 
  * @brief Prints an animated sprite
  * 
  * @param animated_sprite Animated spite object
- * @param mirrored Control flag, for displaying mirrored XPMs
  */
-void print_animated_sprite(animated_xpm_object* animated_sprite, bool mirrored);
+void print_animated_sprite(animated_xpm_object* animated_sprite);
