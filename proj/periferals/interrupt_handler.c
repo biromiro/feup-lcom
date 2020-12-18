@@ -62,6 +62,8 @@ int initialize() {
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
 
+  set_background(background_img);
+
   set_power_up_alarm(0);
   set_enemy_throw(0xF);
   return 0;
@@ -103,6 +105,10 @@ int finish() {
   free_enemies();
 
   free_magic_blasts();
+
+  set_rtc_interrupts(ALARM, false);
+  set_rtc_interrupts(UPDATE, false);
+  set_rtc_interrupts(PERIODIC, false);
 
   if (OK != unsubscribe_interrupts()) {
     printf("Could not unsubscribe all interrupts!\n");
@@ -161,7 +167,7 @@ void timer_handler() {
   timer_int_handler();
 
   if (counter % 2 == 0) {
-    print_xpm(background_img);
+    print_background();
     if(checking_collision(get_magic_blasts())) finished=false;
     if (OK != update_character_movement(counter))
       finished = true;

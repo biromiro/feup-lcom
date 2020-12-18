@@ -3,6 +3,7 @@
 vbe_mode_info_t vmi_p;
 static void *video_mem; /* frame-buffer VM addres (static global variable*/
 static void *video_mem_sec;
+static char* background;
 static unsigned bytes_per_pixel;
 static uint16_t h_res;
 static uint16_t v_res;
@@ -95,6 +96,8 @@ void *(vg_init)(uint16_t mode) {
     return NULL;
   }
 
+  background = malloc(sizeof(char)*vram_size);
+
   return video_mem;
 }
 
@@ -110,6 +113,40 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
     vg_draw_pixel(x + i, y, color);
   }
   return 0;
+}
+
+void set_background(xpm_object* xpm){
+  for (size_t i = 0; i < (xpm->img).height; i++) {
+    for (size_t j = 0; j < (xpm->img).width; j++) {
+      uint32_t color = 0;
+      for (size_t byte = 0; byte < bytes_per_pixel; byte++) {
+        color |= (*(xpm->map + (j + i * (xpm->img).width) * bytes_per_pixel + byte)) << (byte * 8);
+      }
+      if (color == xpm_transparency_color((xpm->img).type))
+        continue;
+      if (xpm->mirrored)
+        draw_background_pixels(xpm->x + ((xpm->img).width - j-1), xpm->y + i, color);
+      else
+        draw_background_pixels(xpm->x + j, xpm->y + i, color);
+    }
+  }
+}
+
+void draw_background_pixels(uint16_t x, uint16_t y, uint32_t color){
+  if (x >= h_res || y >= v_res)
+    return;
+  uint8_t color_byte;
+  if (bytes_per_pixel == 2)
+    color = get_16_bit_color(color);
+  for (unsigned j = 0; j < bytes_per_pixel; j++) {
+    color_byte = (uint8_t) color;
+    background[(h_res * y + x) * bytes_per_pixel + j] = color_byte;
+    color = color >> 8;
+  }
+}
+
+void print_background(){
+  memcpy(video_mem_sec, background, h_res*v_res*bytes_per_pixel);
 }
 
 int(vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {

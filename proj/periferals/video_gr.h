@@ -46,6 +46,12 @@ int (_vbe_get_mode_info)(uint16_t mode, vbe_mode_info_t* vm);
  */
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 
+void set_background(xpm_object* background);
+
+void draw_background_pixels(uint16_t x, uint16_t y, uint32_t color);
+
+void print_background();
+
 /**
  * @brief Calculates a similar 16 bit RGB color from a 32 bit one
  *
