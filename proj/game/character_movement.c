@@ -3,6 +3,7 @@
 
 static animated_xpm_object **object;
 static animated_xpm_object *current_sprite;
+gameState gs;
 static bool sent = false, attackAnimation = false;
 
 void create_game_objects() {
@@ -41,50 +42,67 @@ int update_character_movement(int counter) {
 }
 
 void handle_button_presses(uint8_t scancode) {
+    if(gs==GAMEOVER || gs==INSTRUCTIONS){
+      gs=START;
+    }
+    else if(gs==GAME){
+      switch (scancode) {
+        case KBC_MK_D_KEY:
+        object[1]->obj->x = current_sprite->obj->x;
+        object[1]->obj->y = current_sprite->obj->y;
 
-  switch (scancode) {
-    case KBC_MK_D_KEY:
-      object[1]->obj->x = current_sprite->obj->x;
-      object[1]->obj->y = current_sprite->obj->y;
+        current_sprite = object[1];
+        current_sprite->obj->x_speed = 4;
+        current_sprite->obj->mirrored = false;
+        break;
 
-      current_sprite = object[1];
-      current_sprite->obj->x_speed = 4;
-      current_sprite->obj->mirrored = false;
-      break;
+        case KBC_MK_A_KEY:
+          object[1]->obj->x = current_sprite->obj->x;
+          object[1]->obj->y = current_sprite->obj->y;
 
-    case KBC_MK_A_KEY:
-      object[1]->obj->x = current_sprite->obj->x;
-      object[1]->obj->y = current_sprite->obj->y;
+          current_sprite = object[1];
+          current_sprite->obj->x_speed = -4;
+          current_sprite->obj->mirrored = true;
+          break;
+        case KBC_BRK_A_KEY:
+        case KBC_BRK_D_KEY:
+          object[0]->obj->x = current_sprite->obj->x;
+          object[0]->obj->y = current_sprite->obj->y;
+          object[0]->obj->mirrored = current_sprite->obj->mirrored;
 
-      current_sprite = object[1];
-      current_sprite->obj->x_speed = -4;
-      current_sprite->obj->mirrored = true;
-      break;
-    case KBC_BRK_A_KEY:
-    case KBC_BRK_D_KEY:
-      object[0]->obj->x = current_sprite->obj->x;
-      object[0]->obj->y = current_sprite->obj->y;
-      object[0]->obj->mirrored = current_sprite->obj->mirrored;
-
-      current_sprite = object[0];
-      current_sprite->obj->x_speed = 0;
-      break;
-    default:
-      break;
-  }
+          current_sprite = object[0];
+          current_sprite->obj->x_speed = 0;
+          break;
+        default:
+          break;
+      }
+    }
+    
 }
 
 void handle_mouse_packet(xpm_object *cursor, struct packet *pp) {
   if (pp->lb) {
-    if (!sent) {
-      throw_magic_blast(cursor, get_current_character());
-      object[2]->obj->x = current_sprite->obj->x;
-      object[2]->obj->y = current_sprite->obj->y;
-      object[2]->obj->mirrored = current_sprite->obj->mirrored;
+    if(gs==START){
+      if(cursor->x<=690 && cursor->x>=460 && cursor->y>=425 && cursor->y<=485)
+        gs=GAME;
+      else if(cursor->x<=820 && cursor->x>=325 && cursor->y>=505 && cursor->y<=565)
+        gs=INSTRUCTIONS;
+      else if(cursor->x<=650 && cursor->x>=495 && cursor->y>=595 && cursor->y<=655)
+        gs=EXIT;
 
-      current_sprite = object[2];
-      sent = true;
-      attackAnimation = true;
+      
+    }
+    else if(gs==GAME){
+      if (!sent) {
+        throw_magic_blast(cursor, get_current_character());
+        object[2]->obj->x = current_sprite->obj->x;
+        object[2]->obj->y = current_sprite->obj->y;
+        object[2]->obj->mirrored = current_sprite->obj->mirrored;
+
+        current_sprite = object[2];
+        sent = true;
+        attackAnimation = true;
+      }
     }
   }
   else {

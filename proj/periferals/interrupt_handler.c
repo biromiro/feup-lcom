@@ -9,9 +9,10 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
-static xpm_object *igcursor;
-static xpm_object *background_img;
+static xpm_object *igcursor, *background_img, *mainMenu, *instructionsMenu, *gameOver;
 extern bool alarmInterrupt;
+
+extern gameState gs;
 
 int subscribe_interrupts() {
 
@@ -54,18 +55,21 @@ int initialize() {
   vg_init(0x14C);
   timer_set_frequency(0, 120);
   
-
   create_game_objects();
   set_magic_blasts_available();
   set_enemies_available();
 
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
-
+  mainMenu = create_sprite(mainmenu,"mainMenu",0,0);
+  instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,0);
+  gameOver = create_sprite(gameover,"gameOver",0,0);
   set_background(background_img);
 
   set_power_up_alarm(0);
   set_enemy_throw(0xF);
+
+  gs = START;
   return 0;
 }
 
@@ -168,11 +172,21 @@ void timer_handler() {
 
   if (counter % 2 == 0) {
     print_background();
-    if(checking_collision(get_magic_blasts())) finished=false;
-    if (OK != update_character_movement(counter))
-      finished = true;
-    print_magic_blasts();
-    print_enemies();
+    if(gs==START){
+      print_xpm(mainMenu);
+    } else if(gs==INSTRUCTIONS){
+      print_xpm(instructionsMenu);
+    } else if(gs==GAME) {
+      if(checking_collision(get_magic_blasts())) finished=false;
+      if (OK != update_character_movement(counter))
+        finished = true;
+      print_magic_blasts();
+      print_enemies();
+
+    }else if(gs==GAMEOVER) {
+      print_xpm(gameOver);
+    }
+    
     print_xpm(igcursor);
     if (OK != swap_buffer()) {
       printf("Unable to swap buffers!");
@@ -198,6 +212,8 @@ void mouse_handler() {
     igcursor->y -= pp.delta_y;
   }
   handle_mouse_packet(igcursor, &pp);
+  if(gs==EXIT)
+    finished=true;
 }
 
 void kbd_handler() {
@@ -211,8 +227,9 @@ void kbd_handler() {
 
   handle_button_presses(scancode);
   i = 0;
-  if (scancode == KBC_BRK_ESC_KEY)
-    finished = true;
+  /*
+  if (scancode == KBC_BRK_ESC_KEY )
+    finished = true;*/
 }
 
 void rtc_handler(){

@@ -7,7 +7,9 @@
 #include "../game/game_state.h"
 #include "../img/cursor.xpm"
 #include "../img/background.xpm"
-
+#include "../img/mainmenu.xpm"
+#include "../img/instructionsmenu.xpm"
+#include "../img/gameover.xpm"
 enum {MOUSE,TIMER,KBD,RTC} typedef irq_type;
 
 /**

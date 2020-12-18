@@ -5,6 +5,13 @@
 #include "img/Wraith_01/Walking/Wraith_Walking.h"
 #include "img/Wraith_01/Attacking/Wraith_Attack.h"
 
+enum {
+    START,
+    INSTRUCTIONS,
+    GAME,
+    GAMEOVER,
+    EXIT
+} typedef gameState;
 
 /**
  * @brief Creates the game objects (sprites)
