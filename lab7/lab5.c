@@ -8,7 +8,9 @@
 
 // Any header files included below this line should have been created by you
 #include "serial_port.h"
+#include "kbc.h"
 
+extern uint8_t scancode;
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -34,15 +36,76 @@ int main(int argc, char *argv[]) {
 }
 
 int(video_test_init)(uint16_t mode, uint8_t delay) {
-  uint8_t count = 5;
+  int ipc_status,r,i=0;
+  uint8_t irq_set_kbc, irq_set_serial, irq_set_timer;
+  message msg;
+  uint8_t bytes[2];
+
   ser_init();
-  do{
-    if(read_byte() == OK){
-      uint8_t val = pop(get_received_queue());
-      printf("value = %x\n", val);
-      count--;
+
+  if(kbc_subscribe_int(&irq_set_kbc)!=0) {
+    printf("Error subscribing timer\n");
+    return 1;
+  }
+  if(ser_subscribe_int(&irq_set_serial) != 0){
+    printf("Error subscribing serial\n");
+    return 1;
+  }
+
+  if(timer_subscribe_int(&irq_set_timer)!=0) {
+    printf("Error subscribing timer\n");
+    return 1;
+  }
+
+  ser_enable_int();
+
+  while(scancode != KBC_BRK_ESC_KEY) { /* Run until it has exceeeded time*/
+    /* Get a request message */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
+      printf("driver_receive failed with: %d", r);
+      continue;
     }
-  }while(count);
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & irq_set_kbc) { /* subscribed interrupt */
+            kbc_ih();
+            if(scancode == KBC_2BYTE_CODE){
+              bytes[i] = scancode;
+              i++;
+              continue;
+            }
+            bytes[i] = scancode;
+            i=0;
+            if(scancode == KBC_MK_A_KEY){
+              send_byte(0x01);
+            }
+          }
+          if (msg.m_notify.interrupts & irq_set_serial) {
+              ser_ih();
+              if(is_empty(get_received_queue())) printf("empty queue");
+              while(!is_empty(get_received_queue())){
+                 uint8_t val = pop(get_received_queue());
+                 printf("value = %x\n", val);
+                 send_byte(val+1);
+              } 
+          }
+          if (msg.m_notify.interrupts & irq_set_timer) { /* subscribed interrupt */
+            timer_int_handler();
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    } else { /* received a standard message, not a notification */
+      /* no standard messages expected: do nothing */
+    }
+  }
+  timer_unsubscribe_int();
+   ser_unsubscribe_int();
+    kbc_unsubscribe_int();
+
+
   ser_exit();
   return 0;
 }
@@ -50,10 +113,11 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 int(video_test_controller)() {
   ser_init();
   send_byte(0x65);
-  send_byte(0x66);
+   send_byte(0x66);
   send_byte(0x67);
   send_byte(0x68);
   send_byte(0x69);
+  empty_send_queue();
   ser_exit();
   return 0;
 }

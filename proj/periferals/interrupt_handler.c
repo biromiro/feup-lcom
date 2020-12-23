@@ -1,6 +1,6 @@
 #include "interrupt_handler.h"
 
-static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, irq_set_rtc, i = 0;
+static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, irq_set_rtc, irq_set_ser, i = 0;
 extern int counter, cnt;
 extern uint8_t scancode, packetByte;
 bool finished;
@@ -38,16 +38,23 @@ int subscribe_interrupts() {
     return 1;
   }
 
+  if (ser_subscribe_int(&irq_set_ser) != 0){
+    printf("Error subscribing serial port\n");
+    return 1;
+  }
+
   return 0;
 }
 
 int initialize() {
 
+  ser_init();
+
   if (OK != subscribe_interrupts()) {
     printf("Could not subscribe all interrupts!\n");
     return 1;
   }
-
+  
   set_rtc_interrupts(ALARM, true);
   set_rtc_interrupts(UPDATE, false);
   set_rtc_interrupts(PERIODIC, true);
@@ -74,6 +81,11 @@ int initialize() {
 }
 
 int unsubscribe_interrupts() {
+
+  if (ser_unsubscribe_int() != 0){
+    printf("Error unsubscribing serial port\n");
+    return 1;
+  }
 
   if (timer_unsubscribe_int() != 0) {
     printf("Error unsubscribing timer\n");
@@ -110,9 +122,13 @@ int finish() {
 
   free_magic_blasts();
 
+  timer_set_frequency(0, 60);
+
   set_rtc_interrupts(ALARM, false);
   set_rtc_interrupts(UPDATE, false);
   set_rtc_interrupts(PERIODIC, false);
+
+  ser_exit();
 
   if (OK != unsubscribe_interrupts()) {
     printf("Could not unsubscribe all interrupts!\n");
@@ -132,6 +148,8 @@ uint8_t get_irq_set(irq_type type) {
       return irq_set_kbc;
     case RTC:
       return irq_set_rtc;
+    case SER:
+      return irq_set_ser;
   }
 }
 
@@ -155,6 +173,9 @@ void interrupt_call_receiver() {
         }
         if (msg.m_notify.interrupts & get_irq_set(RTC)) {
           rtc_handler();
+        }
+        if (msg.m_notify.interrupts & get_irq_set(SER)) {
+          ser_handler();
         }
         break;
       default:
@@ -235,4 +256,8 @@ void kbd_handler() {
 void rtc_handler(){
   rtc_ih();
   handle_rtc_ingame_changes(&alarmInterrupt);
+}
+
+void ser_handler(){
+  ser_ih();
 }

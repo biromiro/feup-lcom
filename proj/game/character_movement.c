@@ -48,20 +48,22 @@ void handle_button_presses(uint8_t scancode) {
     else if(gs==GAME){
       switch (scancode) {
         case KBC_MK_D_KEY:
-        object[1]->obj->x = current_sprite->obj->x;
-        object[1]->obj->y = current_sprite->obj->y;
-
-        current_sprite = object[1];
-        current_sprite->obj->x_speed = 4;
-        current_sprite->obj->mirrored = false;
-        break;
+          object[1]->obj->x = current_sprite->obj->x;
+          object[1]->obj->y = current_sprite->obj->y;
+          if(!attackAnimation){
+            current_sprite = object[1];
+          }
+          current_sprite->obj->x_speed = 8;
+          current_sprite->obj->mirrored = false;
+          break;
 
         case KBC_MK_A_KEY:
           object[1]->obj->x = current_sprite->obj->x;
           object[1]->obj->y = current_sprite->obj->y;
-
-          current_sprite = object[1];
-          current_sprite->obj->x_speed = -4;
+          if(!attackAnimation){
+              current_sprite = object[1];
+          }
+          current_sprite->obj->x_speed = -8;
           current_sprite->obj->mirrored = true;
           break;
         case KBC_BRK_A_KEY:
@@ -69,8 +71,9 @@ void handle_button_presses(uint8_t scancode) {
           object[0]->obj->x = current_sprite->obj->x;
           object[0]->obj->y = current_sprite->obj->y;
           object[0]->obj->mirrored = current_sprite->obj->mirrored;
-
-          current_sprite = object[0];
+          if(!attackAnimation){
+            current_sprite = object[0];
+          }
           current_sprite->obj->x_speed = 0;
           break;
         default:
@@ -102,6 +105,8 @@ void handle_mouse_packet(xpm_object *cursor, struct packet *pp) {
         object[2]->obj->mirrored = current_sprite->obj->mirrored;
 
         current_sprite = object[2];
+        current_sprite->obj->x_speed = 0;
+
         sent = true;
         attackAnimation = true;
       }

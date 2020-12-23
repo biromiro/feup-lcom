@@ -2,7 +2,7 @@
 PROG=lab5
 
 # source code files to be compiled
-SRCS = lab5.c serial_port.c utils.c queue.c
+SRCS = lab5.c serial_port.c utils.c queue.c kbc.c timer.c
 
 
 # additional compilation flags
