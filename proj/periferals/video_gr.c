@@ -3,6 +3,7 @@
 vbe_mode_info_t vmi_p;
 static void *video_mem; /* frame-buffer VM addres (static global variable*/
 static void *video_mem_sec;
+static void *video_mem_third;
 static char* background;
 static unsigned bytes_per_pixel;
 static uint16_t h_res;
@@ -39,9 +40,10 @@ void *(vg_init)(uint16_t mode) {
   v_res = vmi_p.YResolution;
   h_res = vmi_p.XResolution;
 
-  struct minix_mem_range mr, mr_secondary;
+  struct minix_mem_range mr, mr_secondary, mr_third;
   unsigned int vram_base; /* VRAM's physical addresss */
   unsigned int vram_base_secondary_buffer;
+  unsigned int vram_base_third_buffer;
   unsigned int vram_size; /* VRAM's size, but you can use
               the frame-buffer size, instead */
   int r;
@@ -51,15 +53,17 @@ void *(vg_init)(uint16_t mode) {
   bytes_per_pixel = (vmi_p.BitsPerPixel + 7) / 8;
 
   vram_base = vmi_p.PhysBasePtr;
-  vram_base_secondary_buffer = vmi_p.PhysBasePtr + h_res * v_res * bytes_per_pixel;
   vram_size = h_res * v_res * bytes_per_pixel;
+  vram_base_secondary_buffer = vmi_p.PhysBasePtr + vram_size;
+  vram_base_third_buffer = vmi_p.PhysBasePtr + (vram_size)*2;
 
   /* Allow memory mapping */
 
   mr.mr_base = (phys_bytes) vram_base;
-  mr.mr_limit = mr.mr_base + vram_size * 2;
+  mr.mr_limit = mr.mr_base + vram_size * 3;
 
   mr_secondary.mr_base = (phys_bytes) vram_base_secondary_buffer;
+  mr_third.mr_base = (phys_bytes) vram_base_third_buffer;
 
   if (OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)))
     panic("sys_privctl (ADD_MEM) failed: %d\n", r);
@@ -70,13 +74,16 @@ void *(vg_init)(uint16_t mode) {
 
   video_mem_sec = vm_map_phys(SELF, (void *) mr_secondary.mr_base, vram_size);
 
-  if (video_mem == MAP_FAILED || video_mem_sec == MAP_FAILED) {
+  video_mem_third = vm_map_phys(SELF, (void *) mr_third.mr_base, vram_size);
+
+  if (video_mem == MAP_FAILED || video_mem_sec == MAP_FAILED || video_mem_third == MAP_FAILED) {
     panic("couldn't map video memory");
     return NULL;
   }
 
   memset(video_mem, 0, vram_size);
   memset(video_mem_sec, 0, vram_size);
+  memset(video_mem_third, 0, vram_size);
 
   struct reg86 r86;
 
@@ -97,22 +104,8 @@ void *(vg_init)(uint16_t mode) {
   }
 
   background = malloc(sizeof(char)*vram_size);
-
+  
   return video_mem;
-}
-
-int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
-  for (int i = 0; i < height; i++) {
-    vg_draw_hline(x, y + i, width, color);
-  }
-  return 0;
-}
-
-int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-  for (int i = 0; i < len; i++) {
-    vg_draw_pixel(x + i, y, color);
-  }
-  return 0;
 }
 
 void set_background(xpm_object* xpm){
@@ -124,25 +117,15 @@ void set_background(xpm_object* xpm){
       }
       if (color == xpm_transparency_color((xpm->img).type))
         continue;
-      if (xpm->mirrored)
-        draw_background_pixels(xpm->x + ((xpm->img).width - j-1), xpm->y + i, color);
-      else
-        draw_background_pixels(xpm->x + j, xpm->y + i, color);
+      draw_static_buffer_pixels(xpm->x + j, xpm->y + i, color, background);
     }
   }
 }
 
-void draw_background_pixels(uint16_t x, uint16_t y, uint32_t color){
+void draw_static_buffer_pixels(uint16_t x, uint16_t y, uint32_t color, char* buffer){
   if (x >= h_res || y >= v_res)
     return;
-  uint8_t color_byte;
-  if (bytes_per_pixel == 2)
-    color = get_16_bit_color(color);
-  for (unsigned j = 0; j < bytes_per_pixel; j++) {
-    color_byte = (uint8_t) color;
-    background[(h_res * y + x) * bytes_per_pixel + j] = color_byte;
-    color = color >> 8;
-  }
+  memcpy(buffer + (h_res*y + x)*bytes_per_pixel, &color, bytes_per_pixel);
 }
 
 void print_background(){
@@ -152,74 +135,8 @@ void print_background(){
 int(vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   if (x >= h_res || y >= v_res)
     return 1;
-  char *buffer = (char *) video_mem_sec;
-  uint8_t color_byte;
-  if (bytes_per_pixel == 2)
-    color = get_16_bit_color(color);
-  for (unsigned j = 0; j < bytes_per_pixel; j++) {
-    color_byte = (uint8_t) color;
-    buffer[(h_res * y + x) * bytes_per_pixel + j] = color_byte;
-    color = color >> 8;
-  }
+  memcpy((char*) video_mem_sec + (h_res*y + x)*bytes_per_pixel, &color, bytes_per_pixel);
   return 0;
-}
-
-uint16_t(get_16_bit_color)(uint32_t color) {
-  uint8_t a, r, g, b;
-  r = get_red(color) >> 3;
-  g = ((vmi_p.RsvdMaskSize) == 0) ? get_green(color) >> 2 : get_green(color) >> 3;
-  b = get_blue(color) >> 3;
-  a = get_alpha(color) >> 7;
-  if ((vmi_p.RsvdMaskSize) == 0)
-    return (r << 11) | (g << 5) | (b);
-  else
-    return (a << 15) | (r << 10) | (g << 5) | (b);
-}
-
-uint8_t(get_red)(uint32_t color) {
-  return (color << 8) >> 24;
-}
-
-uint8_t(get_green)(uint32_t color) {
-  return (color << 16) >> 24;
-}
-
-uint8_t(get_blue)(uint32_t color) {
-  return (color << 24) >> 24;
-}
-
-uint8_t(get_alpha)(uint32_t color) {
-  return color >> 24;
-}
-
-void vg_print_matrix(bool indexed, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  unsigned size_of_col = h_res / no_rectangles, size_of_row = v_res / no_rectangles;
-  unsigned extra_col = h_res % no_rectangles, extra_row = v_res % no_rectangles;
-  unsigned row, col;
-  uint32_t black_color = 0x00, color_to_fill;
-
-  for (row = 0; row < no_rectangles; row++) {
-    for (col = 0; col < no_rectangles; col++) {
-      color_to_fill = indexed ? get_indexed_color(row, col, first, no_rectangles, step) : get_color(row, col, first, no_rectangles, step);
-      vg_draw_rectangle(col * size_of_col, row * size_of_row, size_of_col, size_of_row, color_to_fill);
-    }
-    vg_draw_rectangle(col * size_of_col, row * size_of_row, extra_col, extra_row, black_color);
-  }
-  vg_draw_rectangle(0, row * size_of_row, vmi_p.XResolution, extra_row, black_color);
-}
-
-uint8_t get_indexed_color(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step) {
-  return (first + (row * no_rectangles + col) * step) % (1 << vmi_p.BitsPerPixel);
-}
-
-uint32_t get_color(unsigned row, unsigned col, uint32_t first, uint8_t no_rectangles, uint8_t step) {
-
-  uint8_t r, g, b;
-  r = (get_red(first) + col * step) % (1 << vmi_p.RedMaskSize);
-  g = (get_green(first) + row * step) % (1 << vmi_p.GreenMaskSize);
-  b = (get_blue(first) + (col + row) * step) % (1 << vmi_p.BlueMaskSize);
-
-  return (r << 16 | g << 8 | b);
 }
 
 uint16_t get_h_resolution() {
@@ -246,7 +163,10 @@ int swap_buffer() {
     memset(&r, 0, sizeof(struct reg86));
     r.dx = v_res;
   }
-  else {
+  else if (r.dx == v_res){
+    memset(&r, 0, sizeof(struct reg86));
+    r.dx = 2*v_res;
+  }else{
     memset(&r, 0, sizeof(struct reg86));
     r.dx = 0;
   }
@@ -263,7 +183,8 @@ int swap_buffer() {
 
   void *temp = video_mem;
   video_mem = video_mem_sec;
-  video_mem_sec = temp;
+  video_mem_sec = video_mem_third;
+  video_mem_third = temp;
   return 0;
 }
 
@@ -372,4 +293,8 @@ void print_animated_sprite(animated_xpm_object *animated_sprite) {
   current_sprite.map = (uint8_t *) animated_sprite->map[animated_sprite->cur_fig];
 
   print_xpm(&current_sprite);
+}
+
+void* get_buffer_to_draw(){
+  return video_mem_sec;
 }

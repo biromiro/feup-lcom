@@ -8,9 +8,9 @@ static bool sent = false, attackAnimation = false;
 
 void create_game_objects() {
   object = malloc(sizeof(animated_xpm_object *) * 3);
-  object[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle) / sizeof(const char *), "Wraith Idle", get_h_resolution()/2 - 150, get_v_resolution() - 350,4);
-  object[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking) / sizeof(const char *), "Wraith Walking", 0, 0, 4);
-  object[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack) / sizeof(const char *), "Wraith Attacking", 0, 0, 4);
+  object[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle) / sizeof(const char *), "Wraith Idle", get_h_resolution()/2 - 150, get_v_resolution() - 350,3);
+  object[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking) / sizeof(const char *), "Wraith Walking", 0, 0, 3);
+  object[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack) / sizeof(const char *), "Wraith Attacking", 0, 0, 3);
   current_sprite = object[0];
 }
 
@@ -83,12 +83,14 @@ void handle_button_presses(uint8_t scancode) {
 void handle_mouse_packet(xpm_object *cursor, struct packet *pp) {
   if (pp->lb) {
     if(gs==START){
-      if(cursor->x<=690 && cursor->x>=460 && cursor->y>=425 && cursor->y<=485)
+      if(cursor->x<=690 && cursor->x>=460 && cursor->y>=425 && cursor->y<=485){
         gs=GAME;
-      else if(cursor->x<=820 && cursor->x>=325 && cursor->y>=505 && cursor->y<=565)
+      }
+      else if(cursor->x<=820 && cursor->x>=325 && cursor->y>=505 && cursor->y<=565){
         gs=INSTRUCTIONS;
-      else if(cursor->x<=650 && cursor->x>=495 && cursor->y>=595 && cursor->y<=655)
+      }else if(cursor->x<=650 && cursor->x>=495 && cursor->y>=595 && cursor->y<=655){
         gs=EXIT;
+      }
 
       
     }

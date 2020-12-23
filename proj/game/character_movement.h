@@ -1,3 +1,6 @@
+#ifndef CHARACTER_MOVEMENT_H
+#define CHARACTER_MOVEMENT_H
+
 #include <lcom/lcf.h>
 #include "../periferals/video_gr.h"
 #include "../periferals/i8042.h"
@@ -64,3 +67,5 @@ xpm_object* get_current_character();
  * @return 0 if there is no collision, 1 if there is 
  */
 int wall_collision(animated_xpm_object *current_sprite);
+
+#endif

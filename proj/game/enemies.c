@@ -7,6 +7,7 @@ static xpm_object **enemies;
 static size_t total_enemies = 10;
 static size_t available_enemies;
 static int ENEMIES_MAX_VELOCITY = 5;
+static uint8_t score = 0;
 
 void set_enemies_available() {
   srand(time(NULL));
@@ -66,6 +67,7 @@ int checking_collision(xpm_object **magic_blasts) {
         free(magic_blasts[blastIndex]);
         reindex_magic_blasts(blastIndex);
         collided = true;
+        score++;
         break;
       }
     }
@@ -80,6 +82,7 @@ int checking_collision(xpm_object **magic_blasts) {
     if (enemy_collision(get_current_character(), enemies[enemiesIndex])) {
       free(enemies[enemiesIndex]);
       reindex_enemies(enemiesIndex);
+      score = 0;
       return 1;
     }
   }
@@ -137,4 +140,9 @@ int enemy_collision(xpm_object *object, xpm_object *enemy) {
   }
 
   return 0;
+}
+
+
+uint8_t get_score(){
+  return score;
 }

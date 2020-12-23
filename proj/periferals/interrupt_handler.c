@@ -177,11 +177,12 @@ void timer_handler() {
     } else if(gs==INSTRUCTIONS){
       print_xpm(instructionsMenu);
     } else if(gs==GAME) {
-      if(checking_collision(get_magic_blasts())) finished=false;
+      if(checking_collision(get_magic_blasts())) finished=true;
       if (OK != update_character_movement(counter))
         finished = true;
       print_magic_blasts();
       print_enemies();
+      draw_current_hud();
 
     }else if(gs==GAMEOVER) {
       print_xpm(gameOver);
@@ -227,9 +228,8 @@ void kbd_handler() {
 
   handle_button_presses(scancode);
   i = 0;
-  /*
   if (scancode == KBC_BRK_ESC_KEY )
-    finished = true;*/
+    finished = true;
 }
 
 void rtc_handler(){
