@@ -1,6 +1,8 @@
 #include <lcom/lcf.h>
+#include <time.h>
 #include "serial_port_controller.h"
 #include "queue.h"
+#include "../game/character_movement.h"
 
 void ser_init();
 
@@ -24,6 +26,8 @@ bool clear_fifo();
 
 bool send_byte(uint8_t byte);
 
+bool pack_byte_send_queue(uint8_t byte);
+
 bool empty_send_queue();
 
 bool read_byte();
@@ -31,3 +35,13 @@ bool read_byte();
 Queue* get_received_queue();
 
 Queue* get_send_queue();
+
+bool ser_clear();
+
+bool handle_coop_start();
+
+void send_scancode(uint8_t scancode);
+
+void send_mouse_info(xpm_object* cursor);
+
+void handle_received_info();

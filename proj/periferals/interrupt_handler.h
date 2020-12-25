@@ -12,6 +12,7 @@
 #include "../img/mainmenu.xpm"
 #include "../img/instructionsmenu.xpm"
 #include "../img/gameover.xpm"
+#include "../img/coop.xpm"
 
 
 enum {MOUSE,TIMER,KBD,RTC,SER} typedef irq_type;

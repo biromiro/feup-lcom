@@ -2,8 +2,6 @@
 #define ENEMIES_H
 
 #include <lcom/lcf.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "../periferals/video_gr.h"
 #include "../img/Wraith_02/Spells_Effect.xpm"
 

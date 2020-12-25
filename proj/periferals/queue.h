@@ -1,3 +1,6 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
 #include <lcom/lcf.h>
 
 #define QUEUESIZE 20
@@ -15,3 +18,5 @@ uint8_t front(Queue* q);
 uint8_t back(Queue* q);
 bool is_empty(Queue* q);
 bool is_full(Queue* q);
+
+#endif

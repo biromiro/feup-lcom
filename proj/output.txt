@@ -1,1 +1,18 @@
-alarm! 
+srandByte = 178
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+1:82, 2:0, 3:c0, 4:97
+x = 704, y = 151
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+ent scancode!

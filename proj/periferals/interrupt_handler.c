@@ -9,7 +9,7 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
-static xpm_object *igcursor, *background_img, *mainMenu, *instructionsMenu, *gameOver;
+static xpm_object *igcursor, *background_img, *mainMenu, *instructionsMenu, *gameOver, *coopWaitingMenu;
 extern bool alarmInterrupt;
 
 extern gameState gs;
@@ -54,7 +54,9 @@ int initialize() {
     printf("Could not subscribe all interrupts!\n");
     return 1;
   }
-  
+
+  ser_enable_int();
+
   set_rtc_interrupts(ALARM, true);
   set_rtc_interrupts(UPDATE, false);
   set_rtc_interrupts(PERIODIC, true);
@@ -71,6 +73,7 @@ int initialize() {
   mainMenu = create_sprite(mainmenu,"mainMenu",0,0);
   instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,0);
   gameOver = create_sprite(gameover,"gameOver",0,0);
+  coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 300,300);
   set_background(background_img);
 
   set_power_up_alarm(0);
@@ -197,7 +200,9 @@ void timer_handler() {
       print_xpm(mainMenu);
     } else if(gs==INSTRUCTIONS){
       print_xpm(instructionsMenu);
-    } else if(gs==GAME) {
+    } else if(gs == COOP){
+      print_xpm(coopWaitingMenu);
+    }else if(gs==GAME) {
       if(checking_collision(get_magic_blasts())) finished=true;
       if (OK != update_character_movement(counter))
         finished = true;
@@ -233,7 +238,7 @@ void mouse_handler() {
     igcursor->x += pp.delta_x;
     igcursor->y -= pp.delta_y;
   }
-  handle_mouse_packet(igcursor, &pp);
+  handle_mouse_packet(igcursor, &pp, true);
   if(gs==EXIT)
     finished=true;
 }
@@ -247,7 +252,7 @@ void kbd_handler() {
   }
   bytes[i] = scancode;
 
-  handle_button_presses(scancode);
+  handle_button_presses(scancode, true);
   i = 0;
   if (scancode == KBC_BRK_ESC_KEY )
     finished = true;
@@ -260,4 +265,6 @@ void rtc_handler(){
 
 void ser_handler(){
   ser_ih();
+  if (gs == COOP) handle_coop_start();
+  else if (gs == GAME) handle_received_info();
 }
