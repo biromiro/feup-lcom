@@ -1,6 +1,6 @@
 #include "interrupt_handler.h"
 
-static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, irq_set_rtc, i = 0;
+static uint8_t irq_set_mouse, irq_set_timer, irq_set_kbc, irq_set_rtc, irq_set_ser, i = 0;
 extern int counter, cnt;
 extern uint8_t scancode, packetByte;
 bool finished;
@@ -9,9 +9,10 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
-static xpm_object *igcursor;
-static xpm_object *background_img;
+static xpm_object *igcursor, *background_img, *mainMenu, *instructionsMenu, *gameOver, *coopWaitingMenu;
 extern bool alarmInterrupt;
+
+extern gameState gs;
 
 int subscribe_interrupts() {
 
@@ -37,15 +38,24 @@ int subscribe_interrupts() {
     return 1;
   }
 
+  if (ser_subscribe_int(&irq_set_ser) != 0){
+    printf("Error subscribing serial port\n");
+    return 1;
+  }
+
   return 0;
 }
 
 int initialize() {
 
+  ser_init();
+
   if (OK != subscribe_interrupts()) {
     printf("Could not subscribe all interrupts!\n");
     return 1;
   }
+
+  ser_enable_int();
 
   set_rtc_interrupts(ALARM, true);
   set_rtc_interrupts(UPDATE, false);
@@ -54,22 +64,31 @@ int initialize() {
   vg_init(0x14C);
   timer_set_frequency(0, 120);
   
-
   create_game_objects();
   set_magic_blasts_available();
   set_enemies_available();
 
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
-
+  mainMenu = create_sprite(mainmenu,"mainMenu",0,0);
+  instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,0);
+  gameOver = create_sprite(gameover,"gameOver",0,0);
+  coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 300,300);
   set_background(background_img);
 
   set_power_up_alarm(0);
   set_enemy_throw(0xF);
+
+  gs = START;
   return 0;
 }
 
 int unsubscribe_interrupts() {
+
+  if (ser_unsubscribe_int() != 0){
+    printf("Error unsubscribing serial port\n");
+    return 1;
+  }
 
   if (timer_unsubscribe_int() != 0) {
     printf("Error unsubscribing timer\n");
@@ -106,9 +125,13 @@ int finish() {
 
   free_magic_blasts();
 
+  timer_set_frequency(0, 60);
+
   set_rtc_interrupts(ALARM, false);
   set_rtc_interrupts(UPDATE, false);
   set_rtc_interrupts(PERIODIC, false);
+
+  ser_exit();
 
   if (OK != unsubscribe_interrupts()) {
     printf("Could not unsubscribe all interrupts!\n");
@@ -128,6 +151,8 @@ uint8_t get_irq_set(irq_type type) {
       return irq_set_kbc;
     case RTC:
       return irq_set_rtc;
+    case SER:
+      return irq_set_ser;
   }
 }
 
@@ -152,6 +177,9 @@ void interrupt_call_receiver() {
         if (msg.m_notify.interrupts & get_irq_set(RTC)) {
           rtc_handler();
         }
+        if (msg.m_notify.interrupts & get_irq_set(SER)) {
+          ser_handler();
+        }
         break;
       default:
         break; /* no other notifications expected: do nothing */
@@ -168,11 +196,24 @@ void timer_handler() {
 
   if (counter % 2 == 0) {
     print_background();
-    if(checking_collision(get_magic_blasts())) finished=false;
-    if (OK != update_character_movement(counter))
-      finished = true;
-    print_magic_blasts();
-    print_enemies();
+    if(gs==START){
+      print_xpm(mainMenu);
+    } else if(gs==INSTRUCTIONS){
+      print_xpm(instructionsMenu);
+    } else if(gs == COOP){
+      print_xpm(coopWaitingMenu);
+    }else if(gs==GAME) {
+      if(checking_collision(get_magic_blasts())) finished=true;
+      if (OK != update_character_movement(counter))
+        finished = true;
+      print_magic_blasts();
+      print_enemies();
+      draw_current_hud();
+
+    }else if(gs==GAMEOVER) {
+      print_xpm(gameOver);
+    }
+    
     print_xpm(igcursor);
     if (OK != swap_buffer()) {
       printf("Unable to swap buffers!");
@@ -197,7 +238,9 @@ void mouse_handler() {
     igcursor->x += pp.delta_x;
     igcursor->y -= pp.delta_y;
   }
-  handle_mouse_packet(igcursor, &pp);
+  handle_mouse_packet(igcursor, &pp, true);
+  if(gs==EXIT)
+    finished=true;
 }
 
 void kbd_handler() {
@@ -209,13 +252,20 @@ void kbd_handler() {
   }
   bytes[i] = scancode;
 
-  handle_button_presses(scancode);
+  handle_button_presses(scancode, true);
   i = 0;
-  if (scancode == KBC_BRK_ESC_KEY)
+  if (scancode == KBC_BRK_ESC_KEY )
     finished = true;
 }
 
 void rtc_handler(){
   rtc_ih();
   handle_rtc_ingame_changes(&alarmInterrupt);
+}
+
+void ser_handler(){
+  ser_ih();
+  printf("received packets");
+  if (gs == COOP) handle_coop_start();
+  else if (gs == GAME) handle_received_info();
 }

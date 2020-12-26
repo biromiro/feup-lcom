@@ -1,10 +1,10 @@
 #include "magic_blast.h"
 #include "character_movement.h"
 
-static xpm_object **magic_blasts;
+static xpm_object **magic_blasts ;
 static size_t total_blasts = 10;
 static size_t available_blasts;
-static int PROJECTILE_VELOCITY = 100;
+static int PROJECTILE_VELOCITY = 75;
 
 void set_magic_blasts_available() {
   available_blasts = total_blasts;

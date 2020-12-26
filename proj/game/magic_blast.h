@@ -1,3 +1,6 @@
+#ifndef MAGIC_BLAST_H
+#define MAGIC_BLAST_H
+
 #include "../img/Wraith_01/Spells_Effect.xpm"
 #include "../periferals/video_gr.h"
 #include <lcom/lcf.h>
@@ -61,3 +64,5 @@ size_t get_available_blasts();
  * 
  */
 void decrement_available_blasts();
+
+#endif

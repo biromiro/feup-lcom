@@ -3,8 +3,17 @@
 static int thrown = 0;
 static int rtcPeriodicMultiplier = 6;
 static uint8_t currentDiv = 0xF;
+static uint8_t wave = 1;
+extern gameState gs;
 
 void handle_rtc_ingame_changes(bool* alarmInterrupt){
+    if(gs == GAMEOVER){
+        wave = 1;
+        currentDiv = 0xF;
+        rtcPeriodicMultiplier = 6;
+        thrown = 0;
+    }
+    if(gs != GAME) return;
     if(*alarmInterrupt){
 
         *alarmInterrupt = false;
@@ -21,10 +30,13 @@ void handle_rtc_ingame_changes(bool* alarmInterrupt){
         */
         if(rtcPeriodicMultiplier > 3){
             rtcPeriodicMultiplier--;
-        }else if(currentDiv > 0xC){
-            currentDiv--;
-            rtcPeriodicMultiplier = 6;
+        }else{
+            if(currentDiv > 0xC){
+                currentDiv--;
+                rtcPeriodicMultiplier = 6;
+            }
         }
+        wave++;
     }
 
     // Only sends the new enemy if the rtcPeriodMultiplier is 0, and resets it (working as a new timer, of sorts)    
@@ -34,3 +46,6 @@ void handle_rtc_ingame_changes(bool* alarmInterrupt){
     }else thrown--;
 }
 
+uint8_t get_wave(){
+    return wave;
+}

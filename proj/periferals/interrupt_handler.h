@@ -4,11 +4,18 @@
 #include "timer.h"
 #include "video_gr.h"
 #include "rtc.h"
+#include "serial_port.h"
 #include "../game/game_state.h"
+#include "../game/hud.h"
 #include "../img/cursor.xpm"
 #include "../img/background.xpm"
+#include "../img/mainmenu.xpm"
+#include "../img/instructionsmenu.xpm"
+#include "../img/gameover.xpm"
+#include "../img/coop.xpm"
 
-enum {MOUSE,TIMER,KBD,RTC} typedef irq_type;
+
+enum {MOUSE,TIMER,KBD,RTC,SER} typedef irq_type;
 
 /**
  * @brief Subscribes all the peripherals
@@ -74,3 +81,6 @@ void kbd_handler();
  * 
  */
 void rtc_handler();
+
+
+void ser_handler();

@@ -1,0 +1,87 @@
+receivedreceivedreceivedsrandByte = 226
+received info!
+received info!
+1:82, 2:2, 3:21, 4:ef
+x = 545, y = 751
+received sent sreceived sent sreceived sent sreceived sent sreceived sent sreceived sent sreceived sent mreceived info!
+1:80, 2:0, 3:7f, 4:fa
+x = 127, y = 25sent mouse info!,received info!
+1:81, 2:0, 3:27, 4:9b
+x = sent mouse info!, x = 994, y=163, 1: 83, 2:received info!
+sent mouse info!, x = 877, y=155, 1: 83, 2:20, 3:6d, 4recesent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+sent mouse info!, x = 50, y=176, 1: 80, 2:20, 3:32, 4:b0
+sent scancode!
+sent scancode!
+sent scancode!
+sent scancode!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+1:9a, 2:1f, 3:dd, 4:2e
+x = -2781, y = -3886
+received info!
+received info!
+1:9e, 2:0, 3:e6, 4:aa
+x = -3814, y = 170
+received info!
+received info!
+received info!
+1:9f, 2:0, 3:ee, 4:1e
+x = -4078, y = 30
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+1:82, 2:0, 3:19, 4:fe
+x = 537, y = 254
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+received info!
+1:83, 2:0, 3:73, 4:b3
+x = 883, y = 179
+received info!
+received info!
+1:81, 2:1f, 3:21, 4:af
+x = 289, y = -4015
+received info!
+received info!
+1:81, 2:1f, 3:31, 4:ae
+x = 305, y = -4014
+received info!
+received info!
+received info!
+received info!
+received info!
+1:81, 2:0, 3:5b, 4:8c
+x = 347, y = 140
+received info!

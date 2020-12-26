@@ -1,6 +1,7 @@
+#ifndef ENEMIES_H
+#define ENEMIES_H
+
 #include <lcom/lcf.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "../periferals/video_gr.h"
 #include "../img/Wraith_02/Spells_Effect.xpm"
 
@@ -57,3 +58,7 @@ int checking_collision(xpm_object **magic_blasts);
  * @return 0 if there is no collision, 1 if there is 
  */
 int enemy_collision(xpm_object *magic_blast, xpm_object *enemy);
+
+uint8_t get_score();
+
+#endif

@@ -7,9 +7,9 @@ static xpm_object **enemies;
 static size_t total_enemies = 10;
 static size_t available_enemies;
 static int ENEMIES_MAX_VELOCITY = 5;
+static uint8_t score = 0;
 
 void set_enemies_available() {
-  srand(time(NULL));
   available_enemies = total_enemies;
   enemies = malloc(sizeof(xpm_object *) * total_enemies);
 }
@@ -24,10 +24,11 @@ void free_enemies(){
 void throw_enemies() {
   if (available_enemies == 0)
     return;
-  int pos_x = rand() % (get_h_resolution() + 1);
-  xpm_object *new_enemies = create_sprite(Enemy, "Enemy", pos_x, rand() % 10 - 10);
+  int rand1 = random(), rand2 = random(), rand3 = random();
+  int pos_x = rand1 % (get_h_resolution() + 1);
+  xpm_object *new_enemies = create_sprite(Enemy, "Enemy", pos_x, rand2 % 10 - 10);
 
-  new_enemies->x_speed = pos_x <= (get_h_resolution() / 2.0) ? rand() % ENEMIES_MAX_VELOCITY : rand() % ENEMIES_MAX_VELOCITY - 5;
+  new_enemies->x_speed = pos_x <= (get_h_resolution() / 2.0) ? rand3 % ENEMIES_MAX_VELOCITY : rand3 % ENEMIES_MAX_VELOCITY - 5;
   new_enemies->y_speed = 2;
 
   enemies[total_enemies - available_enemies] = new_enemies;
@@ -66,6 +67,7 @@ int checking_collision(xpm_object **magic_blasts) {
         free(magic_blasts[blastIndex]);
         reindex_magic_blasts(blastIndex);
         collided = true;
+        score++;
         break;
       }
     }
@@ -77,9 +79,17 @@ int checking_collision(xpm_object **magic_blasts) {
       enemiesIndex--;
       continue;
     }
-    if (enemy_collision(get_current_character(), enemies[enemiesIndex])) {
+    if (enemy_collision(get_current_character_p1(), enemies[enemiesIndex])) {
       free(enemies[enemiesIndex]);
       reindex_enemies(enemiesIndex);
+      score = 0;
+      return 1;
+    }
+
+    if (enemy_collision(get_current_character_p2(), enemies[enemiesIndex])) {
+      free(enemies[enemiesIndex]);
+      reindex_enemies(enemiesIndex);
+      score = 0;
       return 1;
     }
   }
@@ -137,4 +147,9 @@ int enemy_collision(xpm_object *object, xpm_object *enemy) {
   }
 
   return 0;
+}
+
+
+uint8_t get_score(){
+  return score;
 }
