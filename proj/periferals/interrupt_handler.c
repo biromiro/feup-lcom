@@ -265,6 +265,7 @@ void rtc_handler(){
 
 void ser_handler(){
   ser_ih();
+  printf("received packets");
   if (gs == COOP) handle_coop_start();
   else if (gs == GAME) handle_received_info();
 }

@@ -100,7 +100,7 @@ void handle_ingame_scancode(uint8_t scancode, animated_xpm_object*** player, ani
     default:
       return;
   }
-  if(player1_pp) send_scancode(scancode);
+  if(player1_pp && coop) send_scancode(scancode);
 }
 
 void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp) {
@@ -119,7 +119,7 @@ void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp)
           send_byte(0x53);
         }
       }else if(gs == GAME){
-        if(!sentP1) send_mouse_info(cursor);
+        if(!sentP1 && coop) send_mouse_info(cursor);
       }
     }
     handle_mouse_packet_player(cursor, pp, &player1, &current_sprite_player1, &attackAnimationP1, &sentP1, player1_pp);

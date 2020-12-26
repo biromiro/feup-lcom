@@ -131,29 +131,26 @@ bool ser_clear(){
 }
 
 bool handle_coop_start(){
-    clock_t start, end;
-    double time_spent;
+    //clock_t start, end;
+    //double time_spent;
     if(front(received_queue) == 0x53){
+        printf("received1");
+        ser_clear();
         send_byte(0x54);
-        ser_clear();
     }else if(front(received_queue) == 0x54){
-        send_byte(0x55);
+        printf("received2");
         ser_clear();
+        send_byte(0x55);
     }else if(front(received_queue) == 0x55){
-        start = clock();
+        printf("received3");
         uint8_t srandByte = time(NULL);
         send_byte(0x56);
         send_byte(srandByte);
         empty_send_queue();
         srandom(srandByte);
-        gs = GAME;
-        end = clock();
-        time_spent = (((double) end - start) / 120) * 1000000;
-        micro_delay(50000-time_spent); //sync time, 1 tick roughly
-        printf("srandByte (sender) = %d, time_spent = %f\n", srandByte, time_spent);
-        coop = true;
+        printf("srandByte (sender) = %d\n", srandByte);
     }else if(front(received_queue) == 0x56){
-        start = clock();
+        printf("received4");
         pop(received_queue);
         uint8_t srandByte = pop(received_queue);
         while(srandByte == 0){
@@ -163,11 +160,15 @@ bool handle_coop_start(){
         srandom(srandByte);
         swap_characters();
         gs = GAME;
-        end = clock();
-        time_spent = (((double) end - start) / 120) * 1000000;
-        micro_delay(41666-time_spent);
         printf("srandByte = %d\n", srandByte);
         coop=true;
+        send_byte(0x57);
+        micro_delay(3*8333);
+    }else if(front(received_queue) == 0x57){
+        printf("received5");
+        gs = GAME;
+        coop = true;
+        printf("started game");
     }
     pop(received_queue);
     return true;
