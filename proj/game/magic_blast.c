@@ -1,10 +1,11 @@
 #include "magic_blast.h"
 #include "character_movement.h"
+#include <math.h>
 
 static xpm_object **magic_blasts ;
 static size_t total_blasts = 10;
 static size_t available_blasts;
-static int PROJECTILE_VELOCITY = 75;
+static int PROJECTILE_VELOCITY = 8;
 
 void set_magic_blasts_available() {
   available_blasts = total_blasts;
@@ -26,8 +27,13 @@ void throw_magic_blast(xpm_object *cursor, xpm_object *character) {
   int y_offset = 215; 
   xpm_object *new_magic_blast = create_sprite(Spells_Effect, "Magic Blast", character->x + x_offset, character->y + y_offset);
 
-  new_magic_blast->x_speed = (cursor->x - (character->x + x_offset)) / (PROJECTILE_VELOCITY);
-  new_magic_blast->y_speed = (cursor->y - (character->y + y_offset)) / (PROJECTILE_VELOCITY);
+  int dx = (cursor->x - (character->x + x_offset));
+  int dy = (cursor->y - (character->y + y_offset));
+
+  double alpha = atan2((double)dy, (double)dx);
+  
+  new_magic_blast->x_speed =(int)(cos(alpha)*(PROJECTILE_VELOCITY));
+  new_magic_blast->y_speed =(int)(sin(alpha)*(PROJECTILE_VELOCITY));
 
   magic_blasts[total_blasts - available_blasts] = new_magic_blast;
   available_blasts--;

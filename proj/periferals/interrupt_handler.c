@@ -131,6 +131,8 @@ int finish() {
   set_rtc_interrupts(UPDATE, false);
   set_rtc_interrupts(PERIODIC, false);
 
+  
+
   ser_exit();
 
   if (OK != unsubscribe_interrupts()) {
