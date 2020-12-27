@@ -279,8 +279,8 @@ void handle_received_info(){
             y |= fourthByte;
             y |= ((secondByte & (BIT(0) | BIT(1) | BIT(2) | BIT(3))) << 8);
 
-            coop_cursor->x = (curByte & BIT(4)) ? (~x + 1) : (x);
-            coop_cursor->y = (secondByte & BIT(4)) ? (~y + 1) : (y);
+            coop_cursor->x = (curByte & BIT(4)) ? (~(0xFFF) | x) : (x);
+            coop_cursor->y = (secondByte & BIT(4)) ? (~(0xFFF) | y) : (y);
             printf("x = %d, y = %d\n", coop_cursor->x, coop_cursor->y);
             struct packet pp;
             pp.lb = true;

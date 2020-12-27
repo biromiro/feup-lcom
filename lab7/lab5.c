@@ -112,11 +112,11 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 
 int(video_test_controller)() {
   ser_init();
-  send_byte(0x65);
-   send_byte(0x66);
-  send_byte(0x67);
-  send_byte(0x68);
-  send_byte(0x69);
+  send_byte(0x3);
+   send_byte(0x1);
+  send_byte(0x2);
+  send_byte(0x4);
+  send_byte(0x5);
   empty_send_queue();
   ser_exit();
   return 0;
