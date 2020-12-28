@@ -54,7 +54,6 @@ int update_character_movement_player(int counter, animated_xpm_object*** player,
   return OK;
 }
 
-
 void handle_button_presses(uint8_t scancode, bool player1_pp) {
   if(player1_pp){
     if(gs==GAMEOVER || gs==INSTRUCTIONS){
@@ -109,6 +108,8 @@ void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp)
       if(gs==START){
         if(cursor->x<=690 && cursor->x>=460 && cursor->y>=425 && cursor->y<=485){
           gs=GAME;
+          set_power_up_alarm(1);
+          set_enemy_throw(0xF);
         }
         else if(cursor->x<=820 && cursor->x>=325 && cursor->y>=505 && cursor->y<=565){
           gs=INSTRUCTIONS;
@@ -195,4 +196,24 @@ void swap_characters(){
   sentP2 = temp3;
   attackAnimationP1 = attackAnimationP2;
   attackAnimationP2 = temp4;
+}
+
+void reset_characters(){
+  player1[0]->obj->x = get_h_resolution()/2 - 300;
+  player1[0]->obj->y = get_v_resolution() - 350;
+  player1[0]->obj->mirrored = false;
+  player1[0]->obj->x_speed = 0;
+  player1[0]->obj->y_speed = 0;
+  player1[0]->cur_fig = 0;
+  player1[0]->cur_speed = 0;
+  player2[0]->obj->x = get_h_resolution()/2 + 100;
+  player2[0]->obj->y = get_v_resolution() - 350;
+  player2[0]->obj->mirrored = false;
+  player2[0]->obj->x_speed = 0;
+  player2[0]->obj->y_speed = 0;
+  player2[0]->cur_fig = 0;
+  player2[0]->cur_speed = 0;
+  current_sprite_player1 = player1[0];
+  current_sprite_player2 = player2[0];
+  coop = false;
 }

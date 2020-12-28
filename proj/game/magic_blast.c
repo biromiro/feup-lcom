@@ -77,3 +77,8 @@ size_t get_available_blasts() {
 void decrement_available_blasts() {
   available_blasts--;
 }
+
+void reset_magic_blasts(){
+  free_magic_blasts();
+  set_magic_blasts_available();
+}

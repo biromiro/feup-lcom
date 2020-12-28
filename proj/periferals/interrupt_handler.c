@@ -76,9 +76,6 @@ int initialize() {
   coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 300,300);
   set_background(background_img);
 
-  set_power_up_alarm(0);
-  set_enemy_throw(0xF);
-
   gs = START;
   return 0;
 }
@@ -205,13 +202,16 @@ void timer_handler() {
     } else if(gs == COOP){
       print_xpm(coopWaitingMenu);
     }else if(gs==GAME) {
-      if(checking_collision(get_magic_blasts())) finished=true;
+      if(checking_collision(get_magic_blasts())){
+        gs = GAMEOVER;
+        reset_game();
+        print_xpm(gameOver);
+      }
       if (OK != update_character_movement(counter))
         finished = true;
       print_magic_blasts();
       print_enemies();
       draw_current_hud();
-
     }else if(gs==GAMEOVER) {
       print_xpm(gameOver);
     }
@@ -270,4 +270,13 @@ void ser_handler(){
   printf("received packets");
   if (gs == COOP) handle_coop_start();
   else if (gs == GAME) handle_received_info();
+}
+
+void reset_game(){
+  reset_characters();
+  reset_enemies();
+  reset_rtc_ingame_changes();
+  reset_hud();
+  reset_magic_blasts();
+  ser_clear();
 }

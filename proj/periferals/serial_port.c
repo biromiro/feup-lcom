@@ -211,7 +211,7 @@ void send_mouse_info(xpm_object* cursor){
 }
 
 void handle_received_info(){
-
+    
     /*
     The communication protocol is as follows:
 
@@ -252,26 +252,38 @@ void handle_received_info(){
     */
    printf("received info!\n");
 
-    while(!is_empty(received_queue)){
+    uint8_t max_tries = 5, max_tries_reread = 10;
+
+    while(!is_empty(received_queue) && max_tries){
         read_byte(); //just trying to retrieve another byte in case of it arriving after the ih or mid handling
         uint8_t curByte = pop(received_queue);
         if(curByte & BIT(7)){ //mouse packet
             uint8_t secondByte = pop(received_queue), thirdByte = pop(received_queue), fourthByte = pop(received_queue);
+            printf("mouse");
             int x = 0, y = 0;
-            while(secondByte == 0){
+            while(secondByte == 0 && max_tries_reread){
                 read_byte();
                 secondByte = pop(received_queue);
+                printf("second_byte");
+                max_tries_reread--;
             }
+            if(!max_tries_reread) break;
+            max_tries_reread = 10;
             if(secondByte & BIT(5)) secondByte = 0;
-            while(thirdByte == 0 && !(curByte & BIT(5))){
+            while(thirdByte == 0 && !(curByte & BIT(5)) && max_tries_reread){
                 read_byte();
                 thirdByte = pop(received_queue);
+                printf("second_byte");
             }
-            while(fourthByte == 0 && !(curByte & BIT(6))){
+            if(!max_tries_reread) break;
+            max_tries_reread = 10;
+            while(fourthByte == 0 && !(curByte & BIT(6)) && max_tries_reread){
                 read_byte();
                 thirdByte = pop(received_queue);
+                printf("second_byte");
             }
-
+            if(!max_tries_reread) break;
+            max_tries_reread = 10;
             printf("1:%x, 2:%x, 3:%x, 4:%x\n", curByte, secondByte, thirdByte, fourthByte);
             x |= thirdByte;
             x |= ((curByte & (BIT(0) | BIT(1) | BIT(2) | BIT(3))) << 8);
@@ -286,6 +298,7 @@ void handle_received_info(){
             pp.lb = true;
             handle_mouse_packet(coop_cursor, &pp,  false);
         }else{ //scancode
+            printf("kbd");
             uint8_t scancode;
             bool invalid = false;
             if(curByte & BIT(0)) //A make code
@@ -299,6 +312,7 @@ void handle_received_info(){
             else invalid = true;
             if(!invalid) handle_button_presses(scancode, false);
         }
+        max_tries--;
     }
 }
 

@@ -84,3 +84,5 @@ void rtc_handler();
 
 
 void ser_handler();
+
+void reset_game();

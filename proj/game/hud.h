@@ -25,4 +25,6 @@ void draw_digit(xpm_object* xpm);
 
 void free_xpm_mem(xpm_object* xpm);
 
+void reset_hud();
+
 #endif

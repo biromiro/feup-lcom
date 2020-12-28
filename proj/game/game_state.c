@@ -3,16 +3,10 @@
 static int thrown = 0;
 static int rtcPeriodicMultiplier = 6;
 static uint8_t currentDiv = 0xF;
-static uint8_t wave = 1;
+static uint8_t wave = 0;
 extern gameState gs;
 
 void handle_rtc_ingame_changes(bool* alarmInterrupt){
-    if(gs == GAMEOVER){
-        wave = 1;
-        currentDiv = 0xF;
-        rtcPeriodicMultiplier = 6;
-        thrown = 0;
-    }
     if(gs != GAME) return;
     if(*alarmInterrupt){
 
@@ -48,4 +42,11 @@ void handle_rtc_ingame_changes(bool* alarmInterrupt){
 
 uint8_t get_wave(){
     return wave;
+}
+
+void reset_rtc_ingame_changes(){
+    thrown = 0;
+    rtcPeriodicMultiplier = 6;
+    currentDiv = 0xF;
+    wave = 0;
 }

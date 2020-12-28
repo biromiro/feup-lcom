@@ -81,3 +81,9 @@ void free_xpm_mem(xpm_object* xpm){
     free(xpm->ID);
     free(xpm);
 }
+
+void reset_hud(){
+    score = 0;
+    charges = 0;
+    wave = 0;
+}

@@ -65,4 +65,6 @@ size_t get_available_blasts();
  */
 void decrement_available_blasts();
 
+void reset_magic_blasts();
+
 #endif

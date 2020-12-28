@@ -16,4 +16,6 @@ void handle_rtc_ingame_changes(bool* alarmInterrupt);
 
 uint8_t get_wave();
 
+void reset_rtc_ingame_changes();
+
 #endif

@@ -61,4 +61,6 @@ int enemy_collision(xpm_object *magic_blast, xpm_object *enemy);
 
 uint8_t get_score();
 
+void reset_enemies();
+
 #endif

@@ -8,6 +8,7 @@ static size_t total_enemies = 10;
 static size_t available_enemies;
 static int ENEMIES_MAX_VELOCITY = 5;
 static uint8_t score = 0;
+extern bool coop;
 
 void set_enemies_available() {
   available_enemies = total_enemies;
@@ -85,12 +86,13 @@ int checking_collision(xpm_object **magic_blasts) {
       score = 0;
       return 1;
     }
-
-    if (enemy_collision(get_current_character_p2(), enemies[enemiesIndex])) {
-      free(enemies[enemiesIndex]);
-      reindex_enemies(enemiesIndex);
-      score = 0;
-      return 1;
+    if(coop){
+      if (enemy_collision(get_current_character_p2(), enemies[enemiesIndex])) {
+        free(enemies[enemiesIndex]);
+        reindex_enemies(enemiesIndex);
+        score = 0;
+        return 1;
+      }
     }
   }
   return 0;
@@ -149,7 +151,12 @@ int enemy_collision(xpm_object *object, xpm_object *enemy) {
   return 0;
 }
 
-
 uint8_t get_score(){
   return score;
+}
+
+void reset_enemies(){
+  free_enemies();
+  set_enemies_available();
+  score = 0;
 }

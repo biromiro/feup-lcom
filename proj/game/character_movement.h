@@ -5,6 +5,7 @@
 #include "../periferals/video_gr.h"
 #include "../periferals/i8042.h"
 #include "../periferals/serial_port.h"
+#include "../periferals/rtc.h"
 #include "img/Wraith_01/Idle/Wraith_Idle.h"
 #include "img/Wraith_01/Walking/Wraith_Walking.h"
 #include "img/Wraith_01/Attacking/Wraith_Attack.h"
@@ -79,5 +80,7 @@ xpm_object* get_current_character_p2();
 int wall_collision(animated_xpm_object *current_sprite);
 
 void swap_characters();
+
+void reset_characters();
 
 #endif
