@@ -1,5 +1,4 @@
 #include "character_movement.h"
-#include "magic_blast.h"
 
 static animated_xpm_object **player1, **player2;
 static animated_xpm_object *current_sprite_player1, *current_sprite_player2;
@@ -106,22 +105,20 @@ void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp)
   if(player1_pp){
     if (pp->lb) {
       if(gs==START){
-        if(cursor->x<=690 && cursor->x>=460 && cursor->y>=425 && cursor->y<=485){
-          gs=GAME;
+        gs=return_game();
+        if(gs==GAME){
           set_power_up_alarm(1);
           set_enemy_throw(0xF);
         }
-        else if(cursor->x<=820 && cursor->x>=325 && cursor->y>=505 && cursor->y<=565){
-          gs=INSTRUCTIONS;
-        }else if(cursor->x<=650 && cursor->x>=495 && cursor->y>=595 && cursor->y<=655){
-          gs=EXIT;
-        }else if(cursor->x<=820 && cursor->x>=325 && cursor->y>=700){
-          gs=COOP;
+        else if(gs==COOP)
           send_byte(0x53);
-        }
+          
       }else if(gs == GAME){
         if(!sentP1 && coop) send_mouse_info(cursor);
       }
+    }
+    if(gs==START){
+      handle_menu_mouse(cursor);
     }
     handle_mouse_packet_player(cursor, pp, &player1, &current_sprite_player1, &attackAnimationP1, &sentP1, player1_pp);
   }else{

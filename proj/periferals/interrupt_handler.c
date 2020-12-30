@@ -9,9 +9,9 @@ static message msg;
 static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
-static xpm_object *igcursor, *background_img, *mainMenu, *instructionsMenu, *gameOver, *coopWaitingMenu;
+static xpm_object *igcursor, *background_img, *mainMenu[5], *instructionsMenu, *gameOver, *coopWaitingMenu;
 extern bool alarmInterrupt;
-
+extern int menu_index;
 extern gameState gs;
 
 int subscribe_interrupts() {
@@ -67,10 +67,26 @@ int initialize() {
   create_game_objects();
   set_magic_blasts_available();
   set_enemies_available();
+  
+  static xpm_object *mainMenu_basic, *mainMenu_start, *mainMenu_instructions, *mainMenu_coop, *mainMenu_exit;
 
+  mainMenu_basic = create_sprite(mainmenu,"mainMenu",0,0);
+  mainMenu_start = create_sprite(mainmenu_start,"mainMenu",0,0);
+  mainMenu_instructions = create_sprite(mainmenu_instructions,"mainMenu_instructions",0,0);
+  mainMenu_coop = create_sprite(mainmenu_coop,"mainMenu_coop",0,0);
+  mainMenu_exit = create_sprite(mainmenu_exit,"mainMenu_exit",0,0);
+
+  for(int x=0;x<5;x++){
+    mainMenu[x]= malloc(sizeof(xpm_object));
+  }
+  mainMenu[0]= mainMenu_basic;
+  mainMenu[1]= mainMenu_start;
+  mainMenu[2]= mainMenu_instructions;
+  mainMenu[3]= mainMenu_coop;
+  mainMenu[4]= mainMenu_exit;
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
-  mainMenu = create_sprite(mainmenu,"mainMenu",0,0);
+  
   instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,0);
   gameOver = create_sprite(gameover,"gameOver",0,0);
   coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 300,300);
@@ -196,7 +212,7 @@ void timer_handler() {
   if (counter % 2 == 0) {
     print_background();
     if(gs==START){
-      print_xpm(mainMenu);
+      print_xpm(mainMenu[menu_index]);
     } else if(gs==INSTRUCTIONS){
       print_xpm(instructionsMenu);
     } else if(gs == COOP){

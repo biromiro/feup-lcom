@@ -6,18 +6,11 @@
 #include "../periferals/i8042.h"
 #include "../periferals/serial_port.h"
 #include "../periferals/rtc.h"
+#include "magic_blast.h"
+#include "menu.h"
 #include "img/Wraith_01/Idle/Wraith_Idle.h"
 #include "img/Wraith_01/Walking/Wraith_Walking.h"
 #include "img/Wraith_01/Attacking/Wraith_Attack.h"
-
-enum {
-    START,
-    INSTRUCTIONS,
-    GAME,
-    GAMEOVER,
-    EXIT,
-    COOP
-} typedef gameState;
 
 /**
  * @brief Creates the game objects (sprites)
