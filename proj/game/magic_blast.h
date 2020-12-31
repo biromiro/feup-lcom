@@ -65,6 +65,10 @@ size_t get_available_blasts();
  */
 void decrement_available_blasts();
 
+/**
+ * @brief Resets the magic blasts array to its initial values
+ * 
+ */
 void reset_magic_blasts();
 
 #endif

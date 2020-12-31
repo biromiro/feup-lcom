@@ -14,8 +14,17 @@
  */
 void handle_rtc_ingame_changes(bool* alarmInterrupt);
 
+/**
+ * @brief Get the current wave number
+ * 
+ * @return the current wave 
+ */
 uint8_t get_wave();
 
+/**
+ * @brief Resets the rtc parameters after the game has ended
+ * 
+ */
 void reset_rtc_ingame_changes();
 
 #endif

@@ -48,26 +48,6 @@ int subscribe_interrupts() {
 
 int initialize() {
 
-  ser_init();
-
-  if (OK != subscribe_interrupts()) {
-    printf("Could not subscribe all interrupts!\n");
-    return 1;
-  }
-
-  ser_enable_int();
-
-  set_rtc_interrupts(ALARM, true);
-  set_rtc_interrupts(UPDATE, false);
-  set_rtc_interrupts(PERIODIC, true);
-
-  vg_init(0x14C);
-  timer_set_frequency(0, 120);
-  
-  create_game_objects();
-  set_magic_blasts_available();
-  set_enemies_available();
-  
   static xpm_object *mainMenu_basic, *mainMenu_start, *mainMenu_instructions, *mainMenu_coop, *mainMenu_exit;
 
   mainMenu_basic = create_sprite(mainmenu,"mainMenu",0,0);
@@ -89,10 +69,37 @@ int initialize() {
   
   instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,0);
   gameOver = create_sprite(gameover,"gameOver",0,0);
-  coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 300,300);
+  coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 0,0);
+  
+  vg_init(0x14C);
+
   set_background(background_img);
+  
+  timer_set_frequency(0, 120);
+
+  create_game_objects();
+  set_magic_blasts_available();
+  set_enemies_available();
+
+  
+  set_rtc_interrupts(ALARM, true);
+  set_rtc_interrupts(UPDATE, false);
+  set_rtc_interrupts(PERIODIC, true);
+
+  ser_enable_int();
+
+  ser_init();
+
+  if (OK != subscribe_interrupts()) {
+    printf("Could not subscribe all interrupts!\n");
+    return 1;
+  }
 
   gs = START;
+
+  rtc_handler();
+  ser_ih();
+
   return 0;
 }
 
@@ -215,11 +222,12 @@ void timer_handler() {
       print_xpm(mainMenu[menu_index]);
     } else if(gs==INSTRUCTIONS){
       print_xpm(instructionsMenu);
-    } else if(gs == COOP){
+    } else if(gs == COOP) {
       print_xpm(coopWaitingMenu);
-    }else if(gs==GAME) {
+    } else if(gs==GAME) {
       if(checking_collision(get_magic_blasts())){
         gs = GAMEOVER;
+        send_byte(0xFF);
         reset_game();
         print_xpm(gameOver);
       }
@@ -229,6 +237,7 @@ void timer_handler() {
       print_enemies();
       draw_current_hud();
     }else if(gs==GAMEOVER) {
+      reset_game();
       print_xpm(gameOver);
     }
     
@@ -283,7 +292,6 @@ void rtc_handler(){
 
 void ser_handler(){
   ser_ih();
-  printf("received packets");
   if (gs == COOP) handle_coop_start();
   else if (gs == GAME) handle_received_info();
 }

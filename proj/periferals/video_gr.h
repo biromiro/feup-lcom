@@ -46,14 +46,40 @@ int (_vbe_get_mode_info)(uint16_t mode, vbe_mode_info_t* vm);
  */
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 
+/**
+ * @brief Set the background buffer for quicker drawing (memcpy)
+ * 
+ * @param background the background to store and set
+ */
 void set_background(xpm_object* background);
 
+/**
+ * @brief Sets the hud object
+ * 
+ * @param xpm the hud to store and set
+ */
 void set_hud(xpm_object* xpm);
 
+/**
+ * @brief Copies a pre-saved buffer pixel to the video mem buffer
+ * 
+ * @param x the x position of the pixel
+ * @param y the y position of the pixel
+ * @param color the color of the pixel
+ * @param buffer the buffer where the pixel is stored
+ */
 void draw_static_buffer_pixels(uint16_t x, uint16_t y, uint32_t color, char* buffer);
 
+/**
+ * @brief Prints the background buffer onto the video mem buffer
+ * 
+ */
 void print_background();
 
+/**
+ * @brief Prints the HUD buffer onto the video mem buffer
+ * 
+ */
 void print_hud();
 
 /**
@@ -148,4 +174,9 @@ animated_xpm_object* create_animated_sprite(xpm_map_t* xpms, int num_of_sprites 
  */
 void print_animated_sprite(animated_xpm_object* animated_sprite);
 
+/**
+ * @brief Gets the buffer to draw on (secondary buffer)
+ * 
+ * @return pointer to the buffer to draw 
+ */
 void* get_buffer_to_draw();

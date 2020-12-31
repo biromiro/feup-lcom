@@ -59,8 +59,17 @@ int checking_collision(xpm_object **magic_blasts);
  */
 int enemy_collision(xpm_object *magic_blast, xpm_object *enemy);
 
+/**
+ * @brief Get the current game score
+ * 
+ * @return the score 
+ */
 uint8_t get_score();
 
+/**
+ * @brief Resets the enemies array to its initial conditions
+ * 
+ */
 void reset_enemies();
 
 #endif

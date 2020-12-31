@@ -11,20 +11,54 @@
 #include "../img/hud_overlay_score.xpm"
 #include "../img/hud_overlay_charges.xpm"
 
+/**
+ * @brief draws the current HUD
+ * 
+ */
 void draw_current_hud();
 
+/**
+ * @brief Sets the hud values (score, ammo and wave) to their correct values
+ * 
+ */
 void set_hud_values();
 
+/**
+ * @brief Draws the current score
+ * 
+ */
 void draw_score();
 
+/**
+ * @brief Draws the current wave
+ * 
+ */
 void draw_waves();
 
+/**
+ * @brief Draws the current charge
+ * 
+ */
 void draw_charges();
 
+/**
+ * @brief Draws a given digit
+ * 
+ * @param xpm the digit to draw
+ */
 void draw_digit(xpm_object* xpm);
 
+/**
+ * @brief Frees the memory related to a given xpm
+ * 
+ * @param xpm the xpm to free
+ */
 void free_xpm_mem(xpm_object* xpm);
 
+/**
+ * @brief Resets the hud
+ * 
+ */
 void reset_hud();
 
 #endif

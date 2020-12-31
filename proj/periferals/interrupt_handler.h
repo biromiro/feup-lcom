@@ -86,7 +86,14 @@ void kbd_handler();
  */
 void rtc_handler();
 
-
+/**
+ * @brief Reads the information on the serial port and handles it
+ * 
+ */
 void ser_handler();
 
+/**
+ * @brief Resets all game assets for a possible restart
+ * 
+ */
 void reset_game();

@@ -110,9 +110,9 @@ void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp)
           set_power_up_alarm(1);
           set_enemy_throw(0xF);
         }
-        else if(gs==COOP)
+        else if(gs==COOP){
           send_byte(0x53);
-          
+        }
       }else if(gs == GAME){
         if(!sentP1 && coop) send_mouse_info(cursor);
       }
