@@ -1,10 +1,28 @@
-echo "If this doesnt work run the following command"
-echo "sudo apt install imagemagick"
-mkdir xpm
-cd sprites
+mkdir Idle_xpm
+cd Idle
 for f in *; do
   if [[ $f =~ \.png$ ]]; then
-    convert "$f" "../xpm/${f%.png}.xpm"
+    convert "$f" "../Idle_xpm/${f%.png}.xpm"
+  else
+    echo Nope!
+  fi
+done
+cd ..
+mkdir IdleBlink_xpm
+cd IdleBlink
+for f in *; do
+  if [[ $f =~ \.png$ ]]; then
+    convert "$f" "../IdleBlink_xpm/${f%.png}.xpm"
+  else
+    echo Nope!
+  fi
+done
+cd ..
+mkdir Walking_xpm
+cd Walking
+for f in *; do
+  if [[ $f =~ \.png$ ]]; then
+    convert "$f" "../Walking_xpm/${f%.png}.xpm"
   else
     echo Nope!
   fi
