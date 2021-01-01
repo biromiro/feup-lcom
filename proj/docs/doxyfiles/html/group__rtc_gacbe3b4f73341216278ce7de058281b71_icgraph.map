@@ -1,0 +1,8 @@
+<map id="rtc_read_info" name="rtc_read_info">
+<area shape="rect" id="node1" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="460,56,567,83"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga14d5cf47836341645265207264f150f5" title="Updates date and time memory registers." alt="" coords="285,5,381,32"/>
+<area shape="rect" id="node5" href="$group__rtc.html#ga16f3810b612672b64b0ed961c38f2ce6" title="Sets up the rate at which the periodic interrupts will send new enemies." alt="" coords="264,56,403,83"/>
+<area shape="rect" id="node6" href="$group__rtc.html#gaa90e57cc419c0a865cf925cad4d9dd63" title="Sets up the alarm to power up in game." alt="" coords="255,107,412,133"/>
+<area shape="rect" id="node3" href="$group__rtc.html#ga0b9ae809cf571f61e54712a23c65348e" title="RTC Interrupt Handler." alt="" coords="148,5,207,32"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#ga9a1321dd741df6d233bf497ab078e32b" title="Handles the real time clock." alt="" coords="5,5,100,32"/>
+</map>

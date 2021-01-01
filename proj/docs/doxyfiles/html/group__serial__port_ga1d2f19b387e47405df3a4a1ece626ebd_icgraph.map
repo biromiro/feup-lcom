@@ -1,0 +1,4 @@
+<map id="ser_subscribe_int" name="ser_subscribe_int">
+<area shape="rect" id="node1" title="subscribes the serial port interrupts" alt="" coords="208,5,343,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#gab570339ba658dea7f08a99b9374e605f" title="Subscribes all the peripherals Timer, Keyboard and Timer." alt="" coords="5,5,160,32"/>
+</map>

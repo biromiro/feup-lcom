@@ -1,0 +1,13 @@
+<map id="draw_current_hud" name="draw_current_hud">
+<area shape="rect" id="node1" title="draws the current HUD" alt="" coords="5,132,144,159"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2ea614919259db8c5622de2917c64c9e" title="Creates a sprite object." alt="" coords="200,5,307,32"/>
+<area shape="rect" id="node3" href="$group__hud.html#ga38246dc8d28b56ce66e6838b601e3bed" title="Draws the current charge." alt="" coords="197,56,309,83"/>
+<area shape="rect" id="node4" href="$group__hud.html#ga200dcd33e635176ca83ddde81b7b7610" title="Draws the current score." alt="" coords="205,107,301,133"/>
+<area shape="rect" id="node5" href="$group__hud.html#gafd0572ba0ddc563bcfe37074390b11fa" title="Draws the current wave." alt="" coords="202,157,305,184"/>
+<area shape="rect" id="node6" href="$group__video__gr.html#ga9eb1c56f052919a0f0a3fc29a9821d7f" title="Prints a XPM." alt="" coords="209,208,297,235"/>
+<area shape="rect" id="node8" href="$group__hud.html#ga10576846fe372e05ed2cc35eb4b83e4a" title="Sets the hud values (score, ammo and wave) to their correct values." alt="" coords="192,271,315,297"/>
+<area shape="rect" id="node7" href="$group__video__gr.html#ga08c498ffeb0a3962e3b7711b57397741" title="Draws a given pixel with a given color." alt="" coords="383,195,498,221"/>
+<area shape="rect" id="node9" href="$group__magic__blast.html#gaf4f87fed374d0d478316d82eae85292c" title="Get the Available Blasts." alt="" coords="363,245,519,272"/>
+<area shape="rect" id="node10" href="$group__enemies.html#gaf471ad2ab45143ba8b77881ff0a8ae03" title="Get the current game score." alt="" coords="398,296,483,323"/>
+<area shape="rect" id="node11" href="$group__game__state.html#ga877c167acf09b2c71f0e0f878859434e" title="Get the current wave number." alt="" coords="398,347,483,373"/>
+</map>

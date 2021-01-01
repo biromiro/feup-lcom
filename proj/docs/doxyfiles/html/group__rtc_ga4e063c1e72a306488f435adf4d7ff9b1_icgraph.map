@@ -1,0 +1,4 @@
+<map id="print_time" name="print_time">
+<area shape="rect" id="node1" title="Prints to the screen the current time." alt="" coords="144,5,233,32"/>
+<area shape="rect" id="node2" href="$group__hud.html#ga4f3d01370e91e93f6b4fe1f9d8201e9f" title="Draws the time to the screen." alt="" coords="5,5,96,32"/>
+</map>

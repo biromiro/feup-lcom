@@ -1,0 +1,5 @@
+<map id="send_bytes_in_queue" name="send_bytes_in_queue">
+<area shape="rect" id="node1" title="Tries to send all bytes in queue to serial port transmitter holding register until not possible." alt="" coords="261,5,424,32"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga9353fabdd05ea291e02243dace57ae1c" title="Handles a serial port interrupt." alt="" coords="152,5,213,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="5,5,104,32"/>
+</map>

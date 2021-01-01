@@ -1,0 +1,163 @@
+\hypertarget{i8042_8h}{}\doxysection{/home/goncalo/\+L\+C\+O\+M/shared/proj/src/periferals/i8042.h File Reference}
+\label{i8042_8h}\index{/home/goncalo/LCOM/shared/proj/src/periferals/i8042.h@{/home/goncalo/LCOM/shared/proj/src/periferals/i8042.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i8042_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__i8042_gaa58b06c8d2e76061abcb01b8f2bbf575}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+E\+S\+C\+\_\+\+K\+EY}}~0x81
+\begin{DoxyCompactList}\small\item\em scancode (breakcode) of E\+SC key \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga12a84af4b9deb45f6a10d7b609725fd8}{K\+B\+C\+\_\+\+M\+S\+B\+\_\+\+S\+C\+N\+CD}}~B\+IT(7)
+\begin{DoxyCompactList}\small\item\em scancode diff (make or break) in B\+IT 7 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga5f726701875fb066460bc2337a52d8bc}{K\+B\+C\+\_\+\+M\+K\+\_\+\+A\+\_\+\+K\+EY}}~0x1e
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga4bdacdd475d918723ebf29d7555da581}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+A\+\_\+\+K\+EY}}~0x9e
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga138a82342b002f9f9b34f910fedeb431}{K\+B\+C\+\_\+\+M\+K\+\_\+\+S\+\_\+\+K\+EY}}~0x1F
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga4ba4bbaf468063a95cb146685cd75dc9}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+S\+\_\+\+K\+EY}}~0x9f
+\item 
+\#define \mbox{\hyperlink{group__i8042_gab85154fc8034fc74f9ec3beebd14221c}{K\+B\+C\+\_\+\+M\+K\+\_\+\+D\+\_\+\+K\+EY}}~0x20
+\item 
+\#define \mbox{\hyperlink{group__i8042_gab7f96b7efb24662d2e729485378239bf}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+D\+\_\+\+K\+EY}}~0xa0
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga066b5c35e926a5fe1b9e4a42b201a14d}{K\+B\+C\+\_\+\+M\+K\+\_\+\+W\+\_\+\+K\+EY}}~0x11
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga07f67ba13932e921a97de386e1c55e9b}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+W\+\_\+\+K\+EY}}~0x91
+\item 
+\#define \mbox{\hyperlink{group__i8042_gacf926951944b6cf370b7229ebd50dd8b}{T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ}}~1193182
+\begin{DoxyCompactList}\small\item\em clock frequency for timer in PC and AT \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga30bf84c312af248cb81bb224e09f9ba8}{T\+I\+M\+E\+R0\+\_\+\+I\+RQ}}~0
+\begin{DoxyCompactList}\small\item\em Timer 0 I\+RQ line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga16c5827f043d82f87c726c2d4369c11d}{K\+B\+C\+\_\+\+I\+RQ}}~1
+\begin{DoxyCompactList}\small\item\em K\+BC I\+RQ line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga85964cb90343bb1a029b1d1b4229f910}{M\+O\+U\+S\+E\+\_\+\+I\+RQ}}~12
+\begin{DoxyCompactList}\small\item\em Mouse I\+RQ line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga4e22feb6ffbc1cda32fadff5c740dc51}{R\+T\+C\+\_\+\+I\+RQ}}~8
+\item 
+\#define \mbox{\hyperlink{group__i8042_gacc9ff9df4a9674a1ce9ba08fc4a4679e}{T\+I\+M\+E\+R\+\_\+0}}~0x40
+\begin{DoxyCompactList}\small\item\em Timer 0 count register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga34b14687d83496940a236351fbbb1aea}{K\+B\+C\+\_\+\+S\+T\+A\+T\+\_\+\+R\+EG}}~0x64
+\begin{DoxyCompactList}\small\item\em K\+BC status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga19b698bdf2e0783e04e17153b49128bd}{K\+B\+C\+\_\+\+I\+N\+\_\+\+B\+U\+F\+\_\+\+C\+MD}}~0x64
+\begin{DoxyCompactList}\small\item\em K\+BC input buffer for commands. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaefc1b7a81b128e9722a6d61a5b9d3e58}{K\+B\+C\+\_\+\+I\+N\+\_\+\+B\+U\+F\+\_\+\+A\+RG}}~0x60
+\begin{DoxyCompactList}\small\item\em K\+BC input buffer for arguments. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga1ccde68b2b6d4e45b50eef1403e10bb7}{K\+B\+C\+\_\+\+O\+U\+T\+\_\+\+B\+UF}}~0x60
+\begin{DoxyCompactList}\small\item\em K\+BC output buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga82a39176e42fe8f48025521b9674cdc6}{K\+B\+C\+\_\+\+P\+A\+R\+I\+TY}}~B\+IT(7)
+\begin{DoxyCompactList}\small\item\em K\+BC parity error bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga34599ca5c55cb9be3b235d7422aff45c}{K\+B\+C\+\_\+\+T\+I\+M\+E\+O\+UT}}~B\+IT(6)
+\begin{DoxyCompactList}\small\item\em K\+BC timeout error bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaaa796d09d1e94025da456738295342f2}{K\+B\+C\+\_\+\+A\+UX}}~B\+IT(5)
+\begin{DoxyCompactList}\small\item\em K\+BC mouse data bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga869c99dd1e3e026e766b3a1c75729df1}{K\+B\+C\+\_\+\+I\+NH}}~B\+IT(4)
+\begin{DoxyCompactList}\small\item\em K\+BC inhibit flag bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga933a8846def486d800a725dc3959a74b}{K\+B\+C\+\_\+\+A2}}~B\+IT(3)
+\begin{DoxyCompactList}\small\item\em K\+BC a2 input line bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga9e3fddced5da8ee918cc20e74ff124d8}{K\+B\+C\+\_\+\+S\+YS}}~B\+IT(2)
+\begin{DoxyCompactList}\small\item\em K\+BC system flag bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gac1649d41f8ba9a02fa70ec4e600d5e4a}{K\+B\+C\+\_\+\+I\+BF}}~B\+IT(1)
+\begin{DoxyCompactList}\small\item\em K\+BC input buffer full bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga36930de8a703505c95fe133095dcfe06}{K\+B\+C\+\_\+\+O\+BF}}~B\+IT(0)
+\begin{DoxyCompactList}\small\item\em K\+BC output buffer full bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaaee8eae833c3cf959324f29862c488a8}{K\+B\+C\+\_\+\+R\+\_\+\+C\+M\+D\+\_\+B}}~0x20
+\begin{DoxyCompactList}\small\item\em K\+BC command to read command byte. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga6c3bb7fed8322058c9a872270e902331}{K\+B\+C\+\_\+\+W\+\_\+\+C\+M\+D\+\_\+B}}~0x60
+\begin{DoxyCompactList}\small\item\em K\+BC command to write command byte. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gae138ccd6270f156e7cea18290da10683}{K\+B\+C\+\_\+\+C\+HK}}~0x\+AA
+\begin{DoxyCompactList}\small\item\em K\+BC command to self-\/check. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gacd1c483b30c192cab72b555a6ec8efd1}{K\+B\+C\+\_\+\+C\+H\+K\+\_\+\+K\+B\+D\+\_\+I}}~0x\+AB
+\begin{DoxyCompactList}\small\item\em K\+BC command to check keyboard interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga6a7645f732e72fc30d5f882fccfa4038}{K\+B\+C\+\_\+\+D\+I\+S\+\_\+\+K\+B\+D\+\_\+I}}~0\+X\+AD
+\begin{DoxyCompactList}\small\item\em K\+BC command to disable K\+BD interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga0a2568cc57d80639792911dd52e82fa9}{K\+B\+C\+\_\+\+E\+N\+\_\+\+K\+B\+D\+\_\+I}}~0\+X\+AE
+\begin{DoxyCompactList}\small\item\em K\+BC command to enable K\+BD interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaa7b58a9223dfb3c191dbd77c0a0881f2}{K\+B\+C\+\_\+\+D\+I\+S2}}~B\+IT(5)
+\begin{DoxyCompactList}\small\item\em disable mouse interface \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga9bdab8e245cb5e5a8217cd4465abd5e6}{K\+B\+C\+\_\+\+D\+IS}}~B\+IT(4)
+\begin{DoxyCompactList}\small\item\em disable keyboard interface \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gad0c59bfa0e9250d4863516848740cae6}{K\+B\+C\+\_\+\+I\+N\+T2}}~B\+IT(1)
+\begin{DoxyCompactList}\small\item\em enable interrupt on O\+BF, from mouse \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga43a8c52761b7ae2c8d67562519b734af}{K\+B\+C\+\_\+\+I\+NT}}~B\+IT(0)
+\begin{DoxyCompactList}\small\item\em enable interrupt on O\+BF, from keyboard \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga1a9c1cdc273c69f115e1e77bc1809fe5}{K\+B\+C\+\_\+2\+B\+Y\+T\+E\+\_\+\+C\+O\+DE}}~0x\+E0
+\begin{DoxyCompactList}\small\item\em the first byte of a 2 byte scancode \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaab963441b4def6316c334b9061af3f99}{K\+B\+C\+\_\+\+A\+CK}}~0x\+FA /$\ast$$\ast$ @brief acknowledgment byte if everything OK$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__i8042_gad92274e194e7c305899651cb7debd626}{K\+B\+C\+\_\+\+N\+A\+CK}}~0x\+FE /$\ast$$\ast$ @brief acknowledgment byte if invalid byte (may be because of a serial communication error)$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga86e7c68b4116efe0217a547611276893}{K\+B\+C\+\_\+\+E\+R\+R\+OR}}~0x\+FC /$\ast$$\ast$ @brief acknowledgment byte if second consecutive invalid byte$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga21941c53d0d55ebc687fed814353fa2e}{M\+O\+U\+S\+E\+\_\+\+E\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EP}}~0x\+F4
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga8c1ed4153caaf985dbf8876dc2ba1ce3}{M\+O\+U\+S\+E\+\_\+\+D\+I\+S\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EP}}~0x\+F5
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga1e3ddcfb2f10a15ceec6b3117e05021d}{M\+O\+U\+S\+E\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+M\+O\+DE}}~0x\+EA
+\item 
+\#define \mbox{\hyperlink{group__i8042_gaed1206542090cfb9c7d9210a4b45e2ae}{M\+O\+U\+S\+E\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+M\+O\+DE}}~0x\+F0
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga6065e2718e2c8e4a5b5d005cba836cbc}{M\+O\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+D\+A\+TA}}~0x\+EB
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga710b98232df2c563009e6f8a6cd18220}{R\+T\+C\+\_\+\+A\+D\+D\+R\+\_\+\+R\+EG}}~0x70
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga2f258a00c59c3f347c8d2d4a75471ce0}{R\+T\+C\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EG}}~0x71
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga7afc252edab3838e2b8ad3b6e04bcdac}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+S\+EC}}~0x00
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga4e0584a7e5ce17bdf3e13798fce5dfe6}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+C\+\_\+\+A\+L\+RM}}~0x01
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga039675f88b3f7e332eaab4de7d8ddf41}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+M\+IN}}~0x02
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga68921faddf1a44b0fec7f6868753ffcb}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+M\+I\+N\+\_\+\+A\+L\+RM}}~0x03
+\item 
+\#define \mbox{\hyperlink{group__i8042_gab3331f47560931b9be78c3dcdce63d61}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+UR}}~0x04
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga16194ec53b201165e7cee785b7ffe250}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+U\+R\+\_\+\+A\+L\+RM}}~0x05
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga7069e6a89e0a7430c22e8520f305786f}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+D\+A\+Y\+\_\+\+W\+E\+EK}}~0x06
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga778362da594ed29aa60067da06077283}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+D\+A\+Y\+\_\+\+M\+O\+N\+TH}}~0x07
+\item 
+\#define \mbox{\hyperlink{group__i8042_gaee20e80324cf99d8358df7ede308c657}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+M\+O\+N\+TH}}~0x08
+\item 
+\#define \mbox{\hyperlink{group__i8042_gad95b07dd9002d89ad203534c9733ab49}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+\+Y\+E\+AR}}~0x09
+\item 
+\#define \mbox{\hyperlink{group__i8042_gae5ffad506b363f28bed1bb5e5926bd2d}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+A}}~0x0A
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga03954a63ead3f02b7790ce79e9877eea}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+B}}~0x0B
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga1bd6f771dc313129723812fe7ac52d9e}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+C}}~0x0C
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga34c8604ade07f4f7ff7e919f2d4c56b4}{R\+T\+C\+\_\+\+R\+E\+G\+\_\+D}}~0x0D
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga2ebe3d816d8b2e9f1be075554e4135b3}{R\+T\+C\+\_\+\+U\+IP}}~B\+IT(7)
+\item 
+\#define \mbox{\hyperlink{group__i8042_gaac2db7539ba4f42b7a399faedc23df39}{R\+T\+C\+\_\+\+S\+ET}}~B\+IT(7)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga8aa3ee782d809767b9e03c49c7756083}{R\+T\+C\+\_\+\+P\+IE}}~B\+IT(6)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga6a293d49e03a7f92a09cbb02fb49a08e}{R\+T\+C\+\_\+\+A\+IE}}~B\+IT(5)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga3fa059415b73592c094cd9a3f79e6795}{R\+T\+C\+\_\+\+U\+IE}}~B\+IT(4)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga1f8f94a2096173944bc82fec3e9bbd8a}{R\+T\+C\+\_\+\+S\+Q\+WE}}~B\+IT(3)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga01c8262113ddc3b618fb7c97395ed142}{R\+T\+C\+\_\+\+I\+R\+QF}}~B\+IT(7)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga9d9fa73fa39aa2500273df240594afe6}{R\+T\+C\+\_\+\+PF}}~B\+IT(6)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga0ed62fab6c50790f2c4b71849f2000b2}{R\+T\+C\+\_\+\+AF}}~B\+IT(5)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga7c63615d9172c9065f5b9d1875ef6d04}{R\+T\+C\+\_\+\+UF}}~B\+IT(4)
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga8ca4547b66ba6771ca72fa132bb4cec0}{R\+T\+C\+\_\+\+D\+O\+N\+T\+\_\+\+C\+A\+RE}}~0x\+FF
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga39fb662b07f3f43ba5db3dfe19b2c5f3}{U\+P\+D\+A\+T\+E\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+C\+RO}}~244
+\end{DoxyCompactItemize}

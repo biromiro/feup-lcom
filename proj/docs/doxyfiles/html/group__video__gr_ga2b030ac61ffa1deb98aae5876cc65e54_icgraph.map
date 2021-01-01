@@ -1,0 +1,11 @@
+<map id="get_h_resolution" name="get_h_resolution">
+<area shape="rect" id="node1" title="Gets the horizontal resolution." alt="" coords="737,107,868,133"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#ga4bddaae2a377242e52609042fb4c5113" title="Creates the game objects (sprites)" alt="" coords="528,5,689,32"/>
+<area shape="rect" id="node3" href="$group__hud.html#ga92264a80f56133f509aabd1b25fd9b7d" title="Draws the date to the screen." alt="" coords="563,56,654,83"/>
+<area shape="rect" id="node4" href="$group__character__movement.html#ga1d1c21fe72062dbf77bd639f0cc8f886" title="resets character&#39;s starting position, speed and current sprite" alt="" coords="543,107,674,133"/>
+<area shape="rect" id="node6" href="$group__enemies.html#gaa76b8d70a84c930d0cd5b97ff27fff36" title="Creates a &quot;Magic Blast&quot; XPM, calculates its speed and updates the available blasts." alt="" coords="547,157,670,184"/>
+<area shape="rect" id="node7" href="$group__character__movement.html#ga2f6b06535f1c7e2d3d259a34820afa12" title="Checks if the character has hit a wall." alt="" coords="553,208,664,235"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="324,107,423,133"/>
+<area shape="rect" id="node8" href="$group__character__movement.html#gad596b8c7de75677690bccd82c144bf5f" title="Updates the movement of a specific player." alt="" coords="267,201,480,242"/>
+<area shape="rect" id="node9" href="$group__character__movement.html#ga6e1b717308ebffc918149d6e179b2e7a" title="Updates the character movement." alt="" coords="5,208,219,235"/>
+</map>

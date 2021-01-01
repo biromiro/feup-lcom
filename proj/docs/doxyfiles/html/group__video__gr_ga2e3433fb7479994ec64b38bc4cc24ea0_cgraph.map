@@ -1,0 +1,5 @@
+<map id="print_animated_sprite" name="print_animated_sprite">
+<area shape="rect" id="node1" title="Prints an animated sprite." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga9eb1c56f052919a0f0a3fc29a9821d7f" title="Prints a XPM." alt="" coords="219,5,307,32"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga08c498ffeb0a3962e3b7711b57397741" title="Draws a given pixel with a given color." alt="" coords="355,5,469,32"/>
+</map>

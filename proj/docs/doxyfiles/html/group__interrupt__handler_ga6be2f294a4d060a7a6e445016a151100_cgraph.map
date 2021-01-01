@@ -1,0 +1,21 @@
+<map id="reset_game" name="reset_game">
+<area shape="rect" id="node1" title="Resets all game assets for a possible restart." alt="" coords="5,183,104,209"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#ga1d1c21fe72062dbf77bd639f0cc8f886" title="resets character&#39;s starting position, speed and current sprite" alt="" coords="185,56,315,83"/>
+<area shape="rect" id="node5" href="$group__enemies.html#ga2ca6d67486265e0827f8970dd7af0fda" title="Resets the enemies array to its initial conditions." alt="" coords="191,107,309,133"/>
+<area shape="rect" id="node8" href="$group__hud.html#ga10599cdd9b2651b513185f65fc47f5a7" title="Resets the hud." alt="" coords="207,157,293,184"/>
+<area shape="rect" id="node9" href="$group__magic__blast.html#ga4cb0d6dd176dc9e81b84995f439d6f2c" title="Resets the magic blasts array to its initial values." alt="" coords="176,208,324,235"/>
+<area shape="rect" id="node12" href="$group__game__state.html#gabcbe762739d5d91623a3cdb097286069" title="Resets the rtc parameters after the game has ended." alt="" coords="152,259,348,285"/>
+<area shape="rect" id="node13" href="$group__serial__port.html#ga04571865b824bc933dc2322a794aafea" title="clears all fifos (ser port queues and program queues)" alt="" coords="209,309,291,336"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga2b030ac61ffa1deb98aae5876cc65e54" title="Gets the horizontal resolution." alt="" coords="432,5,563,32"/>
+<area shape="rect" id="node4" href="$group__video__gr.html#ga4437f47f63b7ede9afb8cb03bc440bf2" title="Gets the vertical resolution." alt="" coords="432,56,563,83"/>
+<area shape="rect" id="node6" href="$group__enemies.html#gad71ad0f82650f114326eef28f17bdb9d" title="Free memory related to the enemies." alt="" coords="442,107,553,133"/>
+<area shape="rect" id="node7" href="$group__enemies.html#gaf3b1b7ee80375a9f4aed228b58d0869e" title="Set up the enemies available (10)" alt="" coords="411,157,583,184"/>
+<area shape="rect" id="node10" href="$group__magic__blast.html#gab530b1f7370136f94f2eed25369cc281" title="Frees all memory related to the magic blasts." alt="" coords="427,208,568,235"/>
+<area shape="rect" id="node11" href="$group__magic__blast.html#gadd1bfc20a326c44a51d874c570ea3a91" title="Set up the magic blasts available (10)" alt="" coords="396,259,599,285"/>
+<area shape="rect" id="node14" href="$group__serial__port.html#ga094cfcecf9cfdf5583d0260ef9b8aa64" title="clears the serial port fifos" alt="" coords="456,309,539,336"/>
+<area shape="rect" id="node17" href="$group__queue.html#gaff071ac301442edc8c4348f9a6b25afb" title="Pops the front element of the queue." alt="" coords="474,360,521,387"/>
+<area shape="rect" id="node15" href="$group__serial__port.html#gac6ec0fcd144e96b116d804d5c9ec9235" title="Reads the value of a given serial port port, adding its base address." alt="" coords="659,259,743,285"/>
+<area shape="rect" id="node16" href="$group__serial__port.html#gadd1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="647,309,755,336"/>
+<area shape="rect" id="node18" href="$group__queue.html#ga32df32dccfc5eadc233531804f0cb305" title="Gets the front element of the queue." alt="" coords="674,360,727,387"/>
+<area shape="rect" id="node19" href="$group__queue.html#ga1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="803,385,885,412"/>
+</map>

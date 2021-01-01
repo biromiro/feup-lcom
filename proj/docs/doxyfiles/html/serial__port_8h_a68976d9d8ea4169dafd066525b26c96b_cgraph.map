@@ -1,0 +1,6 @@
+<map id="send_scancode" name="send_scancode">
+<area shape="rect" id="node1" title="Sends a scancode to the other player." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node2" href="$serial__port_8c.html#ae5efe9b828d15d93690271c1a6991f0c" title="Tries to send a byte to the serial port transmitter holding register, stores it in sending queue if n..." alt="" coords="175,5,264,32"/>
+<area shape="rect" id="node3" href="$queue_8c.html#aa94c11a51084b7b7d018502f796751c7" title="Pushes an element onto the queue." alt="" coords="312,5,365,32"/>
+<area shape="rect" id="node4" href="$queue_8c.html#ab2a149bb751500c47d4f8de95dec4cce" title="Checks if the given queue is full." alt="" coords="413,5,475,32"/>
+</map>

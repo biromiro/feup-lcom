@@ -1,0 +1,5 @@
+<map id="reset_characters" name="reset_characters">
+<area shape="rect" id="node1" title="resets character&#39;s starting position, speed and current sprite" alt="" coords="5,31,136,57"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2b030ac61ffa1deb98aae5876cc65e54" title="Gets the horizontal resolution." alt="" coords="184,5,315,32"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga4437f47f63b7ede9afb8cb03bc440bf2" title="Gets the vertical resolution." alt="" coords="184,56,315,83"/>
+</map>

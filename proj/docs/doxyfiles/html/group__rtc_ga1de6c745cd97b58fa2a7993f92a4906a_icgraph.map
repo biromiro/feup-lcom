@@ -1,0 +1,4 @@
+<map id="decimal_to_bcd" name="decimal_to_bcd">
+<area shape="rect" id="node1" title="Converts a given decimal number to its corresponding BCD value." alt="" coords="211,5,335,32"/>
+<area shape="rect" id="node2" href="$group__rtc.html#gaa90e57cc419c0a865cf925cad4d9dd63" title="Sets up the alarm to power up in game." alt="" coords="5,5,163,32"/>
+</map>

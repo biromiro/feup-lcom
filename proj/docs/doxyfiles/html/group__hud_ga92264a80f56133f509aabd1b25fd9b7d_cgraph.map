@@ -1,0 +1,5 @@
+<map id="draw_date" name="draw_date">
+<area shape="rect" id="node1" title="Draws the date to the screen." alt="" coords="5,31,96,57"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2b030ac61ffa1deb98aae5876cc65e54" title="Gets the horizontal resolution." alt="" coords="144,5,275,32"/>
+<area shape="rect" id="node3" href="$group__rtc.html#ga413291046a969ebda73fcf3215a42a00" title="Prints to the screen the current date." alt="" coords="165,56,253,83"/>
+</map>

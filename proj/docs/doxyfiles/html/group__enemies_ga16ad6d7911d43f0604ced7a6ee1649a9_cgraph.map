@@ -1,0 +1,11 @@
+<map id="checking_collision" name="checking_collision">
+<area shape="rect" id="node1" title="Checks collisions between active blasts and active enemies and active enemies and main character." alt="" coords="5,157,147,184"/>
+<area shape="rect" id="node2" href="$group__enemies.html#gace9b7aa310b5a946367805e2a1682847" title="Checks if there was a collision between an enemy and a projectile." alt="" coords="224,5,352,32"/>
+<area shape="rect" id="node4" href="$group__magic__blast.html#gaf4f87fed374d0d478316d82eae85292c" title="Get the Available Blasts." alt="" coords="210,56,366,83"/>
+<area shape="rect" id="node5" href="$group__character__movement.html#gaef9e9d58a14d833f17f0adeee6ba09fe" title="Get the current character object." alt="" coords="195,107,381,133"/>
+<area shape="rect" id="node6" href="$group__character__movement.html#gab47ab15f198e2708f3d1c69b1c73cfaf" title="Get the current character p2 object." alt="" coords="195,157,381,184"/>
+<area shape="rect" id="node7" href="$group__magic__blast.html#ga99f4f1b1d4407c3d7f24da52c7f8d069" title="Get the Total Blasts." alt="" coords="225,208,351,235"/>
+<area shape="rect" id="node8" href="$group__enemies.html#ga0241b1599cd1a215aee522d1330b60e9" title="Reindexes the magic blasts." alt="" coords="221,259,355,285"/>
+<area shape="rect" id="node9" href="$group__magic__blast.html#ga0b453e22ecb3117166f6ecba1893e7f7" title="Reindexes the magic blasts." alt="" coords="206,309,370,336"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga89e5e15fb2c065221f58c6d883da6049" title="Get the bytes per pixel of the mode." alt="" coords="429,5,581,32"/>
+</map>

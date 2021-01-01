@@ -1,0 +1,195 @@
+\hypertarget{group__enemies}{}\doxysection{enemies}
+\label{group__enemies}\index{enemies@{enemies}}
+
+
+Functions for dealing with the enemies.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__enemies_gaf3b1b7ee80375a9f4aed228b58d0869e}{set\+\_\+enemies\+\_\+available}} ()
+\begin{DoxyCompactList}\small\item\em Set up the enemies available (10) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__enemies_gad71ad0f82650f114326eef28f17bdb9d}{free\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Free memory related to the enemies. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__enemies_gaa76b8d70a84c930d0cd5b97ff27fff36}\label{group__enemies_gaa76b8d70a84c930d0cd5b97ff27fff36}} 
+void \mbox{\hyperlink{group__enemies_gaa76b8d70a84c930d0cd5b97ff27fff36}{throw\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Creates a \char`\"{}\+Magic Blast\char`\"{} X\+PM, calculates its speed and updates the available blasts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__enemies_gad2e1451eca043b42ad7ff94133982f5f}\label{group__enemies_gad2e1451eca043b42ad7ff94133982f5f}} 
+void \mbox{\hyperlink{group__enemies_gad2e1451eca043b42ad7ff94133982f5f}{print\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Prints the blasts If a blast is off-\/screen, frees its memory and reindexes the blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__enemies_ga0241b1599cd1a215aee522d1330b60e9}{reindex\+\_\+enemies}} (size\+\_\+t positions)
+\begin{DoxyCompactList}\small\item\em Reindexes the magic blasts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__enemies_ga16ad6d7911d43f0604ced7a6ee1649a9}{checking\+\_\+collision}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$$\ast$magic\+\_\+blasts)
+\begin{DoxyCompactList}\small\item\em Checks collisions between active blasts and active enemies and active enemies and main character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__enemies_gace9b7aa310b5a946367805e2a1682847}{enemy\+\_\+collision}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$magic\+\_\+blast, \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$enemy)
+\begin{DoxyCompactList}\small\item\em Checks if there was a collision between an enemy and a projectile. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__enemies_gaf471ad2ab45143ba8b77881ff0a8ae03}{get\+\_\+score}} ()
+\begin{DoxyCompactList}\small\item\em Get the current game score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__enemies_ga2ca6d67486265e0827f8970dd7af0fda}{reset\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Resets the enemies array to its initial conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for dealing with the enemies. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__enemies_ga16ad6d7911d43f0604ced7a6ee1649a9}\label{group__enemies_ga16ad6d7911d43f0604ced7a6ee1649a9}} 
+\index{enemies@{enemies}!checking\_collision@{checking\_collision}}
+\index{checking\_collision@{checking\_collision}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{checking\_collision()}{checking\_collision()}}
+{\footnotesize\ttfamily int checking\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$$\ast$}]{magic\+\_\+blasts }\end{DoxyParamCaption})}
+
+
+
+Checks collisions between active blasts and active enemies and active enemies and main character. 
+
+Frees the allocated memory of the respective blasts and enemies, if there was in fact a collision
+
+\begin{DoxyReturn}{Returns}
+0 if there is no collision between player\& enemy, 1 if there is ~\newline
+ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__enemies_ga16ad6d7911d43f0604ced7a6ee1649a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__enemies_gace9b7aa310b5a946367805e2a1682847}\label{group__enemies_gace9b7aa310b5a946367805e2a1682847}} 
+\index{enemies@{enemies}!enemy\_collision@{enemy\_collision}}
+\index{enemy\_collision@{enemy\_collision}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{enemy\_collision()}{enemy\_collision()}}
+{\footnotesize\ttfamily int enemy\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{magic\+\_\+blast,  }\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Checks if there was a collision between an enemy and a projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em magic\+\_\+blasts} & Magic blast \\
+\hline
+{\em enemy} & Enemy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if there is no collision, 1 if there is 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{group__enemies_gace9b7aa310b5a946367805e2a1682847_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{group__enemies_gace9b7aa310b5a946367805e2a1682847_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__enemies_gad71ad0f82650f114326eef28f17bdb9d}\label{group__enemies_gad71ad0f82650f114326eef28f17bdb9d}} 
+\index{enemies@{enemies}!free\_enemies@{free\_enemies}}
+\index{free\_enemies@{free\_enemies}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{free\_enemies()}{free\_enemies()}}
+{\footnotesize\ttfamily void free\+\_\+enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free memory related to the enemies. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__enemies_gad71ad0f82650f114326eef28f17bdb9d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__enemies_gaf471ad2ab45143ba8b77881ff0a8ae03}\label{group__enemies_gaf471ad2ab45143ba8b77881ff0a8ae03}} 
+\index{enemies@{enemies}!get\_score@{get\_score}}
+\index{get\_score@{get\_score}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{get\_score()}{get\_score()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current game score. 
+
+\begin{DoxyReturn}{Returns}
+the score 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__enemies_gaf471ad2ab45143ba8b77881ff0a8ae03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__enemies_ga0241b1599cd1a215aee522d1330b60e9}\label{group__enemies_ga0241b1599cd1a215aee522d1330b60e9}} 
+\index{enemies@{enemies}!reindex\_enemies@{reindex\_enemies}}
+\index{reindex\_enemies@{reindex\_enemies}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{reindex\_enemies()}{reindex\_enemies()}}
+{\footnotesize\ttfamily void reindex\+\_\+enemies (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{positions }\end{DoxyParamCaption})}
+
+
+
+Reindexes the magic blasts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & Position of freed up blast object \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{group__enemies_ga0241b1599cd1a215aee522d1330b60e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__enemies_ga2ca6d67486265e0827f8970dd7af0fda}\label{group__enemies_ga2ca6d67486265e0827f8970dd7af0fda}} 
+\index{enemies@{enemies}!reset\_enemies@{reset\_enemies}}
+\index{reset\_enemies@{reset\_enemies}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{reset\_enemies()}{reset\_enemies()}}
+{\footnotesize\ttfamily void reset\+\_\+enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the enemies array to its initial conditions. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{group__enemies_ga2ca6d67486265e0827f8970dd7af0fda_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{group__enemies_ga2ca6d67486265e0827f8970dd7af0fda_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__enemies_gaf3b1b7ee80375a9f4aed228b58d0869e}\label{group__enemies_gaf3b1b7ee80375a9f4aed228b58d0869e}} 
+\index{enemies@{enemies}!set\_enemies\_available@{set\_enemies\_available}}
+\index{set\_enemies\_available@{set\_enemies\_available}!enemies@{enemies}}
+\doxysubsubsection{\texorpdfstring{set\_enemies\_available()}{set\_enemies\_available()}}
+{\footnotesize\ttfamily void set\+\_\+enemies\+\_\+available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set up the enemies available (10) 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__enemies_gaf3b1b7ee80375a9f4aed228b58d0869e_icgraph}
+\end{center}
+\end{figure}

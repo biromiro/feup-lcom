@@ -1,0 +1,4 @@
+<map id="ser_config" name="ser_config">
+<area shape="rect" id="node1" title="configs the serial port communication settings" alt="" coords="124,5,212,32"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga81d06686138301b58a09aafa8b6944c7" title="initializes the serial port" alt="" coords="5,5,76,32"/>
+</map>

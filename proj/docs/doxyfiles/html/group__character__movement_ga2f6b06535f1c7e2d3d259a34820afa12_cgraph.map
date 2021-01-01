@@ -1,0 +1,5 @@
+<map id="wall_collision" name="wall_collision">
+<area shape="rect" id="node1" title="Checks if the character has hit a wall." alt="" coords="5,31,116,57"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga89e5e15fb2c065221f58c6d883da6049" title="Get the bytes per pixel of the mode." alt="" coords="164,5,316,32"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga2b030ac61ffa1deb98aae5876cc65e54" title="Gets the horizontal resolution." alt="" coords="175,56,305,83"/>
+</map>

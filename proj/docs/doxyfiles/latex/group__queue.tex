@@ -1,0 +1,245 @@
+\hypertarget{group__queue}{}\doxysection{queue}
+\label{group__queue}\index{queue@{queue}}
+
+
+Functions for using a queue.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_queue}{Queue}}
+\begin{DoxyCompactList}\small\item\em Represents a queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{group__queue_ga006f6f78be980ad0795d143f1d22b176}{new\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__queue_gaa94c11a51084b7b7d018502f796751c7}{push}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q, uint8\+\_\+t element)
+\begin{DoxyCompactList}\small\item\em Pushes an element onto the queue. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_gaff071ac301442edc8c4348f9a6b25afb}{pop}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Pops the front element of the queue. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_ga32df32dccfc5eadc233531804f0cb305}{front}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Gets the front element of the queue. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_gaa2b1b27464fcfc82b91478a55b42fb22}{back}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Gets the back element of the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__queue_ga1a03a0cff8f6b685beee30e08f3a3b80}{is\+\_\+empty}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Checks if the given queue is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__queue_gab2a149bb751500c47d4f8de95dec4cce}{is\+\_\+full}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Checks if the given queue is full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__queue_ga4c4196b5d7b92a93df1f574659fd2ed1}\label{group__queue_ga4c4196b5d7b92a93df1f574659fd2ed1}} 
+uint8\+\_\+t $\ast$ {\bfseries values}
+\item 
+\mbox{\Hypertarget{group__queue_ga9f2035c00c72130c1fe64b28646f62cd}\label{group__queue_ga9f2035c00c72130c1fe64b28646f62cd}} 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_ga9f2035c00c72130c1fe64b28646f62cd}{front\+Index}}
+\begin{DoxyCompactList}\small\item\em the values in the queue \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__queue_ga8efd8e9b031ac6ee735c37475c1c7c9f}\label{group__queue_ga8efd8e9b031ac6ee735c37475c1c7c9f}} 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_ga8efd8e9b031ac6ee735c37475c1c7c9f}{rear\+Index}}
+\begin{DoxyCompactList}\small\item\em the index of the front element \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__queue_gac976ac4d3710a7f3ce534d738caf6a9b}\label{group__queue_gac976ac4d3710a7f3ce534d738caf6a9b}} 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_gac976ac4d3710a7f3ce534d738caf6a9b}{num\+Elements}}
+\begin{DoxyCompactList}\small\item\em the index of the last element \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for using a queue. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__queue_gaa2b1b27464fcfc82b91478a55b42fb22}\label{group__queue_gaa2b1b27464fcfc82b91478a55b42fb22}} 
+\index{queue@{queue}!back@{back}}
+\index{back@{back}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily uint8\+\_\+t back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Gets the back element of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the queue to get the element from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if empty, the back element otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{group__queue_gaa2b1b27464fcfc82b91478a55b42fb22_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__queue_ga32df32dccfc5eadc233531804f0cb305}\label{group__queue_ga32df32dccfc5eadc233531804f0cb305}} 
+\index{queue@{queue}!front@{front}}
+\index{front@{front}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily uint8\+\_\+t front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Gets the front element of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the queue to get the element from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if empty, the front element otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{group__queue_ga32df32dccfc5eadc233531804f0cb305_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__queue_ga32df32dccfc5eadc233531804f0cb305_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__queue_ga1a03a0cff8f6b685beee30e08f3a3b80}\label{group__queue_ga1a03a0cff8f6b685beee30e08f3a3b80}} 
+\index{queue@{queue}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Checks if the given queue is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the queue to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether or not the queue is empty 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__queue_ga1a03a0cff8f6b685beee30e08f3a3b80_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__queue_gab2a149bb751500c47d4f8de95dec4cce}\label{group__queue_gab2a149bb751500c47d4f8de95dec4cce}} 
+\index{queue@{queue}!is\_full@{is\_full}}
+\index{is\_full@{is\_full}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{is\_full()}{is\_full()}}
+{\footnotesize\ttfamily bool is\+\_\+full (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Checks if the given queue is full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the queue to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether or not the queue is full 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__queue_gab2a149bb751500c47d4f8de95dec4cce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__queue_ga006f6f78be980ad0795d143f1d22b176}\label{group__queue_ga006f6f78be980ad0795d143f1d22b176}} 
+\index{queue@{queue}!new\_queue@{new\_queue}}
+\index{new\_queue@{new\_queue}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{new\_queue()}{new\_queue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_queue}{Queue}}$\ast$ new\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new queue. 
+
+\begin{DoxyReturn}{Returns}
+the new queue 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{group__queue_ga006f6f78be980ad0795d143f1d22b176_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__queue_gaff071ac301442edc8c4348f9a6b25afb}\label{group__queue_gaff071ac301442edc8c4348f9a6b25afb}} 
+\index{queue@{queue}!pop@{pop}}
+\index{pop@{pop}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily uint8\+\_\+t pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Pops the front element of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the queue to pop from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if empty, the front element otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{group__queue_gaff071ac301442edc8c4348f9a6b25afb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__queue_gaff071ac301442edc8c4348f9a6b25afb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__queue_gaa94c11a51084b7b7d018502f796751c7}\label{group__queue_gaa94c11a51084b7b7d018502f796751c7}} 
+\index{queue@{queue}!push@{push}}
+\index{push@{push}!queue@{queue}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily bool push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q,  }\item[{uint8\+\_\+t}]{element }\end{DoxyParamCaption})}
+
+
+
+Pushes an element onto the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & the queue to push to \\
+\hline
+{\em element} & the element to push \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the push was successful, false otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{group__queue_gaa94c11a51084b7b7d018502f796751c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__queue_gaa94c11a51084b7b7d018502f796751c7_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,16 @@
+<map id="rtc_handler" name="rtc_handler">
+<area shape="rect" id="node1" title="Handles the real time clock." alt="" coords="5,147,100,173"/>
+<area shape="rect" id="node2" href="$game__state_8c.html#ab7b27caafab73614606edacc67a01a8f" title="Matches an RTC interrupt to a corresponding in game change." alt="" coords="148,96,355,123"/>
+<area shape="rect" id="node10" href="$rtc_8c.html#a0b9ae809cf571f61e54712a23c65348e" title="RTC Interrupt Handler." alt="" coords="222,197,281,224"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a16f3810b612672b64b0ed961c38f2ce6" title="Sets up the rate at which the periodic interrupts will send new enemies." alt="" coords="412,96,551,123"/>
+<area shape="rect" id="node7" href="$rtc_8c.html#aa90e57cc419c0a865cf925cad4d9dd63" title="Sets up the alarm to power up in game." alt="" coords="403,45,560,72"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#acbe3b4f73341216278ce7de058281b71" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="617,128,723,155"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="803,197,901,224"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#abef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="780,121,924,162"/>
+<area shape="rect" id="node8" href="$rtc_8c.html#aa4ac2673e4e84d544d0091a1a2fb6bbc" title="Converts a given BCD number to its corresponding decimal value." alt="" coords="608,5,732,32"/>
+<area shape="rect" id="node9" href="$rtc_8c.html#a1de6c745cd97b58fa2a7993f92a4906a" title="Converts a given decimal number to its corresponding BCD value." alt="" coords="608,56,732,83"/>
+<area shape="rect" id="node11" href="$rtc_8c.html#a94abc4ef267daa4c1880d548eec788f4" title="Handles an alarm interrupt." alt="" coords="439,299,523,325"/>
+<area shape="rect" id="node12" href="$rtc_8c.html#a9476e04948a638295220043ef1087bac" title="Handles a periodic interrupt." alt="" coords="432,147,531,173"/>
+<area shape="rect" id="node13" href="$rtc_8c.html#a14d5cf47836341645265207264f150f5" title="Updates date and time memory registers." alt="" coords="433,197,529,224"/>
+<area shape="rect" id="node14" href="$rtc_8c.html#a060741ae796d3c561d57c9a25f402d2d" title="Disables RTC&#39;s updates." alt="" coords="609,197,731,224"/>
+</map>

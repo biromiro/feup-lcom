@@ -1,0 +1,4 @@
+<map id="reset_rtc_ingame_changes" name="reset_rtc_ingame_changes">
+<area shape="rect" id="node1" title="Resets the rtc parameters after the game has ended." alt="" coords="152,5,348,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,5,104,32"/>
+</map>

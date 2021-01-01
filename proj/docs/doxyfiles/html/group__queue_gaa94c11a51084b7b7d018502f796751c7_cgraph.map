@@ -1,0 +1,4 @@
+<map id="push" name="push">
+<area shape="rect" id="node1" title="Pushes an element onto the queue." alt="" coords="5,5,59,32"/>
+<area shape="rect" id="node2" href="$group__queue.html#gab2a149bb751500c47d4f8de95dec4cce" title="Checks if the given queue is full." alt="" coords="107,5,168,32"/>
+</map>

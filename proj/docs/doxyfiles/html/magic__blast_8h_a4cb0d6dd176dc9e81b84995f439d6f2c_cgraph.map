@@ -1,0 +1,5 @@
+<map id="reset_magic_blasts" name="reset_magic_blasts">
+<area shape="rect" id="node1" title="Resets the magic blasts array to its initial values." alt="" coords="5,31,153,57"/>
+<area shape="rect" id="node2" href="$magic__blast_8c.html#ab530b1f7370136f94f2eed25369cc281" title="Frees all memory related to the magic blasts." alt="" coords="232,5,373,32"/>
+<area shape="rect" id="node3" href="$magic__blast_8c.html#add1bfc20a326c44a51d874c570ea3a91" title="Set up the magic blasts available (10)" alt="" coords="201,56,404,83"/>
+</map>

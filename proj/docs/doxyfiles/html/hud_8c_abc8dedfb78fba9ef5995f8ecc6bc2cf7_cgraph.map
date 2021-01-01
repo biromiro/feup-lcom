@@ -1,0 +1,4 @@
+<map id="draw_current_hud" name="draw_current_hud">
+<area shape="rect" id="node1" title="draws the current HUD" alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$hud_8c.html#a10576846fe372e05ed2cc35eb4b83e4a" title="Sets the hud values (score, ammo and wave) to their correct values." alt="" coords="192,5,315,32"/>
+</map>

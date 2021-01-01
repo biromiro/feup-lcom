@@ -1,0 +1,21 @@
+<map id="read_port" name="read_port">
+<area shape="rect" id="node1" title="Reads the value of a given serial port port, adding its base address." alt="" coords="812,208,896,235"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga094cfcecf9cfdf5583d0260ef9b8aa64" title="clears the serial port fifos" alt="" coords="663,56,745,83"/>
+<area shape="rect" id="node7" href="$group__serial__port.html#ga2fff7715fff4fea8a65fec3604fa9074" title="Disables the serial port interrupts." alt="" coords="644,107,764,133"/>
+<area shape="rect" id="node9" href="$group__serial__port.html#gac3c84aa3050b9cfb9ccb7e6945bc9494" title="Sends all bytes in queue to serial port transmitter holding register (busy waiting)" alt="" coords="440,157,589,184"/>
+<area shape="rect" id="node10" href="$group__serial__port.html#gab4dc7fd4df815e249a8863aa51404856" title="Reads a byte from the serial port receiver buffer register." alt="" coords="661,259,747,285"/>
+<area shape="rect" id="node12" href="$group__serial__port.html#gae5efe9b828d15d93690271c1a6991f0c" title="Tries to send a byte to the serial port transmitter holding register, stores it in sending queue if n..." alt="" coords="470,259,559,285"/>
+<area shape="rect" id="node17" href="$group__serial__port.html#ga5cf37bb171c469d0893f2ab2de32a004" title="Tries to send all bytes in queue to serial port transmitter holding register until not possible." alt="" coords="433,411,596,437"/>
+<area shape="rect" id="node18" href="$group__serial__port.html#ga9353fabdd05ea291e02243dace57ae1c" title="Handles a serial port interrupt." alt="" coords="284,411,345,437"/>
+<area shape="rect" id="node3" href="$group__serial__port.html#ga04571865b824bc933dc2322a794aafea" title="clears all fifos (ser port queues and program queues)" alt="" coords="474,5,555,32"/>
+<area shape="rect" id="node6" href="$group__serial__port.html#ga81d06686138301b58a09aafa8b6944c7" title="initializes the serial port" alt="" coords="479,56,550,83"/>
+<area shape="rect" id="node4" href="$group__serial__port.html#ga6d086784aa4c3d5cd54489f695eaa0fd" title="Handles the co&#45;op game start, syncing both players." alt="" coords="244,183,385,209"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="265,5,364,32"/>
+<area shape="rect" id="node8" href="$group__serial__port.html#gac938921551cca0e526f0e9a16c324199" title="Exits and restores the serial port." alt="" coords="477,107,552,133"/>
+<area shape="rect" id="node11" href="$group__serial__port.html#ga38e036b2076c8dfb28168a967bbaba68" title="Received info (either mouse or kbd) handler." alt="" coords="434,309,595,336"/>
+<area shape="rect" id="node13" href="$group__interrupt__handler.html#gac89c6cf4a316a1847cf32ec3ed53646b" title="Builds the keyboard packet and handles it." alt="" coords="263,233,366,260"/>
+<area shape="rect" id="node14" href="$group__serial__port.html#ga21f093191126c81b5045e888b9060cc7" title="Sends the needed mouse info upon a magic blast throw to the other player." alt="" coords="247,284,383,311"/>
+<area shape="rect" id="node15" href="$group__serial__port.html#ga68976d9d8ea4169dafd066525b26c96b" title="Sends a scancode to the other player." alt="" coords="254,335,375,361"/>
+<area shape="rect" id="node16" href="$group__character__movement.html#ga49051feac2200ce74a86da120448128d" title="Updates the sprite position of a given player, depending on keyboard input and sends,..." alt="" coords="5,335,196,361"/>
+<area shape="rect" id="node19" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="51,411,150,437"/>
+</map>

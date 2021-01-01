@@ -1,0 +1,180 @@
+\hypertarget{hud_8h}{}\doxysection{/home/goncalo/\+L\+C\+O\+M/shared/proj/src/game/hud.h File Reference}
+\label{hud_8h}\index{/home/goncalo/LCOM/shared/proj/src/game/hud.h@{/home/goncalo/LCOM/shared/proj/src/game/hud.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../periferals/video\+\_\+gr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}enemies.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}magic\+\_\+blast.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+state.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/font/font.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/hud\+\_\+overlay\+\_\+wave.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/hud\+\_\+overlay\+\_\+score.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/hud\+\_\+overlay\+\_\+charges.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../periferals/rtc.\+h\char`\"{}}\newline
+Include dependency graph for hud.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hud_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hud_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hud_8h_abc8dedfb78fba9ef5995f8ecc6bc2cf7}{draw\+\_\+current\+\_\+hud}} ()
+\begin{DoxyCompactList}\small\item\em draws the current H\+UD \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a10576846fe372e05ed2cc35eb4b83e4a}{set\+\_\+hud\+\_\+values}} ()
+\begin{DoxyCompactList}\small\item\em Sets the hud values (score, ammo and wave) to their correct values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a200dcd33e635176ca83ddde81b7b7610}{draw\+\_\+score}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_afd0572ba0ddc563bcfe37074390b11fa}{draw\+\_\+waves}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current wave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a38246dc8d28b56ce66e6838b601e3bed}{draw\+\_\+charges}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current charge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_ab95116baa2b3820ca4b2a497ce7acab3}{draw\+\_\+digit}} (\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Draws a given digit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a5afd36140e7183dbadb4fded41b62b6d}{free\+\_\+xpm\+\_\+mem}} (\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Frees the memory related to a given xpm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a10599cdd9b2651b513185f65fc47f5a7}{reset\+\_\+hud}} ()
+\begin{DoxyCompactList}\small\item\em Resets the hud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a92264a80f56133f509aabd1b25fd9b7d}{draw\+\_\+date}} ()
+\begin{DoxyCompactList}\small\item\em Draws the date to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hud_8h_a4f3d01370e91e93f6b4fe1f9d8201e9f}{draw\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Draws the time to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hud_8h_a38246dc8d28b56ce66e6838b601e3bed}\label{hud_8h_a38246dc8d28b56ce66e6838b601e3bed}} 
+\index{hud.h@{hud.h}!draw\_charges@{draw\_charges}}
+\index{draw\_charges@{draw\_charges}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_charges()}{draw\_charges()}}
+{\footnotesize\ttfamily void draw\+\_\+charges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current charge. 
+
+\mbox{\Hypertarget{hud_8h_abc8dedfb78fba9ef5995f8ecc6bc2cf7}\label{hud_8h_abc8dedfb78fba9ef5995f8ecc6bc2cf7}} 
+\index{hud.h@{hud.h}!draw\_current\_hud@{draw\_current\_hud}}
+\index{draw\_current\_hud@{draw\_current\_hud}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_current\_hud()}{draw\_current\_hud()}}
+{\footnotesize\ttfamily void draw\+\_\+current\+\_\+hud (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draws the current H\+UD 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{hud_8h_abc8dedfb78fba9ef5995f8ecc6bc2cf7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hud_8h_a92264a80f56133f509aabd1b25fd9b7d}\label{hud_8h_a92264a80f56133f509aabd1b25fd9b7d}} 
+\index{hud.h@{hud.h}!draw\_date@{draw\_date}}
+\index{draw\_date@{draw\_date}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_date()}{draw\_date()}}
+{\footnotesize\ttfamily void draw\+\_\+date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the date to the screen. 
+
+\mbox{\Hypertarget{hud_8h_ab95116baa2b3820ca4b2a497ce7acab3}\label{hud_8h_ab95116baa2b3820ca4b2a497ce7acab3}} 
+\index{hud.h@{hud.h}!draw\_digit@{draw\_digit}}
+\index{draw\_digit@{draw\_digit}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_digit()}{draw\_digit()}}
+{\footnotesize\ttfamily void draw\+\_\+digit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{xpm }\end{DoxyParamCaption})}
+
+
+
+Draws a given digit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & the digit to draw \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hud_8h_a200dcd33e635176ca83ddde81b7b7610}\label{hud_8h_a200dcd33e635176ca83ddde81b7b7610}} 
+\index{hud.h@{hud.h}!draw\_score@{draw\_score}}
+\index{draw\_score@{draw\_score}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_score()}{draw\_score()}}
+{\footnotesize\ttfamily void draw\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current score. 
+
+\mbox{\Hypertarget{hud_8h_a4f3d01370e91e93f6b4fe1f9d8201e9f}\label{hud_8h_a4f3d01370e91e93f6b4fe1f9d8201e9f}} 
+\index{hud.h@{hud.h}!draw\_time@{draw\_time}}
+\index{draw\_time@{draw\_time}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_time()}{draw\_time()}}
+{\footnotesize\ttfamily void draw\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the time to the screen. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{hud_8h_a4f3d01370e91e93f6b4fe1f9d8201e9f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hud_8h_afd0572ba0ddc563bcfe37074390b11fa}\label{hud_8h_afd0572ba0ddc563bcfe37074390b11fa}} 
+\index{hud.h@{hud.h}!draw\_waves@{draw\_waves}}
+\index{draw\_waves@{draw\_waves}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{draw\_waves()}{draw\_waves()}}
+{\footnotesize\ttfamily void draw\+\_\+waves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current wave. 
+
+\mbox{\Hypertarget{hud_8h_a5afd36140e7183dbadb4fded41b62b6d}\label{hud_8h_a5afd36140e7183dbadb4fded41b62b6d}} 
+\index{hud.h@{hud.h}!free\_xpm\_mem@{free\_xpm\_mem}}
+\index{free\_xpm\_mem@{free\_xpm\_mem}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{free\_xpm\_mem()}{free\_xpm\_mem()}}
+{\footnotesize\ttfamily void free\+\_\+xpm\+\_\+mem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{xpm }\end{DoxyParamCaption})}
+
+
+
+Frees the memory related to a given xpm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & the xpm to free \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hud_8h_a10599cdd9b2651b513185f65fc47f5a7}\label{hud_8h_a10599cdd9b2651b513185f65fc47f5a7}} 
+\index{hud.h@{hud.h}!reset\_hud@{reset\_hud}}
+\index{reset\_hud@{reset\_hud}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{reset\_hud()}{reset\_hud()}}
+{\footnotesize\ttfamily void reset\+\_\+hud (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the hud. 
+
+\mbox{\Hypertarget{hud_8h_a10576846fe372e05ed2cc35eb4b83e4a}\label{hud_8h_a10576846fe372e05ed2cc35eb4b83e4a}} 
+\index{hud.h@{hud.h}!set\_hud\_values@{set\_hud\_values}}
+\index{set\_hud\_values@{set\_hud\_values}!hud.h@{hud.h}}
+\doxysubsubsection{\texorpdfstring{set\_hud\_values()}{set\_hud\_values()}}
+{\footnotesize\ttfamily void set\+\_\+hud\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the hud values (score, ammo and wave) to their correct values. 
+

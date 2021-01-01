@@ -1,0 +1,9 @@
+<map id="finish" name="finish">
+<area shape="rect" id="node1" title="Calls the functions to terminate the program." alt="" coords="5,107,63,133"/>
+<area shape="rect" id="node2" href="$group__enemies.html#gad71ad0f82650f114326eef28f17bdb9d" title="Free memory related to the enemies." alt="" coords="133,5,244,32"/>
+<area shape="rect" id="node3" href="$group__character__movement.html#gaca053f5df2289cdedde59b292cb57005" title="Free memory related to the game objects." alt="" coords="115,56,262,83"/>
+<area shape="rect" id="node4" href="$group__magic__blast.html#gab530b1f7370136f94f2eed25369cc281" title="Frees all memory related to the magic blasts." alt="" coords="118,107,259,133"/>
+<area shape="rect" id="node5" href="$group__rtc.html#gabb3363eb34b976d94fb14067028312f2" title="Activates/Deactivates the given RTC Interrupt." alt="" coords="121,157,257,184"/>
+<area shape="rect" id="node6" href="$group__timer.html#gaf2c04fa8e97ffa748fd3f612886a92a7" title="Changes the operating frequency of a timer." alt="" coords="111,208,267,235"/>
+<area shape="rect" id="node7" href="$group__timer.html#ga703c60b40c8c49607d6ecb6fef82d27a" title="Reads the input timer configuration (status) via read&#45;back command." alt="" coords="315,208,435,235"/>
+</map>

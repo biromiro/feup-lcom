@@ -1,0 +1,4 @@
+<map id="set_background" name="set_background">
+<area shape="rect" id="node1" title="Set the background buffer for quicker drawing (memcpy)" alt="" coords="5,13,131,39"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga3a590797d6b9f19f31a6bdc601561c3d" title="Copies a pre&#45;saved buffer pixel to the video mem buffer." alt="" coords="179,5,321,47"/>
+</map>

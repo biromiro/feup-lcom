@@ -1,0 +1,4 @@
+<map id="erase_xpm" name="erase_xpm">
+<area shape="rect" id="node1" title="Prints over a XPM with the transparent colour." alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga08c498ffeb0a3962e3b7711b57397741" title="Draws a given pixel with a given color." alt="" coords="148,5,263,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="get_score" name="get_score">
+<area shape="rect" id="node1" title="Get the current game score." alt="" coords="363,5,448,32"/>
+<area shape="rect" id="node2" href="$group__hud.html#ga10576846fe372e05ed2cc35eb4b83e4a" title="Sets the hud values (score, ammo and wave) to their correct values." alt="" coords="192,5,315,32"/>
+<area shape="rect" id="node3" href="$group__hud.html#gabc8dedfb78fba9ef5995f8ecc6bc2cf7" title="draws the current HUD" alt="" coords="5,5,144,32"/>
+</map>

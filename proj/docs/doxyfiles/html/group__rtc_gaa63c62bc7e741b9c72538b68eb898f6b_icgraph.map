@@ -1,0 +1,6 @@
+<map id="enable_update" name="enable_update">
+<area shape="rect" id="node1" title="Enables RTC&#39;s updates." alt="" coords="399,5,517,32"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga14d5cf47836341645265207264f150f5" title="Updates date and time memory registers." alt="" coords="255,5,351,32"/>
+<area shape="rect" id="node3" href="$group__rtc.html#ga0b9ae809cf571f61e54712a23c65348e" title="RTC Interrupt Handler." alt="" coords="148,5,207,32"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#ga9a1321dd741df6d233bf497ab078e32b" title="Handles the real time clock." alt="" coords="5,5,100,32"/>
+</map>

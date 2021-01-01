@@ -1,0 +1,6 @@
+<map id="get_v_resolution" name="get_v_resolution">
+<area shape="rect" id="node1" title="Gets the vertical resolution." alt="" coords="361,31,492,57"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#ga4bddaae2a377242e52609042fb4c5113" title="Creates the game objects (sprites)" alt="" coords="152,5,313,32"/>
+<area shape="rect" id="node3" href="$group__character__movement.html#ga1d1c21fe72062dbf77bd639f0cc8f886" title="resets character&#39;s starting position, speed and current sprite" alt="" coords="167,56,298,83"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,56,104,83"/>
+</map>

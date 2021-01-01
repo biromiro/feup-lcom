@@ -1,0 +1,4 @@
+<map id="rtc_unsubscribe_int" name="rtc_unsubscribe_int">
+<area shape="rect" id="node1" title="Unsubscribes RTC interrupts." alt="" coords="224,5,372,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes all the peripherals." alt="" coords="5,5,176,32"/>
+</map>

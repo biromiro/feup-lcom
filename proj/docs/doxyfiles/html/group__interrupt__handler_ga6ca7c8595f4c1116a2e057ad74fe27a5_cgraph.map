@@ -1,0 +1,5 @@
+<map id="mouse_handler" name="mouse_handler">
+<area shape="rect" id="node1" title="Builds the mouse packet and handles it." alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#gaa7ea37fd717f540a3fce04e13eacba9f" title="Handles mouse movement and button presses for all characters and sends, if needed,..." alt="" coords="176,5,343,32"/>
+<area shape="rect" id="node3" href="$group__kbc.html#gaa147fdd58bbf8c430e7974a8e3d13812" title="Parses a given packet for clearer output." alt="" coords="180,56,339,83"/>
+</map>

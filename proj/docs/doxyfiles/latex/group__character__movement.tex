@@ -1,0 +1,362 @@
+\hypertarget{group__character__movement}{}\doxysection{character\+\_\+movement}
+\label{group__character__movement}\index{character\_movement@{character\_movement}}
+
+
+Functions for dealing with the character movement.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__character__movement_ga4bddaae2a377242e52609042fb4c5113}{create\+\_\+game\+\_\+objects}} ()
+\begin{DoxyCompactList}\small\item\em Creates the game objects (sprites) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_gaca053f5df2289cdedde59b292cb57005}{free\+\_\+game\+\_\+objects}} ()
+\begin{DoxyCompactList}\small\item\em Free memory related to the game objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__character__movement_ga6e1b717308ebffc918149d6e179b2e7a}{update\+\_\+character\+\_\+movement}} (int counter)
+\begin{DoxyCompactList}\small\item\em Updates the character movement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__character__movement_gad596b8c7de75677690bccd82c144bf5f}{update\+\_\+character\+\_\+movement\+\_\+player}} (int counter, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$player, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$current\+\_\+sprite, bool $\ast$attack\+Animation)
+\begin{DoxyCompactList}\small\item\em Updates the movement of a specific player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga7d698d007395c2e3925ff64652b6312c}{handle\+\_\+button\+\_\+presses}} (uint8\+\_\+t scancode, bool player1\+\_\+press)
+\begin{DoxyCompactList}\small\item\em Updates the sprites position, depending on keyboard input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga49051feac2200ce74a86da120448128d}{handle\+\_\+ingame\+\_\+scancode}} (uint8\+\_\+t scancode, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$player, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$current\+\_\+sprite, bool $\ast$attack\+Animation, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Updates the sprite position of a given player, depending on keyboard input and sends, if needed, the information to the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_gaa7ea37fd717f540a3fce04e13eacba9f}{handle\+\_\+mouse\+\_\+packet}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor, struct packet $\ast$pp, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Handles mouse movement and button presses for all characters and sends, if needed, the information to the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga2c8bba9c7268d1f82b329cacec9433dc}{handle\+\_\+mouse\+\_\+packet\+\_\+player}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor, struct packet $\ast$pp, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$player, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$current\+\_\+sprite, bool $\ast$attack\+Animation, bool $\ast$sent, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Handles mouse movement and button presses for a given characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{group__character__movement_gaef9e9d58a14d833f17f0adeee6ba09fe}{get\+\_\+current\+\_\+character\+\_\+p1}} ()
+\begin{DoxyCompactList}\small\item\em Get the current character object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{group__character__movement_gab47ab15f198e2708f3d1c69b1c73cfaf}{get\+\_\+current\+\_\+character\+\_\+p2}} ()
+\begin{DoxyCompactList}\small\item\em Get the current character p2 object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__character__movement_ga2f6b06535f1c7e2d3d259a34820afa12}{wall\+\_\+collision}} (\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$current\+\_\+sprite)
+\begin{DoxyCompactList}\small\item\em Checks if the character has hit a wall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga756a0d449b2869df1eaf2bed0f952afe}{swap\+\_\+characters}} ()
+\begin{DoxyCompactList}\small\item\em swaps character animated\+\_\+xpm\+\_\+object pointers (for multiplayer) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga1d1c21fe72062dbf77bd639f0cc8f886}{reset\+\_\+characters}} ()
+\begin{DoxyCompactList}\small\item\em resets character\textquotesingle{}s starting position, speed and current sprite \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for dealing with the character movement. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__character__movement_ga4bddaae2a377242e52609042fb4c5113}\label{group__character__movement_ga4bddaae2a377242e52609042fb4c5113}} 
+\index{character\_movement@{character\_movement}!create\_game\_objects@{create\_game\_objects}}
+\index{create\_game\_objects@{create\_game\_objects}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{create\_game\_objects()}{create\_game\_objects()}}
+{\footnotesize\ttfamily void create\+\_\+game\+\_\+objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the game objects (sprites) 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_ga4bddaae2a377242e52609042fb4c5113_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_gaca053f5df2289cdedde59b292cb57005}\label{group__character__movement_gaca053f5df2289cdedde59b292cb57005}} 
+\index{character\_movement@{character\_movement}!free\_game\_objects@{free\_game\_objects}}
+\index{free\_game\_objects@{free\_game\_objects}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{free\_game\_objects()}{free\_game\_objects()}}
+{\footnotesize\ttfamily void free\+\_\+game\+\_\+objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free memory related to the game objects. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{group__character__movement_gaca053f5df2289cdedde59b292cb57005_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_gaef9e9d58a14d833f17f0adeee6ba09fe}\label{group__character__movement_gaef9e9d58a14d833f17f0adeee6ba09fe}} 
+\index{character\_movement@{character\_movement}!get\_current\_character\_p1@{get\_current\_character\_p1}}
+\index{get\_current\_character\_p1@{get\_current\_character\_p1}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{get\_current\_character\_p1()}{get\_current\_character\_p1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}}$\ast$ get\+\_\+current\+\_\+character\+\_\+p1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current character object. 
+
+\begin{DoxyReturn}{Returns}
+xpm\+\_\+object$\ast$ of current character 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_gaef9e9d58a14d833f17f0adeee6ba09fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_gab47ab15f198e2708f3d1c69b1c73cfaf}\label{group__character__movement_gab47ab15f198e2708f3d1c69b1c73cfaf}} 
+\index{character\_movement@{character\_movement}!get\_current\_character\_p2@{get\_current\_character\_p2}}
+\index{get\_current\_character\_p2@{get\_current\_character\_p2}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{get\_current\_character\_p2()}{get\_current\_character\_p2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}}$\ast$ get\+\_\+current\+\_\+character\+\_\+p2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current character p2 object. 
+
+\begin{DoxyReturn}{Returns}
+xpm\+\_\+object$\ast$ 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_gab47ab15f198e2708f3d1c69b1c73cfaf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_ga7d698d007395c2e3925ff64652b6312c}\label{group__character__movement_ga7d698d007395c2e3925ff64652b6312c}} 
+\index{character\_movement@{character\_movement}!handle\_button\_presses@{handle\_button\_presses}}
+\index{handle\_button\_presses@{handle\_button\_presses}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{handle\_button\_presses()}{handle\_button\_presses()}}
+{\footnotesize\ttfamily void handle\+\_\+button\+\_\+presses (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{scancode,  }\item[{bool}]{player1\+\_\+press }\end{DoxyParamCaption})}
+
+
+
+Updates the sprites position, depending on keyboard input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scancode} & Key Pressed (W\+A\+SD) \\
+\hline
+{\em player1\+\_\+press} & defines if it was the player1 who pressed a key or not \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{group__character__movement_ga7d698d007395c2e3925ff64652b6312c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_ga49051feac2200ce74a86da120448128d}\label{group__character__movement_ga49051feac2200ce74a86da120448128d}} 
+\index{character\_movement@{character\_movement}!handle\_ingame\_scancode@{handle\_ingame\_scancode}}
+\index{handle\_ingame\_scancode@{handle\_ingame\_scancode}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{handle\_ingame\_scancode()}{handle\_ingame\_scancode()}}
+{\footnotesize\ttfamily void handle\+\_\+ingame\+\_\+scancode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{scancode,  }\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$}]{player,  }\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$}]{current\+\_\+sprite,  }\item[{bool $\ast$}]{attack\+Animation,  }\item[{bool}]{player1\+\_\+pp }\end{DoxyParamCaption})}
+
+
+
+Updates the sprite position of a given player, depending on keyboard input and sends, if needed, the information to the serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scancode} & Key pressed (W\+A\+SD) \\
+\hline
+{\em player} & the player who pressed the key \\
+\hline
+{\em current\+\_\+sprite} & the current sprite of the player who pressed the key \\
+\hline
+{\em attack\+Animation} & defines if the player is attacking or not \\
+\hline
+{\em player1\+\_\+pp} & defines if it was the player1 who pressed a key or not \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_ga49051feac2200ce74a86da120448128d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_gaa7ea37fd717f540a3fce04e13eacba9f}\label{group__character__movement_gaa7ea37fd717f540a3fce04e13eacba9f}} 
+\index{character\_movement@{character\_movement}!handle\_mouse\_packet@{handle\_mouse\_packet}}
+\index{handle\_mouse\_packet@{handle\_mouse\_packet}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{handle\_mouse\_packet()}{handle\_mouse\_packet()}}
+{\footnotesize\ttfamily void handle\+\_\+mouse\+\_\+packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{cursor,  }\item[{struct packet $\ast$}]{pp,  }\item[{bool}]{player1\+\_\+pp }\end{DoxyParamCaption})}
+
+
+
+Handles mouse movement and button presses for all characters and sends, if needed, the information to the serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor} & X\+PM of mouse cursor \\
+\hline
+{\em pp} & Mouse Packet \\
+\hline
+{\em player1} & defines if it was the player1 who pressed a key or not \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{group__character__movement_gaa7ea37fd717f540a3fce04e13eacba9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_ga2c8bba9c7268d1f82b329cacec9433dc}\label{group__character__movement_ga2c8bba9c7268d1f82b329cacec9433dc}} 
+\index{character\_movement@{character\_movement}!handle\_mouse\_packet\_player@{handle\_mouse\_packet\_player}}
+\index{handle\_mouse\_packet\_player@{handle\_mouse\_packet\_player}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{handle\_mouse\_packet\_player()}{handle\_mouse\_packet\_player()}}
+{\footnotesize\ttfamily void handle\+\_\+mouse\+\_\+packet\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{cursor,  }\item[{struct packet $\ast$}]{pp,  }\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$}]{player,  }\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$}]{current\+\_\+sprite,  }\item[{bool $\ast$}]{attack\+Animation,  }\item[{bool $\ast$}]{sent,  }\item[{bool}]{player1\+\_\+pp }\end{DoxyParamCaption})}
+
+
+
+Handles mouse movement and button presses for a given characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor} & the cursor of the current character \\
+\hline
+{\em pp} & the packet to unpack \\
+\hline
+{\em player} & the player whose movement is to be handled \\
+\hline
+{\em current\+\_\+sprite} & the current sprite of the current player \\
+\hline
+{\em attack\+Animation} & defines if the player is attacking or not \\
+\hline
+{\em sent} & defines if a magic ball was already sent in this button press \\
+\hline
+{\em player1\+\_\+pp} & defines if it was the player1 who pressed a key or not ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__character__movement_ga1d1c21fe72062dbf77bd639f0cc8f886}\label{group__character__movement_ga1d1c21fe72062dbf77bd639f0cc8f886}} 
+\index{character\_movement@{character\_movement}!reset\_characters@{reset\_characters}}
+\index{reset\_characters@{reset\_characters}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{reset\_characters()}{reset\_characters()}}
+{\footnotesize\ttfamily void reset\+\_\+characters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+resets character\textquotesingle{}s starting position, speed and current sprite 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{group__character__movement_ga1d1c21fe72062dbf77bd639f0cc8f886_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{group__character__movement_ga1d1c21fe72062dbf77bd639f0cc8f886_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_ga756a0d449b2869df1eaf2bed0f952afe}\label{group__character__movement_ga756a0d449b2869df1eaf2bed0f952afe}} 
+\index{character\_movement@{character\_movement}!swap\_characters@{swap\_characters}}
+\index{swap\_characters@{swap\_characters}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{swap\_characters()}{swap\_characters()}}
+{\footnotesize\ttfamily void swap\+\_\+characters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+swaps character animated\+\_\+xpm\+\_\+object pointers (for multiplayer) 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{group__character__movement_ga756a0d449b2869df1eaf2bed0f952afe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_ga6e1b717308ebffc918149d6e179b2e7a}\label{group__character__movement_ga6e1b717308ebffc918149d6e179b2e7a}} 
+\index{character\_movement@{character\_movement}!update\_character\_movement@{update\_character\_movement}}
+\index{update\_character\_movement@{update\_character\_movement}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{update\_character\_movement()}{update\_character\_movement()}}
+{\footnotesize\ttfamily int update\+\_\+character\+\_\+movement (\begin{DoxyParamCaption}\item[{int}]{counter }\end{DoxyParamCaption})}
+
+
+
+Updates the character movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & the timer counter in ticks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_ga6e1b717308ebffc918149d6e179b2e7a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_gad596b8c7de75677690bccd82c144bf5f}\label{group__character__movement_gad596b8c7de75677690bccd82c144bf5f}} 
+\index{character\_movement@{character\_movement}!update\_character\_movement\_player@{update\_character\_movement\_player}}
+\index{update\_character\_movement\_player@{update\_character\_movement\_player}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{update\_character\_movement\_player()}{update\_character\_movement\_player()}}
+{\footnotesize\ttfamily int update\+\_\+character\+\_\+movement\+\_\+player (\begin{DoxyParamCaption}\item[{int}]{counter,  }\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$}]{player,  }\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$}]{current\+\_\+sprite,  }\item[{bool $\ast$}]{attack\+Animation }\end{DoxyParamCaption})}
+
+
+
+Updates the movement of a specific player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & the time counter in ticks \\
+\hline
+{\em player} & the player to update \\
+\hline
+{\em current\+\_\+sprite} & the current sprite of the player to update \\
+\hline
+{\em attack\+Animation} & defines if the player is attacking or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_gad596b8c7de75677690bccd82c144bf5f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_gad596b8c7de75677690bccd82c144bf5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__character__movement_ga2f6b06535f1c7e2d3d259a34820afa12}\label{group__character__movement_ga2f6b06535f1c7e2d3d259a34820afa12}} 
+\index{character\_movement@{character\_movement}!wall\_collision@{wall\_collision}}
+\index{wall\_collision@{wall\_collision}!character\_movement@{character\_movement}}
+\doxysubsubsection{\texorpdfstring{wall\_collision()}{wall\_collision()}}
+{\footnotesize\ttfamily int wall\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$}]{current\+\_\+sprite }\end{DoxyParamCaption})}
+
+
+
+Checks if the character has hit a wall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+sprite} & Character sprite\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if there is no collision, 1 if there is 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{group__character__movement_ga2f6b06535f1c7e2d3d259a34820afa12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__character__movement_ga2f6b06535f1c7e2d3d259a34820afa12_icgraph}
+\end{center}
+\end{figure}

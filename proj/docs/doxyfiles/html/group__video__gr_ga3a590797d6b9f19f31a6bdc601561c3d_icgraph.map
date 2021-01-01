@@ -1,0 +1,5 @@
+<map id="draw_static_buffer_pixels" name="draw_static_buffer_pixels">
+<area shape="rect" id="node1" title="Copies a pre&#45;saved buffer pixel to the video mem buffer." alt="" coords="179,23,321,65"/>
+<area shape="rect" id="node2" href="$group__hud.html#gab95116baa2b3820ca4b2a497ce7acab3" title="Draws a given digit." alt="" coords="23,5,113,32"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga770b1be5358ccc290b7a93e4bb16e0b4" title="Set the background buffer for quicker drawing (memcpy)" alt="" coords="5,56,131,83"/>
+</map>

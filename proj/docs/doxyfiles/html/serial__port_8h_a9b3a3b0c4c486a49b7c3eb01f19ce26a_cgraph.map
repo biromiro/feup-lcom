@@ -1,0 +1,4 @@
+<map id="ser_config" name="ser_config">
+<area shape="rect" id="node1" title="configs the serial port communication settings" alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node2" href="$serial__port_8c.html#add1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="141,5,249,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="empty_send_queue" name="empty_send_queue">
+<area shape="rect" id="node1" title="Sends all bytes in queue to serial port transmitter holding register (busy waiting)" alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="203,5,285,32"/>
+</map>

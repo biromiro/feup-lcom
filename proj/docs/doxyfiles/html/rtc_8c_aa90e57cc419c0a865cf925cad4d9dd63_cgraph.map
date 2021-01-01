@@ -1,0 +1,8 @@
+<map id="set_power_up_alarm" name="set_power_up_alarm">
+<area shape="rect" id="node1" title="Sets up the alarm to power up in game." alt="" coords="5,56,163,83"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#aa4ac2673e4e84d544d0091a1a2fb6bbc" title="Converts a given BCD number to its corresponding decimal value." alt="" coords="211,5,335,32"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a1de6c745cd97b58fa2a7993f92a4906a" title="Converts a given decimal number to its corresponding BCD value." alt="" coords="211,56,335,83"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#acbe3b4f73341216278ce7de058281b71" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="219,107,326,133"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="405,77,504,104"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#abef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="383,129,527,170"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="get_irq_set" name="get_irq_set">
+<area shape="rect" id="node1" title="Get the irq set, based on the type of interruption." alt="" coords="221,5,316,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga50a518afed32147b41b66eceb5c99994" title="Interrupt receiver." alt="" coords="5,5,173,32"/>
+</map>

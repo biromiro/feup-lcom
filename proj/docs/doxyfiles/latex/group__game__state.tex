@@ -1,0 +1,83 @@
+\hypertarget{group__game__state}{}\doxysection{game\+\_\+state}
+\label{group__game__state}\index{game\_state@{game\_state}}
+
+
+Functions for dealing with in game changes.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__game__state_gab7b27caafab73614606edacc67a01a8f}{handle\+\_\+rtc\+\_\+ingame\+\_\+changes}} (bool $\ast$alarm\+Interrupt)
+\begin{DoxyCompactList}\small\item\em Matches an R\+TC interrupt to a corresponding in game change. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__game__state_ga877c167acf09b2c71f0e0f878859434e}{get\+\_\+wave}} ()
+\begin{DoxyCompactList}\small\item\em Get the current wave number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__state_gabcbe762739d5d91623a3cdb097286069}{reset\+\_\+rtc\+\_\+ingame\+\_\+changes}} ()
+\begin{DoxyCompactList}\small\item\em Resets the rtc parameters after the game has ended. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for dealing with in game changes. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__game__state_ga877c167acf09b2c71f0e0f878859434e}\label{group__game__state_ga877c167acf09b2c71f0e0f878859434e}} 
+\index{game\_state@{game\_state}!get\_wave@{get\_wave}}
+\index{get\_wave@{get\_wave}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{get\_wave()}{get\_wave()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current wave number. 
+
+\begin{DoxyReturn}{Returns}
+the current wave 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__game__state_ga877c167acf09b2c71f0e0f878859434e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__game__state_gab7b27caafab73614606edacc67a01a8f}\label{group__game__state_gab7b27caafab73614606edacc67a01a8f}} 
+\index{game\_state@{game\_state}!handle\_rtc\_ingame\_changes@{handle\_rtc\_ingame\_changes}}
+\index{handle\_rtc\_ingame\_changes@{handle\_rtc\_ingame\_changes}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{handle\_rtc\_ingame\_changes()}{handle\_rtc\_ingame\_changes()}}
+{\footnotesize\ttfamily void handle\+\_\+rtc\+\_\+ingame\+\_\+changes (\begin{DoxyParamCaption}\item[{bool $\ast$}]{alarm\+Interrupt }\end{DoxyParamCaption})}
+
+
+
+Matches an R\+TC interrupt to a corresponding in game change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alarm\+Interrupt} & True if an Alarm interrupt is being handled, false otherwise \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{group__game__state_gab7b27caafab73614606edacc67a01a8f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__game__state_gabcbe762739d5d91623a3cdb097286069}\label{group__game__state_gabcbe762739d5d91623a3cdb097286069}} 
+\index{game\_state@{game\_state}!reset\_rtc\_ingame\_changes@{reset\_rtc\_ingame\_changes}}
+\index{reset\_rtc\_ingame\_changes@{reset\_rtc\_ingame\_changes}!game\_state@{game\_state}}
+\doxysubsubsection{\texorpdfstring{reset\_rtc\_ingame\_changes()}{reset\_rtc\_ingame\_changes()}}
+{\footnotesize\ttfamily void reset\+\_\+rtc\+\_\+ingame\+\_\+changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the rtc parameters after the game has ended. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{group__game__state_gabcbe762739d5d91623a3cdb097286069_icgraph}
+\end{center}
+\end{figure}

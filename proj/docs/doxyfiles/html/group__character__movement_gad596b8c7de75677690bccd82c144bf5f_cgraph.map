@@ -1,0 +1,9 @@
+<map id="update_character_movement_player" name="update_character_movement_player">
+<area shape="rect" id="node1" title="Updates the movement of a specific player." alt="" coords="5,23,219,65"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2e3433fb7479994ec64b38bc4cc24ea0" title="Prints an animated sprite." alt="" coords="267,5,432,32"/>
+<area shape="rect" id="node5" href="$group__character__movement.html#ga2f6b06535f1c7e2d3d259a34820afa12" title="Checks if the character has hit a wall." alt="" coords="294,56,405,83"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#ga9eb1c56f052919a0f0a3fc29a9821d7f" title="Prints a XPM." alt="" coords="512,5,600,32"/>
+<area shape="rect" id="node4" href="$group__video__gr.html#ga08c498ffeb0a3962e3b7711b57397741" title="Draws a given pixel with a given color." alt="" coords="680,5,795,32"/>
+<area shape="rect" id="node6" href="$group__video__gr.html#ga89e5e15fb2c065221f58c6d883da6049" title="Get the bytes per pixel of the mode." alt="" coords="480,56,632,83"/>
+<area shape="rect" id="node7" href="$group__video__gr.html#ga2b030ac61ffa1deb98aae5876cc65e54" title="Gets the horizontal resolution." alt="" coords="491,107,621,133"/>
+</map>

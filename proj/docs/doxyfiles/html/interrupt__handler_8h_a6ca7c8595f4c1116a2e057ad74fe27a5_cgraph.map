@@ -1,0 +1,8 @@
+<map id="mouse_handler" name="mouse_handler">
+<area shape="rect" id="node1" title="Builds the mouse packet and handles it." alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#aed4404005e4c565ac36656307386e0ac" title=" " alt="" coords="176,31,261,57"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#a2b0cab3b65db905154df274d1841a214" title="Reads a data byte from the mouse controller." alt="" coords="309,31,448,57"/>
+<area shape="rect" id="node4" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Reads the KBC configuration (status)" alt="" coords="499,5,619,32"/>
+<area shape="rect" id="node6" href="$kbc_8c.html#af18c2a348e2c55a40cacc74caee08323" title="Reads the output buffer of KBC." alt="" coords="496,56,623,83"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="671,31,769,57"/>
+</map>

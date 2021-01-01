@@ -1,0 +1,4 @@
+<map id="setup_handler" name="setup_handler">
+<area shape="rect" id="node1" title="Sets the up alarm handler of the unistd.h library." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="$serial__port_8c.html#af675374954cdabdf63d036fe3c12d348" title="Handles an alarm of the unistd.h library." alt="" coords="168,5,285,32"/>
+</map>

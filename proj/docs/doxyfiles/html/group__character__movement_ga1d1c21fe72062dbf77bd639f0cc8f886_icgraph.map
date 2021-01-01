@@ -1,0 +1,4 @@
+<map id="reset_characters" name="reset_characters">
+<area shape="rect" id="node1" title="resets character&#39;s starting position, speed and current sprite" alt="" coords="152,5,283,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,5,104,32"/>
+</map>

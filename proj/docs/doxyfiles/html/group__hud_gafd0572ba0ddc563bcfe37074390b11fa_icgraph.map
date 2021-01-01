@@ -1,0 +1,4 @@
+<map id="draw_waves" name="draw_waves">
+<area shape="rect" id="node1" title="Draws the current wave." alt="" coords="192,5,295,32"/>
+<area shape="rect" id="node2" href="$group__hud.html#gabc8dedfb78fba9ef5995f8ecc6bc2cf7" title="draws the current HUD" alt="" coords="5,5,144,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="disable_ser_int" name="disable_ser_int">
+<area shape="rect" id="node1" title="Disables the serial port interrupts." alt="" coords="128,5,248,32"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#gac938921551cca0e526f0e9a16c324199" title="Exits and restores the serial port." alt="" coords="5,5,80,32"/>
+</map>

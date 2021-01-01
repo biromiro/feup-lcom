@@ -1,0 +1,4 @@
+<map id="update_character_movement_player" name="update_character_movement_player">
+<area shape="rect" id="node1" title="Updates the movement of a specific player." alt="" coords="267,5,480,47"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#ga6e1b717308ebffc918149d6e179b2e7a" title="Updates the character movement." alt="" coords="5,13,219,39"/>
+</map>

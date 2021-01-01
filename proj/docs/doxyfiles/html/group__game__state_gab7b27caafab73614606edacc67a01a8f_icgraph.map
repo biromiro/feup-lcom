@@ -1,0 +1,4 @@
+<map id="handle_rtc_ingame_changes" name="handle_rtc_ingame_changes">
+<area shape="rect" id="node1" title="Matches an RTC interrupt to a corresponding in game change." alt="" coords="148,5,355,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga9a1321dd741df6d233bf497ab078e32b" title="Handles the real time clock." alt="" coords="5,5,100,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="timer_display_conf" name="timer_display_conf">
+<area shape="rect" id="node1" title="Shows timer configuration." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$group__timer.html#gad3902e029b27c80982873394c0290496" title="Prints a timer config field value." alt="" coords="200,5,340,32"/>
+</map>

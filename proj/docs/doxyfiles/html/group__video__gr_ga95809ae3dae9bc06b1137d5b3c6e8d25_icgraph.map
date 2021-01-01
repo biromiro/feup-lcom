@@ -1,0 +1,4 @@
+<map id="get_buffer_to_draw" name="get_buffer_to_draw">
+<area shape="rect" id="node1" title="Gets the buffer to draw on (secondary buffer)" alt="" coords="144,5,291,32"/>
+<area shape="rect" id="node2" href="$group__hud.html#gab95116baa2b3820ca4b2a497ce7acab3" title="Draws a given digit." alt="" coords="5,5,96,32"/>
+</map>

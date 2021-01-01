@@ -1,0 +1,5 @@
+<map id="set_magic_blasts_available" name="set_magic_blasts_available">
+<area shape="rect" id="node1" title="Set up the magic blasts available (10)" alt="" coords="348,5,551,32"/>
+<area shape="rect" id="node2" href="$group__magic__blast.html#ga4cb0d6dd176dc9e81b84995f439d6f2c" title="Resets the magic blasts array to its initial values." alt="" coords="152,5,300,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,5,104,32"/>
+</map>

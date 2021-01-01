@@ -1,0 +1,17 @@
+<map id="/home/goncalo/LCOM/shared/proj/src/game/menu.h" name="/home/goncalo/LCOM/shared/proj/src/game/menu.h">
+<area shape="rect" id="node1" title=" " alt="" coords="416,5,579,61"/>
+<area shape="rect" id="node2" href="$character__movement_8h.html" title=" " alt="" coords="311,109,489,165"/>
+<area shape="rect" id="node15" href="$menu_8c.html" title=" " alt="" coords="513,109,676,165"/>
+<area shape="rect" id="node3" href="$character__movement_8c.html" title=" " alt="" coords="5,213,181,269"/>
+<area shape="rect" id="node4" href="$serial__port_8h.html" title=" " alt="" coords="206,213,394,269"/>
+<area shape="rect" id="node9" href="$enemies_8c.html" title=" " alt="" coords="419,213,581,269"/>
+<area shape="rect" id="node10" href="$game__state_8h.html" title=" " alt="" coords="605,213,768,269"/>
+<area shape="rect" id="node14" href="$magic__blast_8c.html" title=" " alt="" coords="792,213,955,269"/>
+<area shape="rect" id="node5" href="$interrupt__handler_8h.html" title=" " alt="" coords="471,421,659,477"/>
+<area shape="rect" id="node8" href="$serial__port_8c.html" title=" " alt="" coords="338,317,526,373"/>
+<area shape="rect" id="node6" href="$interrupt__handler_8c.html" title=" " alt="" coords="371,525,559,581"/>
+<area shape="rect" id="node7" href="$proj_8c.html" title=" " alt="" coords="584,533,747,574"/>
+<area shape="rect" id="node11" href="$game__state_8c.html" title=" " alt="" coords="603,317,765,373"/>
+<area shape="rect" id="node12" href="$hud_8h.html" title=" " alt="" coords="789,325,992,366"/>
+<area shape="rect" id="node13" href="$hud_8c.html" title=" " alt="" coords="789,429,992,470"/>
+</map>

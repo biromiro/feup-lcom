@@ -1,0 +1,4 @@
+<map id="rtc_read_info" name="rtc_read_info">
+<area shape="rect" id="node1" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="5,13,112,39"/>
+<area shape="rect" id="node2" href="$group__rtc.html#gabef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="160,5,304,47"/>
+</map>

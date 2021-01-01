@@ -1,0 +1,5 @@
+<map id="timer_handler" name="timer_handler">
+<area shape="rect" id="node1" title="Updates the screen every frame." alt="" coords="5,31,119,57"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga98711039a318a2f5a6a4652caa775395" title="Prints the background buffer onto the video mem buffer." alt="" coords="168,5,303,32"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga91a2072306c68353712a6b771287dc2c" title="Timer 0 interrupt handler." alt="" coords="167,56,304,83"/>
+</map>

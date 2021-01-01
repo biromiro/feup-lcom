@@ -1,0 +1,4 @@
+<map id="draw_time" name="draw_time">
+<area shape="rect" id="node1" title="Draws the time to the screen." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga4e063c1e72a306488f435adf4d7ff9b1" title="Prints to the screen the current time." alt="" coords="144,5,233,32"/>
+</map>

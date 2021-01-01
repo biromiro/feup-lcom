@@ -1,0 +1,4 @@
+<map id="throw_magic_blast" name="throw_magic_blast">
+<area shape="rect" id="node1" title="Creates a &quot;Magic Blast&quot; XPM, calculates its speed and updates the available blasts." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2ea614919259db8c5622de2917c64c9e" title="Creates a sprite object." alt="" coords="199,5,305,32"/>
+</map>

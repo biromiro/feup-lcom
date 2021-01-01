@@ -1,0 +1,5 @@
+<map id="set_enemies_available" name="set_enemies_available">
+<area shape="rect" id="node1" title="Set up the enemies available (10)" alt="" coords="319,5,491,32"/>
+<area shape="rect" id="node2" href="$group__enemies.html#ga2ca6d67486265e0827f8970dd7af0fda" title="Resets the enemies array to its initial conditions." alt="" coords="152,5,271,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,5,104,32"/>
+</map>

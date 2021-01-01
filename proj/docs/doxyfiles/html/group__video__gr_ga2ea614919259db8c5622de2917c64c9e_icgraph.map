@@ -1,0 +1,7 @@
+<map id="create_sprite" name="create_sprite">
+<area shape="rect" id="node1" title="Creates a sprite object." alt="" coords="199,81,305,108"/>
+<area shape="rect" id="node2" href="$group__hud.html#gabc8dedfb78fba9ef5995f8ecc6bc2cf7" title="draws the current HUD" alt="" coords="9,5,147,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga03aede8ff91764482bb5e9accfae9b4f" title="Calls the functions to set up the program." alt="" coords="39,56,117,83"/>
+<area shape="rect" id="node4" href="$group__enemies.html#gaa76b8d70a84c930d0cd5b97ff27fff36" title="Creates a &quot;Magic Blast&quot; XPM, calculates its speed and updates the available blasts." alt="" coords="17,107,139,133"/>
+<area shape="rect" id="node5" href="$group__magic__blast.html#ga8f3c067f863279cb8ea7e48ececc77fe" title="Creates a &quot;Magic Blast&quot; XPM, calculates its speed and updates the available blasts." alt="" coords="5,157,151,184"/>
+</map>

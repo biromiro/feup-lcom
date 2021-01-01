@@ -1,0 +1,4 @@
+<map id="get_total_blasts" name="get_total_blasts">
+<area shape="rect" id="node1" title="Get the Total Blasts." alt="" coords="195,5,321,32"/>
+<area shape="rect" id="node2" href="$group__enemies.html#ga16ad6d7911d43f0604ced7a6ee1649a9" title="Checks collisions between active blasts and active enemies and active enemies and main character." alt="" coords="5,5,147,32"/>
+</map>

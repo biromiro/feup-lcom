@@ -1,0 +1,173 @@
+\hypertarget{enemies_8c}{}\doxysection{/home/goncalo/\+L\+C\+O\+M/shared/proj/src/game/enemies.c File Reference}
+\label{enemies_8c}\index{/home/goncalo/LCOM/shared/proj/src/game/enemies.c@{/home/goncalo/LCOM/shared/proj/src/game/enemies.c}}
+{\ttfamily \#include \char`\"{}enemies.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}character\+\_\+movement.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}magic\+\_\+blast.\+h\char`\"{}}\newline
+Include dependency graph for enemies.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enemies_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{enemies_8c_af3b1b7ee80375a9f4aed228b58d0869e}{set\+\_\+enemies\+\_\+available}} ()
+\begin{DoxyCompactList}\small\item\em Set up the enemies available (10) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemies_8c_ad71ad0f82650f114326eef28f17bdb9d}{free\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Free memory related to the enemies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemies_8c_aa76b8d70a84c930d0cd5b97ff27fff36}{throw\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Creates a \char`\"{}\+Magic Blast\char`\"{} X\+PM, calculates its speed and updates the available blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemies_8c_ad2e1451eca043b42ad7ff94133982f5f}{print\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Prints the blasts If a blast is off-\/screen, frees its memory and reindexes the blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemies_8c_a8e0492530bfc53b89fc6395c581eab9d}{reindex\+\_\+enemies}} (size\+\_\+t position)
+\begin{DoxyCompactList}\small\item\em Reindexes the magic blasts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{enemies_8c_a16ad6d7911d43f0604ced7a6ee1649a9}{checking\+\_\+collision}} (\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$$\ast$magic\+\_\+blasts)
+\begin{DoxyCompactList}\small\item\em Checks collisions between active blasts and active enemies and active enemies and main character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{enemies_8c_ae8844fabe6f87edc071f41540faffb6a}{enemy\+\_\+collision}} (\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$object, \mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$enemy)
+\begin{DoxyCompactList}\small\item\em Checks if there was a collision between an enemy and a projectile. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{enemies_8c_af471ad2ab45143ba8b77881ff0a8ae03}{get\+\_\+score}} ()
+\begin{DoxyCompactList}\small\item\em Get the current game score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enemies_8c_a2ca6d67486265e0827f8970dd7af0fda}{reset\+\_\+enemies}} ()
+\begin{DoxyCompactList}\small\item\em Resets the enemies array to its initial conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{enemies_8c_a7a7c4e27f9873c2aee1f4f5af7581487}{in\+\_\+coop}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{enemies_8c_a16ad6d7911d43f0604ced7a6ee1649a9}\label{enemies_8c_a16ad6d7911d43f0604ced7a6ee1649a9}} 
+\index{enemies.c@{enemies.c}!checking\_collision@{checking\_collision}}
+\index{checking\_collision@{checking\_collision}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{checking\_collision()}{checking\_collision()}}
+{\footnotesize\ttfamily int checking\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$$\ast$}]{magic\+\_\+blasts }\end{DoxyParamCaption})}
+
+
+
+Checks collisions between active blasts and active enemies and active enemies and main character. 
+
+Frees the allocated memory of the respective blasts and enemies, if there was in fact a collision
+
+\begin{DoxyReturn}{Returns}
+0 if there is no collision between player\& enemy, 1 if there is ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enemies_8c_ae8844fabe6f87edc071f41540faffb6a}\label{enemies_8c_ae8844fabe6f87edc071f41540faffb6a}} 
+\index{enemies.c@{enemies.c}!enemy\_collision@{enemy\_collision}}
+\index{enemy\_collision@{enemy\_collision}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{enemy\_collision()}{enemy\_collision()}}
+{\footnotesize\ttfamily int enemy\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{magic\+\_\+blast,  }\item[{\mbox{\hyperlink{video__gr_8h_a4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Checks if there was a collision between an enemy and a projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em magic\+\_\+blasts} & Magic blast \\
+\hline
+{\em enemy} & Enemy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if there is no collision, 1 if there is 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enemies_8c_ad71ad0f82650f114326eef28f17bdb9d}\label{enemies_8c_ad71ad0f82650f114326eef28f17bdb9d}} 
+\index{enemies.c@{enemies.c}!free\_enemies@{free\_enemies}}
+\index{free\_enemies@{free\_enemies}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{free\_enemies()}{free\_enemies()}}
+{\footnotesize\ttfamily void free\+\_\+enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free memory related to the enemies. 
+
+\mbox{\Hypertarget{enemies_8c_af471ad2ab45143ba8b77881ff0a8ae03}\label{enemies_8c_af471ad2ab45143ba8b77881ff0a8ae03}} 
+\index{enemies.c@{enemies.c}!get\_score@{get\_score}}
+\index{get\_score@{get\_score}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{get\_score()}{get\_score()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current game score. 
+
+\begin{DoxyReturn}{Returns}
+the score 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enemies_8c_ad2e1451eca043b42ad7ff94133982f5f}\label{enemies_8c_ad2e1451eca043b42ad7ff94133982f5f}} 
+\index{enemies.c@{enemies.c}!print\_enemies@{print\_enemies}}
+\index{print\_enemies@{print\_enemies}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{print\_enemies()}{print\_enemies()}}
+{\footnotesize\ttfamily void print\+\_\+enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the blasts If a blast is off-\/screen, frees its memory and reindexes the blasts. 
+
+\mbox{\Hypertarget{enemies_8c_a8e0492530bfc53b89fc6395c581eab9d}\label{enemies_8c_a8e0492530bfc53b89fc6395c581eab9d}} 
+\index{enemies.c@{enemies.c}!reindex\_enemies@{reindex\_enemies}}
+\index{reindex\_enemies@{reindex\_enemies}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{reindex\_enemies()}{reindex\_enemies()}}
+{\footnotesize\ttfamily void reindex\+\_\+enemies (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{positions }\end{DoxyParamCaption})}
+
+
+
+Reindexes the magic blasts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & Position of freed up blast object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{enemies_8c_a2ca6d67486265e0827f8970dd7af0fda}\label{enemies_8c_a2ca6d67486265e0827f8970dd7af0fda}} 
+\index{enemies.c@{enemies.c}!reset\_enemies@{reset\_enemies}}
+\index{reset\_enemies@{reset\_enemies}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{reset\_enemies()}{reset\_enemies()}}
+{\footnotesize\ttfamily void reset\+\_\+enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the enemies array to its initial conditions. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{enemies_8c_a2ca6d67486265e0827f8970dd7af0fda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{enemies_8c_af3b1b7ee80375a9f4aed228b58d0869e}\label{enemies_8c_af3b1b7ee80375a9f4aed228b58d0869e}} 
+\index{enemies.c@{enemies.c}!set\_enemies\_available@{set\_enemies\_available}}
+\index{set\_enemies\_available@{set\_enemies\_available}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{set\_enemies\_available()}{set\_enemies\_available()}}
+{\footnotesize\ttfamily void set\+\_\+enemies\+\_\+available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set up the enemies available (10) 
+
+\mbox{\Hypertarget{enemies_8c_aa76b8d70a84c930d0cd5b97ff27fff36}\label{enemies_8c_aa76b8d70a84c930d0cd5b97ff27fff36}} 
+\index{enemies.c@{enemies.c}!throw\_enemies@{throw\_enemies}}
+\index{throw\_enemies@{throw\_enemies}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{throw\_enemies()}{throw\_enemies()}}
+{\footnotesize\ttfamily void throw\+\_\+enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a \char`\"{}\+Magic Blast\char`\"{} X\+PM, calculates its speed and updates the available blasts. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{enemies_8c_a7a7c4e27f9873c2aee1f4f5af7581487}\label{enemies_8c_a7a7c4e27f9873c2aee1f4f5af7581487}} 
+\index{enemies.c@{enemies.c}!in\_coop@{in\_coop}}
+\index{in\_coop@{in\_coop}!enemies.c@{enemies.c}}
+\doxysubsubsection{\texorpdfstring{in\_coop}{in\_coop}}
+{\footnotesize\ttfamily bool in\+\_\+coop}
+

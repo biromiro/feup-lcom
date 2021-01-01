@@ -1,0 +1,4 @@
+<map id="free_game_objects" name="free_game_objects">
+<area shape="rect" id="node1" title="Free memory related to the game objects." alt="" coords="111,5,257,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="5,5,63,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="pop" name="pop">
+<area shape="rect" id="node1" title="Pops the front element of the queue." alt="" coords="5,31,52,57"/>
+<area shape="rect" id="node2" href="$queue_8c.html#a32df32dccfc5eadc233531804f0cb305" title="Gets the front element of the queue." alt="" coords="100,5,153,32"/>
+<area shape="rect" id="node3" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="201,31,284,57"/>
+</map>

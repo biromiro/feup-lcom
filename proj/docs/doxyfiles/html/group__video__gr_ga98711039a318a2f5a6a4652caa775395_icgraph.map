@@ -1,0 +1,4 @@
+<map id="print_background" name="print_background">
+<area shape="rect" id="node1" title="Prints the background buffer onto the video mem buffer." alt="" coords="167,5,301,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga9e63ea32abae3f871fcbe66fd99003b2" title="Updates the screen every frame." alt="" coords="5,5,119,32"/>
+</map>
