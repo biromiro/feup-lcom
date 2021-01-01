@@ -4,7 +4,7 @@ static animated_xpm_object **player1, **player2;
 static animated_xpm_object *current_sprite_player1, *current_sprite_player2;
 gameState gs;
 static bool sentP1 = false, sentP2 = false, attackAnimationP1 = false, attackAnimationP2 = false;
-bool coop = false;
+bool in_coop = false;
 
 void create_game_objects() {
   player1 = malloc(sizeof(animated_xpm_object *) * 3);
@@ -12,9 +12,9 @@ void create_game_objects() {
   player1[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle) / sizeof(const char *), "Wraith Idle 1", get_h_resolution()/2 - 300, get_v_resolution() - 350,3);
   player1[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking) / sizeof(const char *), "Wraith Walking 1", 0, 0, 3);
   player1[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack) / sizeof(const char *), "Wraith Attacking 1", 0, 0, 3);
-  player2[0] = create_animated_sprite(wraithIdle, sizeof(wraithIdle) / sizeof(const char *), "Wraith Idle 2", get_h_resolution()/2 + 100, get_v_resolution() - 350,3);
-  player2[1] = create_animated_sprite(wraithWalking, sizeof(wraithWalking) / sizeof(const char *), "Wraith Walking 2", 0, 0, 3);
-  player2[2] = create_animated_sprite(wraithAttack, sizeof(wraithAttack) / sizeof(const char *), "Wraith Attacking 2", 0, 0, 3);
+  player2[0] = create_animated_sprite(wraithIdle2, sizeof(wraithIdle2) / sizeof(const char *), "Wraith Idle 2", get_h_resolution()/2 + 100, get_v_resolution() - 350,3);
+  player2[1] = create_animated_sprite(wraithWalking2, sizeof(wraithWalking2) / sizeof(const char *), "Wraith Walking 2", 0, 0, 3);
+  player2[2] = create_animated_sprite(wraithAttack2, sizeof(wraithAttack2) / sizeof(const char *), "Wraith Attacking 2", 0, 0, 3);
   current_sprite_player1 = player1[0];
   current_sprite_player2 = player2[0];
 }
@@ -29,7 +29,7 @@ void free_game_objects(){
 }
 
 int update_character_movement(int counter) {
-  if(coop) update_character_movement_player(counter, &player2, &current_sprite_player2, &attackAnimationP2);
+  if(in_coop) update_character_movement_player(counter, &player2, &current_sprite_player2, &attackAnimationP2);
   update_character_movement_player(counter, &player1, &current_sprite_player1, &attackAnimationP1);
   return 0;
 }
@@ -98,7 +98,7 @@ void handle_ingame_scancode(uint8_t scancode, animated_xpm_object*** player, ani
     default:
       return;
   }
-  if(player1_pp && coop) send_scancode(scancode);
+  if(player1_pp && in_coop) send_scancode(scancode);
 }
 
 void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp) {
@@ -114,7 +114,7 @@ void handle_mouse_packet(xpm_object *cursor, struct packet *pp, bool player1_pp)
           send_byte(0x53);
         }
       }else if(gs == GAME){
-        if(!sentP1 && coop) send_mouse_info(cursor);
+        if(!sentP1 && in_coop) send_mouse_info(cursor);
       }
     }
     if(gs==START){
@@ -212,5 +212,5 @@ void reset_characters(){
   player2[0]->cur_speed = 0;
   current_sprite_player1 = player1[0];
   current_sprite_player2 = player2[0];
-  coop = false;
+  in_coop = false;
 }

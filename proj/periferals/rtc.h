@@ -114,6 +114,12 @@ void (rtc_alarm)();
 void (rtc_periodic)();
 
 /**
- * @brief Prints to the screen the current date and time
+ * @brief Prints to the screen the current date
  */
 char* (print_date)();
+
+/**
+ * @brief Prints to the screen the current time
+ * 
+ */
+char* (print_time)();

@@ -1,5 +1,5 @@
 /* XPM */
-static char * C:\Users\nrtc\Desktop\FEUP\LCOM\g06\proj\img\Wraith_02\Attacking\Wraith_02_Attack_003_xpm[] = {
+static const char * Wraith_02_Attack_003[] = {
 "249 312 215 2",
 "  	c None",
 ". 	c #171514",

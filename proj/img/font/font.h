@@ -68,3 +68,4 @@
 
 
 static xpm_map_t digits[10] = {zero, one, two, three, four, five, six, seven, eight, nine};
+static xpm_map_t alphabet[] = {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z};

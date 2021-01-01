@@ -11,6 +11,9 @@
 #include "img/Wraith_01/Idle/Wraith_Idle.h"
 #include "img/Wraith_01/Walking/Wraith_Walking.h"
 #include "img/Wraith_01/Attacking/Wraith_Attack.h"
+#include "img/Wraith_02/Attacking/Wraith_Attack.h"
+#include "img/Wraith_02/Idle/Wraith_Idle.h"
+#include "img/Wraith_02/Walking/Wraith_Walking.h"
 
 /**
  * @brief Creates the game objects (sprites)

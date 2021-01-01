@@ -6,7 +6,7 @@ int ser_hook = 4;
 static Queue *send_queue, *received_queue;
 xpm_object *coop_cursor;
 extern gameState gs;
-extern bool coop;
+extern bool in_coop;
 extern bool finished;
 static bool ualarm_set = false;
 
@@ -335,14 +335,14 @@ bool handle_coop_start(){
         set_power_up_alarm(1);
         set_enemy_throw(0xF);
         printf("srandByte = %d\n", srandByte);
-        coop=true;
+        in_coop=true;
         send_byte(0x57);
     }else if(front(received_queue) == 0x57){
         printf("received5");
         gs = GAME;
         set_power_up_alarm(1);
         set_enemy_throw(0xF);
-        coop = true;
+        in_coop = true;
         printf("started game");
     }
     pop(received_queue);

@@ -7,10 +7,11 @@ static uint8_t hour = 0, minute = 0, second = 0, day_of_the_week_val = 0, day_mo
 static uint32_t  year = 0;
 static char day_of_the_week[9];
 static char month[9];
-static char date[] = "Wednesday, 31 of September of 2000, 23:59:59";
+static char time_hours[] = "00:00:00";
+static char date[] = "WEDNESDAY, 31 OF SEPTEMBER OF 2000";
 
-char * days_of_the_week[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-char * months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+char * days_of_the_week[7] = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
+char * months[12] = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
 
 bool alarmInterrupt = false;
 
@@ -190,10 +191,15 @@ void (rtc_periodic)(){
 
 char* (print_date)(){
     char day_ending[3];
-    if(day_month == 1 || day_month == 21 || day_month == 31) sprintf(day_ending, "st");
-    else if(day_month == 2 || day_month == 22) sprintf(day_ending, "nd");
-    else if(day_month == 3 || day_month == 23) sprintf(day_ending, "rd");
-    else sprintf(day_ending, "th");
-    sprintf(date, "%s, %d%s of %s, %d, %d:%d:%d\n",day_of_the_week, day_month, day_ending, month, year, hour, minute, second);
+    if(day_month == 1 || day_month == 21 || day_month == 31) sprintf(day_ending, "ST");
+    else if(day_month == 2 || day_month == 22) sprintf(day_ending, "ND");
+    else if(day_month == 3 || day_month == 23) sprintf(day_ending, "RD");
+    else sprintf(day_ending, "TH");
+    sprintf(date, "%s, %d%s OF %s, %d",day_of_the_week, day_month, day_ending, month, year);
     return date;
+}
+
+char* print_time(){
+    sprintf(time_hours, "%02d:%02d:%02d", hour, minute, second);
+    return time_hours;
 }

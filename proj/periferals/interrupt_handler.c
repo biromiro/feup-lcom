@@ -10,7 +10,7 @@ static bool startPacket;
 static struct packet pp;
 static uint8_t bytes[2];
 static xpm_object *igcursor, *background_img, *mainMenu[5], *instructionsMenu, *gameOver, *coopWaitingMenu;
-extern bool alarmInterrupt;
+extern bool alarmInterrupt, in_coop;
 extern int menu_index;
 extern gameState gs;
 
@@ -67,7 +67,7 @@ int initialize() {
   igcursor = create_sprite(cursor, "cursor", 200, 200);
   background_img = create_sprite(background, "background", 0, 0);
   
-  instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,0);
+  instructionsMenu = create_sprite(instructionsmenu,"instructionsMenu",0,-120);
   gameOver = create_sprite(gameover,"gameOver",0,0);
   coopWaitingMenu = create_sprite(coop, "coopWaitingMenu", 0,0);
   
@@ -83,7 +83,7 @@ int initialize() {
 
   
   set_rtc_interrupts(ALARM, true);
-  set_rtc_interrupts(UPDATE, false);
+  set_rtc_interrupts(UPDATE, true);
   set_rtc_interrupts(PERIODIC, true);
 
   ser_enable_int();
@@ -222,12 +222,14 @@ void timer_handler() {
       print_xpm(mainMenu[menu_index]);
     } else if(gs==INSTRUCTIONS){
       print_xpm(instructionsMenu);
+      draw_date();
+      draw_time();
     } else if(gs == COOP) {
       print_xpm(coopWaitingMenu);
     } else if(gs==GAME) {
       if(checking_collision(get_magic_blasts())){
         gs = GAMEOVER;
-        send_byte(0xFF);
+        if(in_coop)send_byte(0xFF);
         reset_game();
         print_xpm(gameOver);
       }
@@ -281,8 +283,10 @@ void kbd_handler() {
 
   handle_button_presses(scancode, true);
   i = 0;
-  if (scancode == KBC_BRK_ESC_KEY )
+  if (scancode == KBC_BRK_ESC_KEY ){
     finished = true;
+    if(in_coop) send_byte(0xFF);
+  }
 }
 
 void rtc_handler(){

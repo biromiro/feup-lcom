@@ -75,6 +75,51 @@ void draw_digit(xpm_object* xpm){
     free_xpm_mem(xpm);
 }
 
+void draw_time(){
+    char * time = print_time();
+    uint8_t length = strlen(time);
+    int x = 470, y=750;
+    for (uint8_t i = 0; i < length ; i++){
+        char elem = time[i];
+        if(elem >= 0x30 && elem <= 0x39){
+            uint8_t index = elem % 0x30;
+            xpm_object* xpm = create_sprite(digits[index], "number", x, y);
+            x += (xpm->img).width + 5;
+            draw_digit(xpm);
+        }else if(elem == 0x3A){
+            xpm_object* xpm = create_sprite(colon, "colon", x, y);
+            x += (xpm->img).width + 5;
+            draw_digit(xpm);
+        }
+    }
+}
+
+void draw_date(){
+    char* date = print_date();
+    uint8_t length = strlen(date);
+    uint8_t num_letters = get_h_resolution()/30;
+    uint8_t rest = ((num_letters-length)%2)/2;
+    int x = (get_h_resolution()%30) + ((num_letters-length)/2)*30 + rest, y=650;
+    for (uint8_t i = 0; i < length ; i++){
+        char elem = date[i];
+        if(elem == 0x2C){ //comma
+            xpm_object* xpm = create_sprite(comma, "comma", x, y);
+            x += (xpm->img).width + 2;
+            draw_digit(xpm);
+        }else if(elem >= 0x41 && elem <= 0x5A){
+            uint8_t index = elem % 0x41;
+            xpm_object* xpm = create_sprite(alphabet[index], "letter", x, y);
+            x += (xpm->img).width + 2;
+            draw_digit(xpm);
+        }else if(elem >= 0x30 && elem <= 0x39){
+            uint8_t index = elem % 0x30;
+            xpm_object* xpm = create_sprite(digits[index], "number", x, y);
+            x += (xpm->img).width + 2;
+            draw_digit(xpm);
+        }else x += 30;
+    }
+}
+
 
 void free_xpm_mem(xpm_object* xpm){
     free(xpm->map);

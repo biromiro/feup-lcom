@@ -10,6 +10,7 @@
 #include "../img/hud_overlay_wave.xpm"
 #include "../img/hud_overlay_score.xpm"
 #include "../img/hud_overlay_charges.xpm"
+#include "../periferals/rtc.h"
 
 /**
  * @brief draws the current HUD
@@ -60,5 +61,17 @@ void free_xpm_mem(xpm_object* xpm);
  * 
  */
 void reset_hud();
+
+/**
+ * @brief Draws the date to the screen
+ * 
+ */
+void draw_date();
+
+/**
+ * @brief Draws the time to the screen
+ * 
+ */
+void draw_time();
 
 #endif

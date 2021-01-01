@@ -8,7 +8,7 @@ static size_t total_enemies = 10;
 static size_t available_enemies;
 static int ENEMIES_MAX_VELOCITY = 5;
 static uint8_t score = 0;
-extern bool coop;
+extern bool in_coop;
 
 void set_enemies_available() {
   available_enemies = total_enemies;
@@ -86,7 +86,7 @@ int checking_collision(xpm_object **magic_blasts) {
       score = 0;
       return 1;
     }
-    if(coop){
+    if(in_coop){
       if (enemy_collision(get_current_character_p2(), enemies[enemiesIndex])) {
         free(enemies[enemiesIndex]);
         reindex_enemies(enemiesIndex);
