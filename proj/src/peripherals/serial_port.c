@@ -139,8 +139,6 @@ bool send_byte(uint8_t byte){
             return true;
         }
         
-        bool max_tries = 20;
-
         uint8_t max_tries = 20;
 
         while(true){
