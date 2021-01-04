@@ -129,3 +129,10 @@ char* (print_date)();
  * 
  */
 char* (print_time)();
+
+/**
+ * @brief Gets the current second
+ * 
+ * @return uint8_t the current second
+ */
+uint8_t get_second();

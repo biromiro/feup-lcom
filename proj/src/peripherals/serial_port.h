@@ -2,6 +2,7 @@
 #include <time.h>
 #include "serial_port_controller.h"
 #include "queue.h"
+#include "rtc.h"
 #include "../game/character_movement.h"
 
 

@@ -317,6 +317,7 @@ void reset_game(){
   ser_clear();
   if(swapped){
     swap_characters();
+    printf("SWAPPED BACK!!!!!!!!!!!!!!!");
     swapped = false;
   }
   in_coop = false;

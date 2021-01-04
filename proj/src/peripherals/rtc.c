@@ -205,3 +205,7 @@ char* print_time(){
     sprintf(time_hours, "%02d:%02d:%02d", hour, minute, second);
     return time_hours;
 }
+
+uint8_t get_second(){
+    return second;
+}
