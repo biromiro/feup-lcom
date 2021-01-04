@@ -2,8 +2,8 @@
 #define ENEMIES_H
 
 #include <lcom/lcf.h>
-#include "../periferals/video_gr.h"
-#include "../img/Wraith_02/Spells_Effect.xpm"
+#include "../peripherals/video_gr.h"
+#include "../img/Spells_Effect.xpm"
 
 /** @defgroup enemies enemies
  * @{

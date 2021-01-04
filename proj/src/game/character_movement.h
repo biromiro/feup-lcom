@@ -2,10 +2,10 @@
 #define CHARACTER_MOVEMENT_H
 
 #include <lcom/lcf.h>
-#include "../periferals/video_gr.h"
-#include "../periferals/i8042.h"
-#include "../periferals/serial_port.h"
-#include "../periferals/rtc.h"
+#include "../peripherals/video_gr.h"
+#include "../peripherals/i8042.h"
+#include "../peripherals/serial_port.h"
+#include "../peripherals/rtc.h"
 #include "magic_blast.h"
 #include "menu.h"
 #include "img/Wraith_01/Idle/Wraith_Idle.h"

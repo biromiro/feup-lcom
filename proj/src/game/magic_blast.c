@@ -25,7 +25,14 @@ void throw_magic_blast(xpm_object *cursor, xpm_object *character) {
 
   int x_offset = (character->mirrored) ? 90 : (160);
   int y_offset = 215; 
-  xpm_object *new_magic_blast = create_sprite(Spells_Effect, "Magic Blast", character->x + x_offset, character->y + y_offset);
+  xpm_object *new_magic_blast;
+
+  char character_num = character->ID[strlen(character->ID) -1];  
+  if(character_num == '1'){
+    new_magic_blast = create_sprite(Spells_Effect, "Magic Blast", character->x + x_offset, character->y + y_offset);
+  }else if(character_num == '2'){
+    new_magic_blast = create_sprite(Spells_Effect_2, "Magic Blast", character->x + x_offset, character->y + y_offset);
+  }else new_magic_blast = NULL;
 
   int dx = (cursor->x - (character->x + x_offset));
   int dy = (cursor->y - (character->y + y_offset));

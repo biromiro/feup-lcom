@@ -1,0 +1,1519 @@
+0000fully configuredc1
+cc
+received info
+received byte: 53 c2!!!!!cc
+received info
+received byte: c1
+c2
+c2!!!!!!!!cc
+received info
+received bytcc
+received info
+received byte: fe received byte: 54 ccc
+received info
+received byte: fe received bytcc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 56 received byte: c4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+rcc
+received info
+receivec2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesencc
+received info
+received byte: 57 received byte: 82 received byte: 2 received byte: 13 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+received5started gamecc
+received info
+received byte: 65 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:82, 2:2, 3:13, 4:65
+x = 531, y = 613
+c1
+alarm! cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 82 received byte: 20 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+cc
+received info
+received byte: 6a received byte: 71 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:82, 2:0, 3:6a, 4:71
+x = 618, y = 113
+c1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 8 received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 81 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 20 received byte: 2f received byte: 7e c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:81, 2:0, 3:2f, 4:7e
+x = 303, y = 126
+cc
+received info
+received byte: 81 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 20 received byte: f1 received byte: 5e c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:81, 2:0, 3:f1, 4:5e
+x = 497, y = 94
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+alarm! cc
+received info
+received byte: 82 received byte: 20 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 28 received byte: 65 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:82, 2:0, 3:28, 4:65
+x = 552, y = 101
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 82 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 20 received byte: 5a c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 61 c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:82, 2:0, 3:5a, 4:61
+x = 602, y = 97
+c1
+cc
+received info
+received byte: 82 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 20 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 50 received byte: 61 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:82, 2:0, 3:50, 4:61
+x = 592, y = 97
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 81 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 20 received byte: 17 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: af c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:81, 2:0, 3:17, 4:af
+x = 279, y = 175
+c1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 80 received byte: 20 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+cc
+received info
+received byte: e9 received byte: bf c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:80, 2:0, 3:e9, 4:bf
+x = 233, y = 191
+c1
+alarm! cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: ff c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+cc
+received info
+received byte: 53 c2!!!!!!!!!!
+UFE
+sending bytes in queuereceived1cc
+received info
+received byte: fe received byte: 55 c2!!!!!!!!!!
+UFE
+sending bytes in queuereceived3
+1
+0srandByte (sender) = 29
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 1d
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe received byte: fe c1!!!!!!!!!!
+c1
+cc
+received info
+received byte: 57 c2!!!!!!!!!!
+UFE
+sending bytes in queuereceived5started gamecc
+received info
+received byte: 82 received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+cc
+received info
+received byte: 5b c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 5a c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:82, 2:2, 3:5b, 4:5a
+x = 603, y = 602
+c1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+alarm! cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 81 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 20 received byte: 7e c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+cc
+received info
+received byte: e0 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+mouse1:81, 2:0, 3:7e, 4:e0
+x = 382, y = 224
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 84 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 20 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 75 received byte: af c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:84, 2:0, 3:75, 4:af
+x = 1141, y = 175
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 81 received byte: 20 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+cc
+received info
+received byte: c4 received byte: ca c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:81, 2:0, 3:c4, 4:ca
+x = 452, y = 202
+c1
+cc
+received info
+received byte: 1 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 2 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 80 c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 1 received byte: 38 c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: 12 c2!!!!!!!!!!
+UFE
+sending bytes in queuemouse1:80, 2:1, 3:38, 4:12
+x = 56, y = 274
+c1
+alarm! cc
+received info
+received byte: 81 received byte: 20 received byte: 4b c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : fe
+cc
+received info
+received byte: df c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+mouse1:81, 2:0, 3:4b, 4:df
+x = 331, y = 223
+cc
+received info
+received byte: 4 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: 8 c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+cc
+received info
+received byte: fe c1!!!!!!!!!!
+alarm! alarm! alarm! alarm! e c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent scancode!
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent mouse info!, x = 382, y=224, 1: 81, 2:20, 3:7e, 4:e0
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 20
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 7e
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : e0
+received byte: fe cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent mouse info!, x = 1141, y=175, 1: 84, 2:20, 3:75, 4:af
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 20
+received byte: fe c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 75
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : af
+cc
+received info
+received byte: fe received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent scancode!
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent scancode!
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 4
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe received byte: fe c1!!!!!!!!!!
+c1
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent mouse info!, x = 452, y=202, 1: 81, 2:20, 3:c4, 4:ca
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 20
+cc
+received info
+received byte: fe received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : c4
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : ca
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe received byte: fe c1!!!!!!!!!!
+c1
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent mouse info!, x = 56, y=274, 1: 80, 2:1, 3:38, 4:12
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 1
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 38
+cc
+received info
+received byte: fe received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 12
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+alarm! sent mouse info!, x = 331, y=223, 1: 81, 2:20, 3:4b, 4:df
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 20
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : 4b
+cc
+received info
+received byte: fe received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuesent byte : df
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe received byte: fe c1!!!!!!!!!!
+c1
+sent scancode!
+c2
+c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: fe c1!!!!!!!!!!
+sent scancode!
+cc
+received info
+received byte: fe c2!!!!!!!!!!
+UFE
+sending bytes in queuecc
+received info
+received byte: ff c2!!!!!!!!!!
+UFE
+sending bytes in queuec1
+alarm! alarm! alarm! alarm! 

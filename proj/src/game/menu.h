@@ -2,7 +2,7 @@
 #define MENU_H
 
 #include <lcom/lcf.h>
-#include "../periferals/video_gr.h"
+#include "../peripherals/video_gr.h"
 
 /** @defgroup menu menu
  * @{

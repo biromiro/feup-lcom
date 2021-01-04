@@ -2,7 +2,7 @@
 #define HUD_H
 
 #include <lcom/lcf.h>
-#include "../periferals/video_gr.h"
+#include "../peripherals/video_gr.h"
 #include "enemies.h"
 #include "magic_blast.h"
 #include "game_state.h"
@@ -10,7 +10,7 @@
 #include "../img/hud_overlay_wave.xpm"
 #include "../img/hud_overlay_score.xpm"
 #include "../img/hud_overlay_charges.xpm"
-#include "../periferals/rtc.h"
+#include "../peripherals/rtc.h"
 
 /** @defgroup hud hud
  * @{
