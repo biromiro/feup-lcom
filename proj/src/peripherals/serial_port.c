@@ -71,22 +71,16 @@ void ser_exit(){
 void ser_ih(){
     uint8_t reg;
     read_port(IIR, &reg);
-    //printf("%x\n",reg);
     while(!(reg & IIR_NO_INT)) {
         if(reg & IIR_RECEIVED_DATA_AVAILABLE){
-            //printf("received info\n");
             while(OK == read_byte());
             read_port(IIR, &reg);
         }
-        //printf("%x!!!!!!!!!!\n",reg);
         if(reg & IIR_TRANSMIT_HOLD_REG_EMPTY){
-            //printf("UFE\n");
             send_bytes_in_queue();
             read_port(IIR, &reg);
         }
     }
-    //printf("The receiving queue empty -> %d", is_empty(received_queue));
-    //printf("The send queue empty -> %d", is_empty(send_queue));
 }
 
 bool read_port(int port, uint8_t* val){
@@ -131,48 +125,12 @@ bool send_byte(uint8_t byte){
     empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
     hold_reg_empty = empty_transmitter;
     if(hold_reg_empty){
-        /* write_to_port(THR,front(send_queue));
-        printf("sent byte insta: %x\n", front(send_queue));
-    
-        if(front(send_queue) == 0xFE || front(send_queue) == 0xDE){
-            pop(send_queue);
-            return true;
-        }
-        
-        uint8_t max_tries = 20;
-
-        while(max_tries){
-            read_byte();
-            uint8_t answer = pop(ack_queue);
-            if(answer == 0xFE){
-                pop(send_queue);
-                break;
-            }
-            else if(answer == 0xDE){
-                write_to_port(THR,front(send_queue));
-            }
-            else if(answer == 0){
-                max_tries--;
-            }
-        }
-                //printf("num of tries = %d\n", 5000 - max_tries);
-        if(max_tries == 0){
-            printf("max tries reached\n");
-            if(gs == GAME) gs = GAMEOVER;
-            pop(send_queue);
-            return false;
-        }
-        read_port(LSR, &empty_transmitter);
-        empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
-        hold_reg_empty = empty_transmitter;
-        return true; */
         return send_bytes_in_queue();
     }else return pushed;
     
 }
 
 bool send_bytes_in_queue(){
-    //printf("sending bytes in queue");
     if(is_empty(send_queue)){
         hold_reg_empty = true;
         return false;
@@ -233,16 +191,13 @@ bool read_byte(){
     read_port(LSR, &reg);
     if(reg & LSR_RECEIVER_DATA){
         read_port(RBR, &byte);
-        printf("received byte: %x \n", byte);
         if(OK == (reg & (LSR_OVERRUN_ERR | LSR_PARITY_ERR | LSR_FRAMING_ERR))){
             if(byte != 0xFE && byte != 0xDE){
                 send_byte(0xFE);
                 push(received_queue,byte);
-                printf("pushed received queue\n");
             }
             else{
                 push(ack_queue, byte);
-                printf("pushed to ack queue\n");
             }
             return OK;
         }else{
@@ -270,24 +225,17 @@ bool ser_clear(){
 
 bool handle_coop_start(){
 
-    //printf("handling coop start -> front = %x\n", front(received_queue));
     if(front(received_queue) == 0x53){
-        //printf("received1\n");
         send_byte(0x54);
     }else if(front(received_queue) == 0x54){
-        //printf("received2\n");
         send_byte(0x55);
     }else if(front(received_queue) == 0x55){
-        //printf("received3\n");
         uint8_t srandByte = time(NULL);
         send_byte(0x56);
-        //printf("\n%d\n",);
         send_byte(srandByte);
-        //printf("\n%d\n", );
         srandom(srandByte);
         printf("srandByte (sender) = %d\n", srandByte);
     }else if(front(received_queue) == 0x56){
-        //printf("received4\n");
         pop(received_queue);
         uint8_t srandByte = pop(received_queue);
         while(srandByte == 0){
@@ -305,12 +253,10 @@ bool handle_coop_start(){
         in_coop=true;
         send_byte(0x57);
     }else if(front(received_queue) == 0x57){
-        //printf("received5\n");
         gs = GAME;
         set_power_up_alarm(1);
         set_enemy_throw(0xF);
         in_coop = true;
-        //printf("started game\n");
     }
     pop(received_queue);
     return true;
@@ -329,7 +275,6 @@ void send_scancode(uint8_t scancode){
         send_code |= BIT(3);
     }
     send_byte(send_code);
-    printf("sent scancode!\n");
 }
 
 void send_mouse_info(xpm_object* cursor){
@@ -346,7 +291,6 @@ void send_mouse_info(xpm_object* cursor){
     send_byte(mostSignificantPartY);
     send_byte(xByte);
     send_byte(yByte);
-    printf("sent mouse info!, x = %d, y=%d, 1: %x, 2:%x, 3:%x, 4:%x\n", cursor->x, cursor->y, send_code, mostSignificantPartY, xByte, yByte);
 }
 
 void handle_received_info(){
@@ -396,7 +340,6 @@ void handle_received_info(){
 
         if(!is_empty(packet_queue)){
             push(packet_queue, curByte);
-            printf("number of packet elements: %d\n", packet_queue->numElements);
             if(packet_queue->numElements == 4)
                 mount_packet();
             continue;
@@ -428,13 +371,11 @@ void handle_received_info(){
 
 void mount_packet(){
     uint8_t firstByte = pop(packet_queue), secondByte = pop(packet_queue), thirdByte = pop(packet_queue), fourthByte = pop(packet_queue);
-    printf("mouse");
     int x = 0, y = 0;
     if(secondByte & BIT(5)) secondByte = 0;
     if(firstByte & BIT(5)) thirdByte = 0;
     if(firstByte & BIT(6)) fourthByte = 0;
 
-    printf("1:%x, 2:%x, 3:%x, 4:%x\n", firstByte, secondByte, thirdByte, fourthByte);
     x |= thirdByte;
     x |= ((firstByte & (BIT(0) | BIT(1) | BIT(2) | BIT(3))) << 8);
 
@@ -443,7 +384,6 @@ void mount_packet(){
 
     coop_cursor->x = (firstByte & BIT(4)) ? (~(0xFFF) | x) : (x);
     coop_cursor->y = (secondByte & BIT(4)) ? (~(0xFFF) | y) : (y);
-    printf("x = %d, y = %d\n", coop_cursor->x, coop_cursor->y);
     struct packet pp;
     pp.lb = true;
     handle_mouse_packet(coop_cursor, &pp,  false);
