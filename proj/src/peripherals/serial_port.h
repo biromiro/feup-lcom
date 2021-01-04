@@ -135,9 +135,11 @@ bool empty_send_queue();
 /**
  * @brief Reads a byte from the serial port receiver buffer register
  * 
+ * @param in_timeout true if the read byte call is in the timeout loop
+ * 
  * @return True if successful, false otherwise 
  */
-bool read_byte();
+bool read_byte(bool in_timeout);
 
 /**
  * @brief Get the received queue object

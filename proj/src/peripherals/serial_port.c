@@ -72,7 +72,7 @@ void ser_ih(){
     read_port(IIR, &reg);
     while(!(reg & IIR_NO_INT)) {
         if(reg & IIR_RECEIVED_DATA_AVAILABLE){
-            while(OK == read_byte());
+            while(OK == read_byte(false));
             read_port(IIR, &reg);
         }
         if(reg & IIR_TRANSMIT_HOLD_REG_EMPTY){
@@ -129,6 +129,7 @@ bool send_bytes_in_queue(){
         printf("sent byte : %x\n", front(send_queue));
     
         if(front(send_queue) == ACK || front(send_queue) == NACK || front(send_queue) == END){
+            printf("entered");
             pop(send_queue);
             read_port(LSR, &empty_transmitter);
             empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
@@ -137,12 +138,14 @@ bool send_bytes_in_queue(){
             continue;
         }
         
+        printf("began while timeout\n");
+
         bool timeout = false;
         uint8_t current_sec = get_second();
         uint8_t seconds_elapsed = 0;
 
         while(!timeout){
-            read_byte();
+            read_byte(true);
             uint8_t answer = pop(ack_queue);
             if(answer == ACK){
                 pop(send_queue);
@@ -157,6 +160,7 @@ bool send_bytes_in_queue(){
                 if(current_sec != get_second()){
                     current_sec = get_second();
                     seconds_elapsed++;
+                    printf("+ 1 second");
                 }
                 if(seconds_elapsed == 2) timeout = true;
             }
@@ -180,14 +184,14 @@ bool send_bytes_in_queue(){
     return true;
 }
 
-bool read_byte(){
+bool read_byte(bool in_timeout){
     uint8_t reg, byte;
     read_port(LSR, &reg);
     if(reg & LSR_RECEIVER_DATA){
         read_port(RBR, &byte);
         if(OK == (reg & (LSR_OVERRUN_ERR | LSR_PARITY_ERR | LSR_FRAMING_ERR))){
             if(byte != 0xFE && byte != 0xDE){
-                send_byte(0xFE);
+                if(!in_timeout) send_byte(0xFE);
                 push(received_queue,byte);
             }
             else{
@@ -195,7 +199,7 @@ bool read_byte(){
             }
             return OK;
         }else{
-            if(byte != 0xFE && byte != 0xDE)
+            if(byte != 0xFE && byte != 0xDE && !in_timeout)
                 send_byte(0xDE);
             return OK;
         }
@@ -236,7 +240,7 @@ bool handle_coop_start(){
         pop(received_queue);
         uint8_t srandByte = pop(received_queue);
         while(srandByte == 0){
-            read_byte();
+            read_byte(false);
             srandByte = pop(received_queue);
         }
         srandom(srandByte);
