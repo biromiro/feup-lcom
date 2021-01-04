@@ -1,0 +1,11 @@
+<map id="wait_until_finished_update" name="wait_until_finished_update">
+<area shape="rect" id="node1" title="Waits until there is no active update on the RTC." alt="" coords="763,74,907,115"/>
+<area shape="rect" id="node2" href="$group__rtc.html#gacbe3b4f73341216278ce7de058281b71" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="608,81,715,108"/>
+<area shape="rect" id="node3" href="$group__rtc.html#ga8f0a2d1eb9643086c3f45464a649293f" title="Gets the current second." alt="" coords="433,5,529,32"/>
+<area shape="rect" id="node4" href="$group__rtc.html#ga14d5cf47836341645265207264f150f5" title="Updates date and time memory registers." alt="" coords="433,56,529,83"/>
+<area shape="rect" id="node7" href="$group__rtc.html#ga16f3810b612672b64b0ed961c38f2ce6" title="Sets up the rate at which the periodic interrupts will send new enemies." alt="" coords="412,107,551,133"/>
+<area shape="rect" id="node9" href="$group__rtc.html#gaa90e57cc419c0a865cf925cad4d9dd63" title="Sets up the alarm to power up in game." alt="" coords="403,157,560,184"/>
+<area shape="rect" id="node5" href="$group__rtc.html#ga0b9ae809cf571f61e54712a23c65348e" title="RTC Interrupt Handler." alt="" coords="222,56,281,83"/>
+<area shape="rect" id="node6" href="$group__interrupt__handler.html#ga9a1321dd741df6d233bf497ab078e32b" title="Handles the real time clock." alt="" coords="5,81,100,108"/>
+<area shape="rect" id="node8" href="$group__game__state.html#gab7b27caafab73614606edacc67a01a8f" title="Matches an RTC interrupt to a corresponding in game change." alt="" coords="148,107,355,133"/>
+</map>

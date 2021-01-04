@@ -1,0 +1,6 @@
+<map id="game/menu.c" name="game/menu.c">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$menu_8h.html" title=" " alt="" coords="25,80,96,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="18,229,103,256"/>
+<area shape="rect" id="node4" href="$video__gr_8h.html" title=" " alt="" coords="35,155,214,181"/>
+</map>

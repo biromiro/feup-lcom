@@ -1,0 +1,164 @@
+\hypertarget{interrupt__handler_8c}{}\doxysection{peripherals/interrupt\+\_\+handler.c File Reference}
+\label{interrupt__handler_8c}\index{peripherals/interrupt\_handler.c@{peripherals/interrupt\_handler.c}}
+{\ttfamily \#include \char`\"{}interrupt\+\_\+handler.\+h\char`\"{}}\newline
+Include dependency graph for interrupt\+\_\+handler.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupt__handler_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__interrupt__handler_gab570339ba658dea7f08a99b9374e605f}{subscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Subscribes all the peripherals Timer, Keyboard and Timer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__interrupt__handler_ga03aede8ff91764482bb5e9accfae9b4f}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Calls the functions to set up the program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__interrupt__handler_ga39ca4da537e3c0062ada871f99b91b8d}{unsubscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes all the peripherals. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__interrupt__handler_gaede67e93f7e68c80a15439bd673effc5}{finish}} ()
+\begin{DoxyCompactList}\small\item\em Calls the functions to terminate the program. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__interrupt__handler_ga2b32d4aa52316d13e9223c64d3acb774}{get\+\_\+irq\+\_\+set}} (\mbox{\hyperlink{group__interrupt__handler_ga3b84711f4729b8ef456ee80707f6b579}{irq\+\_\+type}} type)
+\begin{DoxyCompactList}\small\item\em Get the irq set, based on the type of interruption. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga50a518afed32147b41b66eceb5c99994}{interrupt\+\_\+call\+\_\+receiver}} ()
+\begin{DoxyCompactList}\small\item\em Interrupt receiver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga9e63ea32abae3f871fcbe66fd99003b2}{timer\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Updates the screen every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga6ca7c8595f4c1116a2e057ad74fe27a5}{mouse\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Builds the mouse packet and handles it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_gac89c6cf4a316a1847cf32ec3ed53646b}{kbd\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Builds the keyboard packet and handles it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga9a1321dd741df6d233bf497ab078e32b}{rtc\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles the real time clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga03156595467b344e4394ce04e43cd638}{ser\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Reads the information on the serial port and handles it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga6be2f294a4d060a7a6e445016a151100}{reset\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Resets all game assets for a possible restart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interrupt__handler_8c_a617a47c70795bcff659815ad0efd2266}{counter}}
+\item 
+int \mbox{\hyperlink{interrupt__handler_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{interrupt__handler_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{interrupt__handler_8c_a1aa751d66941402c672b0b8ea786e050}{packet\+Byte}}
+\item 
+bool \mbox{\hyperlink{interrupt__handler_8c_a9324389a5cdc532c6417a87ccafe18ce}{finished}}
+\item 
+bool \mbox{\hyperlink{interrupt__handler_8c_ad1949c4e76775df4cd456939da7710cb}{alarm\+Interrupt}}
+\item 
+bool \mbox{\hyperlink{interrupt__handler_8c_a7a7c4e27f9873c2aee1f4f5af7581487}{in\+\_\+coop}}
+\item 
+bool \mbox{\hyperlink{interrupt__handler_8c_af366811e52ea15aa1a7aa8ded3fa28c4}{swapped}}
+\item 
+int \mbox{\hyperlink{interrupt__handler_8c_a4a73346f34aa035bd18ffec354e317be}{menu\+\_\+index}}
+\item 
+\mbox{\hyperlink{group__menu_gaaf29bbe309504beb4cfec2481eacee62}{game\+State}} \mbox{\hyperlink{interrupt__handler_8c_a3ff300b00fcf14c8f695accf1af84918}{gs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interrupt__handler_8c_ad1949c4e76775df4cd456939da7710cb}\label{interrupt__handler_8c_ad1949c4e76775df4cd456939da7710cb}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!alarmInterrupt@{alarmInterrupt}}
+\index{alarmInterrupt@{alarmInterrupt}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{alarmInterrupt}{alarmInterrupt}}
+{\footnotesize\ttfamily bool alarm\+Interrupt}
+
+
+
+Definition at line 15 of file rtc.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a9cfbb269728dc4185236d28be58d9eab}\label{interrupt__handler_8c_a9cfbb269728dc4185236d28be58d9eab}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!cnt@{cnt}}
+\index{cnt@{cnt}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{cnt}{cnt}}
+{\footnotesize\ttfamily int cnt}
+
+
+
+Definition at line 4 of file interrupt\+\_\+handler.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a617a47c70795bcff659815ad0efd2266}\label{interrupt__handler_8c_a617a47c70795bcff659815ad0efd2266}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!counter@{counter}}
+\index{counter@{counter}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily int counter}
+
+
+
+Definition at line 8 of file timer.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a9324389a5cdc532c6417a87ccafe18ce}\label{interrupt__handler_8c_a9324389a5cdc532c6417a87ccafe18ce}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!finished@{finished}}
+\index{finished@{finished}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily bool finished}
+
+
+
+Definition at line 6 of file interrupt\+\_\+handler.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a3ff300b00fcf14c8f695accf1af84918}\label{interrupt__handler_8c_a3ff300b00fcf14c8f695accf1af84918}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!gs@{gs}}
+\index{gs@{gs}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{gs}{gs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__menu_gaaf29bbe309504beb4cfec2481eacee62}{game\+State}} gs}
+
+
+
+Definition at line 5 of file character\+\_\+movement.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a7a7c4e27f9873c2aee1f4f5af7581487}\label{interrupt__handler_8c_a7a7c4e27f9873c2aee1f4f5af7581487}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!in\_coop@{in\_coop}}
+\index{in\_coop@{in\_coop}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{in\_coop}{in\_coop}}
+{\footnotesize\ttfamily bool in\+\_\+coop}
+
+
+
+Definition at line 13 of file interrupt\+\_\+handler.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a4a73346f34aa035bd18ffec354e317be}\label{interrupt__handler_8c_a4a73346f34aa035bd18ffec354e317be}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!menu\_index@{menu\_index}}
+\index{menu\_index@{menu\_index}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{menu\_index}{menu\_index}}
+{\footnotesize\ttfamily int menu\+\_\+index}
+
+
+
+Definition at line 3 of file menu.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_a1aa751d66941402c672b0b8ea786e050}\label{interrupt__handler_8c_a1aa751d66941402c672b0b8ea786e050}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!packetByte@{packetByte}}
+\index{packetByte@{packetByte}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{packetByte}{packetByte}}
+{\footnotesize\ttfamily uint8\+\_\+t packet\+Byte}
+
+
+
+Definition at line 5 of file interrupt\+\_\+handler.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_aa1de7a5557e9d96b83cf03f73c92163f}\label{interrupt__handler_8c_aa1de7a5557e9d96b83cf03f73c92163f}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!scancode@{scancode}}
+\index{scancode@{scancode}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{scancode}{scancode}}
+{\footnotesize\ttfamily uint8\+\_\+t scancode}
+
+
+
+Definition at line 9 of file kbc.\+c.
+
+\mbox{\Hypertarget{interrupt__handler_8c_af366811e52ea15aa1a7aa8ded3fa28c4}\label{interrupt__handler_8c_af366811e52ea15aa1a7aa8ded3fa28c4}} 
+\index{interrupt\_handler.c@{interrupt\_handler.c}!swapped@{swapped}}
+\index{swapped@{swapped}!interrupt\_handler.c@{interrupt\_handler.c}}
+\doxysubsubsection{\texorpdfstring{swapped}{swapped}}
+{\footnotesize\ttfamily bool swapped}
+
+
+
+Definition at line 13 of file interrupt\+\_\+handler.\+c.
+

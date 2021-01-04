@@ -1,6 +1,0 @@
-<map id="create_game_objects" name="create_game_objects">
-<area shape="rect" id="node1" title="Creates the game objects (sprites)" alt="" coords="5,56,167,83"/>
-<area shape="rect" id="node2" href="$group__video__gr.html#gadffcf48a3d9030354d26080ee75d4fb0" title="Creates a animated sprite object." alt="" coords="215,5,391,32"/>
-<area shape="rect" id="node3" href="$group__video__gr.html#ga2b030ac61ffa1deb98aae5876cc65e54" title="Gets the horizontal resolution." alt="" coords="237,56,368,83"/>
-<area shape="rect" id="node4" href="$group__video__gr.html#ga4437f47f63b7ede9afb8cb03bc440bf2" title="Gets the vertical resolution." alt="" coords="237,107,368,133"/>
-</map>

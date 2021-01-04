@@ -1,5 +1,0 @@
-<map id="disable_ser_int" name="disable_ser_int">
-<area shape="rect" id="node1" title="Disables the serial port interrupts." alt="" coords="5,31,125,57"/>
-<area shape="rect" id="node2" href="$group__serial__port.html#gac6ec0fcd144e96b116d804d5c9ec9235" title="Reads the value of a given serial port port, adding its base address." alt="" coords="185,5,269,32"/>
-<area shape="rect" id="node3" href="$group__serial__port.html#gadd1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="173,56,281,83"/>
-</map>

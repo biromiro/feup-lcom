@@ -1,0 +1,16 @@
+<map id="game/magic_blast.h" name="game/magic_blast.h">
+<area shape="rect" id="node1" title=" " alt="" coords="581,5,736,32"/>
+<area shape="rect" id="node2" href="$character__movement_8h.html" title=" " alt="" coords="355,80,570,107"/>
+<area shape="rect" id="node9" href="$enemies_8c.html" title=" " alt="" coords="579,162,709,189"/>
+<area shape="rect" id="node10" href="$game__state_8h.html" title=" " alt="" coords="403,162,555,189"/>
+<area shape="rect" id="node12" href="$hud_8h.html" title=" " alt="" coords="629,251,728,278"/>
+<area shape="rect" id="node14" href="$magic__blast_8c.html" title=" " alt="" coords="734,162,887,189"/>
+<area shape="rect" id="node3" href="$character__movement_8c.html" title=" " alt="" coords="5,162,219,189"/>
+<area shape="rect" id="node4" href="$serial__port_8h.html" title=" " alt="" coords="243,155,378,196"/>
+<area shape="rect" id="node5" href="$interrupt__handler_8h.html" title=" " alt="" coords="339,333,493,375"/>
+<area shape="rect" id="node8" href="$serial__port_8c.html" title=" " alt="" coords="193,244,327,285"/>
+<area shape="rect" id="node6" href="$interrupt__handler_8c.html" title=" " alt="" coords="273,423,428,464"/>
+<area shape="rect" id="node7" href="$proj_8c.html" title=" " alt="" coords="452,430,511,457"/>
+<area shape="rect" id="node11" href="$game__state_8c.html" title=" " alt="" coords="454,251,605,278"/>
+<area shape="rect" id="node13" href="$hud_8c.html" title=" " alt="" coords="629,341,728,367"/>
+</map>

@@ -1,0 +1,50 @@
+\hypertarget{hud_8h}{}\doxysection{game/hud.h File Reference}
+\label{hud_8h}\index{game/hud.h@{game/hud.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../peripherals/video\+\_\+gr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}enemies.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}magic\+\_\+blast.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+state.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/font/font.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/hud\+\_\+overlay\+\_\+wave.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/hud\+\_\+overlay\+\_\+score.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/hud\+\_\+overlay\+\_\+charges.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../peripherals/rtc.\+h\char`\"{}}\newline
+Include dependency graph for hud.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hud_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{hud_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__hud_gabc8dedfb78fba9ef5995f8ecc6bc2cf7}{draw\+\_\+current\+\_\+hud}} ()
+\begin{DoxyCompactList}\small\item\em draws the current H\+UD \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga10576846fe372e05ed2cc35eb4b83e4a}{set\+\_\+hud\+\_\+values}} ()
+\begin{DoxyCompactList}\small\item\em Sets the hud values (score, ammo and wave) to their correct values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga200dcd33e635176ca83ddde81b7b7610}{draw\+\_\+score}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_gafd0572ba0ddc563bcfe37074390b11fa}{draw\+\_\+waves}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current wave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga38246dc8d28b56ce66e6838b601e3bed}{draw\+\_\+charges}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current charge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_gab95116baa2b3820ca4b2a497ce7acab3}{draw\+\_\+digit}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Draws a given digit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga5afd36140e7183dbadb4fded41b62b6d}{free\+\_\+xpm\+\_\+mem}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Frees the memory related to a given xpm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga10599cdd9b2651b513185f65fc47f5a7}{reset\+\_\+hud}} ()
+\begin{DoxyCompactList}\small\item\em Resets the hud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga92264a80f56133f509aabd1b25fd9b7d}{draw\+\_\+date}} ()
+\begin{DoxyCompactList}\small\item\em Draws the date to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hud_ga4f3d01370e91e93f6b4fe1f9d8201e9f}{draw\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Draws the time to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}

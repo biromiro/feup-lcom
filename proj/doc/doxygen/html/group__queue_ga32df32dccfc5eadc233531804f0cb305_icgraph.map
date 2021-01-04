@@ -1,0 +1,9 @@
+<map id="front" name="front">
+<area shape="rect" id="node1" title="Gets the front element of the queue." alt="" coords="504,31,557,57"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga6d086784aa4c3d5cd54489f695eaa0fd" title="Handles the co&#45;op game start, syncing both players." alt="" coords="315,5,456,32"/>
+<area shape="rect" id="node4" href="$group__queue.html#gaff071ac301442edc8c4348f9a6b25afb" title="Pops the front element of the queue." alt="" coords="362,56,409,83"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="5,31,104,57"/>
+<area shape="rect" id="node5" href="$group__serial__port.html#ga6e9c1eeb50ffac1b9bc3195d915447fe" title="Mounts the received packet bytes." alt="" coords="152,56,267,83"/>
+<area shape="rect" id="node6" href="$group__serial__port.html#ga04571865b824bc933dc2322a794aafea" title="clears all fifos (ser port queues and program queues)" alt="" coords="169,107,250,133"/>
+<area shape="rect" id="node7" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,107,104,133"/>
+</map>

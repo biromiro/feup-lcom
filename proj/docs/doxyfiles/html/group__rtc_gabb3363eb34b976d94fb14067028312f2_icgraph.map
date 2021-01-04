@@ -1,4 +1,0 @@
-<map id="set_rtc_interrupts" name="set_rtc_interrupts">
-<area shape="rect" id="node1" title="Activates/Deactivates the given RTC Interrupt." alt="" coords="111,5,247,32"/>
-<area shape="rect" id="node2" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="5,5,63,32"/>
-</map>

@@ -1,0 +1,44 @@
+\hypertarget{queue_8h}{}\doxysection{peripherals/queue.h File Reference}
+\label{queue_8h}\index{peripherals/queue.h@{peripherals/queue.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+Include dependency graph for queue.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{queue_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_queue}{Queue}}
+\begin{DoxyCompactList}\small\item\em Represents a queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__queue_gaace0c984578b7ab06e32662b4de52c16}{Q\+U\+E\+U\+E\+S\+I\+ZE}}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{group__queue_ga006f6f78be980ad0795d143f1d22b176}{new\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__queue_gaa94c11a51084b7b7d018502f796751c7}{push}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q, uint8\+\_\+t element)
+\begin{DoxyCompactList}\small\item\em Pushes an element onto the queue. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_gaff071ac301442edc8c4348f9a6b25afb}{pop}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Pops the front element of the queue. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_ga32df32dccfc5eadc233531804f0cb305}{front}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Gets the front element of the queue. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__queue_gaa2b1b27464fcfc82b91478a55b42fb22}{back}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Gets the back element of the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__queue_ga1a03a0cff8f6b685beee30e08f3a3b80}{is\+\_\+empty}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Checks if the given queue is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__queue_gab2a149bb751500c47d4f8de95dec4cce}{is\+\_\+full}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Checks if the given queue is full. \end{DoxyCompactList}\end{DoxyCompactItemize}

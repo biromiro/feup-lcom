@@ -2,7 +2,8 @@
 #define MAGIC_BLAST_H
 
 #include "../img/Wraith_01/Spells_Effect.xpm"
-#include "../periferals/video_gr.h"
+#include "../img/Wraith_02/Spells_Effect_2.xpm"
+#include "../peripherals/video_gr.h"
 #include <lcom/lcf.h>
 
 /** @defgroup magic_blast magic_blast

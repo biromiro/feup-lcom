@@ -1,0 +1,10 @@
+<map id="read_port" name="read_port">
+<area shape="rect" id="node1" title="Reads the value of a given serial port port, adding its base address." alt="" coords="613,56,697,83"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga2fff7715fff4fea8a65fec3604fa9074" title="Disables the serial port interrupts." alt="" coords="445,5,565,32"/>
+<area shape="rect" id="node6" href="$group__serial__port.html#gab4dc7fd4df815e249a8863aa51404856" title="Reads a byte from the serial port receiver buffer register." alt="" coords="462,56,549,83"/>
+<area shape="rect" id="node7" href="$group__serial__port.html#ga9353fabdd05ea291e02243dace57ae1c" title="Handles a serial port interrupt." alt="" coords="329,81,391,108"/>
+<area shape="rect" id="node3" href="$group__serial__port.html#gac938921551cca0e526f0e9a16c324199" title="Exits and restores the serial port." alt="" coords="323,5,397,32"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="197,5,254,32"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node8" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="176,81,275,108"/>
+</map>

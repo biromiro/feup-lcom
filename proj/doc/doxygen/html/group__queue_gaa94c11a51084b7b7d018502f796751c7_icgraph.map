@@ -1,0 +1,11 @@
+<map id="push" name="push">
+<area shape="rect" id="node1" title="Pushes an element onto the queue." alt="" coords="785,31,839,57"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#gab4dc7fd4df815e249a8863aa51404856" title="Reads a byte from the serial port receiver buffer register." alt="" coords="649,5,736,32"/>
+<area shape="rect" id="node5" href="$group__serial__port.html#gae5efe9b828d15d93690271c1a6991f0c" title="Tries to send a byte to the serial port transmitter holding register, stores it in sending queue if n..." alt="" coords="648,56,737,83"/>
+<area shape="rect" id="node3" href="$group__serial__port.html#ga9353fabdd05ea291e02243dace57ae1c" title="Handles a serial port interrupt." alt="" coords="501,5,563,32"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="271,5,370,32"/>
+<area shape="rect" id="node6" href="$group__serial__port.html#ga21f093191126c81b5045e888b9060cc7" title="Sends the needed mouse info upon a magic blast throw to the other player." alt="" coords="464,56,600,83"/>
+<area shape="rect" id="node7" href="$group__serial__port.html#ga68976d9d8ea4169dafd066525b26c96b" title="Sends a scancode to the other player." alt="" coords="471,107,593,133"/>
+<area shape="rect" id="node8" href="$group__character__movement.html#ga49051feac2200ce74a86da120448128d" title="Updates the sprite position of a given player, depending on keyboard input and sends,..." alt="" coords="225,107,416,133"/>
+<area shape="rect" id="node9" href="$group__character__movement.html#ga7d698d007395c2e3925ff64652b6312c" title="Updates the sprites position, depending on keyboard input." alt="" coords="5,107,177,133"/>
+</map>

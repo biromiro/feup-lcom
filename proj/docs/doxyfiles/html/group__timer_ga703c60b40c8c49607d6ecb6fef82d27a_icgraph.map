@@ -1,5 +1,0 @@
-<map id="timer_get_conf" name="timer_get_conf">
-<area shape="rect" id="node1" title="Reads the input timer configuration (status) via read&#45;back command." alt="" coords="315,5,435,32"/>
-<area shape="rect" id="node2" href="$group__timer.html#gaf2c04fa8e97ffa748fd3f612886a92a7" title="Changes the operating frequency of a timer." alt="" coords="111,5,267,32"/>
-<area shape="rect" id="node3" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="5,5,63,32"/>
-</map>

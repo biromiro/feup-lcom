@@ -1,7 +1,0 @@
-<map id="clear_fifo" name="clear_fifo">
-<area shape="rect" id="node1" title="clears the serial port fifos" alt="" coords="324,56,407,83"/>
-<area shape="rect" id="node2" href="$group__serial__port.html#ga04571865b824bc933dc2322a794aafea" title="clears all fifos (ser port queues and program queues)" alt="" coords="195,31,276,57"/>
-<area shape="rect" id="node5" href="$group__serial__port.html#ga81d06686138301b58a09aafa8b6944c7" title="initializes the serial port" alt="" coords="200,81,271,108"/>
-<area shape="rect" id="node3" href="$group__serial__port.html#ga6d086784aa4c3d5cd54489f695eaa0fd" title="Handles the co&#45;op game start, syncing both players." alt="" coords="5,5,147,32"/>
-<area shape="rect" id="node4" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="27,56,125,83"/>
-</map>

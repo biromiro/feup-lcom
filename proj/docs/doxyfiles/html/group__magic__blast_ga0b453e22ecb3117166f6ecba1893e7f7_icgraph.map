@@ -1,4 +1,0 @@
-<map id="reindex_magic_blasts" name="reindex_magic_blasts">
-<area shape="rect" id="node1" title="Reindexes the magic blasts." alt="" coords="195,5,359,32"/>
-<area shape="rect" id="node2" href="$group__enemies.html#ga16ad6d7911d43f0604ced7a6ee1649a9" title="Checks collisions between active blasts and active enemies and active enemies and main character." alt="" coords="5,5,147,32"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="rtc_updater" name="rtc_updater">
-<area shape="rect" id="node1" title="Updates date and time memory registers." alt="" coords="5,31,101,57"/>
-<area shape="rect" id="node2" href="$rtc_8c.html#a060741ae796d3c561d57c9a25f402d2d" title="Disables RTC&#39;s updates." alt="" coords="149,5,271,32"/>
-<area shape="rect" id="node4" href="$rtc_8c.html#acbe3b4f73341216278ce7de058281b71" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="157,56,263,83"/>
-<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="341,5,440,32"/>
-<area shape="rect" id="node5" href="$rtc_8c.html#abef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="319,57,463,98"/>
-</map>

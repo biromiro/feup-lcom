@@ -5,7 +5,7 @@
 #include "character_movement.h"
 #include "enemies.h"
 #include "magic_blast.h"
-#include "../periferals/rtc.h"
+#include "../peripherals/rtc.h"
 
 /** @defgroup game_state game_state
  * @{

@@ -1,0 +1,7 @@
+<map id="timer_set_frequency" name="timer_set_frequency">
+<area shape="rect" id="node1" title="Changes the operating frequency of a timer." alt="" coords="5,56,161,83"/>
+<area shape="rect" id="node2" href="$group__timer.html#ga703c60b40c8c49607d6ecb6fef82d27a" title="Reads the input timer configuration (status) via read&#45;back command." alt="" coords="209,5,329,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title=" " alt="" coords="218,56,321,83"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title=" " alt="" coords="216,107,323,133"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="377,5,476,32"/>
+</map>

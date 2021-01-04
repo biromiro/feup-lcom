@@ -1,0 +1,31 @@
+\hypertarget{game__state_8h}{}\doxysection{game/game\+\_\+state.h File Reference}
+\label{game__state_8h}\index{game/game\_state.h@{game/game\_state.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}character\+\_\+movement.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}enemies.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}magic\+\_\+blast.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../peripherals/rtc.\+h\char`\"{}}\newline
+Include dependency graph for game\+\_\+state.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__state_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__state_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__game__state_gab7b27caafab73614606edacc67a01a8f}{handle\+\_\+rtc\+\_\+ingame\+\_\+changes}} (bool $\ast$\mbox{\hyperlink{rtc_8c_ad1949c4e76775df4cd456939da7710cb}{alarm\+Interrupt}})
+\begin{DoxyCompactList}\small\item\em Matches an R\+TC interrupt to a corresponding in game change. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__game__state_ga877c167acf09b2c71f0e0f878859434e}{get\+\_\+wave}} ()
+\begin{DoxyCompactList}\small\item\em Get the current wave number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__state_gabcbe762739d5d91623a3cdb097286069}{reset\+\_\+rtc\+\_\+ingame\+\_\+changes}} ()
+\begin{DoxyCompactList}\small\item\em Resets the rtc parameters after the game has ended. \end{DoxyCompactList}\end{DoxyCompactItemize}

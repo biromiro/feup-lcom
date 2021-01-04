@@ -1,0 +1,7 @@
+<map id="free_enemies" name="free_enemies">
+<area shape="rect" id="node1" title="Free memory related to the enemies." alt="" coords="343,31,453,57"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="207,5,264,32"/>
+<area shape="rect" id="node4" href="$group__enemies.html#ga2ca6d67486265e0827f8970dd7af0fda" title="Resets the enemies array to its initial conditions." alt="" coords="176,56,295,83"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="17,56,116,83"/>
+</map>

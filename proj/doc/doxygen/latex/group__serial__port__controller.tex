@@ -1,0 +1,594 @@
+\hypertarget{group__serial__port__controller}{}\doxysection{serial\+\_\+port\+\_\+controller}
+\label{group__serial__port__controller}\index{serial\_port\_controller@{serial\_port\_controller}}
+
+
+Constants for programming the serial port.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga00dbb3ab1c59e14699be9393693e2248}{C\+O\+M1}}~0x3\+F8
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga3685c78b9bd6dd0fa3861807e24a4e1b}{C\+O\+M1\+\_\+\+I\+RQ}}~4
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gaa6f7e7a9f4551d6151f9d45362118a50}{R\+BR}}~0x00
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga5e9787adf3c9afcc4b781e85bb545b35}{T\+HR}}~0x00
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga3e27fa35f9febccdc4a0c28a5c8cffbb}{I\+ER}}~0x01
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga67004975983f9c99226d63db17ba74c4}{I\+IR}}~0x02
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga264b36b13386e3f62fe69e04711bc006}{F\+CR}}~0x02
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga851cb396b6eaa97346364a772b439f37}{L\+CR}}~0x03
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga65364db1603cde6f6533cb61bcfcf553}{M\+CR}}~0x04
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gad51d51aee21f6cc77d4955221aee3dcb}{L\+SR}}~0x05
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gad4806a0bfd996121bc27d2466393207e}{M\+SR}}~0x06
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gaba790acded5479fe4b3e8e7bc7cd5473}{S\+C\+R\+A\+T\+C\+H\+P\+A\+D\+\_\+\+R\+EG}}~0x07
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gab801e055044a209a9870650479be14c1}{D\+I\+V\+I\+S\+O\+R\+\_\+\+L\+A\+T\+C\+H\+\_\+\+L\+SB}}~0x00
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga11d25bb245c875432c59dfad58587483}{D\+I\+V\+I\+S\+O\+R\+\_\+\+L\+A\+T\+C\+H\+\_\+\+M\+SB}}~0x01
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga27f02575e5eacaf96f2ea55c57aabf43}{L\+C\+R\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR}}~B\+IT(0) $\vert$ B\+IT(1)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga57ff35c0ff45d7e875c769aa86d4f6ab}{L\+C\+R\+\_\+\+O\+D\+D\+\_\+\+P\+A\+R\+I\+TY}}~B\+IT(3)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga1cf80a668c79b3081803063178f40920}{L\+C\+R\+\_\+\+D\+L\+AB}}~B\+IT(7)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga9833b4149a089d0717dcf83da68e3e62}{L\+S\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+A\+TA}}~B\+IT(0)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga3684ed231dfce54fdc7e7807deb7bc4a}{L\+S\+R\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+E\+RR}}~B\+IT(1)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga7888b4b4497920e3c61df39361383a80}{L\+S\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+RR}}~B\+IT(2)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gaa41b86c0d4211979e45401ac83f797a0}{L\+S\+R\+\_\+\+F\+R\+A\+M\+I\+N\+G\+\_\+\+E\+RR}}~B\+IT(3)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gac5cf815bb180da24505a7086782543de}{L\+S\+R\+\_\+\+B\+R\+E\+A\+K\+\_\+\+I\+NT}}~B\+IT(4)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga4171a66481bc48c0e0d7e082669a50f8}{L\+S\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+H\+O\+L\+D\+\_\+\+R\+E\+G\+\_\+\+E\+M\+P\+TY}}~B\+IT(5)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga39927634a195973fa9d71e98c8979d45}{L\+S\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+R\+EG}}~B\+IT(6)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga495955cda89f49f7dfa09f1a50b303bd}{L\+S\+R\+\_\+\+F\+I\+F\+O\+\_\+\+E\+RR}}~B\+IT(7)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga0f00422ec65d54a9fc73139b93cd4958}{I\+E\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+D\+A\+T\+A\+\_\+\+A\+V\+A\+I\+L\+A\+B\+L\+E\+\_\+\+I\+NT}}~B\+IT(0)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga249e37e77a57573cc7408d9c7ab7adf0}{I\+E\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+H\+O\+L\+D\+\_\+\+R\+E\+G\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+NT}}~B\+IT(1)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga14b8af921ba466653305e561229b1f8f}{I\+E\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+L\+I\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+NT}}~B\+IT(2)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gac1d90a69045d416f6766ca7884532bc1}{I\+E\+R\+\_\+\+M\+O\+D\+E\+M\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+NT}}~B\+IT(3)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga6134febf63594c966aa2735270cb3b2f}{I\+I\+R\+\_\+\+N\+O\+\_\+\+I\+NT}}~B\+IT(0)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga165b22b5d644704b505eccfc094e4b1f}{I\+I\+R\+\_\+\+ID}}~B\+IT(1) $\vert$ B\+IT(2) $\vert$ B\+IT(3)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga5116f3ead04d69090b4194a58fdedd0c}{I\+I\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+L\+I\+N\+E\+\_\+\+S\+T\+A\+T\+US}}~B\+IT(1) $\vert$ B\+IT(2)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga4064726e3cd283da1defb1a8b54a1ead}{I\+I\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+D\+A\+T\+A\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}~B\+IT(2)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga3f8fe6db66b64b7d17ad069fb13d142a}{I\+I\+R\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H\+A\+R\+\_\+\+T\+I\+M\+E\+O\+UT}}~B\+IT(3) $\vert$ B\+IT(2)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gac368fab1f0254044465e9775b4851bca}{I\+I\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+H\+O\+L\+D\+\_\+\+R\+E\+G\+\_\+\+E\+M\+P\+TY}}~B\+IT(1)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga48782779e251356a09f0124979329aa2}{I\+I\+R\+\_\+\+M\+O\+D\+E\+M\+\_\+\+S\+T\+A\+T\+US}}~0x00
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga70931a99a081a2ed8ee6b39fe72566c8}{F\+C\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+B\+O\+T\+H\+\_\+\+F\+I\+FO}}~B\+IT(0)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga9a7cf7a7e7ecd02ee6ff499274890ef1}{F\+C\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+R\+C\+V\+R\+\_\+\+F\+I\+FO}}~B\+IT(1)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga051a82f34f9fa29b948fc04c55ccdfd8}{F\+C\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+X\+M\+I\+T\+\_\+\+F\+I\+FO}}~B\+IT(2)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gafd506f341003e7973d4dd687987bc5c0}{F\+C\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+64\+\_\+\+B\+Y\+T\+E\+\_\+\+F\+I\+FO}}~B\+IT(5)
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga6f6489887e08bff4887d0bc5dcf214d8}{A\+CK}}~0x\+FE
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga958518a45b12053ae33606ee7cb68a55}{N\+A\+CK}}~0x\+DE
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga29fd18bed01c4d836c7ebfe73a125c3f}{E\+ND}}~0x40
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gab999e5cfa2a4261b1c101f4a10b126ce}{F\+I\+R\+S\+T\+\_\+\+S\+Y\+NC}}~0x53
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga9f3973fd5bccba64070a4f254303da2e}{S\+E\+C\+O\+N\+D\+\_\+\+S\+Y\+NC}}~0x54
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_ga1b17b91e6fdde378aa0187aa10564cdd}{T\+H\+I\+R\+D\+\_\+\+S\+Y\+NC}}~0x55
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gaea1c9809d9a579f22980df16b2b0cb64}{F\+O\+U\+R\+T\+H\+\_\+\+S\+Y\+NC}}~0x56
+\item 
+\#define \mbox{\hyperlink{group__serial__port__controller_gaf03744a006e0463986e7570664348007}{F\+I\+F\+T\+H\+\_\+\+S\+Y\+NC}}~0x57
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for programming the serial port. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__serial__port__controller_ga6f6489887e08bff4887d0bc5dcf214d8}\label{group__serial__port__controller_ga6f6489887e08bff4887d0bc5dcf214d8}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!ACK@{ACK}}
+\index{ACK@{ACK}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{ACK}{ACK}}
+{\footnotesize\ttfamily \#define A\+CK~0x\+FE}
+
+
+
+Definition at line 60 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga00dbb3ab1c59e14699be9393693e2248}\label{group__serial__port__controller_ga00dbb3ab1c59e14699be9393693e2248}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!COM1@{COM1}}
+\index{COM1@{COM1}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{COM1}{COM1}}
+{\footnotesize\ttfamily \#define C\+O\+M1~0x3\+F8}
+
+
+
+Definition at line 9 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga3685c78b9bd6dd0fa3861807e24a4e1b}\label{group__serial__port__controller_ga3685c78b9bd6dd0fa3861807e24a4e1b}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!COM1\_IRQ@{COM1\_IRQ}}
+\index{COM1\_IRQ@{COM1\_IRQ}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{COM1\_IRQ}{COM1\_IRQ}}
+{\footnotesize\ttfamily \#define C\+O\+M1\+\_\+\+I\+RQ~4}
+
+
+
+Definition at line 10 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gab801e055044a209a9870650479be14c1}\label{group__serial__port__controller_gab801e055044a209a9870650479be14c1}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!DIVISOR\_LATCH\_LSB@{DIVISOR\_LATCH\_LSB}}
+\index{DIVISOR\_LATCH\_LSB@{DIVISOR\_LATCH\_LSB}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{DIVISOR\_LATCH\_LSB}{DIVISOR\_LATCH\_LSB}}
+{\footnotesize\ttfamily \#define D\+I\+V\+I\+S\+O\+R\+\_\+\+L\+A\+T\+C\+H\+\_\+\+L\+SB~0x00}
+
+
+
+Definition at line 23 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga11d25bb245c875432c59dfad58587483}\label{group__serial__port__controller_ga11d25bb245c875432c59dfad58587483}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!DIVISOR\_LATCH\_MSB@{DIVISOR\_LATCH\_MSB}}
+\index{DIVISOR\_LATCH\_MSB@{DIVISOR\_LATCH\_MSB}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{DIVISOR\_LATCH\_MSB}{DIVISOR\_LATCH\_MSB}}
+{\footnotesize\ttfamily \#define D\+I\+V\+I\+S\+O\+R\+\_\+\+L\+A\+T\+C\+H\+\_\+\+M\+SB~0x01}
+
+
+
+Definition at line 24 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga29fd18bed01c4d836c7ebfe73a125c3f}\label{group__serial__port__controller_ga29fd18bed01c4d836c7ebfe73a125c3f}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!END@{END}}
+\index{END@{END}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{END}{END}}
+{\footnotesize\ttfamily \#define E\+ND~0x40}
+
+
+
+Definition at line 62 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga264b36b13386e3f62fe69e04711bc006}\label{group__serial__port__controller_ga264b36b13386e3f62fe69e04711bc006}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FCR@{FCR}}
+\index{FCR@{FCR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FCR}{FCR}}
+{\footnotesize\ttfamily \#define F\+CR~0x02}
+
+
+
+Definition at line 16 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga9a7cf7a7e7ecd02ee6ff499274890ef1}\label{group__serial__port__controller_ga9a7cf7a7e7ecd02ee6ff499274890ef1}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FCR\_CLEAR\_RCVR\_FIFO@{FCR\_CLEAR\_RCVR\_FIFO}}
+\index{FCR\_CLEAR\_RCVR\_FIFO@{FCR\_CLEAR\_RCVR\_FIFO}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FCR\_CLEAR\_RCVR\_FIFO}{FCR\_CLEAR\_RCVR\_FIFO}}
+{\footnotesize\ttfamily \#define F\+C\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+R\+C\+V\+R\+\_\+\+F\+I\+FO~B\+IT(1)}
+
+
+
+Definition at line 53 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga051a82f34f9fa29b948fc04c55ccdfd8}\label{group__serial__port__controller_ga051a82f34f9fa29b948fc04c55ccdfd8}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FCR\_CLEAR\_XMIT\_FIFO@{FCR\_CLEAR\_XMIT\_FIFO}}
+\index{FCR\_CLEAR\_XMIT\_FIFO@{FCR\_CLEAR\_XMIT\_FIFO}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FCR\_CLEAR\_XMIT\_FIFO}{FCR\_CLEAR\_XMIT\_FIFO}}
+{\footnotesize\ttfamily \#define F\+C\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+X\+M\+I\+T\+\_\+\+F\+I\+FO~B\+IT(2)}
+
+
+
+Definition at line 54 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gafd506f341003e7973d4dd687987bc5c0}\label{group__serial__port__controller_gafd506f341003e7973d4dd687987bc5c0}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FCR\_ENABLE\_64\_BYTE\_FIFO@{FCR\_ENABLE\_64\_BYTE\_FIFO}}
+\index{FCR\_ENABLE\_64\_BYTE\_FIFO@{FCR\_ENABLE\_64\_BYTE\_FIFO}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FCR\_ENABLE\_64\_BYTE\_FIFO}{FCR\_ENABLE\_64\_BYTE\_FIFO}}
+{\footnotesize\ttfamily \#define F\+C\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+64\+\_\+\+B\+Y\+T\+E\+\_\+\+F\+I\+FO~B\+IT(5)}
+
+
+
+Definition at line 55 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga70931a99a081a2ed8ee6b39fe72566c8}\label{group__serial__port__controller_ga70931a99a081a2ed8ee6b39fe72566c8}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FCR\_ENABLE\_BOTH\_FIFO@{FCR\_ENABLE\_BOTH\_FIFO}}
+\index{FCR\_ENABLE\_BOTH\_FIFO@{FCR\_ENABLE\_BOTH\_FIFO}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FCR\_ENABLE\_BOTH\_FIFO}{FCR\_ENABLE\_BOTH\_FIFO}}
+{\footnotesize\ttfamily \#define F\+C\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+B\+O\+T\+H\+\_\+\+F\+I\+FO~B\+IT(0)}
+
+
+
+Definition at line 52 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gaf03744a006e0463986e7570664348007}\label{group__serial__port__controller_gaf03744a006e0463986e7570664348007}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FIFTH\_SYNC@{FIFTH\_SYNC}}
+\index{FIFTH\_SYNC@{FIFTH\_SYNC}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FIFTH\_SYNC}{FIFTH\_SYNC}}
+{\footnotesize\ttfamily \#define F\+I\+F\+T\+H\+\_\+\+S\+Y\+NC~0x57}
+
+
+
+Definition at line 67 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gab999e5cfa2a4261b1c101f4a10b126ce}\label{group__serial__port__controller_gab999e5cfa2a4261b1c101f4a10b126ce}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FIRST\_SYNC@{FIRST\_SYNC}}
+\index{FIRST\_SYNC@{FIRST\_SYNC}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FIRST\_SYNC}{FIRST\_SYNC}}
+{\footnotesize\ttfamily \#define F\+I\+R\+S\+T\+\_\+\+S\+Y\+NC~0x53}
+
+
+
+Definition at line 63 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gaea1c9809d9a579f22980df16b2b0cb64}\label{group__serial__port__controller_gaea1c9809d9a579f22980df16b2b0cb64}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!FOURTH\_SYNC@{FOURTH\_SYNC}}
+\index{FOURTH\_SYNC@{FOURTH\_SYNC}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{FOURTH\_SYNC}{FOURTH\_SYNC}}
+{\footnotesize\ttfamily \#define F\+O\+U\+R\+T\+H\+\_\+\+S\+Y\+NC~0x56}
+
+
+
+Definition at line 66 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga3e27fa35f9febccdc4a0c28a5c8cffbb}\label{group__serial__port__controller_ga3e27fa35f9febccdc4a0c28a5c8cffbb}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IER@{IER}}
+\index{IER@{IER}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IER}{IER}}
+{\footnotesize\ttfamily \#define I\+ER~0x01}
+
+
+
+Definition at line 14 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gac1d90a69045d416f6766ca7884532bc1}\label{group__serial__port__controller_gac1d90a69045d416f6766ca7884532bc1}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IER\_MODEM\_STATUS\_INT@{IER\_MODEM\_STATUS\_INT}}
+\index{IER\_MODEM\_STATUS\_INT@{IER\_MODEM\_STATUS\_INT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IER\_MODEM\_STATUS\_INT}{IER\_MODEM\_STATUS\_INT}}
+{\footnotesize\ttfamily \#define I\+E\+R\+\_\+\+M\+O\+D\+E\+M\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+NT~B\+IT(3)}
+
+
+
+Definition at line 42 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga0f00422ec65d54a9fc73139b93cd4958}\label{group__serial__port__controller_ga0f00422ec65d54a9fc73139b93cd4958}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IER\_RECEIVED\_DATA\_AVAILABLE\_INT@{IER\_RECEIVED\_DATA\_AVAILABLE\_INT}}
+\index{IER\_RECEIVED\_DATA\_AVAILABLE\_INT@{IER\_RECEIVED\_DATA\_AVAILABLE\_INT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IER\_RECEIVED\_DATA\_AVAILABLE\_INT}{IER\_RECEIVED\_DATA\_AVAILABLE\_INT}}
+{\footnotesize\ttfamily \#define I\+E\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+D\+A\+T\+A\+\_\+\+A\+V\+A\+I\+L\+A\+B\+L\+E\+\_\+\+I\+NT~B\+IT(0)}
+
+
+
+Definition at line 39 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga14b8af921ba466653305e561229b1f8f}\label{group__serial__port__controller_ga14b8af921ba466653305e561229b1f8f}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IER\_RECEIVER\_LINE\_STATUS\_INT@{IER\_RECEIVER\_LINE\_STATUS\_INT}}
+\index{IER\_RECEIVER\_LINE\_STATUS\_INT@{IER\_RECEIVER\_LINE\_STATUS\_INT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IER\_RECEIVER\_LINE\_STATUS\_INT}{IER\_RECEIVER\_LINE\_STATUS\_INT}}
+{\footnotesize\ttfamily \#define I\+E\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+L\+I\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+NT~B\+IT(2)}
+
+
+
+Definition at line 41 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga249e37e77a57573cc7408d9c7ab7adf0}\label{group__serial__port__controller_ga249e37e77a57573cc7408d9c7ab7adf0}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IER\_TRANSMIT\_HOLD\_REG\_EMPTY\_INT@{IER\_TRANSMIT\_HOLD\_REG\_EMPTY\_INT}}
+\index{IER\_TRANSMIT\_HOLD\_REG\_EMPTY\_INT@{IER\_TRANSMIT\_HOLD\_REG\_EMPTY\_INT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IER\_TRANSMIT\_HOLD\_REG\_EMPTY\_INT}{IER\_TRANSMIT\_HOLD\_REG\_EMPTY\_INT}}
+{\footnotesize\ttfamily \#define I\+E\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+H\+O\+L\+D\+\_\+\+R\+E\+G\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+I\+NT~B\+IT(1)}
+
+
+
+Definition at line 40 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga67004975983f9c99226d63db17ba74c4}\label{group__serial__port__controller_ga67004975983f9c99226d63db17ba74c4}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR@{IIR}}
+\index{IIR@{IIR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR}{IIR}}
+{\footnotesize\ttfamily \#define I\+IR~0x02}
+
+
+
+Definition at line 15 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga3f8fe6db66b64b7d17ad069fb13d142a}\label{group__serial__port__controller_ga3f8fe6db66b64b7d17ad069fb13d142a}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_FIFO\_CHAR\_TIMEOUT@{IIR\_FIFO\_CHAR\_TIMEOUT}}
+\index{IIR\_FIFO\_CHAR\_TIMEOUT@{IIR\_FIFO\_CHAR\_TIMEOUT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_FIFO\_CHAR\_TIMEOUT}{IIR\_FIFO\_CHAR\_TIMEOUT}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+F\+I\+F\+O\+\_\+\+C\+H\+A\+R\+\_\+\+T\+I\+M\+E\+O\+UT~B\+IT(3) $\vert$ B\+IT(2)}
+
+
+
+Definition at line 48 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga165b22b5d644704b505eccfc094e4b1f}\label{group__serial__port__controller_ga165b22b5d644704b505eccfc094e4b1f}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_ID@{IIR\_ID}}
+\index{IIR\_ID@{IIR\_ID}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_ID}{IIR\_ID}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+ID~B\+IT(1) $\vert$ B\+IT(2) $\vert$ B\+IT(3)}
+
+
+
+Definition at line 45 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga48782779e251356a09f0124979329aa2}\label{group__serial__port__controller_ga48782779e251356a09f0124979329aa2}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_MODEM\_STATUS@{IIR\_MODEM\_STATUS}}
+\index{IIR\_MODEM\_STATUS@{IIR\_MODEM\_STATUS}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_MODEM\_STATUS}{IIR\_MODEM\_STATUS}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+M\+O\+D\+E\+M\+\_\+\+S\+T\+A\+T\+US~0x00}
+
+
+
+Definition at line 50 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga6134febf63594c966aa2735270cb3b2f}\label{group__serial__port__controller_ga6134febf63594c966aa2735270cb3b2f}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_NO\_INT@{IIR\_NO\_INT}}
+\index{IIR\_NO\_INT@{IIR\_NO\_INT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_NO\_INT}{IIR\_NO\_INT}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+N\+O\+\_\+\+I\+NT~B\+IT(0)}
+
+
+
+Definition at line 44 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga4064726e3cd283da1defb1a8b54a1ead}\label{group__serial__port__controller_ga4064726e3cd283da1defb1a8b54a1ead}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_RECEIVED\_DATA\_AVAILABLE@{IIR\_RECEIVED\_DATA\_AVAILABLE}}
+\index{IIR\_RECEIVED\_DATA\_AVAILABLE@{IIR\_RECEIVED\_DATA\_AVAILABLE}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_RECEIVED\_DATA\_AVAILABLE}{IIR\_RECEIVED\_DATA\_AVAILABLE}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+D\+A\+T\+A\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE~B\+IT(2)}
+
+
+
+Definition at line 47 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga5116f3ead04d69090b4194a58fdedd0c}\label{group__serial__port__controller_ga5116f3ead04d69090b4194a58fdedd0c}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_RECEIVER\_LINE\_STATUS@{IIR\_RECEIVER\_LINE\_STATUS}}
+\index{IIR\_RECEIVER\_LINE\_STATUS@{IIR\_RECEIVER\_LINE\_STATUS}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_RECEIVER\_LINE\_STATUS}{IIR\_RECEIVER\_LINE\_STATUS}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+L\+I\+N\+E\+\_\+\+S\+T\+A\+T\+US~B\+IT(1) $\vert$ B\+IT(2)}
+
+
+
+Definition at line 46 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gac368fab1f0254044465e9775b4851bca}\label{group__serial__port__controller_gac368fab1f0254044465e9775b4851bca}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!IIR\_TRANSMIT\_HOLD\_REG\_EMPTY@{IIR\_TRANSMIT\_HOLD\_REG\_EMPTY}}
+\index{IIR\_TRANSMIT\_HOLD\_REG\_EMPTY@{IIR\_TRANSMIT\_HOLD\_REG\_EMPTY}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{IIR\_TRANSMIT\_HOLD\_REG\_EMPTY}{IIR\_TRANSMIT\_HOLD\_REG\_EMPTY}}
+{\footnotesize\ttfamily \#define I\+I\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+H\+O\+L\+D\+\_\+\+R\+E\+G\+\_\+\+E\+M\+P\+TY~B\+IT(1)}
+
+
+
+Definition at line 49 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga851cb396b6eaa97346364a772b439f37}\label{group__serial__port__controller_ga851cb396b6eaa97346364a772b439f37}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LCR@{LCR}}
+\index{LCR@{LCR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LCR}{LCR}}
+{\footnotesize\ttfamily \#define L\+CR~0x03}
+
+
+
+Definition at line 17 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga27f02575e5eacaf96f2ea55c57aabf43}\label{group__serial__port__controller_ga27f02575e5eacaf96f2ea55c57aabf43}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LCR\_8\_BITS\_PER\_CHAR@{LCR\_8\_BITS\_PER\_CHAR}}
+\index{LCR\_8\_BITS\_PER\_CHAR@{LCR\_8\_BITS\_PER\_CHAR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LCR\_8\_BITS\_PER\_CHAR}{LCR\_8\_BITS\_PER\_CHAR}}
+{\footnotesize\ttfamily \#define L\+C\+R\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AR~B\+IT(0) $\vert$ B\+IT(1)}
+
+
+
+Definition at line 26 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga1cf80a668c79b3081803063178f40920}\label{group__serial__port__controller_ga1cf80a668c79b3081803063178f40920}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LCR\_DLAB@{LCR\_DLAB}}
+\index{LCR\_DLAB@{LCR\_DLAB}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LCR\_DLAB}{LCR\_DLAB}}
+{\footnotesize\ttfamily \#define L\+C\+R\+\_\+\+D\+L\+AB~B\+IT(7)}
+
+
+
+Definition at line 28 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga57ff35c0ff45d7e875c769aa86d4f6ab}\label{group__serial__port__controller_ga57ff35c0ff45d7e875c769aa86d4f6ab}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LCR\_ODD\_PARITY@{LCR\_ODD\_PARITY}}
+\index{LCR\_ODD\_PARITY@{LCR\_ODD\_PARITY}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LCR\_ODD\_PARITY}{LCR\_ODD\_PARITY}}
+{\footnotesize\ttfamily \#define L\+C\+R\+\_\+\+O\+D\+D\+\_\+\+P\+A\+R\+I\+TY~B\+IT(3)}
+
+
+
+Definition at line 27 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gad51d51aee21f6cc77d4955221aee3dcb}\label{group__serial__port__controller_gad51d51aee21f6cc77d4955221aee3dcb}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR@{LSR}}
+\index{LSR@{LSR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR}{LSR}}
+{\footnotesize\ttfamily \#define L\+SR~0x05}
+
+
+
+Definition at line 19 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gac5cf815bb180da24505a7086782543de}\label{group__serial__port__controller_gac5cf815bb180da24505a7086782543de}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_BREAK\_INT@{LSR\_BREAK\_INT}}
+\index{LSR\_BREAK\_INT@{LSR\_BREAK\_INT}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_BREAK\_INT}{LSR\_BREAK\_INT}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+B\+R\+E\+A\+K\+\_\+\+I\+NT~B\+IT(4)}
+
+
+
+Definition at line 34 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga495955cda89f49f7dfa09f1a50b303bd}\label{group__serial__port__controller_ga495955cda89f49f7dfa09f1a50b303bd}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_FIFO\_ERR@{LSR\_FIFO\_ERR}}
+\index{LSR\_FIFO\_ERR@{LSR\_FIFO\_ERR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_FIFO\_ERR}{LSR\_FIFO\_ERR}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+F\+I\+F\+O\+\_\+\+E\+RR~B\+IT(7)}
+
+
+
+Definition at line 37 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gaa41b86c0d4211979e45401ac83f797a0}\label{group__serial__port__controller_gaa41b86c0d4211979e45401ac83f797a0}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_FRAMING\_ERR@{LSR\_FRAMING\_ERR}}
+\index{LSR\_FRAMING\_ERR@{LSR\_FRAMING\_ERR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_FRAMING\_ERR}{LSR\_FRAMING\_ERR}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+F\+R\+A\+M\+I\+N\+G\+\_\+\+E\+RR~B\+IT(3)}
+
+
+
+Definition at line 33 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga3684ed231dfce54fdc7e7807deb7bc4a}\label{group__serial__port__controller_ga3684ed231dfce54fdc7e7807deb7bc4a}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_OVERRUN\_ERR@{LSR\_OVERRUN\_ERR}}
+\index{LSR\_OVERRUN\_ERR@{LSR\_OVERRUN\_ERR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_OVERRUN\_ERR}{LSR\_OVERRUN\_ERR}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+O\+V\+E\+R\+R\+U\+N\+\_\+\+E\+RR~B\+IT(1)}
+
+
+
+Definition at line 31 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga7888b4b4497920e3c61df39361383a80}\label{group__serial__port__controller_ga7888b4b4497920e3c61df39361383a80}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_PARITY\_ERR@{LSR\_PARITY\_ERR}}
+\index{LSR\_PARITY\_ERR@{LSR\_PARITY\_ERR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_PARITY\_ERR}{LSR\_PARITY\_ERR}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+RR~B\+IT(2)}
+
+
+
+Definition at line 32 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga9833b4149a089d0717dcf83da68e3e62}\label{group__serial__port__controller_ga9833b4149a089d0717dcf83da68e3e62}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_RECEIVER\_DATA@{LSR\_RECEIVER\_DATA}}
+\index{LSR\_RECEIVER\_DATA@{LSR\_RECEIVER\_DATA}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_RECEIVER\_DATA}{LSR\_RECEIVER\_DATA}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+D\+A\+TA~B\+IT(0)}
+
+
+
+Definition at line 30 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga39927634a195973fa9d71e98c8979d45}\label{group__serial__port__controller_ga39927634a195973fa9d71e98c8979d45}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_TRANSMIT\_EMPTY\_REG@{LSR\_TRANSMIT\_EMPTY\_REG}}
+\index{LSR\_TRANSMIT\_EMPTY\_REG@{LSR\_TRANSMIT\_EMPTY\_REG}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_TRANSMIT\_EMPTY\_REG}{LSR\_TRANSMIT\_EMPTY\_REG}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+R\+EG~B\+IT(6)}
+
+
+
+Definition at line 36 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga4171a66481bc48c0e0d7e082669a50f8}\label{group__serial__port__controller_ga4171a66481bc48c0e0d7e082669a50f8}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!LSR\_TRANSMIT\_HOLD\_REG\_EMPTY@{LSR\_TRANSMIT\_HOLD\_REG\_EMPTY}}
+\index{LSR\_TRANSMIT\_HOLD\_REG\_EMPTY@{LSR\_TRANSMIT\_HOLD\_REG\_EMPTY}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{LSR\_TRANSMIT\_HOLD\_REG\_EMPTY}{LSR\_TRANSMIT\_HOLD\_REG\_EMPTY}}
+{\footnotesize\ttfamily \#define L\+S\+R\+\_\+\+T\+R\+A\+N\+S\+M\+I\+T\+\_\+\+H\+O\+L\+D\+\_\+\+R\+E\+G\+\_\+\+E\+M\+P\+TY~B\+IT(5)}
+
+
+
+Definition at line 35 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga65364db1603cde6f6533cb61bcfcf553}\label{group__serial__port__controller_ga65364db1603cde6f6533cb61bcfcf553}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!MCR@{MCR}}
+\index{MCR@{MCR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{MCR}{MCR}}
+{\footnotesize\ttfamily \#define M\+CR~0x04}
+
+
+
+Definition at line 18 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gad4806a0bfd996121bc27d2466393207e}\label{group__serial__port__controller_gad4806a0bfd996121bc27d2466393207e}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!MSR@{MSR}}
+\index{MSR@{MSR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{MSR}{MSR}}
+{\footnotesize\ttfamily \#define M\+SR~0x06}
+
+
+
+Definition at line 20 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga958518a45b12053ae33606ee7cb68a55}\label{group__serial__port__controller_ga958518a45b12053ae33606ee7cb68a55}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!NACK@{NACK}}
+\index{NACK@{NACK}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{NACK}{NACK}}
+{\footnotesize\ttfamily \#define N\+A\+CK~0x\+DE}
+
+
+
+Definition at line 61 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gaa6f7e7a9f4551d6151f9d45362118a50}\label{group__serial__port__controller_gaa6f7e7a9f4551d6151f9d45362118a50}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!RBR@{RBR}}
+\index{RBR@{RBR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{RBR}{RBR}}
+{\footnotesize\ttfamily \#define R\+BR~0x00}
+
+
+
+Definition at line 12 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_gaba790acded5479fe4b3e8e7bc7cd5473}\label{group__serial__port__controller_gaba790acded5479fe4b3e8e7bc7cd5473}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!SCRATCHPAD\_REG@{SCRATCHPAD\_REG}}
+\index{SCRATCHPAD\_REG@{SCRATCHPAD\_REG}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{SCRATCHPAD\_REG}{SCRATCHPAD\_REG}}
+{\footnotesize\ttfamily \#define S\+C\+R\+A\+T\+C\+H\+P\+A\+D\+\_\+\+R\+EG~0x07}
+
+
+
+Definition at line 21 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga9f3973fd5bccba64070a4f254303da2e}\label{group__serial__port__controller_ga9f3973fd5bccba64070a4f254303da2e}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!SECOND\_SYNC@{SECOND\_SYNC}}
+\index{SECOND\_SYNC@{SECOND\_SYNC}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{SECOND\_SYNC}{SECOND\_SYNC}}
+{\footnotesize\ttfamily \#define S\+E\+C\+O\+N\+D\+\_\+\+S\+Y\+NC~0x54}
+
+
+
+Definition at line 64 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga1b17b91e6fdde378aa0187aa10564cdd}\label{group__serial__port__controller_ga1b17b91e6fdde378aa0187aa10564cdd}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!THIRD\_SYNC@{THIRD\_SYNC}}
+\index{THIRD\_SYNC@{THIRD\_SYNC}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{THIRD\_SYNC}{THIRD\_SYNC}}
+{\footnotesize\ttfamily \#define T\+H\+I\+R\+D\+\_\+\+S\+Y\+NC~0x55}
+
+
+
+Definition at line 65 of file serial\+\_\+port\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{group__serial__port__controller_ga5e9787adf3c9afcc4b781e85bb545b35}\label{group__serial__port__controller_ga5e9787adf3c9afcc4b781e85bb545b35}} 
+\index{serial\_port\_controller@{serial\_port\_controller}!THR@{THR}}
+\index{THR@{THR}!serial\_port\_controller@{serial\_port\_controller}}
+\doxysubsubsection{\texorpdfstring{THR}{THR}}
+{\footnotesize\ttfamily \#define T\+HR~0x00}
+
+
+
+Definition at line 13 of file serial\+\_\+port\+\_\+controller.\+h.
+

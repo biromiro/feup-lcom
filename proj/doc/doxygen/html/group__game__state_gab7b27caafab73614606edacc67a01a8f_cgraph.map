@@ -1,0 +1,10 @@
+<map id="handle_rtc_ingame_changes" name="handle_rtc_ingame_changes">
+<area shape="rect" id="node1" title="Matches an RTC interrupt to a corresponding in game change." alt="" coords="5,60,212,87"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga16f3810b612672b64b0ed961c38f2ce6" title="Sets up the rate at which the periodic interrupts will send new enemies." alt="" coords="269,35,408,61"/>
+<area shape="rect" id="node6" href="$group__rtc.html#gaa90e57cc419c0a865cf925cad4d9dd63" title="Sets up the alarm to power up in game." alt="" coords="260,85,417,112"/>
+<area shape="rect" id="node3" href="$group__rtc.html#gacbe3b4f73341216278ce7de058281b71" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="474,35,581,61"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="660,5,759,32"/>
+<area shape="rect" id="node5" href="$group__rtc.html#gabef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="637,57,781,98"/>
+<area shape="rect" id="node7" href="$group__rtc.html#gaa4ac2673e4e84d544d0091a1a2fb6bbc" title="Converts a given BCD number to its corresponding decimal value." alt="" coords="465,85,589,112"/>
+<area shape="rect" id="node8" href="$group__rtc.html#ga1de6c745cd97b58fa2a7993f92a4906a" title="Converts a given decimal number to its corresponding BCD value." alt="" coords="465,136,589,163"/>
+</map>

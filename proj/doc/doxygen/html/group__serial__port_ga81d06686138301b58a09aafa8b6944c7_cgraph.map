@@ -1,0 +1,5 @@
+<map id="ser_init" name="ser_init">
+<area shape="rect" id="node1" title="initializes the serial port" alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga094cfcecf9cfdf5583d0260ef9b8aa64" title="clears the serial port fifos" alt="" coords="124,5,207,32"/>
+<area shape="rect" id="node3" href="$group__serial__port.html#gadd1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="255,5,363,32"/>
+</map>

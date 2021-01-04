@@ -1,0 +1,5 @@
+<map id="ser_clear" name="ser_clear">
+<area shape="rect" id="node1" title="clears all fifos (ser port queues and program queues)" alt="" coords="152,31,233,57"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="5,56,104,83"/>
+</map>

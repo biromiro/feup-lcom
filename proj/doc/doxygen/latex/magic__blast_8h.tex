@@ -1,0 +1,43 @@
+\hypertarget{magic__blast_8h}{}\doxysection{game/magic\+\_\+blast.h File Reference}
+\label{magic__blast_8h}\index{game/magic\_blast.h@{game/magic\_blast.h}}
+{\ttfamily \#include \char`\"{}../img/\+Wraith\+\_\+01/\+Spells\+\_\+\+Effect.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/\+Wraith\+\_\+02/\+Spells\+\_\+\+Effect\+\_\+2.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../peripherals/video\+\_\+gr.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+Include dependency graph for magic\+\_\+blast.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{magic__blast_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{magic__blast_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__magic__blast_gadd1bfc20a326c44a51d874c570ea3a91}{set\+\_\+magic\+\_\+blasts\+\_\+available}} ()
+\begin{DoxyCompactList}\small\item\em Set up the magic blasts available (10) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_gab530b1f7370136f94f2eed25369cc281}{free\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Frees all memory related to the magic blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga8f3c067f863279cb8ea7e48ececc77fe}{throw\+\_\+magic\+\_\+blast}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor, \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$character)
+\begin{DoxyCompactList}\small\item\em Creates a \char`\"{}\+Magic Blast\char`\"{} X\+PM, calculates its speed and updates the available blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga99d7b942da6955abaea016a98e8078da}{print\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Prints the blasts If a blast is off-\/screen, frees its memory and reindexes the blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga0b453e22ecb3117166f6ecba1893e7f7}{reindex\+\_\+magic\+\_\+blasts}} (size\+\_\+t positions)
+\begin{DoxyCompactList}\small\item\em Reindexes the magic blasts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$$\ast$ \mbox{\hyperlink{group__magic__blast_ga66676b4506fca18c5701b732ce48292b}{get\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Get the magic blasts. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__magic__blast_ga99f4f1b1d4407c3d7f24da52c7f8d069}{get\+\_\+total\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Get the Total Blasts. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__magic__blast_gaf4f87fed374d0d478316d82eae85292c}{get\+\_\+available\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Get the Available Blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga7ea97f736a8f59cc828f214c480c1ba4}{decrement\+\_\+available\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the available blasts variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga4cb0d6dd176dc9e81b84995f439d6f2c}{reset\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Resets the magic blasts array to its initial values. \end{DoxyCompactList}\end{DoxyCompactItemize}

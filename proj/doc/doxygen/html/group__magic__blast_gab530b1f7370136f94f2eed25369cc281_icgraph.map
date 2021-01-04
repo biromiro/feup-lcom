@@ -1,0 +1,7 @@
+<map id="free_magic_blasts" name="free_magic_blasts">
+<area shape="rect" id="node1" title="Frees all memory related to the magic blasts." alt="" coords="372,31,513,57"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="221,5,279,32"/>
+<area shape="rect" id="node4" href="$group__magic__blast.html#ga4cb0d6dd176dc9e81b84995f439d6f2c" title="Resets the magic blasts array to its initial values." alt="" coords="176,56,324,83"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="17,56,116,83"/>
+</map>

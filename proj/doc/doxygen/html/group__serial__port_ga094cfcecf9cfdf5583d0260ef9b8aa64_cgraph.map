@@ -1,0 +1,4 @@
+<map id="clear_fifo" name="clear_fifo">
+<area shape="rect" id="node1" title="clears the serial port fifos" alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#gadd1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="136,5,244,32"/>
+</map>

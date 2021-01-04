@@ -1,6 +1,0 @@
-<map id="kbc_read_buffer" name="kbc_read_buffer">
-<area shape="rect" id="node1" title="Reads the output buffer of KBC." alt="" coords="221,56,348,83"/>
-<area shape="rect" id="node2" href="$group__kbc.html#ga638e7f85ff3800aaf17c95cde1760865" title="Reads the value of the OBF of the KBC." alt="" coords="31,5,148,32"/>
-<area shape="rect" id="node3" href="$group__kbc.html#ga92ffdbe2b735528ea192bd5c3fe78a30" title="Restores the Minix Interrupt Handler for KBC." alt="" coords="5,56,173,83"/>
-<area shape="rect" id="node4" href="$group__kbc.html#ga2b0cab3b65db905154df274d1841a214" title="Reads a data byte from the mouse controller." alt="" coords="20,107,159,133"/>
-</map>

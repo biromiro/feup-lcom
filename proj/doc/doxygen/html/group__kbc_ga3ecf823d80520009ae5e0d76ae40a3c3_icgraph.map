@@ -1,0 +1,6 @@
+<map id="mouse_unsubscribe_int" name="mouse_unsubscribe_int">
+<area shape="rect" id="node1" title="Unsubscribes mouse interrupts." alt="" coords="500,5,675,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes all the peripherals." alt="" coords="281,5,452,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="176,5,233,32"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

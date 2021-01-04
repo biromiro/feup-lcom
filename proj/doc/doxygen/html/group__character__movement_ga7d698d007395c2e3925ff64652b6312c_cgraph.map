@@ -1,0 +1,8 @@
+<map id="handle_button_presses" name="handle_button_presses">
+<area shape="rect" id="node1" title="Updates the sprites position, depending on keyboard input." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#ga49051feac2200ce74a86da120448128d" title="Updates the sprite position of a given player, depending on keyboard input and sends,..." alt="" coords="225,5,416,32"/>
+<area shape="rect" id="node3" href="$group__serial__port.html#ga68976d9d8ea4169dafd066525b26c96b" title="Sends a scancode to the other player." alt="" coords="464,5,585,32"/>
+<area shape="rect" id="node4" href="$group__serial__port.html#gae5efe9b828d15d93690271c1a6991f0c" title="Tries to send a byte to the serial port transmitter holding register, stores it in sending queue if n..." alt="" coords="633,5,723,32"/>
+<area shape="rect" id="node5" href="$group__queue.html#gaa94c11a51084b7b7d018502f796751c7" title="Pushes an element onto the queue." alt="" coords="771,5,824,32"/>
+<area shape="rect" id="node6" href="$group__queue.html#gab2a149bb751500c47d4f8de95dec4cce" title="Checks if the given queue is full." alt="" coords="872,5,933,32"/>
+</map>

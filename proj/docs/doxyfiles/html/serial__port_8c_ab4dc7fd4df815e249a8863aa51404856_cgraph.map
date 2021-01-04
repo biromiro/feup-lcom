@@ -1,7 +1,0 @@
-<map id="read_byte" name="read_byte">
-<area shape="rect" id="node1" title="Reads a byte from the serial port receiver buffer register." alt="" coords="5,31,92,57"/>
-<area shape="rect" id="node2" href="$queue_8c.html#aa94c11a51084b7b7d018502f796751c7" title="Pushes an element onto the queue." alt="" coords="155,5,209,32"/>
-<area shape="rect" id="node4" href="$serial__port_8c.html#ac6ec0fcd144e96b116d804d5c9ec9235" title="Reads the value of a given serial port port, adding its base address." alt="" coords="140,56,224,83"/>
-<area shape="rect" id="node3" href="$queue_8c.html#ab2a149bb751500c47d4f8de95dec4cce" title="Checks if the given queue is full." alt="" coords="291,5,352,32"/>
-<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="272,56,371,83"/>
-</map>

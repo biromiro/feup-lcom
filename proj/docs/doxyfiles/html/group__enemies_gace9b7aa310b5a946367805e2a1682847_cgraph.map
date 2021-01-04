@@ -1,4 +1,0 @@
-<map id="enemy_collision" name="enemy_collision">
-<area shape="rect" id="node1" title="Checks if there was a collision between an enemy and a projectile." alt="" coords="5,5,133,32"/>
-<area shape="rect" id="node2" href="$group__video__gr.html#ga89e5e15fb2c065221f58c6d883da6049" title="Get the bytes per pixel of the mode." alt="" coords="181,5,333,32"/>
-</map>
