@@ -220,12 +220,12 @@ void timer_handler() {
     print_background();
     if(gs==START){
       print_xpm(mainMenu[menu_index]);
+      reset = false;
     } else if(gs==INSTRUCTIONS){
       print_xpm(instructionsMenu);
       draw_date();
       draw_time();
     } else if(gs == COOP) {
-      reset = false;
       print_xpm(coopWaitingMenu);
     } else if(gs==GAME) {
       if(checking_collision(get_magic_blasts())){
@@ -309,16 +309,17 @@ void ser_handler(){
 }
 
 void reset_game(){
+  if(swapped){
+    swap_characters();
+    printf("SWAPPED BACK!!!!!!!!!!!!!!!");
+  }
   reset_characters();
   reset_enemies();
   reset_rtc_ingame_changes();
   reset_hud();
   reset_magic_blasts();
   ser_clear();
-  if(swapped){
-    swap_characters();
-    printf("SWAPPED BACK!!!!!!!!!!!!!!!");
-  }
+  
   swapped = false;
   in_coop = false;
 }

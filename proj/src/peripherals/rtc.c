@@ -207,5 +207,7 @@ char* print_time(){
 }
 
 uint8_t get_second(){
+    rtc_read_info(RTC_REG_SEC, &second);
+    second = bcd_to_decimal(second);
     return second;
 }

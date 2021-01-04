@@ -8,7 +8,7 @@ xpm_object *coop_cursor;
 extern gameState gs;
 extern bool in_coop;
 extern bool finished;
-static bool ualarm_set = false, hold_reg_empty = true;
+static bool hold_reg_empty = true;
 bool swapped = false;
 uint8_t pack_index = 0;
 
@@ -51,7 +51,6 @@ void ser_init(){
     coop_cursor->x = 0;
     coop_cursor->y = 0;
     ser_config();
-    setup_handler();
 }
 
 bool ser_enable_int(){
@@ -105,19 +104,6 @@ bool clear_fifo(){
     return write_to_port(FCR, reg);
 }
 
-void signal_handler(int signum){
-   ualarm_set = true; 
-   printf("alarm fired");
-}
-
-void setup_handler() {
-    struct sigaction alarm;
-    alarm.sa_handler = signal_handler;
-    sigemptyset(&alarm.sa_mask);
-    alarm.sa_flags = 0;
-    sigaction(SIGALRM, &alarm, NULL);
-}
-
 bool send_byte(uint8_t byte){
     bool pushed = push(send_queue,byte);
     uint8_t empty_transmitter;
@@ -142,7 +128,7 @@ bool send_bytes_in_queue(){
         write_to_port(THR,front(send_queue));
         printf("sent byte : %x\n", front(send_queue));
     
-        if(front(send_queue) == 0xFE || front(send_queue) == 0xDE){
+        if(front(send_queue) == ACK || front(send_queue) == NACK || front(send_queue) == END){
             pop(send_queue);
             read_port(LSR, &empty_transmitter);
             empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
@@ -152,28 +138,36 @@ bool send_bytes_in_queue(){
         }
         
         bool timeout = false;
-        uint8_t second = get_second();
-
+        uint8_t current_sec = get_second();
+        uint8_t seconds_elapsed = 0;
 
         while(!timeout){
             read_byte();
             uint8_t answer = pop(ack_queue);
-            if(answer == 0xFE){
+            if(answer == ACK){
                 pop(send_queue);
                 break;
             }
-            else if(answer == 0xDE){
+            else if(answer == NACK){
                 write_to_port(THR,front(send_queue));
-                second = get_second();
+                current_sec = get_second();
+                seconds_elapsed = 0;
             }
             else if(answer == 0){
-                if(get_second() == (second + 2)%60) timeout = true;
+                if(current_sec != get_second()){
+                    current_sec = get_second();
+                    seconds_elapsed++;
+                }
+                if(seconds_elapsed == 2) timeout = true;
             }
         }
 
         if(timeout){
-            printf("max tries reached!");
-            if(gs == GAME) gs = GAMEOVER;
+            printf("timed out!");
+            if(gs == GAME){
+                gs = GAMEOVER;
+                send_byte(END);
+            }
             pop(send_queue);
             return false;
         }
@@ -230,7 +224,10 @@ bool handle_coop_start(){
     }else if(front(received_queue) == 0x54){
         send_byte(0x55);
     }else if(front(received_queue) == 0x55){
-        uint8_t srandByte = time(NULL);
+        uint8_t srandByte = 0;
+        while(srandByte == ACK || srandByte == NACK || srandByte == END || srandByte == 0){
+            srandByte = rand();
+        }
         send_byte(0x56);
         send_byte(srandByte);
         srandom(srandByte);
@@ -345,7 +342,7 @@ void handle_received_info(){
             continue;
         }
 
-        if(curByte == 0x40){
+        if(curByte == END){
             gs = GAMEOVER;
             return;
         }
