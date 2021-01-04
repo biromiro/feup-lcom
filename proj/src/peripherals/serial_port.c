@@ -139,9 +139,11 @@ bool send_byte(uint8_t byte){
             return true;
         }
         
-        bool max_tries = 50;
+        bool max_tries = 20;
 
-        while(max_tries){
+        uint8_t max_tries = 20;
+
+        while(true){
             read_byte();
             uint8_t answer = pop(ack_queue);
             if(answer == 0xFE){
@@ -155,12 +157,13 @@ bool send_byte(uint8_t byte){
                 max_tries--;
             }
         }
+                printf("num of tries = %d\n", 5000 - max_tries);
         if(max_tries == 0){
+            printf("max tries reached\n");
             if(gs == GAME) gs = GAMEOVER;
             pop(send_queue);
             return false;
         }
-
         read_port(LSR, &empty_transmitter);
         empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
         hold_reg_empty = empty_transmitter;
@@ -191,9 +194,9 @@ bool send_bytes_in_queue(){
             return true;
         }
         
-        bool max_tries = 20;
-
-        while(max_tries){
+        uint8_t max_tries = 20;
+        
+        while(true){
             read_byte();
             uint8_t answer = pop(ack_queue);
             if(answer == 0xFE){
@@ -207,7 +210,9 @@ bool send_bytes_in_queue(){
                 max_tries--;
             }
         }
+        printf("num of tries = %d\n", 5000 - max_tries);
         if(max_tries == 0){
+            printf("max tries reached!");
             if(gs == GAME) gs = GAMEOVER;
             pop(send_queue);
             return false;
@@ -262,7 +267,7 @@ bool ser_clear(){
 
 bool handle_coop_start(){
 
-    printf("handling coop start\n");
+    printf("handling coop start -> front = %x\n", front(received_queue));
     if(front(received_queue) == 0x53){
         printf("received1\n");
         send_byte(0x54);
