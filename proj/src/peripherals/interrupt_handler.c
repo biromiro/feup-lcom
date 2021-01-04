@@ -304,14 +304,12 @@ void ser_handler(){
   ser_ih();
   if (gs == COOP) handle_coop_start();
   else if (gs == GAME && in_coop) handle_received_info();
-  else if(gs == GAME && !in_coop) printf("not in coop!");
   else ser_clear();
 }
 
 void reset_game(){
   if(swapped){
     swap_characters();
-    printf("SWAPPED BACK!!!!!!!!!!!!!!!");
   }
   reset_characters();
   reset_enemies();

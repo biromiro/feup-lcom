@@ -1,0 +1,74 @@
+\hypertarget{serial__port_8h}{}\doxysection{peripherals/serial\+\_\+port.h File Reference}
+\label{serial__port_8h}\index{peripherals/serial\_port.h@{peripherals/serial\_port.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}serial\+\_\+port\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../game/character\+\_\+movement.\+h\char`\"{}}\newline
+Include dependency graph for serial\+\_\+port.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serial__port_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serial__port_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__serial__port_ga81d06686138301b58a09aafa8b6944c7}{ser\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em initializes the serial port \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__serial__port_ga9b3a3b0c4c486a49b7c3eb01f19ce26a}{ser\+\_\+config}} ()
+\begin{DoxyCompactList}\small\item\em configs the serial port communication settings \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__serial__port_ga1d2f19b387e47405df3a4a1ece626ebd}{ser\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bitno)
+\begin{DoxyCompactList}\small\item\em subscribes the serial port interrupts \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__serial__port_ga7d7df555d50a59b9ee60efb23e95d550}{ser\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em unsubscribes the serial port interrupts \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_gac938921551cca0e526f0e9a16c324199}{ser\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em Exits and restores the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga9353fabdd05ea291e02243dace57ae1c}{ser\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Handles a serial port interrupt. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga0a75074bfd4daf70e981abcefc660a5d}{ser\+\_\+enable\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Enables the serial port interrupts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gac6ec0fcd144e96b116d804d5c9ec9235}{read\+\_\+port}} (int port, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Reads the value of a given serial port port, adding its base address. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gadd1462454cf3c1f15c6a959c3b78c03a}{write\+\_\+to\+\_\+port}} (int port, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Writes to a given port(adding its base address) a given value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga2fff7715fff4fea8a65fec3604fa9074}{disable\+\_\+ser\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Disables the serial port interrupts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga094cfcecf9cfdf5583d0260ef9b8aa64}{clear\+\_\+fifo}} ()
+\begin{DoxyCompactList}\small\item\em clears the serial port fifos \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gae5efe9b828d15d93690271c1a6991f0c}{send\+\_\+byte}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Tries to send a byte to the serial port transmitter holding register, stores it in sending queue if not possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga5cf37bb171c469d0893f2ab2de32a004}{send\+\_\+bytes\+\_\+in\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Tries to send all bytes in queue to serial port transmitter holding register until not possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga206e6d99921c4e3c9987aaf4f097d2fb}{pack\+\_\+byte\+\_\+send\+\_\+queue}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Adds a byte to the send queue stack. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gac3c84aa3050b9cfb9ccb7e6945bc9494}{empty\+\_\+send\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Sends all bytes in queue to serial port transmitter holding register (busy waiting) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gab4dc7fd4df815e249a8863aa51404856}{read\+\_\+byte}} ()
+\begin{DoxyCompactList}\small\item\em Reads a byte from the serial port receiver buffer register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{group__serial__port_gaf9bd20038c82188db5d865e68479b67d}{get\+\_\+received\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Get the received queue object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{group__serial__port_gac782606ea1b2ef2e83c90dad224a441a}{get\+\_\+send\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Get the send queue object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga04571865b824bc933dc2322a794aafea}{ser\+\_\+clear}} ()
+\begin{DoxyCompactList}\small\item\em clears all fifos (ser port queues and program queues) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga6d086784aa4c3d5cd54489f695eaa0fd}{handle\+\_\+coop\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Handles the co-\/op game start, syncing both players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga68976d9d8ea4169dafd066525b26c96b}{send\+\_\+scancode}} (uint8\+\_\+t \mbox{\hyperlink{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}})
+\begin{DoxyCompactList}\small\item\em Sends a scancode to the other player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga21f093191126c81b5045e888b9060cc7}{send\+\_\+mouse\+\_\+info}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor)
+\begin{DoxyCompactList}\small\item\em Sends the needed mouse info upon a magic blast throw to the other player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga38e036b2076c8dfb28168a967bbaba68}{handle\+\_\+received\+\_\+info}} ()
+\begin{DoxyCompactList}\small\item\em Received info (either mouse or kbd) handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga6e9c1eeb50ffac1b9bc3195d915447fe}{mount\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em Mounts the received packet bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}

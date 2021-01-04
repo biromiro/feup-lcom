@@ -1,0 +1,150 @@
+\hypertarget{serial__port_8c}{}\doxysection{peripherals/serial\+\_\+port.c File Reference}
+\label{serial__port_8c}\index{peripherals/serial\_port.c@{peripherals/serial\_port.c}}
+{\ttfamily \#include \char`\"{}serial\+\_\+port.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+Include dependency graph for serial\+\_\+port.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serial__port_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__serial__port_ga1d2f19b387e47405df3a4a1ece626ebd}{ser\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bitno)
+\begin{DoxyCompactList}\small\item\em subscribes the serial port interrupts \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__serial__port_ga7d7df555d50a59b9ee60efb23e95d550}{ser\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em unsubscribes the serial port interrupts \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__serial__port_ga9b3a3b0c4c486a49b7c3eb01f19ce26a}{ser\+\_\+config}} ()
+\begin{DoxyCompactList}\small\item\em configs the serial port communication settings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga81d06686138301b58a09aafa8b6944c7}{ser\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em initializes the serial port \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga0a75074bfd4daf70e981abcefc660a5d}{ser\+\_\+enable\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Enables the serial port interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_gac938921551cca0e526f0e9a16c324199}{ser\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em Exits and restores the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga9353fabdd05ea291e02243dace57ae1c}{ser\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Handles a serial port interrupt. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gac6ec0fcd144e96b116d804d5c9ec9235}{read\+\_\+port}} (int port, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Reads the value of a given serial port port, adding its base address. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gadd1462454cf3c1f15c6a959c3b78c03a}{write\+\_\+to\+\_\+port}} (int port, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Writes to a given port(adding its base address) a given value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga2fff7715fff4fea8a65fec3604fa9074}{disable\+\_\+ser\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Disables the serial port interrupts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga094cfcecf9cfdf5583d0260ef9b8aa64}{clear\+\_\+fifo}} ()
+\begin{DoxyCompactList}\small\item\em clears the serial port fifos \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gae5efe9b828d15d93690271c1a6991f0c}{send\+\_\+byte}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Tries to send a byte to the serial port transmitter holding register, stores it in sending queue if not possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga5cf37bb171c469d0893f2ab2de32a004}{send\+\_\+bytes\+\_\+in\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Tries to send all bytes in queue to serial port transmitter holding register until not possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_gab4dc7fd4df815e249a8863aa51404856}{read\+\_\+byte}} ()
+\begin{DoxyCompactList}\small\item\em Reads a byte from the serial port receiver buffer register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{group__serial__port_gaf9bd20038c82188db5d865e68479b67d}{get\+\_\+received\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Get the received queue object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{group__serial__port_gac782606ea1b2ef2e83c90dad224a441a}{get\+\_\+send\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Get the send queue object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga04571865b824bc933dc2322a794aafea}{ser\+\_\+clear}} ()
+\begin{DoxyCompactList}\small\item\em clears all fifos (ser port queues and program queues) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__serial__port_ga6d086784aa4c3d5cd54489f695eaa0fd}{handle\+\_\+coop\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Handles the co-\/op game start, syncing both players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga68976d9d8ea4169dafd066525b26c96b}{send\+\_\+scancode}} (uint8\+\_\+t \mbox{\hyperlink{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}})
+\begin{DoxyCompactList}\small\item\em Sends a scancode to the other player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga21f093191126c81b5045e888b9060cc7}{send\+\_\+mouse\+\_\+info}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor)
+\begin{DoxyCompactList}\small\item\em Sends the needed mouse info upon a magic blast throw to the other player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga38e036b2076c8dfb28168a967bbaba68}{handle\+\_\+received\+\_\+info}} ()
+\begin{DoxyCompactList}\small\item\em Received info (either mouse or kbd) handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__serial__port_ga6e9c1eeb50ffac1b9bc3195d915447fe}{mount\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em Mounts the received packet bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{serial__port_8c_aebef26ee458319e780e68bd056ce31b6}{ser\+\_\+hook}} = 4
+\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{serial__port_8c_ac810a1c5a885ceb8773cbb934f5c86bc}{coop\+\_\+cursor}}
+\item 
+\mbox{\hyperlink{group__menu_gaaf29bbe309504beb4cfec2481eacee62}{game\+State}} \mbox{\hyperlink{serial__port_8c_a3ff300b00fcf14c8f695accf1af84918}{gs}}
+\item 
+bool \mbox{\hyperlink{serial__port_8c_a7a7c4e27f9873c2aee1f4f5af7581487}{in\+\_\+coop}}
+\item 
+bool \mbox{\hyperlink{serial__port_8c_a9324389a5cdc532c6417a87ccafe18ce}{finished}}
+\item 
+bool \mbox{\hyperlink{serial__port_8c_af366811e52ea15aa1a7aa8ded3fa28c4}{swapped}} = false
+\item 
+uint8\+\_\+t \mbox{\hyperlink{serial__port_8c_ab4d75e6d362273e48f1ac5e76d3e69c4}{pack\+\_\+index}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{serial__port_8c_ac810a1c5a885ceb8773cbb934f5c86bc}\label{serial__port_8c_ac810a1c5a885ceb8773cbb934f5c86bc}} 
+\index{serial\_port.c@{serial\_port.c}!coop\_cursor@{coop\_cursor}}
+\index{coop\_cursor@{coop\_cursor}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{coop\_cursor}{coop\_cursor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}}$\ast$ coop\+\_\+cursor}
+
+
+
+Definition at line 7 of file serial\+\_\+port.\+c.
+
+\mbox{\Hypertarget{serial__port_8c_a9324389a5cdc532c6417a87ccafe18ce}\label{serial__port_8c_a9324389a5cdc532c6417a87ccafe18ce}} 
+\index{serial\_port.c@{serial\_port.c}!finished@{finished}}
+\index{finished@{finished}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily bool finished}
+
+
+
+Definition at line 6 of file interrupt\+\_\+handler.\+c.
+
+\mbox{\Hypertarget{serial__port_8c_a3ff300b00fcf14c8f695accf1af84918}\label{serial__port_8c_a3ff300b00fcf14c8f695accf1af84918}} 
+\index{serial\_port.c@{serial\_port.c}!gs@{gs}}
+\index{gs@{gs}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{gs}{gs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__menu_gaaf29bbe309504beb4cfec2481eacee62}{game\+State}} gs}
+
+
+
+Definition at line 5 of file character\+\_\+movement.\+c.
+
+\mbox{\Hypertarget{serial__port_8c_a7a7c4e27f9873c2aee1f4f5af7581487}\label{serial__port_8c_a7a7c4e27f9873c2aee1f4f5af7581487}} 
+\index{serial\_port.c@{serial\_port.c}!in\_coop@{in\_coop}}
+\index{in\_coop@{in\_coop}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{in\_coop}{in\_coop}}
+{\footnotesize\ttfamily bool in\+\_\+coop}
+
+
+
+Definition at line 7 of file character\+\_\+movement.\+c.
+
+\mbox{\Hypertarget{serial__port_8c_ab4d75e6d362273e48f1ac5e76d3e69c4}\label{serial__port_8c_ab4d75e6d362273e48f1ac5e76d3e69c4}} 
+\index{serial\_port.c@{serial\_port.c}!pack\_index@{pack\_index}}
+\index{pack\_index@{pack\_index}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{pack\_index}{pack\_index}}
+{\footnotesize\ttfamily uint8\+\_\+t pack\+\_\+index = 0}
+
+
+
+Definition at line 13 of file serial\+\_\+port.\+c.
+
+\mbox{\Hypertarget{serial__port_8c_aebef26ee458319e780e68bd056ce31b6}\label{serial__port_8c_aebef26ee458319e780e68bd056ce31b6}} 
+\index{serial\_port.c@{serial\_port.c}!ser\_hook@{ser\_hook}}
+\index{ser\_hook@{ser\_hook}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{ser\_hook}{ser\_hook}}
+{\footnotesize\ttfamily int ser\+\_\+hook = 4}
+
+
+
+Definition at line 5 of file serial\+\_\+port.\+c.
+
+\mbox{\Hypertarget{serial__port_8c_af366811e52ea15aa1a7aa8ded3fa28c4}\label{serial__port_8c_af366811e52ea15aa1a7aa8ded3fa28c4}} 
+\index{serial\_port.c@{serial\_port.c}!swapped@{swapped}}
+\index{swapped@{swapped}!serial\_port.c@{serial\_port.c}}
+\doxysubsubsection{\texorpdfstring{swapped}{swapped}}
+{\footnotesize\ttfamily bool swapped = false}
+
+
+
+Definition at line 12 of file serial\+\_\+port.\+c.
+

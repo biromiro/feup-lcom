@@ -1,0 +1,10 @@
+<map id="kbc_read_buffer" name="kbc_read_buffer">
+<area shape="rect" id="node1" title="Reads the output buffer of KBC." alt="" coords="525,56,652,83"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga638e7f85ff3800aaf17c95cde1760865" title="Reads the value of the OBF of the KBC." alt="" coords="335,5,452,32"/>
+<area shape="rect" id="node5" href="$group__kbc.html#ga92ffdbe2b735528ea192bd5c3fe78a30" title="Restores the Minix Interrupt Handler for KBC." alt="" coords="309,56,477,83"/>
+<area shape="rect" id="node6" href="$group__kbc.html#ga2b0cab3b65db905154df274d1841a214" title="Reads a data byte from the mouse controller." alt="" coords="324,107,463,133"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#a5761bd4aad91ac1d68916ad88f583d9f" title=" " alt="" coords="187,5,251,32"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#gac89c6cf4a316a1847cf32ec3ed53646b" title="Builds the keyboard packet and handles it." alt="" coords="15,5,118,32"/>
+<area shape="rect" id="node7" href="$kbc_8c.html#aed4404005e4c565ac36656307386e0ac" title=" " alt="" coords="176,107,261,133"/>
+<area shape="rect" id="node8" href="$group__interrupt__handler.html#ga6ca7c8595f4c1116a2e057ad74fe27a5" title="Builds the mouse packet and handles it." alt="" coords="5,107,128,133"/>
+</map>

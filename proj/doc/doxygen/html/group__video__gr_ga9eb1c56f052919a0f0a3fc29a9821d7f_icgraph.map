@@ -1,0 +1,7 @@
+<map id="print_xpm" name="print_xpm">
+<area shape="rect" id="node1" title="Prints a XPM." alt="" coords="741,38,829,65"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2e3433fb7479994ec64b38bc4cc24ea0" title="Prints an animated sprite." alt="" coords="528,13,693,39"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga9e63ea32abae3f871fcbe66fd99003b2" title="Updates the screen every frame." alt="" coords="554,63,667,90"/>
+<area shape="rect" id="node3" href="$group__character__movement.html#gad596b8c7de75677690bccd82c144bf5f" title="Updates the movement of a specific player." alt="" coords="267,5,480,47"/>
+<area shape="rect" id="node4" href="$group__character__movement.html#ga6e1b717308ebffc918149d6e179b2e7a" title="Updates the character movement." alt="" coords="5,13,219,39"/>
+</map>

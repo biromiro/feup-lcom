@@ -1,0 +1,376 @@
+\hypertarget{group__timer}{}\doxysection{timer}
+\label{group__timer}\index{timer@{timer}}
+
+
+Functions for using the i8254 timers.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{uniontimer__status__field__val}{timer\+\_\+status\+\_\+field\+\_\+val}}
+\begin{DoxyCompactList}\small\item\em Union for storing values of timer status fields, including the full status byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__timer_ga5cc20f14fd50625eea9b20f58fbe2a55}{timer\+\_\+init}} \{ \mbox{\hyperlink{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a829d958875d8e92068f1b07f858721a4}{I\+N\+V\+A\+L\+\_\+val}}, 
+\mbox{\hyperlink{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a9a2e8b22f6d5ee33cc37829164a55955}{L\+S\+B\+\_\+only}}, 
+\mbox{\hyperlink{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55ae46d93c3576b5f78ae1aeb4ee4fc4938}{M\+S\+B\+\_\+only}}, 
+\mbox{\hyperlink{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a7d392c02b4f52d93c10e4c646f8cedc7}{M\+S\+B\+\_\+after\+\_\+\+L\+SB}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerated type for specifying the timer value initialization. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__timer_gada782f3116a896caaa602b70c0c6d8b7}{timer\+\_\+status\+\_\+field}} \{ \mbox{\hyperlink{group__timer_ggada782f3116a896caaa602b70c0c6d8b7a92376d84969da91547254fc7461f0da2}{tsf\+\_\+all}}, 
+\mbox{\hyperlink{group__timer_ggada782f3116a896caaa602b70c0c6d8b7aa89f72faf31fa0e4db8cab25364a4583}{tsf\+\_\+initial}}, 
+\mbox{\hyperlink{group__timer_ggada782f3116a896caaa602b70c0c6d8b7aa84c2f6462a2deb90fda229c89453dfa}{tsf\+\_\+mode}}, 
+\mbox{\hyperlink{group__timer_ggada782f3116a896caaa602b70c0c6d8b7af4b69eace6b1cc952de198acee4c5e32}{tsf\+\_\+base}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerated type for identifying the timer status fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__timer_gaf2c04fa8e97ffa748fd3f612886a92a7}{timer\+\_\+set\+\_\+frequency}} (uint8\+\_\+t timer, uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Changes the operating frequency of a timer. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__timer_gac57a7e1140a7e00ad95ac5488d2a671b}{timer\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables Timer 0 interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__timer_gafabd21de449be154dd65d5fdb2d8045d}{timer\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes Timer 0 interrupts. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__timer_ga91a2072306c68353712a6b771287dc2c}{timer\+\_\+int\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Timer 0 interrupt handler. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__timer_ga703c60b40c8c49607d6ecb6fef82d27a}{timer\+\_\+get\+\_\+conf}} (uint8\+\_\+t timer, uint8\+\_\+t $\ast$st)
+\begin{DoxyCompactList}\small\item\em Reads the input timer configuration (status) via read-\/back command. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__timer_ga140d8f092c0913cabdca949c4a1cc650}{timer\+\_\+display\+\_\+conf}} (uint8\+\_\+t timer, uint8\+\_\+t st, enum \mbox{\hyperlink{group__timer_gada782f3116a896caaa602b70c0c6d8b7}{timer\+\_\+status\+\_\+field}} field)
+\begin{DoxyCompactList}\small\item\em Shows timer configuration. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__timer_gad3902e029b27c80982873394c0290496}{timer\+\_\+print\+\_\+config}} (uint8\+\_\+t timer, enum \mbox{\hyperlink{group__timer_gada782f3116a896caaa602b70c0c6d8b7}{timer\+\_\+status\+\_\+field}} field, union \mbox{\hyperlink{uniontimer__status__field__val}{timer\+\_\+status\+\_\+field\+\_\+val}} val)
+\begin{DoxyCompactList}\small\item\em Prints a timer config field value. \end{DoxyCompactList}\item 
+uint32\+\_\+t() \mbox{\hyperlink{group__timer_ga43b221cba0c39b32f89688dcfee5aefa}{timer\+\_\+print\+\_\+elapsed\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Increments elapsed time count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__timer_ga96f44d20f1dbf1c8785a7bc99a46164c}{byte}}
+\item 
+enum \mbox{\hyperlink{group__timer_ga5cc20f14fd50625eea9b20f58fbe2a55}{timer\+\_\+init}} \mbox{\hyperlink{group__timer_gad414fb8742e435f9bda1f199a6200645}{in\+\_\+mode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__timer_gabd6e94a182fc2daff67dfb46f732644a}{count\+\_\+mode}}
+\item 
+bool \mbox{\hyperlink{group__timer_gaa2444cde256beeae6fb06bb7a5ebd0c9}{bcd}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for using the i8254 timers. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__timer_ga5cc20f14fd50625eea9b20f58fbe2a55}\label{group__timer_ga5cc20f14fd50625eea9b20f58fbe2a55}} 
+\index{timer@{timer}!timer\_init@{timer\_init}}
+\index{timer\_init@{timer\_init}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_init}{timer\_init}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__timer_ga5cc20f14fd50625eea9b20f58fbe2a55}{timer\+\_\+init}}}
+
+
+
+Enumerated type for specifying the timer value initialization. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVAL\_val@{INVAL\_val}!timer@{timer}}\index{timer@{timer}!INVAL\_val@{INVAL\_val}}}\mbox{\Hypertarget{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a829d958875d8e92068f1b07f858721a4}\label{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a829d958875d8e92068f1b07f858721a4}} 
+I\+N\+V\+A\+L\+\_\+val&Invalid initialization mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LSB\_only@{LSB\_only}!timer@{timer}}\index{timer@{timer}!LSB\_only@{LSB\_only}}}\mbox{\Hypertarget{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a9a2e8b22f6d5ee33cc37829164a55955}\label{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a9a2e8b22f6d5ee33cc37829164a55955}} 
+L\+S\+B\+\_\+only&Initialization only of the L\+SB \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSB\_only@{MSB\_only}!timer@{timer}}\index{timer@{timer}!MSB\_only@{MSB\_only}}}\mbox{\Hypertarget{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55ae46d93c3576b5f78ae1aeb4ee4fc4938}\label{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55ae46d93c3576b5f78ae1aeb4ee4fc4938}} 
+M\+S\+B\+\_\+only&Initialization only of the M\+SB \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSB\_after\_LSB@{MSB\_after\_LSB}!timer@{timer}}\index{timer@{timer}!MSB\_after\_LSB@{MSB\_after\_LSB}}}\mbox{\Hypertarget{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a7d392c02b4f52d93c10e4c646f8cedc7}\label{group__timer_gga5cc20f14fd50625eea9b20f58fbe2a55a7d392c02b4f52d93c10e4c646f8cedc7}} 
+M\+S\+B\+\_\+after\+\_\+\+L\+SB&Initialization of L\+SB and M\+SB, in this order \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 16 of file timer.\+h.
+
+\mbox{\Hypertarget{group__timer_gada782f3116a896caaa602b70c0c6d8b7}\label{group__timer_gada782f3116a896caaa602b70c0c6d8b7}} 
+\index{timer@{timer}!timer\_status\_field@{timer\_status\_field}}
+\index{timer\_status\_field@{timer\_status\_field}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_status\_field}{timer\_status\_field}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__timer_gada782f3116a896caaa602b70c0c6d8b7}{timer\+\_\+status\+\_\+field}}}
+
+
+
+Enumerated type for identifying the timer status fields. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tsf\_all@{tsf\_all}!timer@{timer}}\index{timer@{timer}!tsf\_all@{tsf\_all}}}\mbox{\Hypertarget{group__timer_ggada782f3116a896caaa602b70c0c6d8b7a92376d84969da91547254fc7461f0da2}\label{group__timer_ggada782f3116a896caaa602b70c0c6d8b7a92376d84969da91547254fc7461f0da2}} 
+tsf\+\_\+all&configuration/status \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tsf\_initial@{tsf\_initial}!timer@{timer}}\index{timer@{timer}!tsf\_initial@{tsf\_initial}}}\mbox{\Hypertarget{group__timer_ggada782f3116a896caaa602b70c0c6d8b7aa89f72faf31fa0e4db8cab25364a4583}\label{group__timer_ggada782f3116a896caaa602b70c0c6d8b7aa89f72faf31fa0e4db8cab25364a4583}} 
+tsf\+\_\+initial&timer initialization mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tsf\_mode@{tsf\_mode}!timer@{timer}}\index{timer@{timer}!tsf\_mode@{tsf\_mode}}}\mbox{\Hypertarget{group__timer_ggada782f3116a896caaa602b70c0c6d8b7aa84c2f6462a2deb90fda229c89453dfa}\label{group__timer_ggada782f3116a896caaa602b70c0c6d8b7aa84c2f6462a2deb90fda229c89453dfa}} 
+tsf\+\_\+mode&timer counting mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tsf\_base@{tsf\_base}!timer@{timer}}\index{timer@{timer}!tsf\_base@{tsf\_base}}}\mbox{\Hypertarget{group__timer_ggada782f3116a896caaa602b70c0c6d8b7af4b69eace6b1cc952de198acee4c5e32}\label{group__timer_ggada782f3116a896caaa602b70c0c6d8b7af4b69eace6b1cc952de198acee4c5e32}} 
+tsf\+\_\+base&timer counting base \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 26 of file timer.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__timer_ga140d8f092c0913cabdca949c4a1cc650}\label{group__timer_ga140d8f092c0913cabdca949c4a1cc650}} 
+\index{timer@{timer}!timer\_display\_conf@{timer\_display\_conf}}
+\index{timer\_display\_conf@{timer\_display\_conf}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_display\_conf()}{timer\_display\_conf()}}
+{\footnotesize\ttfamily int() timer\+\_\+display\+\_\+conf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer,  }\item[{uint8\+\_\+t}]{st,  }\item[{enum \mbox{\hyperlink{group__timer_gada782f3116a896caaa602b70c0c6d8b7}{timer\+\_\+status\+\_\+field}}}]{field }\end{DoxyParamCaption})}
+
+
+
+Shows timer configuration. 
+
+Displays, in a human friendly way, the specified field of a timer status, which was read via the read-\/back command
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer whose configuration should be displayed (Ranges from 0 to 2) \\
+\hline
+{\em st} & status read via the read-\/back command \\
+\hline
+{\em field} & status field to display in human friendly way \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file timer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{group__timer_ga140d8f092c0913cabdca949c4a1cc650_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__timer_ga703c60b40c8c49607d6ecb6fef82d27a}\label{group__timer_ga703c60b40c8c49607d6ecb6fef82d27a}} 
+\index{timer@{timer}!timer\_get\_conf@{timer\_get\_conf}}
+\index{timer\_get\_conf@{timer\_get\_conf}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_get\_conf()}{timer\_get\_conf()}}
+{\footnotesize\ttfamily int() timer\+\_\+get\+\_\+conf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer,  }\item[{uint8\+\_\+t $\ast$}]{st }\end{DoxyParamCaption})}
+
+
+
+Reads the input timer configuration (status) via read-\/back command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Timer whose configuration to read (Ranges from 0 to 2) \\
+\hline
+{\em st} & Address of memory position to be filled with the timer config \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file timer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{group__timer_ga703c60b40c8c49607d6ecb6fef82d27a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__timer_ga703c60b40c8c49607d6ecb6fef82d27a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__timer_ga91a2072306c68353712a6b771287dc2c}\label{group__timer_ga91a2072306c68353712a6b771287dc2c}} 
+\index{timer@{timer}!timer\_int\_handler@{timer\_int\_handler}}
+\index{timer\_int\_handler@{timer\_int\_handler}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_int\_handler()}{timer\_int\_handler()}}
+{\footnotesize\ttfamily void() timer\+\_\+int\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Timer 0 interrupt handler. 
+
+Increments counter
+
+Increments tick counter 
+
+Definition at line 63 of file timer.\+c.
+
+\mbox{\Hypertarget{group__timer_gad3902e029b27c80982873394c0290496}\label{group__timer_gad3902e029b27c80982873394c0290496}} 
+\index{timer@{timer}!timer\_print\_config@{timer\_print\_config}}
+\index{timer\_print\_config@{timer\_print\_config}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_print\_config()}{timer\_print\_config()}}
+{\footnotesize\ttfamily int() timer\+\_\+print\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer,  }\item[{enum \mbox{\hyperlink{group__timer_gada782f3116a896caaa602b70c0c6d8b7}{timer\+\_\+status\+\_\+field}}}]{field,  }\item[{union \mbox{\hyperlink{uniontimer__status__field__val}{timer\+\_\+status\+\_\+field\+\_\+val}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Prints a timer config field value. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 upon success and non-\/zero otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{group__timer_gad3902e029b27c80982873394c0290496_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__timer_ga43b221cba0c39b32f89688dcfee5aefa}\label{group__timer_ga43b221cba0c39b32f89688dcfee5aefa}} 
+\index{timer@{timer}!timer\_print\_elapsed\_time@{timer\_print\_elapsed\_time}}
+\index{timer\_print\_elapsed\_time@{timer\_print\_elapsed\_time}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_print\_elapsed\_time()}{timer\_print\_elapsed\_time()}}
+{\footnotesize\ttfamily uint32\+\_\+t() timer\+\_\+print\+\_\+elapsed\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments elapsed time count. 
+
+\begin{DoxyReturn}{Returns}
+Returns the current time count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__timer_gaf2c04fa8e97ffa748fd3f612886a92a7}\label{group__timer_gaf2c04fa8e97ffa748fd3f612886a92a7}} 
+\index{timer@{timer}!timer\_set\_frequency@{timer\_set\_frequency}}
+\index{timer\_set\_frequency@{timer\_set\_frequency}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_set\_frequency()}{timer\_set\_frequency()}}
+{\footnotesize\ttfamily int() timer\+\_\+set\+\_\+frequency (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer,  }\item[{uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Changes the operating frequency of a timer. 
+
+Must use the read-\/back command so that it does not change the 4 L\+S\+Bs (mode and B\+C\+D/binary) of the timer\textquotesingle{}s control word.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Timer to configure. (Ranges from 0 to 2) \\
+\hline
+{\em freq} & Timer operating frequency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file timer.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__timer_gaf2c04fa8e97ffa748fd3f612886a92a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__timer_gaf2c04fa8e97ffa748fd3f612886a92a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__timer_gac57a7e1140a7e00ad95ac5488d2a671b}\label{group__timer_gac57a7e1140a7e00ad95ac5488d2a671b}} 
+\index{timer@{timer}!timer\_subscribe\_int@{timer\_subscribe\_int}}
+\index{timer\_subscribe\_int@{timer\_subscribe\_int}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_subscribe\_int()}{timer\_subscribe\_int()}}
+{\footnotesize\ttfamily int() timer\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes and enables Timer 0 interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & address of memory to be initialized with the bit number to be set in the mask returned upon an interrupt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file timer.\+c.
+
+\mbox{\Hypertarget{group__timer_gafabd21de449be154dd65d5fdb2d8045d}\label{group__timer_gafabd21de449be154dd65d5fdb2d8045d}} 
+\index{timer@{timer}!timer\_unsubscribe\_int@{timer\_unsubscribe\_int}}
+\index{timer\_unsubscribe\_int@{timer\_unsubscribe\_int}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{timer\_unsubscribe\_int()}{timer\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() timer\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes Timer 0 interrupts. 
+
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file timer.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__timer_gaa2444cde256beeae6fb06bb7a5ebd0c9}\label{group__timer_gaa2444cde256beeae6fb06bb7a5ebd0c9}} 
+\index{timer@{timer}!bcd@{bcd}}
+\index{bcd@{bcd}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{bcd}{bcd}}
+{\footnotesize\ttfamily bool bcd}
+
+counting base, true if B\+CD 
+
+Definition at line 40 of file timer.\+h.
+
+\mbox{\Hypertarget{group__timer_ga96f44d20f1dbf1c8785a7bc99a46164c}\label{group__timer_ga96f44d20f1dbf1c8785a7bc99a46164c}} 
+\index{timer@{timer}!byte@{byte}}
+\index{byte@{byte}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily uint8\+\_\+t byte}
+
+status 
+
+Definition at line 37 of file timer.\+h.
+
+\mbox{\Hypertarget{group__timer_gabd6e94a182fc2daff67dfb46f732644a}\label{group__timer_gabd6e94a182fc2daff67dfb46f732644a}} 
+\index{timer@{timer}!count\_mode@{count\_mode}}
+\index{count\_mode@{count\_mode}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{count\_mode}{count\_mode}}
+{\footnotesize\ttfamily uint8\+\_\+t count\+\_\+mode}
+
+counting mode\+: 0, 1,.., 5 
+
+Definition at line 39 of file timer.\+h.
+
+\mbox{\Hypertarget{group__timer_gad414fb8742e435f9bda1f199a6200645}\label{group__timer_gad414fb8742e435f9bda1f199a6200645}} 
+\index{timer@{timer}!in\_mode@{in\_mode}}
+\index{in\_mode@{in\_mode}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{in\_mode}{in\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__timer_ga5cc20f14fd50625eea9b20f58fbe2a55}{timer\+\_\+init}} in\+\_\+mode}
+
+initialization mode 
+
+Definition at line 38 of file timer.\+h.
+

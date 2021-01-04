@@ -1,0 +1,4 @@
+<map id="handle_received_info" name="handle_received_info">
+<area shape="rect" id="node1" title="Received info (either mouse or kbd) handler." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="node2" href="$group__queue.html#ga1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="215,5,297,32"/>
+</map>

@@ -1,6 +1,0 @@
-<map id="set_hud_values" name="set_hud_values">
-<area shape="rect" id="node1" title="Sets the hud values (score, ammo and wave) to their correct values." alt="" coords="5,56,128,83"/>
-<area shape="rect" id="node2" href="$group__magic__blast.html#gaf4f87fed374d0d478316d82eae85292c" title="Get the Available Blasts." alt="" coords="176,5,332,32"/>
-<area shape="rect" id="node3" href="$group__enemies.html#gaf471ad2ab45143ba8b77881ff0a8ae03" title="Get the current game score." alt="" coords="211,56,297,83"/>
-<area shape="rect" id="node4" href="$group__game__state.html#ga877c167acf09b2c71f0e0f878859434e" title="Get the current wave number." alt="" coords="211,107,297,133"/>
-</map>

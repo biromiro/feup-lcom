@@ -1,9 +1,0 @@
-<map id="ser_clear" name="ser_clear">
-<area shape="rect" id="node1" title="clears all fifos (ser port queues and program queues)" alt="" coords="5,81,87,108"/>
-<area shape="rect" id="node2" href="$group__serial__port.html#ga094cfcecf9cfdf5583d0260ef9b8aa64" title="clears the serial port fifos" alt="" coords="135,56,217,83"/>
-<area shape="rect" id="node5" href="$group__queue.html#gaff071ac301442edc8c4348f9a6b25afb" title="Pops the front element of the queue." alt="" coords="153,107,199,133"/>
-<area shape="rect" id="node3" href="$group__serial__port.html#gac6ec0fcd144e96b116d804d5c9ec9235" title="Reads the value of a given serial port port, adding its base address." alt="" coords="277,5,361,32"/>
-<area shape="rect" id="node4" href="$group__serial__port.html#gadd1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="265,56,373,83"/>
-<area shape="rect" id="node6" href="$group__queue.html#ga32df32dccfc5eadc233531804f0cb305" title="Gets the front element of the queue." alt="" coords="293,107,346,133"/>
-<area shape="rect" id="node7" href="$group__queue.html#ga1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="421,132,504,159"/>
-</map>

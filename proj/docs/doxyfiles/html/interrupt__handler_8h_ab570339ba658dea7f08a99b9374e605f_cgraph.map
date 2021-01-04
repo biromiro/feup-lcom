@@ -1,4 +1,0 @@
-<map id="subscribe_interrupts" name="subscribe_interrupts">
-<area shape="rect" id="node1" title="Subscribes all the peripherals Timer, Keyboard and Timer." alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node2" href="$rtc_8c.html#a6bbe679f115cec90d36d50eb2aac1b89" title="Subscribes and enables RTC interrupts." alt="" coords="208,5,340,32"/>
-</map>

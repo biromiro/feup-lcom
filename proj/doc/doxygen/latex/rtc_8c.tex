@@ -1,0 +1,104 @@
+\hypertarget{rtc_8c}{}\doxysection{peripherals/rtc.c File Reference}
+\label{rtc_8c}\index{peripherals/rtc.c@{peripherals/rtc.c}}
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+Include dependency graph for rtc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{rtc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__rtc_ga6bbe679f115cec90d36d50eb2aac1b89}{rtc\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables R\+TC interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_ga9d4850bb2a488644672d43287f160622}{rtc\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes R\+TC interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_gabef8f73283f7f99f7f2e1312e2b08b55}{wait\+\_\+until\+\_\+finished\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em Waits until there is no active update on the R\+TC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_gaa63c62bc7e741b9c72538b68eb898f6b}{enable\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em Enables R\+TC\textquotesingle{}s updates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_ga060741ae796d3c561d57c9a25f402d2d}{disable\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em Disables R\+TC\textquotesingle{}s updates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_gabb3363eb34b976d94fb14067028312f2}{set\+\_\+rtc\+\_\+interrupts}} (\mbox{\hyperlink{group__rtc_gaa145c0d8b943f53d4619e4643aa8d39b}{interrupt\+Type}} interrupt, bool value)
+\begin{DoxyCompactList}\small\item\em Activates/\+Deactivates the given R\+TC Interrupt. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__rtc_ga0b9ae809cf571f61e54712a23c65348e}{rtc\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em R\+TC Interrupt Handler. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_gacbe3b4f73341216278ce7de058281b71}{rtc\+\_\+read\+\_\+info}} (uint8\+\_\+t reg, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Reads the info of a given register and returns it throw the parameter. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_gaa4ac2673e4e84d544d0091a1a2fb6bbc}{bcd\+\_\+to\+\_\+decimal}} (uint8\+\_\+t hex)
+\begin{DoxyCompactList}\small\item\em Converts a given B\+CD number to its corresponding decimal value. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_ga1de6c745cd97b58fa2a7993f92a4906a}{decimal\+\_\+to\+\_\+bcd}} (uint8\+\_\+t dec)
+\begin{DoxyCompactList}\small\item\em Converts a given decimal number to its corresponding B\+CD value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__rtc_gaa90e57cc419c0a865cf925cad4d9dd63}{set\+\_\+power\+\_\+up\+\_\+alarm}} (uint8\+\_\+t powerup\+Delay)
+\begin{DoxyCompactList}\small\item\em Sets up the alarm to power up in game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__rtc_ga16f3810b612672b64b0ed961c38f2ce6}{set\+\_\+enemy\+\_\+throw}} (uint8\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Sets up the rate at which the periodic interrupts will send new enemies. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__rtc_ga14d5cf47836341645265207264f150f5}{rtc\+\_\+updater}} ()
+\begin{DoxyCompactList}\small\item\em Updates date and time memory registers. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__rtc_ga94abc4ef267daa4c1880d548eec788f4}{rtc\+\_\+alarm}} ()
+\begin{DoxyCompactList}\small\item\em Handles an alarm interrupt. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__rtc_ga9476e04948a638295220043ef1087bac}{rtc\+\_\+periodic}} ()
+\begin{DoxyCompactList}\small\item\em Handles a periodic interrupt. \end{DoxyCompactList}\item 
+char $\ast$() \mbox{\hyperlink{group__rtc_ga413291046a969ebda73fcf3215a42a00}{print\+\_\+date}} ()
+\begin{DoxyCompactList}\small\item\em Prints to the screen the current date. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{group__rtc_ga4e063c1e72a306488f435adf4d7ff9b1}{print\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Prints to the screen the current time. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__rtc_ga8f0a2d1eb9643086c3f45464a649293f}{get\+\_\+second}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rtc_8c_abdf06f0dec79c6f6b26a0a2bccf9682d}{hook\+\_\+rtc}} = 3
+\item 
+char $\ast$ \mbox{\hyperlink{rtc_8c_ae85b3acb5124b5497721ef292663ad94}{days\+\_\+of\+\_\+the\+\_\+week}} \mbox{[}7\mbox{]} = \{\char`\"{}S\+U\+N\+D\+AY\char`\"{}, \char`\"{}M\+O\+N\+D\+AY\char`\"{}, \char`\"{}T\+U\+E\+S\+D\+AY\char`\"{}, \char`\"{}W\+E\+D\+N\+E\+S\+D\+AY\char`\"{}, \char`\"{}T\+H\+U\+R\+S\+D\+AY\char`\"{}, \char`\"{}F\+R\+I\+D\+AY\char`\"{}, \char`\"{}S\+A\+T\+U\+R\+D\+AY\char`\"{}\}
+\item 
+char $\ast$ \mbox{\hyperlink{rtc_8c_ae8a01f6b78d5a60b71daff705a3c40d7}{months}} \mbox{[}12\mbox{]} = \{\char`\"{}J\+A\+N\+U\+A\+RY\char`\"{}, \char`\"{}F\+E\+B\+R\+U\+A\+RY\char`\"{}, \char`\"{}M\+A\+R\+CH\char`\"{}, \char`\"{}A\+P\+R\+IL\char`\"{}, \char`\"{}M\+AY\char`\"{}, \char`\"{}J\+U\+NE\char`\"{}, \char`\"{}J\+U\+LY\char`\"{}, \char`\"{}A\+U\+G\+U\+ST\char`\"{}, \char`\"{}S\+E\+P\+T\+E\+M\+B\+ER\char`\"{}, \char`\"{}O\+C\+T\+O\+B\+ER\char`\"{}, \char`\"{}N\+O\+V\+E\+M\+B\+ER\char`\"{}, \char`\"{}D\+E\+C\+E\+M\+B\+ER\char`\"{}\}
+\item 
+bool \mbox{\hyperlink{rtc_8c_ad1949c4e76775df4cd456939da7710cb}{alarm\+Interrupt}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{rtc_8c_ad1949c4e76775df4cd456939da7710cb}\label{rtc_8c_ad1949c4e76775df4cd456939da7710cb}} 
+\index{rtc.c@{rtc.c}!alarmInterrupt@{alarmInterrupt}}
+\index{alarmInterrupt@{alarmInterrupt}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{alarmInterrupt}{alarmInterrupt}}
+{\footnotesize\ttfamily bool alarm\+Interrupt = false}
+
+
+
+Definition at line 15 of file rtc.\+c.
+
+\mbox{\Hypertarget{rtc_8c_ae85b3acb5124b5497721ef292663ad94}\label{rtc_8c_ae85b3acb5124b5497721ef292663ad94}} 
+\index{rtc.c@{rtc.c}!days\_of\_the\_week@{days\_of\_the\_week}}
+\index{days\_of\_the\_week@{days\_of\_the\_week}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{days\_of\_the\_week}{days\_of\_the\_week}}
+{\footnotesize\ttfamily char$\ast$ days\+\_\+of\+\_\+the\+\_\+week\mbox{[}7\mbox{]} = \{\char`\"{}S\+U\+N\+D\+AY\char`\"{}, \char`\"{}M\+O\+N\+D\+AY\char`\"{}, \char`\"{}T\+U\+E\+S\+D\+AY\char`\"{}, \char`\"{}W\+E\+D\+N\+E\+S\+D\+AY\char`\"{}, \char`\"{}T\+H\+U\+R\+S\+D\+AY\char`\"{}, \char`\"{}F\+R\+I\+D\+AY\char`\"{}, \char`\"{}S\+A\+T\+U\+R\+D\+AY\char`\"{}\}}
+
+
+
+Definition at line 12 of file rtc.\+c.
+
+\mbox{\Hypertarget{rtc_8c_abdf06f0dec79c6f6b26a0a2bccf9682d}\label{rtc_8c_abdf06f0dec79c6f6b26a0a2bccf9682d}} 
+\index{rtc.c@{rtc.c}!hook\_rtc@{hook\_rtc}}
+\index{hook\_rtc@{hook\_rtc}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{hook\_rtc}{hook\_rtc}}
+{\footnotesize\ttfamily int hook\+\_\+rtc = 3}
+
+
+
+Definition at line 3 of file rtc.\+c.
+
+\mbox{\Hypertarget{rtc_8c_ae8a01f6b78d5a60b71daff705a3c40d7}\label{rtc_8c_ae8a01f6b78d5a60b71daff705a3c40d7}} 
+\index{rtc.c@{rtc.c}!months@{months}}
+\index{months@{months}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{months}{months}}
+{\footnotesize\ttfamily char$\ast$ months\mbox{[}12\mbox{]} = \{\char`\"{}J\+A\+N\+U\+A\+RY\char`\"{}, \char`\"{}F\+E\+B\+R\+U\+A\+RY\char`\"{}, \char`\"{}M\+A\+R\+CH\char`\"{}, \char`\"{}A\+P\+R\+IL\char`\"{}, \char`\"{}M\+AY\char`\"{}, \char`\"{}J\+U\+NE\char`\"{}, \char`\"{}J\+U\+LY\char`\"{}, \char`\"{}A\+U\+G\+U\+ST\char`\"{}, \char`\"{}S\+E\+P\+T\+E\+M\+B\+ER\char`\"{}, \char`\"{}O\+C\+T\+O\+B\+ER\char`\"{}, \char`\"{}N\+O\+V\+E\+M\+B\+ER\char`\"{}, \char`\"{}D\+E\+C\+E\+M\+B\+ER\char`\"{}\}}
+
+
+
+Definition at line 13 of file rtc.\+c.
+

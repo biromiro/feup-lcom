@@ -1,0 +1,690 @@
+\hypertarget{group__i8042}{}\doxysection{i8042}
+\label{group__i8042}\index{i8042@{i8042}}
+
+
+Constants for programming the i8042 Keyboard Controller (and useful i8254 Timer constants).  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__i8042_gaa58b06c8d2e76061abcb01b8f2bbf575}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+E\+S\+C\+\_\+\+K\+EY}}~0x81
+\begin{DoxyCompactList}\small\item\em scancode (breakcode) of E\+SC key \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga12a84af4b9deb45f6a10d7b609725fd8}{K\+B\+C\+\_\+\+M\+S\+B\+\_\+\+S\+C\+N\+CD}}~B\+IT(7)
+\begin{DoxyCompactList}\small\item\em scancode diff (make or break) in B\+IT 7 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga5f726701875fb066460bc2337a52d8bc}{K\+B\+C\+\_\+\+M\+K\+\_\+\+A\+\_\+\+K\+EY}}~0x1e
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga4bdacdd475d918723ebf29d7555da581}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+A\+\_\+\+K\+EY}}~0x9e
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga138a82342b002f9f9b34f910fedeb431}{K\+B\+C\+\_\+\+M\+K\+\_\+\+S\+\_\+\+K\+EY}}~0x1F
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga4ba4bbaf468063a95cb146685cd75dc9}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+S\+\_\+\+K\+EY}}~0x9f
+\item 
+\#define \mbox{\hyperlink{group__i8042_gab85154fc8034fc74f9ec3beebd14221c}{K\+B\+C\+\_\+\+M\+K\+\_\+\+D\+\_\+\+K\+EY}}~0x20
+\item 
+\#define \mbox{\hyperlink{group__i8042_gab7f96b7efb24662d2e729485378239bf}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+D\+\_\+\+K\+EY}}~0xa0
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga066b5c35e926a5fe1b9e4a42b201a14d}{K\+B\+C\+\_\+\+M\+K\+\_\+\+W\+\_\+\+K\+EY}}~0x11
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga07f67ba13932e921a97de386e1c55e9b}{K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+W\+\_\+\+K\+EY}}~0x91
+\item 
+\#define \mbox{\hyperlink{group__i8042_gacf926951944b6cf370b7229ebd50dd8b}{T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ}}~1193182
+\begin{DoxyCompactList}\small\item\em clock frequency for timer in PC and AT \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga30bf84c312af248cb81bb224e09f9ba8}{T\+I\+M\+E\+R0\+\_\+\+I\+RQ}}~0
+\begin{DoxyCompactList}\small\item\em Timer 0 I\+RQ line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga16c5827f043d82f87c726c2d4369c11d}{K\+B\+C\+\_\+\+I\+RQ}}~1
+\begin{DoxyCompactList}\small\item\em K\+BC I\+RQ line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga85964cb90343bb1a029b1d1b4229f910}{M\+O\+U\+S\+E\+\_\+\+I\+RQ}}~12
+\begin{DoxyCompactList}\small\item\em Mouse I\+RQ line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gacc9ff9df4a9674a1ce9ba08fc4a4679e}{T\+I\+M\+E\+R\+\_\+0}}~0x40
+\begin{DoxyCompactList}\small\item\em Timer 0 count register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga34b14687d83496940a236351fbbb1aea}{K\+B\+C\+\_\+\+S\+T\+A\+T\+\_\+\+R\+EG}}~0x64
+\begin{DoxyCompactList}\small\item\em K\+BC status register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga19b698bdf2e0783e04e17153b49128bd}{K\+B\+C\+\_\+\+I\+N\+\_\+\+B\+U\+F\+\_\+\+C\+MD}}~0x64
+\begin{DoxyCompactList}\small\item\em K\+BC input buffer for commands. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaefc1b7a81b128e9722a6d61a5b9d3e58}{K\+B\+C\+\_\+\+I\+N\+\_\+\+B\+U\+F\+\_\+\+A\+RG}}~0x60
+\begin{DoxyCompactList}\small\item\em K\+BC input buffer for arguments. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga1ccde68b2b6d4e45b50eef1403e10bb7}{K\+B\+C\+\_\+\+O\+U\+T\+\_\+\+B\+UF}}~0x60
+\begin{DoxyCompactList}\small\item\em K\+BC output buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga82a39176e42fe8f48025521b9674cdc6}{K\+B\+C\+\_\+\+P\+A\+R\+I\+TY}}~B\+IT(7)
+\begin{DoxyCompactList}\small\item\em K\+BC parity error bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga34599ca5c55cb9be3b235d7422aff45c}{K\+B\+C\+\_\+\+T\+I\+M\+E\+O\+UT}}~B\+IT(6)
+\begin{DoxyCompactList}\small\item\em K\+BC timeout error bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaaa796d09d1e94025da456738295342f2}{K\+B\+C\+\_\+\+A\+UX}}~B\+IT(5)
+\begin{DoxyCompactList}\small\item\em K\+BC mouse data bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga869c99dd1e3e026e766b3a1c75729df1}{K\+B\+C\+\_\+\+I\+NH}}~B\+IT(4)
+\begin{DoxyCompactList}\small\item\em K\+BC inhibit flag bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga933a8846def486d800a725dc3959a74b}{K\+B\+C\+\_\+\+A2}}~B\+IT(3)
+\begin{DoxyCompactList}\small\item\em K\+BC a2 input line bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga9e3fddced5da8ee918cc20e74ff124d8}{K\+B\+C\+\_\+\+S\+YS}}~B\+IT(2)
+\begin{DoxyCompactList}\small\item\em K\+BC system flag bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gac1649d41f8ba9a02fa70ec4e600d5e4a}{K\+B\+C\+\_\+\+I\+BF}}~B\+IT(1)
+\begin{DoxyCompactList}\small\item\em K\+BC input buffer full bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga36930de8a703505c95fe133095dcfe06}{K\+B\+C\+\_\+\+O\+BF}}~B\+IT(0)
+\begin{DoxyCompactList}\small\item\em K\+BC output buffer full bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaaee8eae833c3cf959324f29862c488a8}{K\+B\+C\+\_\+\+R\+\_\+\+C\+M\+D\+\_\+B}}~0x20
+\begin{DoxyCompactList}\small\item\em K\+BC command to read command byte. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga6c3bb7fed8322058c9a872270e902331}{K\+B\+C\+\_\+\+W\+\_\+\+C\+M\+D\+\_\+B}}~0x60
+\begin{DoxyCompactList}\small\item\em K\+BC command to write command byte. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gae138ccd6270f156e7cea18290da10683}{K\+B\+C\+\_\+\+C\+HK}}~0x\+AA
+\begin{DoxyCompactList}\small\item\em K\+BC command to self-\/check. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gacd1c483b30c192cab72b555a6ec8efd1}{K\+B\+C\+\_\+\+C\+H\+K\+\_\+\+K\+B\+D\+\_\+I}}~0x\+AB
+\begin{DoxyCompactList}\small\item\em K\+BC command to check keyboard interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga6a7645f732e72fc30d5f882fccfa4038}{K\+B\+C\+\_\+\+D\+I\+S\+\_\+\+K\+B\+D\+\_\+I}}~0\+X\+AD
+\begin{DoxyCompactList}\small\item\em K\+BC command to disable K\+BD interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga0a2568cc57d80639792911dd52e82fa9}{K\+B\+C\+\_\+\+E\+N\+\_\+\+K\+B\+D\+\_\+I}}~0\+X\+AE
+\begin{DoxyCompactList}\small\item\em K\+BC command to enable K\+BD interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaa7b58a9223dfb3c191dbd77c0a0881f2}{K\+B\+C\+\_\+\+D\+I\+S2}}~B\+IT(5)
+\begin{DoxyCompactList}\small\item\em disable mouse interface \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga9bdab8e245cb5e5a8217cd4465abd5e6}{K\+B\+C\+\_\+\+D\+IS}}~B\+IT(4)
+\begin{DoxyCompactList}\small\item\em disable keyboard interface \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gad0c59bfa0e9250d4863516848740cae6}{K\+B\+C\+\_\+\+I\+N\+T2}}~B\+IT(1)
+\begin{DoxyCompactList}\small\item\em enable interrupt on O\+BF, from mouse \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga43a8c52761b7ae2c8d67562519b734af}{K\+B\+C\+\_\+\+I\+NT}}~B\+IT(0)
+\begin{DoxyCompactList}\small\item\em enable interrupt on O\+BF, from keyboard \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_ga1a9c1cdc273c69f115e1e77bc1809fe5}{K\+B\+C\+\_\+2\+B\+Y\+T\+E\+\_\+\+C\+O\+DE}}~0x\+E0
+\begin{DoxyCompactList}\small\item\em the first byte of a 2 byte scancode \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__i8042_gaab963441b4def6316c334b9061af3f99}{K\+B\+C\+\_\+\+A\+CK}}~0x\+FA /$\ast$$\ast$ @brief acknowledgment byte if everything OK$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__i8042_gad92274e194e7c305899651cb7debd626}{K\+B\+C\+\_\+\+N\+A\+CK}}~0x\+FE /$\ast$$\ast$ @brief acknowledgment byte if invalid byte (may be because of a serial communication error)$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga86e7c68b4116efe0217a547611276893}{K\+B\+C\+\_\+\+E\+R\+R\+OR}}~0x\+FC /$\ast$$\ast$ @brief acknowledgment byte if second consecutive invalid byte$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga21941c53d0d55ebc687fed814353fa2e}{M\+O\+U\+S\+E\+\_\+\+E\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EP}}~0x\+F4
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga8c1ed4153caaf985dbf8876dc2ba1ce3}{M\+O\+U\+S\+E\+\_\+\+D\+I\+S\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EP}}~0x\+F5
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga1e3ddcfb2f10a15ceec6b3117e05021d}{M\+O\+U\+S\+E\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+M\+O\+DE}}~0x\+EA
+\item 
+\#define \mbox{\hyperlink{group__i8042_gaed1206542090cfb9c7d9210a4b45e2ae}{M\+O\+U\+S\+E\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+M\+O\+DE}}~0x\+F0
+\item 
+\#define \mbox{\hyperlink{group__i8042_ga6065e2718e2c8e4a5b5d005cba836cbc}{M\+O\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+D\+A\+TA}}~0x\+EB
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for programming the i8042 Keyboard Controller (and useful i8254 Timer constants). 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__i8042_ga1a9c1cdc273c69f115e1e77bc1809fe5}\label{group__i8042_ga1a9c1cdc273c69f115e1e77bc1809fe5}} 
+\index{i8042@{i8042}!KBC\_2BYTE\_CODE@{KBC\_2BYTE\_CODE}}
+\index{KBC\_2BYTE\_CODE@{KBC\_2BYTE\_CODE}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_2BYTE\_CODE}{KBC\_2BYTE\_CODE}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+2\+B\+Y\+T\+E\+\_\+\+C\+O\+DE~0x\+E0}
+
+
+
+the first byte of a 2 byte scancode 
+
+
+
+Definition at line 68 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga933a8846def486d800a725dc3959a74b}\label{group__i8042_ga933a8846def486d800a725dc3959a74b}} 
+\index{i8042@{i8042}!KBC\_A2@{KBC\_A2}}
+\index{KBC\_A2@{KBC\_A2}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_A2}{KBC\_A2}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+A2~B\+IT(3)}
+
+
+
+K\+BC a2 input line bit. 
+
+
+
+Definition at line 45 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaab963441b4def6316c334b9061af3f99}\label{group__i8042_gaab963441b4def6316c334b9061af3f99}} 
+\index{i8042@{i8042}!KBC\_ACK@{KBC\_ACK}}
+\index{KBC\_ACK@{KBC\_ACK}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_ACK}{KBC\_ACK}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+A\+CK~0x\+FA /$\ast$$\ast$ @brief acknowledgment byte if everything OK$\ast$/}
+
+
+
+Definition at line 72 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaaa796d09d1e94025da456738295342f2}\label{group__i8042_gaaa796d09d1e94025da456738295342f2}} 
+\index{i8042@{i8042}!KBC\_AUX@{KBC\_AUX}}
+\index{KBC\_AUX@{KBC\_AUX}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_AUX}{KBC\_AUX}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+A\+UX~B\+IT(5)}
+
+
+
+K\+BC mouse data bit. 
+
+
+
+Definition at line 43 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga4bdacdd475d918723ebf29d7555da581}\label{group__i8042_ga4bdacdd475d918723ebf29d7555da581}} 
+\index{i8042@{i8042}!KBC\_BRK\_A\_KEY@{KBC\_BRK\_A\_KEY}}
+\index{KBC\_BRK\_A\_KEY@{KBC\_BRK\_A\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_BRK\_A\_KEY}{KBC\_BRK\_A\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+A\+\_\+\+K\+EY~0x9e}
+
+
+
+Definition at line 17 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gab7f96b7efb24662d2e729485378239bf}\label{group__i8042_gab7f96b7efb24662d2e729485378239bf}} 
+\index{i8042@{i8042}!KBC\_BRK\_D\_KEY@{KBC\_BRK\_D\_KEY}}
+\index{KBC\_BRK\_D\_KEY@{KBC\_BRK\_D\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_BRK\_D\_KEY}{KBC\_BRK\_D\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+D\+\_\+\+K\+EY~0xa0}
+
+
+
+Definition at line 21 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaa58b06c8d2e76061abcb01b8f2bbf575}\label{group__i8042_gaa58b06c8d2e76061abcb01b8f2bbf575}} 
+\index{i8042@{i8042}!KBC\_BRK\_ESC\_KEY@{KBC\_BRK\_ESC\_KEY}}
+\index{KBC\_BRK\_ESC\_KEY@{KBC\_BRK\_ESC\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_BRK\_ESC\_KEY}{KBC\_BRK\_ESC\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+E\+S\+C\+\_\+\+K\+EY~0x81}
+
+
+
+scancode (breakcode) of E\+SC key 
+
+
+
+Definition at line 14 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga4ba4bbaf468063a95cb146685cd75dc9}\label{group__i8042_ga4ba4bbaf468063a95cb146685cd75dc9}} 
+\index{i8042@{i8042}!KBC\_BRK\_S\_KEY@{KBC\_BRK\_S\_KEY}}
+\index{KBC\_BRK\_S\_KEY@{KBC\_BRK\_S\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_BRK\_S\_KEY}{KBC\_BRK\_S\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+S\+\_\+\+K\+EY~0x9f}
+
+
+
+Definition at line 19 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga07f67ba13932e921a97de386e1c55e9b}\label{group__i8042_ga07f67ba13932e921a97de386e1c55e9b}} 
+\index{i8042@{i8042}!KBC\_BRK\_W\_KEY@{KBC\_BRK\_W\_KEY}}
+\index{KBC\_BRK\_W\_KEY@{KBC\_BRK\_W\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_BRK\_W\_KEY}{KBC\_BRK\_W\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+B\+R\+K\+\_\+\+W\+\_\+\+K\+EY~0x91}
+
+
+
+Definition at line 23 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gae138ccd6270f156e7cea18290da10683}\label{group__i8042_gae138ccd6270f156e7cea18290da10683}} 
+\index{i8042@{i8042}!KBC\_CHK@{KBC\_CHK}}
+\index{KBC\_CHK@{KBC\_CHK}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_CHK}{KBC\_CHK}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+C\+HK~0x\+AA}
+
+
+
+K\+BC command to self-\/check. 
+
+
+
+Definition at line 54 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gacd1c483b30c192cab72b555a6ec8efd1}\label{group__i8042_gacd1c483b30c192cab72b555a6ec8efd1}} 
+\index{i8042@{i8042}!KBC\_CHK\_KBD\_I@{KBC\_CHK\_KBD\_I}}
+\index{KBC\_CHK\_KBD\_I@{KBC\_CHK\_KBD\_I}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_CHK\_KBD\_I}{KBC\_CHK\_KBD\_I}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+C\+H\+K\+\_\+\+K\+B\+D\+\_\+I~0x\+AB}
+
+
+
+K\+BC command to check keyboard interface. 
+
+
+
+Definition at line 55 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga9bdab8e245cb5e5a8217cd4465abd5e6}\label{group__i8042_ga9bdab8e245cb5e5a8217cd4465abd5e6}} 
+\index{i8042@{i8042}!KBC\_DIS@{KBC\_DIS}}
+\index{KBC\_DIS@{KBC\_DIS}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_DIS}{KBC\_DIS}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+D\+IS~B\+IT(4)}
+
+
+
+disable keyboard interface 
+
+
+
+Definition at line 62 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaa7b58a9223dfb3c191dbd77c0a0881f2}\label{group__i8042_gaa7b58a9223dfb3c191dbd77c0a0881f2}} 
+\index{i8042@{i8042}!KBC\_DIS2@{KBC\_DIS2}}
+\index{KBC\_DIS2@{KBC\_DIS2}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_DIS2}{KBC\_DIS2}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+D\+I\+S2~B\+IT(5)}
+
+
+
+disable mouse interface 
+
+
+
+Definition at line 61 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga6a7645f732e72fc30d5f882fccfa4038}\label{group__i8042_ga6a7645f732e72fc30d5f882fccfa4038}} 
+\index{i8042@{i8042}!KBC\_DIS\_KBD\_I@{KBC\_DIS\_KBD\_I}}
+\index{KBC\_DIS\_KBD\_I@{KBC\_DIS\_KBD\_I}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_DIS\_KBD\_I}{KBC\_DIS\_KBD\_I}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+D\+I\+S\+\_\+\+K\+B\+D\+\_\+I~0\+X\+AD}
+
+
+
+K\+BC command to disable K\+BD interface. 
+
+
+
+Definition at line 56 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga0a2568cc57d80639792911dd52e82fa9}\label{group__i8042_ga0a2568cc57d80639792911dd52e82fa9}} 
+\index{i8042@{i8042}!KBC\_EN\_KBD\_I@{KBC\_EN\_KBD\_I}}
+\index{KBC\_EN\_KBD\_I@{KBC\_EN\_KBD\_I}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_EN\_KBD\_I}{KBC\_EN\_KBD\_I}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+E\+N\+\_\+\+K\+B\+D\+\_\+I~0\+X\+AE}
+
+
+
+K\+BC command to enable K\+BD interface. 
+
+
+
+Definition at line 57 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga86e7c68b4116efe0217a547611276893}\label{group__i8042_ga86e7c68b4116efe0217a547611276893}} 
+\index{i8042@{i8042}!KBC\_ERROR@{KBC\_ERROR}}
+\index{KBC\_ERROR@{KBC\_ERROR}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_ERROR}{KBC\_ERROR}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+E\+R\+R\+OR~0x\+FC /$\ast$$\ast$ @brief acknowledgment byte if second consecutive invalid byte$\ast$/}
+
+
+
+Definition at line 74 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gac1649d41f8ba9a02fa70ec4e600d5e4a}\label{group__i8042_gac1649d41f8ba9a02fa70ec4e600d5e4a}} 
+\index{i8042@{i8042}!KBC\_IBF@{KBC\_IBF}}
+\index{KBC\_IBF@{KBC\_IBF}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_IBF}{KBC\_IBF}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+BF~B\+IT(1)}
+
+
+
+K\+BC input buffer full bit. 
+
+
+
+Definition at line 47 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaefc1b7a81b128e9722a6d61a5b9d3e58}\label{group__i8042_gaefc1b7a81b128e9722a6d61a5b9d3e58}} 
+\index{i8042@{i8042}!KBC\_IN\_BUF\_ARG@{KBC\_IN\_BUF\_ARG}}
+\index{KBC\_IN\_BUF\_ARG@{KBC\_IN\_BUF\_ARG}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_IN\_BUF\_ARG}{KBC\_IN\_BUF\_ARG}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+N\+\_\+\+B\+U\+F\+\_\+\+A\+RG~0x60}
+
+
+
+K\+BC input buffer for arguments. 
+
+
+
+Definition at line 34 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga19b698bdf2e0783e04e17153b49128bd}\label{group__i8042_ga19b698bdf2e0783e04e17153b49128bd}} 
+\index{i8042@{i8042}!KBC\_IN\_BUF\_CMD@{KBC\_IN\_BUF\_CMD}}
+\index{KBC\_IN\_BUF\_CMD@{KBC\_IN\_BUF\_CMD}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_IN\_BUF\_CMD}{KBC\_IN\_BUF\_CMD}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+N\+\_\+\+B\+U\+F\+\_\+\+C\+MD~0x64}
+
+
+
+K\+BC input buffer for commands. 
+
+
+
+Definition at line 33 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga869c99dd1e3e026e766b3a1c75729df1}\label{group__i8042_ga869c99dd1e3e026e766b3a1c75729df1}} 
+\index{i8042@{i8042}!KBC\_INH@{KBC\_INH}}
+\index{KBC\_INH@{KBC\_INH}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_INH}{KBC\_INH}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+NH~B\+IT(4)}
+
+
+
+K\+BC inhibit flag bit. 
+
+
+
+Definition at line 44 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga43a8c52761b7ae2c8d67562519b734af}\label{group__i8042_ga43a8c52761b7ae2c8d67562519b734af}} 
+\index{i8042@{i8042}!KBC\_INT@{KBC\_INT}}
+\index{KBC\_INT@{KBC\_INT}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_INT}{KBC\_INT}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+NT~B\+IT(0)}
+
+
+
+enable interrupt on O\+BF, from keyboard 
+
+
+
+Definition at line 64 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gad0c59bfa0e9250d4863516848740cae6}\label{group__i8042_gad0c59bfa0e9250d4863516848740cae6}} 
+\index{i8042@{i8042}!KBC\_INT2@{KBC\_INT2}}
+\index{KBC\_INT2@{KBC\_INT2}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_INT2}{KBC\_INT2}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+N\+T2~B\+IT(1)}
+
+
+
+enable interrupt on O\+BF, from mouse 
+
+
+
+Definition at line 63 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga16c5827f043d82f87c726c2d4369c11d}\label{group__i8042_ga16c5827f043d82f87c726c2d4369c11d}} 
+\index{i8042@{i8042}!KBC\_IRQ@{KBC\_IRQ}}
+\index{KBC\_IRQ@{KBC\_IRQ}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_IRQ}{KBC\_IRQ}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+I\+RQ~1}
+
+
+
+K\+BC I\+RQ line. 
+
+
+
+Definition at line 26 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga5f726701875fb066460bc2337a52d8bc}\label{group__i8042_ga5f726701875fb066460bc2337a52d8bc}} 
+\index{i8042@{i8042}!KBC\_MK\_A\_KEY@{KBC\_MK\_A\_KEY}}
+\index{KBC\_MK\_A\_KEY@{KBC\_MK\_A\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_MK\_A\_KEY}{KBC\_MK\_A\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+M\+K\+\_\+\+A\+\_\+\+K\+EY~0x1e}
+
+
+
+Definition at line 16 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gab85154fc8034fc74f9ec3beebd14221c}\label{group__i8042_gab85154fc8034fc74f9ec3beebd14221c}} 
+\index{i8042@{i8042}!KBC\_MK\_D\_KEY@{KBC\_MK\_D\_KEY}}
+\index{KBC\_MK\_D\_KEY@{KBC\_MK\_D\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_MK\_D\_KEY}{KBC\_MK\_D\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+M\+K\+\_\+\+D\+\_\+\+K\+EY~0x20}
+
+
+
+Definition at line 20 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga138a82342b002f9f9b34f910fedeb431}\label{group__i8042_ga138a82342b002f9f9b34f910fedeb431}} 
+\index{i8042@{i8042}!KBC\_MK\_S\_KEY@{KBC\_MK\_S\_KEY}}
+\index{KBC\_MK\_S\_KEY@{KBC\_MK\_S\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_MK\_S\_KEY}{KBC\_MK\_S\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+M\+K\+\_\+\+S\+\_\+\+K\+EY~0x1F}
+
+
+
+Definition at line 18 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga066b5c35e926a5fe1b9e4a42b201a14d}\label{group__i8042_ga066b5c35e926a5fe1b9e4a42b201a14d}} 
+\index{i8042@{i8042}!KBC\_MK\_W\_KEY@{KBC\_MK\_W\_KEY}}
+\index{KBC\_MK\_W\_KEY@{KBC\_MK\_W\_KEY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_MK\_W\_KEY}{KBC\_MK\_W\_KEY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+M\+K\+\_\+\+W\+\_\+\+K\+EY~0x11}
+
+
+
+Definition at line 22 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga12a84af4b9deb45f6a10d7b609725fd8}\label{group__i8042_ga12a84af4b9deb45f6a10d7b609725fd8}} 
+\index{i8042@{i8042}!KBC\_MSB\_SCNCD@{KBC\_MSB\_SCNCD}}
+\index{KBC\_MSB\_SCNCD@{KBC\_MSB\_SCNCD}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_MSB\_SCNCD}{KBC\_MSB\_SCNCD}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+M\+S\+B\+\_\+\+S\+C\+N\+CD~B\+IT(7)}
+
+
+
+scancode diff (make or break) in B\+IT 7 
+
+
+
+Definition at line 15 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gad92274e194e7c305899651cb7debd626}\label{group__i8042_gad92274e194e7c305899651cb7debd626}} 
+\index{i8042@{i8042}!KBC\_NACK@{KBC\_NACK}}
+\index{KBC\_NACK@{KBC\_NACK}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_NACK}{KBC\_NACK}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+N\+A\+CK~0x\+FE /$\ast$$\ast$ @brief acknowledgment byte if invalid byte (may be because of a serial communication error)$\ast$/}
+
+
+
+Definition at line 73 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga36930de8a703505c95fe133095dcfe06}\label{group__i8042_ga36930de8a703505c95fe133095dcfe06}} 
+\index{i8042@{i8042}!KBC\_OBF@{KBC\_OBF}}
+\index{KBC\_OBF@{KBC\_OBF}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_OBF}{KBC\_OBF}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+O\+BF~B\+IT(0)}
+
+
+
+K\+BC output buffer full bit. 
+
+
+
+Definition at line 48 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga1ccde68b2b6d4e45b50eef1403e10bb7}\label{group__i8042_ga1ccde68b2b6d4e45b50eef1403e10bb7}} 
+\index{i8042@{i8042}!KBC\_OUT\_BUF@{KBC\_OUT\_BUF}}
+\index{KBC\_OUT\_BUF@{KBC\_OUT\_BUF}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_OUT\_BUF}{KBC\_OUT\_BUF}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+O\+U\+T\+\_\+\+B\+UF~0x60}
+
+
+
+K\+BC output buffer. 
+
+
+
+Definition at line 35 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga82a39176e42fe8f48025521b9674cdc6}\label{group__i8042_ga82a39176e42fe8f48025521b9674cdc6}} 
+\index{i8042@{i8042}!KBC\_PARITY@{KBC\_PARITY}}
+\index{KBC\_PARITY@{KBC\_PARITY}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_PARITY}{KBC\_PARITY}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+P\+A\+R\+I\+TY~B\+IT(7)}
+
+
+
+K\+BC parity error bit. 
+
+
+
+Definition at line 41 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaaee8eae833c3cf959324f29862c488a8}\label{group__i8042_gaaee8eae833c3cf959324f29862c488a8}} 
+\index{i8042@{i8042}!KBC\_R\_CMD\_B@{KBC\_R\_CMD\_B}}
+\index{KBC\_R\_CMD\_B@{KBC\_R\_CMD\_B}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_R\_CMD\_B}{KBC\_R\_CMD\_B}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+R\+\_\+\+C\+M\+D\+\_\+B~0x20}
+
+
+
+K\+BC command to read command byte. 
+
+
+
+Definition at line 52 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga34b14687d83496940a236351fbbb1aea}\label{group__i8042_ga34b14687d83496940a236351fbbb1aea}} 
+\index{i8042@{i8042}!KBC\_STAT\_REG@{KBC\_STAT\_REG}}
+\index{KBC\_STAT\_REG@{KBC\_STAT\_REG}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_STAT\_REG}{KBC\_STAT\_REG}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+S\+T\+A\+T\+\_\+\+R\+EG~0x64}
+
+
+
+K\+BC status register. 
+
+
+
+Definition at line 32 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga9e3fddced5da8ee918cc20e74ff124d8}\label{group__i8042_ga9e3fddced5da8ee918cc20e74ff124d8}} 
+\index{i8042@{i8042}!KBC\_SYS@{KBC\_SYS}}
+\index{KBC\_SYS@{KBC\_SYS}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_SYS}{KBC\_SYS}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+S\+YS~B\+IT(2)}
+
+
+
+K\+BC system flag bit. 
+
+
+
+Definition at line 46 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga34599ca5c55cb9be3b235d7422aff45c}\label{group__i8042_ga34599ca5c55cb9be3b235d7422aff45c}} 
+\index{i8042@{i8042}!KBC\_TIMEOUT@{KBC\_TIMEOUT}}
+\index{KBC\_TIMEOUT@{KBC\_TIMEOUT}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_TIMEOUT}{KBC\_TIMEOUT}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+T\+I\+M\+E\+O\+UT~B\+IT(6)}
+
+
+
+K\+BC timeout error bit. 
+
+
+
+Definition at line 42 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga6c3bb7fed8322058c9a872270e902331}\label{group__i8042_ga6c3bb7fed8322058c9a872270e902331}} 
+\index{i8042@{i8042}!KBC\_W\_CMD\_B@{KBC\_W\_CMD\_B}}
+\index{KBC\_W\_CMD\_B@{KBC\_W\_CMD\_B}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{KBC\_W\_CMD\_B}{KBC\_W\_CMD\_B}}
+{\footnotesize\ttfamily \#define K\+B\+C\+\_\+\+W\+\_\+\+C\+M\+D\+\_\+B~0x60}
+
+
+
+K\+BC command to write command byte. 
+
+
+
+Definition at line 53 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga8c1ed4153caaf985dbf8876dc2ba1ce3}\label{group__i8042_ga8c1ed4153caaf985dbf8876dc2ba1ce3}} 
+\index{i8042@{i8042}!MOUSE\_DIS\_DATA\_REP@{MOUSE\_DIS\_DATA\_REP}}
+\index{MOUSE\_DIS\_DATA\_REP@{MOUSE\_DIS\_DATA\_REP}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_DIS\_DATA\_REP}{MOUSE\_DIS\_DATA\_REP}}
+{\footnotesize\ttfamily \#define M\+O\+U\+S\+E\+\_\+\+D\+I\+S\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EP~0x\+F5}
+
+
+
+Definition at line 76 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga21941c53d0d55ebc687fed814353fa2e}\label{group__i8042_ga21941c53d0d55ebc687fed814353fa2e}} 
+\index{i8042@{i8042}!MOUSE\_EN\_DATA\_REP@{MOUSE\_EN\_DATA\_REP}}
+\index{MOUSE\_EN\_DATA\_REP@{MOUSE\_EN\_DATA\_REP}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_EN\_DATA\_REP}{MOUSE\_EN\_DATA\_REP}}
+{\footnotesize\ttfamily \#define M\+O\+U\+S\+E\+\_\+\+E\+N\+\_\+\+D\+A\+T\+A\+\_\+\+R\+EP~0x\+F4}
+
+
+
+Definition at line 75 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga85964cb90343bb1a029b1d1b4229f910}\label{group__i8042_ga85964cb90343bb1a029b1d1b4229f910}} 
+\index{i8042@{i8042}!MOUSE\_IRQ@{MOUSE\_IRQ}}
+\index{MOUSE\_IRQ@{MOUSE\_IRQ}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_IRQ}{MOUSE\_IRQ}}
+{\footnotesize\ttfamily \#define M\+O\+U\+S\+E\+\_\+\+I\+RQ~12}
+
+
+
+Mouse I\+RQ line. 
+
+
+
+Definition at line 27 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga6065e2718e2c8e4a5b5d005cba836cbc}\label{group__i8042_ga6065e2718e2c8e4a5b5d005cba836cbc}} 
+\index{i8042@{i8042}!MOUSE\_READ\_DATA@{MOUSE\_READ\_DATA}}
+\index{MOUSE\_READ\_DATA@{MOUSE\_READ\_DATA}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_READ\_DATA}{MOUSE\_READ\_DATA}}
+{\footnotesize\ttfamily \#define M\+O\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+D\+A\+TA~0x\+EB}
+
+
+
+Definition at line 79 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gaed1206542090cfb9c7d9210a4b45e2ae}\label{group__i8042_gaed1206542090cfb9c7d9210a4b45e2ae}} 
+\index{i8042@{i8042}!MOUSE\_REMOTE\_MODE@{MOUSE\_REMOTE\_MODE}}
+\index{MOUSE\_REMOTE\_MODE@{MOUSE\_REMOTE\_MODE}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_REMOTE\_MODE}{MOUSE\_REMOTE\_MODE}}
+{\footnotesize\ttfamily \#define M\+O\+U\+S\+E\+\_\+\+R\+E\+M\+O\+T\+E\+\_\+\+M\+O\+DE~0x\+F0}
+
+
+
+Definition at line 78 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga1e3ddcfb2f10a15ceec6b3117e05021d}\label{group__i8042_ga1e3ddcfb2f10a15ceec6b3117e05021d}} 
+\index{i8042@{i8042}!MOUSE\_STREAM\_MODE@{MOUSE\_STREAM\_MODE}}
+\index{MOUSE\_STREAM\_MODE@{MOUSE\_STREAM\_MODE}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_STREAM\_MODE}{MOUSE\_STREAM\_MODE}}
+{\footnotesize\ttfamily \#define M\+O\+U\+S\+E\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+M\+O\+DE~0x\+EA}
+
+
+
+Definition at line 77 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_ga30bf84c312af248cb81bb224e09f9ba8}\label{group__i8042_ga30bf84c312af248cb81bb224e09f9ba8}} 
+\index{i8042@{i8042}!TIMER0\_IRQ@{TIMER0\_IRQ}}
+\index{TIMER0\_IRQ@{TIMER0\_IRQ}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{TIMER0\_IRQ}{TIMER0\_IRQ}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R0\+\_\+\+I\+RQ~0}
+
+
+
+Timer 0 I\+RQ line. 
+
+
+
+Definition at line 25 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gacc9ff9df4a9674a1ce9ba08fc4a4679e}\label{group__i8042_gacc9ff9df4a9674a1ce9ba08fc4a4679e}} 
+\index{i8042@{i8042}!TIMER\_0@{TIMER\_0}}
+\index{TIMER\_0@{TIMER\_0}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{TIMER\_0}{TIMER\_0}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+0~0x40}
+
+
+
+Timer 0 count register. 
+
+
+
+Definition at line 31 of file i8042.\+h.
+
+\mbox{\Hypertarget{group__i8042_gacf926951944b6cf370b7229ebd50dd8b}\label{group__i8042_gacf926951944b6cf370b7229ebd50dd8b}} 
+\index{i8042@{i8042}!TIMER\_FREQ@{TIMER\_FREQ}}
+\index{TIMER\_FREQ@{TIMER\_FREQ}!i8042@{i8042}}
+\doxysubsubsection{\texorpdfstring{TIMER\_FREQ}{TIMER\_FREQ}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ~1193182}
+
+
+
+clock frequency for timer in PC and AT 
+
+
+
+Definition at line 24 of file i8042.\+h.
+

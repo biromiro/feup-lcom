@@ -1,0 +1,5 @@
+<map id="mouse_read_data" name="mouse_read_data">
+<area shape="rect" id="node1" title="Reads a data byte from the mouse controller." alt="" coords="309,5,448,32"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#aed4404005e4c565ac36656307386e0ac" title=" " alt="" coords="176,5,261,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga6ca7c8595f4c1116a2e057ad74fe27a5" title="Builds the mouse packet and handles it." alt="" coords="5,5,128,32"/>
+</map>

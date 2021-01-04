@@ -1,5 +1,0 @@
-<map id="reset_enemies" name="reset_enemies">
-<area shape="rect" id="node1" title="Resets the enemies array to its initial conditions." alt="" coords="5,31,124,57"/>
-<area shape="rect" id="node2" href="$enemies_8c.html#ad71ad0f82650f114326eef28f17bdb9d" title="Free memory related to the enemies." alt="" coords="203,5,313,32"/>
-<area shape="rect" id="node3" href="$enemies_8c.html#af3b1b7ee80375a9f4aed228b58d0869e" title="Set up the enemies available (10)" alt="" coords="172,56,344,83"/>
-</map>

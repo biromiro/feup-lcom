@@ -1,8 +1,0 @@
-<map id="kbc_write_cmd" name="kbc_write_cmd">
-<area shape="rect" id="node1" title="Writes (issues) a command to the KBC." alt="" coords="440,56,560,83"/>
-<area shape="rect" id="node2" href="$group__kbc.html#gad4e8e035ef7ffd5bbba5480d4831c368" title="Resets the KBC to Minix&#39;s default." alt="" coords="225,5,391,32"/>
-<area shape="rect" id="node3" href="$group__kbc.html#ga92ffdbe2b735528ea192bd5c3fe78a30" title="Restores the Minix Interrupt Handler for KBC." alt="" coords="224,56,392,83"/>
-<area shape="rect" id="node4" href="$group__kbc.html#gadce7a7604f8b0782158b70bf728eb411" title="Writes a mouse command to the controller." alt="" coords="237,107,379,133"/>
-<area shape="rect" id="node5" href="$group__interrupt__handler.html#gab570339ba658dea7f08a99b9374e605f" title="Subscribes all the peripherals Timer, Keyboard and Timer." alt="" coords="13,81,168,108"/>
-<area shape="rect" id="node6" href="$group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes all the peripherals." alt="" coords="5,132,176,159"/>
-</map>

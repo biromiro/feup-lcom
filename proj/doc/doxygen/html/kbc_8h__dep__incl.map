@@ -1,0 +1,7 @@
+<map id="peripherals/kbc.h" name="peripherals/kbc.h">
+<area shape="rect" id="node1" title=" " alt="" coords="165,5,299,32"/>
+<area shape="rect" id="node2" href="$interrupt__handler_8h.html" title=" " alt="" coords="71,80,225,121"/>
+<area shape="rect" id="node5" href="$kbc_8c.html" title=" " alt="" coords="249,87,383,114"/>
+<area shape="rect" id="node3" href="$interrupt__handler_8c.html" title=" " alt="" coords="5,169,160,211"/>
+<area shape="rect" id="node4" href="$proj_8c.html" title=" " alt="" coords="184,177,243,203"/>
+</map>

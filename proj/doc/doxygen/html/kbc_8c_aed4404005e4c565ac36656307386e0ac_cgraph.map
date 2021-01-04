@@ -1,0 +1,7 @@
+<map id="mouse_ih" name="mouse_ih">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,91,57"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga2b0cab3b65db905154df274d1841a214" title="Reads a data byte from the mouse controller." alt="" coords="139,31,277,57"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga478e9d9e6e396379599060715e26730a" title="Reads the KBC configuration (status)" alt="" coords="329,5,449,32"/>
+<area shape="rect" id="node5" href="$group__kbc.html#gaf18c2a348e2c55a40cacc74caee08323" title="Reads the output buffer of KBC." alt="" coords="325,56,452,83"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="500,31,599,57"/>
+</map>

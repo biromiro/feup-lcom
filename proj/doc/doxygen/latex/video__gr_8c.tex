@@ -1,0 +1,87 @@
+\hypertarget{video__gr_8c}{}\doxysection{peripherals/video\+\_\+gr.c File Reference}
+\label{video__gr_8c}\index{peripherals/video\_gr.c@{peripherals/video\_gr.c}}
+{\ttfamily \#include \char`\"{}video\+\_\+gr.\+h\char`\"{}}\newline
+Include dependency graph for video\+\_\+gr.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{video__gr_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__video__gr_ga3bac393cea879af749da7ed05b693c3c}{\+\_\+vbe\+\_\+get\+\_\+mode\+\_\+info}} (uint16\+\_\+t mode, vbe\+\_\+mode\+\_\+info\+\_\+t $\ast$vm)
+\begin{DoxyCompactList}\small\item\em Gets the V\+BE information. \end{DoxyCompactList}\item 
+void $\ast$() \mbox{\hyperlink{video__gr_8c_aa6c1ff5024cd4d15e476bce487584daa}{vg\+\_\+init}} (uint16\+\_\+t mode)
+\item 
+void \mbox{\hyperlink{group__video__gr_ga770b1be5358ccc290b7a93e4bb16e0b4}{set\+\_\+background}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Set the background buffer for quicker drawing (memcpy) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__video__gr_ga3a590797d6b9f19f31a6bdc601561c3d}{draw\+\_\+static\+\_\+buffer\+\_\+pixels}} (uint16\+\_\+t \mbox{\hyperlink{group__video__gr_ga6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{group__video__gr_ga0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint32\+\_\+t color, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Copies a pre-\/saved buffer pixel to the video mem buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__video__gr_ga98711039a318a2f5a6a4652caa775395}{print\+\_\+background}} ()
+\begin{DoxyCompactList}\small\item\em Prints the background buffer onto the video mem buffer. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__video__gr_ga08c498ffeb0a3962e3b7711b57397741}{vg\+\_\+draw\+\_\+pixel}} (uint16\+\_\+t \mbox{\hyperlink{group__video__gr_ga6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{group__video__gr_ga0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a given pixel with a given color. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__video__gr_ga2b030ac61ffa1deb98aae5876cc65e54}{get\+\_\+h\+\_\+resolution}} ()
+\begin{DoxyCompactList}\small\item\em Gets the horizontal resolution. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__video__gr_ga4437f47f63b7ede9afb8cb03bc440bf2}{get\+\_\+v\+\_\+resolution}} ()
+\begin{DoxyCompactList}\small\item\em Gets the vertical resolution. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{group__video__gr_ga89e5e15fb2c065221f58c6d883da6049}{get\+\_\+bytes\+\_\+per\+\_\+pixel}} ()
+\begin{DoxyCompactList}\small\item\em Get the bytes per pixel of the mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__video__gr_ga2c402fef55ded43fe29137c5a2e0ee28}{swap\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em Swaps between buffers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__video__gr_gad6329e114c4b888e1e0643905246d94f}{get\+\_\+current\+\_\+buffer}} (struct reg86 $\ast$r)
+\begin{DoxyCompactList}\small\item\em Gets the current buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group__video__gr_gad3943c79eecd99102e27a15ed4d26007}{load\+X\+PM}} (xpm\+\_\+map\+\_\+t xpm, enum xpm\+\_\+image\+\_\+type type, xpm\+\_\+image\+\_\+t $\ast$\mbox{\hyperlink{group__video__gr_gac16ac5b5982366cbba9038d9e97c250d}{img}})
+\begin{DoxyCompactList}\small\item\em Loads an X\+PM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__video__gr_ga9eb1c56f052919a0f0a3fc29a9821d7f}{print\+\_\+xpm}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Prints a X\+PM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__video__gr_ga1b11f2048e9164a4324e0f3a503e904d}{erase\+\_\+xpm}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$xpm)
+\begin{DoxyCompactList}\small\item\em Prints over a X\+PM with the transparent colour. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{group__video__gr_ga2ea614919259db8c5622de2917c64c9e}{create\+\_\+sprite}} (xpm\+\_\+map\+\_\+t sprite, char $\ast$\mbox{\hyperlink{group__video__gr_ga63756a4a33a8c806e584babb52907653}{ID}}, int \mbox{\hyperlink{group__video__gr_ga6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{group__video__gr_ga0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Creates a sprite object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{group__video__gr_gadffcf48a3d9030354d26080ee75d4fb0}{create\+\_\+animated\+\_\+sprite}} (xpm\+\_\+map\+\_\+t $\ast$xpms, int num\+\_\+of\+\_\+sprites, char $\ast$\mbox{\hyperlink{group__video__gr_ga63756a4a33a8c806e584babb52907653}{ID}}, int \mbox{\hyperlink{group__video__gr_ga6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{group__video__gr_ga0a2f84ed7838f07779ae24c5a9086d33}{y}}, int \mbox{\hyperlink{group__video__gr_gabbe355dc340f87fd8915a4b57581113f}{aspeed}})
+\begin{DoxyCompactList}\small\item\em Creates a animated sprite object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__video__gr_ga2e3433fb7479994ec64b38bc4cc24ea0}{print\+\_\+animated\+\_\+sprite}} (\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$animated\+\_\+sprite)
+\begin{DoxyCompactList}\small\item\em Prints an animated sprite. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{group__video__gr_ga95809ae3dae9bc06b1137d5b3c6e8d25}{get\+\_\+buffer\+\_\+to\+\_\+draw}} ()
+\begin{DoxyCompactList}\small\item\em Gets the buffer to draw on (secondary buffer) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{video__gr_8c_a26081be7a771e5c611b33f15caaf831e}{vmi\+\_\+p}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{video__gr_8c_aa6c1ff5024cd4d15e476bce487584daa}\label{video__gr_8c_aa6c1ff5024cd4d15e476bce487584daa}} 
+\index{video\_gr.c@{video\_gr.c}!vg\_init@{vg\_init}}
+\index{vg\_init@{vg\_init}!video\_gr.c@{video\_gr.c}}
+\doxysubsubsection{\texorpdfstring{vg\_init()}{vg\_init()}}
+{\footnotesize\ttfamily void$\ast$() vg\+\_\+init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file video\+\_\+gr.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{video__gr_8c_aa6c1ff5024cd4d15e476bce487584daa_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{video__gr_8c_a26081be7a771e5c611b33f15caaf831e}\label{video__gr_8c_a26081be7a771e5c611b33f15caaf831e}} 
+\index{video\_gr.c@{video\_gr.c}!vmi\_p@{vmi\_p}}
+\index{vmi\_p@{vmi\_p}!video\_gr.c@{video\_gr.c}}
+\doxysubsubsection{\texorpdfstring{vmi\_p}{vmi\_p}}
+{\footnotesize\ttfamily vbe\+\_\+mode\+\_\+info\+\_\+t vmi\+\_\+p}
+
+
+
+Definition at line 3 of file video\+\_\+gr.\+c.
+

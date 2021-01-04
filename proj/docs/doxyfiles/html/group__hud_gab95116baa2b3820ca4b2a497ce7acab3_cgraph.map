@@ -1,7 +1,0 @@
-<map id="draw_digit" name="draw_digit">
-<area shape="rect" id="node1" title="Draws a given digit." alt="" coords="5,97,96,123"/>
-<area shape="rect" id="node2" href="$group__video__gr.html#ga3a590797d6b9f19f31a6bdc601561c3d" title="Copies a pre&#45;saved buffer pixel to the video mem buffer." alt="" coords="149,5,291,47"/>
-<area shape="rect" id="node3" href="$group__hud.html#ga5afd36140e7183dbadb4fded41b62b6d" title="Frees the memory related to a given xpm." alt="" coords="157,71,283,98"/>
-<area shape="rect" id="node4" href="$group__video__gr.html#ga95809ae3dae9bc06b1137d5b3c6e8d25" title="Gets the buffer to draw on (secondary buffer)" alt="" coords="147,122,293,149"/>
-<area shape="rect" id="node5" href="$group__video__gr.html#ga89e5e15fb2c065221f58c6d883da6049" title="Get the bytes per pixel of the mode." alt="" coords="144,173,296,199"/>
-</map>

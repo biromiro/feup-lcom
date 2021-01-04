@@ -1,6 +1,0 @@
-<map id="get_available_blasts" name="get_available_blasts">
-<area shape="rect" id="node1" title="Get the Available Blasts." alt="" coords="381,31,537,57"/>
-<area shape="rect" id="node2" href="$group__enemies.html#ga16ad6d7911d43f0604ced7a6ee1649a9" title="Checks collisions between active blasts and active enemies and active enemies and main character." alt="" coords="192,5,333,32"/>
-<area shape="rect" id="node3" href="$group__hud.html#ga10576846fe372e05ed2cc35eb4b83e4a" title="Sets the hud values (score, ammo and wave) to their correct values." alt="" coords="201,56,324,83"/>
-<area shape="rect" id="node4" href="$group__hud.html#gabc8dedfb78fba9ef5995f8ecc6bc2cf7" title="draws the current HUD" alt="" coords="5,56,144,83"/>
-</map>

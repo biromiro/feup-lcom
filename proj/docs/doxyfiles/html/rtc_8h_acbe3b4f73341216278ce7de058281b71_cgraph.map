@@ -1,5 +1,0 @@
-<map id="rtc_read_info" name="rtc_read_info">
-<area shape="rect" id="node1" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="5,35,112,61"/>
-<area shape="rect" id="node2" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="183,5,281,32"/>
-<area shape="rect" id="node3" href="$rtc_8c.html#abef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="160,57,304,98"/>
-</map>

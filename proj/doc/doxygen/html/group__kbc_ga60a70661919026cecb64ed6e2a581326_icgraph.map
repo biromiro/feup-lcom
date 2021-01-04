@@ -1,0 +1,9 @@
+<map id="kbc_write_cmd" name="kbc_write_cmd">
+<area shape="rect" id="node1" title="Writes (issues) a command to the KBC." alt="" coords="716,56,836,83"/>
+<area shape="rect" id="node2" href="$group__kbc.html#gad4e8e035ef7ffd5bbba5480d4831c368" title="Resets the KBC to Minix&#39;s default." alt="" coords="501,5,667,32"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga92ffdbe2b735528ea192bd5c3fe78a30" title="Restores the Minix Interrupt Handler for KBC." alt="" coords="500,56,668,83"/>
+<area shape="rect" id="node4" href="$group__kbc.html#gadce7a7604f8b0782158b70bf728eb411" title="Writes a mouse command to the controller." alt="" coords="513,107,655,133"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes all the peripherals." alt="" coords="281,107,452,133"/>
+<area shape="rect" id="node6" href="$group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5" title="Calls the functions to terminate the program." alt="" coords="176,107,233,133"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,107,128,133"/>
+</map>

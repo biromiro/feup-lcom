@@ -1,0 +1,5 @@
+<map id="initialize" name="initialize">
+<area shape="rect" id="node1" title="Calls the functions to set up the program." alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$group__video__gr.html#ga2ea614919259db8c5622de2917c64c9e" title="Creates a sprite object." alt="" coords="132,5,239,32"/>
+<area shape="rect" id="node3" href="$group__video__gr.html#gad3943c79eecd99102e27a15ed4d26007" title="Loads an XPM." alt="" coords="287,5,365,32"/>
+</map>

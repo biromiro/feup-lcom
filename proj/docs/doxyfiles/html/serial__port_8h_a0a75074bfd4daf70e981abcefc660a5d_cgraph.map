@@ -1,4 +1,0 @@
-<map id="ser_enable_int" name="ser_enable_int">
-<area shape="rect" id="node1" title="Enables the serial port interrupts." alt="" coords="5,5,123,32"/>
-<area shape="rect" id="node2" href="$serial__port_8c.html#add1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="171,5,279,32"/>
-</map>

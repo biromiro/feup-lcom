@@ -1,0 +1,6 @@
+<map id="mount_packet" name="mount_packet">
+<area shape="rect" id="node1" title="Mounts the received packet bytes." alt="" coords="5,31,120,57"/>
+<area shape="rect" id="node2" href="$group__queue.html#gaff071ac301442edc8c4348f9a6b25afb" title="Pops the front element of the queue." alt="" coords="168,31,215,57"/>
+<area shape="rect" id="node3" href="$group__queue.html#ga32df32dccfc5eadc233531804f0cb305" title="Gets the front element of the queue." alt="" coords="263,5,316,32"/>
+<area shape="rect" id="node4" href="$group__queue.html#ga1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="364,31,447,57"/>
+</map>

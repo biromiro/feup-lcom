@@ -1,0 +1,26 @@
+<map id="finish" name="finish">
+<area shape="rect" id="node1" title="Calls the functions to terminate the program." alt="" coords="5,157,63,184"/>
+<area shape="rect" id="node2" href="$group__enemies.html#gad71ad0f82650f114326eef28f17bdb9d" title="Free memory related to the enemies." alt="" coords="141,5,251,32"/>
+<area shape="rect" id="node3" href="$group__character__movement.html#gaca053f5df2289cdedde59b292cb57005" title="Free memory related to the game objects." alt="" coords="123,56,269,83"/>
+<area shape="rect" id="node4" href="$group__magic__blast.html#gab530b1f7370136f94f2eed25369cc281" title="Frees all memory related to the magic blasts." alt="" coords="125,107,267,133"/>
+<area shape="rect" id="node5" href="$group__serial__port.html#gac938921551cca0e526f0e9a16c324199" title="Exits and restores the serial port." alt="" coords="159,157,233,184"/>
+<area shape="rect" id="node10" href="$group__rtc.html#gabb3363eb34b976d94fb14067028312f2" title="Activates/Deactivates the given RTC Interrupt." alt="" coords="741,208,877,235"/>
+<area shape="rect" id="node11" href="$group__timer.html#gaf2c04fa8e97ffa748fd3f612886a92a7" title="Changes the operating frequency of a timer." alt="" coords="118,284,274,311"/>
+<area shape="rect" id="node15" href="$group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes all the peripherals." alt="" coords="111,512,281,539"/>
+<area shape="rect" id="node6" href="$group__serial__port.html#ga2fff7715fff4fea8a65fec3604fa9074" title="Disables the serial port interrupts." alt="" coords="357,157,477,184"/>
+<area shape="rect" id="node7" href="$group__serial__port.html#gac6ec0fcd144e96b116d804d5c9ec9235" title="Reads the value of a given serial port port, adding its base address." alt="" coords="767,132,851,159"/>
+<area shape="rect" id="node9" href="$group__serial__port.html#gadd1462454cf3c1f15c6a959c3b78c03a" title="Writes to a given port(adding its base address) a given value." alt="" coords="569,157,677,184"/>
+<area shape="rect" id="node8" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="925,259,1024,285"/>
+<area shape="rect" id="node12" href="$group__timer.html#ga703c60b40c8c49607d6ecb6fef82d27a" title="Reads the input timer configuration (status) via read&#45;back command." alt="" coords="749,259,869,285"/>
+<area shape="rect" id="node13" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title=" " alt="" coords="365,309,468,336"/>
+<area shape="rect" id="node14" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title=" " alt="" coords="363,360,470,387"/>
+<area shape="rect" id="node16" href="$group__kbc.html#ga1102381e6a9e876e05dd78c58ccb5673" title="Unsubscribes KBC interrupts." alt="" coords="339,411,494,437"/>
+<area shape="rect" id="node17" href="$group__kbc.html#ga3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes mouse interrupts." alt="" coords="329,461,504,488"/>
+<area shape="rect" id="node18" href="$group__kbc.html#gadce7a7604f8b0782158b70bf728eb411" title="Writes a mouse command to the controller." alt="" coords="346,512,487,539"/>
+<area shape="rect" id="node22" href="$group__rtc.html#ga9d4850bb2a488644672d43287f160622" title="Unsubscribes RTC interrupts." alt="" coords="343,563,491,589"/>
+<area shape="rect" id="node23" href="$group__serial__port.html#ga7d7df555d50a59b9ee60efb23e95d550" title="unsubscribes the serial port interrupts" alt="" coords="341,613,492,640"/>
+<area shape="rect" id="node24" href="$group__kbc.html#gafabd21de449be154dd65d5fdb2d8045d" title="Unsubscribes Timer 0 interrupts." alt="" coords="333,664,500,691"/>
+<area shape="rect" id="node19" href="$group__kbc.html#ga60a70661919026cecb64ed6e2a581326" title="Writes (issues) a command to the KBC." alt="" coords="563,365,683,392"/>
+<area shape="rect" id="node21" href="$kbc_8c.html#a6c96b97b6d60426a8fc089131ca0c1db" title=" " alt="" coords="552,492,693,519"/>
+<area shape="rect" id="node20" href="$group__kbc.html#ga478e9d9e6e396379599060715e26730a" title="Reads the KBC configuration (status)" alt="" coords="749,328,869,355"/>
+</map>

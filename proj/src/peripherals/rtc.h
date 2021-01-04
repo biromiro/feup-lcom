@@ -1,7 +1,7 @@
 #pragma once
 
 #include <lcom/lcf.h>
-#include "i8042.h"
+#include "ds12887.h"
 
 /** @defgroup rtc rtc
  * @{

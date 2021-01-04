@@ -1,0 +1,227 @@
+\hypertarget{group__magic__blast}{}\doxysection{magic\+\_\+blast}
+\label{group__magic__blast}\index{magic\_blast@{magic\_blast}}
+
+
+Functions for dealing with the magic projectiles.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__magic__blast_gadd1bfc20a326c44a51d874c570ea3a91}{set\+\_\+magic\+\_\+blasts\+\_\+available}} ()
+\begin{DoxyCompactList}\small\item\em Set up the magic blasts available (10) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_gab530b1f7370136f94f2eed25369cc281}{free\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Frees all memory related to the magic blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga8f3c067f863279cb8ea7e48ececc77fe}{throw\+\_\+magic\+\_\+blast}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor, \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$character)
+\begin{DoxyCompactList}\small\item\em Creates a \char`\"{}\+Magic Blast\char`\"{} X\+PM, calculates its speed and updates the available blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga99d7b942da6955abaea016a98e8078da}{print\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Prints the blasts If a blast is off-\/screen, frees its memory and reindexes the blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga0b453e22ecb3117166f6ecba1893e7f7}{reindex\+\_\+magic\+\_\+blasts}} (size\+\_\+t positions)
+\begin{DoxyCompactList}\small\item\em Reindexes the magic blasts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$$\ast$ \mbox{\hyperlink{group__magic__blast_ga66676b4506fca18c5701b732ce48292b}{get\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Get the magic blasts. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__magic__blast_ga99f4f1b1d4407c3d7f24da52c7f8d069}{get\+\_\+total\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Get the Total Blasts. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__magic__blast_gaf4f87fed374d0d478316d82eae85292c}{get\+\_\+available\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Get the Available Blasts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga7ea97f736a8f59cc828f214c480c1ba4}{decrement\+\_\+available\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the available blasts variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__magic__blast_ga4cb0d6dd176dc9e81b84995f439d6f2c}{reset\+\_\+magic\+\_\+blasts}} ()
+\begin{DoxyCompactList}\small\item\em Resets the magic blasts array to its initial values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for dealing with the magic projectiles. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__magic__blast_ga7ea97f736a8f59cc828f214c480c1ba4}\label{group__magic__blast_ga7ea97f736a8f59cc828f214c480c1ba4}} 
+\index{magic\_blast@{magic\_blast}!decrement\_available\_blasts@{decrement\_available\_blasts}}
+\index{decrement\_available\_blasts@{decrement\_available\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{decrement\_available\_blasts()}{decrement\_available\_blasts()}}
+{\footnotesize\ttfamily void decrement\+\_\+available\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrements the available blasts variable. 
+
+
+
+Definition at line 84 of file magic\+\_\+blast.\+c.
+
+\mbox{\Hypertarget{group__magic__blast_gab530b1f7370136f94f2eed25369cc281}\label{group__magic__blast_gab530b1f7370136f94f2eed25369cc281}} 
+\index{magic\_blast@{magic\_blast}!free\_magic\_blasts@{free\_magic\_blasts}}
+\index{free\_magic\_blasts@{free\_magic\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{free\_magic\_blasts()}{free\_magic\_blasts()}}
+{\footnotesize\ttfamily void free\+\_\+magic\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Frees all memory related to the magic blasts. 
+
+
+
+Definition at line 15 of file magic\+\_\+blast.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__magic__blast_gab530b1f7370136f94f2eed25369cc281_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__magic__blast_gaf4f87fed374d0d478316d82eae85292c}\label{group__magic__blast_gaf4f87fed374d0d478316d82eae85292c}} 
+\index{magic\_blast@{magic\_blast}!get\_available\_blasts@{get\_available\_blasts}}
+\index{get\_available\_blasts@{get\_available\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{get\_available\_blasts()}{get\_available\_blasts()}}
+{\footnotesize\ttfamily size\+\_\+t get\+\_\+available\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Available Blasts. 
+
+\begin{DoxyReturn}{Returns}
+Number of available blasts 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file magic\+\_\+blast.\+c.
+
+\mbox{\Hypertarget{group__magic__blast_ga66676b4506fca18c5701b732ce48292b}\label{group__magic__blast_ga66676b4506fca18c5701b732ce48292b}} 
+\index{magic\_blast@{magic\_blast}!get\_magic\_blasts@{get\_magic\_blasts}}
+\index{get\_magic\_blasts@{get\_magic\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{get\_magic\_blasts()}{get\_magic\_blasts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}}$\ast$$\ast$ get\+\_\+magic\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the magic blasts. 
+
+\begin{DoxyReturn}{Returns}
+X\+PM objects array 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file magic\+\_\+blast.\+c.
+
+\mbox{\Hypertarget{group__magic__blast_ga99f4f1b1d4407c3d7f24da52c7f8d069}\label{group__magic__blast_ga99f4f1b1d4407c3d7f24da52c7f8d069}} 
+\index{magic\_blast@{magic\_blast}!get\_total\_blasts@{get\_total\_blasts}}
+\index{get\_total\_blasts@{get\_total\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{get\_total\_blasts()}{get\_total\_blasts()}}
+{\footnotesize\ttfamily size\+\_\+t get\+\_\+total\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Total Blasts. 
+
+\begin{DoxyReturn}{Returns}
+Number of total blasts 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file magic\+\_\+blast.\+c.
+
+\mbox{\Hypertarget{group__magic__blast_ga99d7b942da6955abaea016a98e8078da}\label{group__magic__blast_ga99d7b942da6955abaea016a98e8078da}} 
+\index{magic\_blast@{magic\_blast}!print\_magic\_blasts@{print\_magic\_blasts}}
+\index{print\_magic\_blasts@{print\_magic\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{print\_magic\_blasts()}{print\_magic\_blasts()}}
+{\footnotesize\ttfamily void print\+\_\+magic\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the blasts If a blast is off-\/screen, frees its memory and reindexes the blasts. 
+
+
+
+Definition at line 49 of file magic\+\_\+blast.\+c.
+
+\mbox{\Hypertarget{group__magic__blast_ga0b453e22ecb3117166f6ecba1893e7f7}\label{group__magic__blast_ga0b453e22ecb3117166f6ecba1893e7f7}} 
+\index{magic\_blast@{magic\_blast}!reindex\_magic\_blasts@{reindex\_magic\_blasts}}
+\index{reindex\_magic\_blasts@{reindex\_magic\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{reindex\_magic\_blasts()}{reindex\_magic\_blasts()}}
+{\footnotesize\ttfamily void reindex\+\_\+magic\+\_\+blasts (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{positions }\end{DoxyParamCaption})}
+
+
+
+Reindexes the magic blasts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & Position of freed up blast object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file magic\+\_\+blast.\+c.
+
+\mbox{\Hypertarget{group__magic__blast_ga4cb0d6dd176dc9e81b84995f439d6f2c}\label{group__magic__blast_ga4cb0d6dd176dc9e81b84995f439d6f2c}} 
+\index{magic\_blast@{magic\_blast}!reset\_magic\_blasts@{reset\_magic\_blasts}}
+\index{reset\_magic\_blasts@{reset\_magic\_blasts}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{reset\_magic\_blasts()}{reset\_magic\_blasts()}}
+{\footnotesize\ttfamily void reset\+\_\+magic\+\_\+blasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the magic blasts array to its initial values. 
+
+
+
+Definition at line 88 of file magic\+\_\+blast.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__magic__blast_ga4cb0d6dd176dc9e81b84995f439d6f2c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{group__magic__blast_ga4cb0d6dd176dc9e81b84995f439d6f2c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__magic__blast_gadd1bfc20a326c44a51d874c570ea3a91}\label{group__magic__blast_gadd1bfc20a326c44a51d874c570ea3a91}} 
+\index{magic\_blast@{magic\_blast}!set\_magic\_blasts\_available@{set\_magic\_blasts\_available}}
+\index{set\_magic\_blasts\_available@{set\_magic\_blasts\_available}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{set\_magic\_blasts\_available()}{set\_magic\_blasts\_available()}}
+{\footnotesize\ttfamily void set\+\_\+magic\+\_\+blasts\+\_\+available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set up the magic blasts available (10) 
+
+
+
+Definition at line 10 of file magic\+\_\+blast.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__magic__blast_gadd1bfc20a326c44a51d874c570ea3a91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__magic__blast_ga8f3c067f863279cb8ea7e48ececc77fe}\label{group__magic__blast_ga8f3c067f863279cb8ea7e48ececc77fe}} 
+\index{magic\_blast@{magic\_blast}!throw\_magic\_blast@{throw\_magic\_blast}}
+\index{throw\_magic\_blast@{throw\_magic\_blast}!magic\_blast@{magic\_blast}}
+\doxysubsubsection{\texorpdfstring{throw\_magic\_blast()}{throw\_magic\_blast()}}
+{\footnotesize\ttfamily void throw\+\_\+magic\+\_\+blast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{cursor,  }\item[{\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$}]{character }\end{DoxyParamCaption})}
+
+
+
+Creates a \char`\"{}\+Magic Blast\char`\"{} X\+PM, calculates its speed and updates the available blasts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor} & Mouse cursor \\
+\hline
+{\em character} & Player character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file magic\+\_\+blast.\+c.
+

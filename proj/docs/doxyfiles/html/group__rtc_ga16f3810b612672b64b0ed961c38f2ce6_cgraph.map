@@ -1,5 +1,0 @@
-<map id="set_enemy_throw" name="set_enemy_throw">
-<area shape="rect" id="node1" title="Sets up the rate at which the periodic interrupts will send new enemies." alt="" coords="5,13,144,39"/>
-<area shape="rect" id="node2" href="$group__rtc.html#gacbe3b4f73341216278ce7de058281b71" title="Reads the info of a given register and returns it throw the parameter." alt="" coords="192,13,299,39"/>
-<area shape="rect" id="node3" href="$group__rtc.html#gabef8f73283f7f99f7f2e1312e2b08b55" title="Waits until there is no active update on the RTC." alt="" coords="347,5,491,47"/>
-</map>

@@ -53,18 +53,6 @@ void ser_exit();
 void ser_ih();
 
 /**
- * @brief Handles an alarm of the unistd.h library
- * 
- */
-void signal_handler(int signum);
-
-/**
- * @brief Sets the up alarm handler of the unistd.h library
- * 
- */
-void setup_handler();
-
-/**
  * @brief Enables the serial port interrupts
  * 
  * @return true if successful, false otherwise
@@ -135,11 +123,9 @@ bool empty_send_queue();
 /**
  * @brief Reads a byte from the serial port receiver buffer register
  * 
- * @param in_timeout true if the read byte call is in the timeout loop
- * 
  * @return True if successful, false otherwise 
  */
-bool read_byte(bool in_timeout);
+bool read_byte();
 
 /**
  * @brief Get the received queue object

@@ -1,5 +1,0 @@
-<map id="mouse_write_cmd" name="mouse_write_cmd">
-<area shape="rect" id="node1" title="Writes a mouse command to the controller." alt="" coords="224,31,365,57"/>
-<area shape="rect" id="node2" href="$group__interrupt__handler.html#gab570339ba658dea7f08a99b9374e605f" title="Subscribes all the peripherals Timer, Keyboard and Timer." alt="" coords="13,5,168,32"/>
-<area shape="rect" id="node3" href="$group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes all the peripherals." alt="" coords="5,56,176,83"/>
-</map>

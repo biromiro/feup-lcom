@@ -72,7 +72,7 @@ void ser_ih(){
     read_port(IIR, &reg);
     while(!(reg & IIR_NO_INT)) {
         if(reg & IIR_RECEIVED_DATA_AVAILABLE){
-            while(OK == read_byte(false));
+            while(OK == read_byte());
             read_port(IIR, &reg);
         }
         if(reg & IIR_TRANSMIT_HOLD_REG_EMPTY){
@@ -100,16 +100,11 @@ bool disable_ser_int(){
 bool clear_fifo(){
     uint8_t reg;
     reg = (FCR_CLEAR_RCVR_FIFO | FCR_CLEAR_XMIT_FIFO | FCR_ENABLE_BOTH_FIFO);
-    printf("fifo cleared");
     return write_to_port(FCR, reg);
 }
 
 bool send_byte(uint8_t byte){
     bool pushed = push(send_queue,byte);
-    uint8_t empty_transmitter;
-    read_port(LSR, &empty_transmitter);
-    empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
-    hold_reg_empty = empty_transmitter;
     if(hold_reg_empty){
         return send_bytes_in_queue();
     }else return pushed;
@@ -126,56 +121,7 @@ bool send_bytes_in_queue(){
 
     while(!is_empty(send_queue)){
         write_to_port(THR,front(send_queue));
-        printf("sent byte : %x\n", front(send_queue));
-    
-        if(front(send_queue) == ACK || front(send_queue) == NACK || front(send_queue) == END){
-            printf("entered");
-            pop(send_queue);
-            read_port(LSR, &empty_transmitter);
-            empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
-            hold_reg_empty = empty_transmitter;
-            if(!empty_transmitter) return false;
-            continue;
-        }
-        
-        printf("began while timeout\n");
-
-        bool timeout = false;
-        uint8_t current_sec = get_second();
-        uint8_t seconds_elapsed = 0;
-
-        while(!timeout){
-            read_byte(true);
-            uint8_t answer = pop(ack_queue);
-            if(answer == ACK){
-                pop(send_queue);
-                break;
-            }
-            else if(answer == NACK){
-                write_to_port(THR,front(send_queue));
-                current_sec = get_second();
-                seconds_elapsed = 0;
-            }
-            else if(answer == 0){
-                if(current_sec != get_second()){
-                    current_sec = get_second();
-                    seconds_elapsed++;
-                    printf("+ 1 second");
-                }
-                if(seconds_elapsed == 2) timeout = true;
-            }
-        }
-
-        if(timeout){
-            printf("timed out!");
-            if(gs == GAME){
-                gs = GAMEOVER;
-                send_byte(END);
-            }
-            pop(send_queue);
-            return false;
-        }
-
+        pop(send_queue);
         read_port(LSR, &empty_transmitter);
         empty_transmitter &= LSR_TRANSMIT_HOLD_REG_EMPTY;
         hold_reg_empty = empty_transmitter;
@@ -184,23 +130,13 @@ bool send_bytes_in_queue(){
     return true;
 }
 
-bool read_byte(bool in_timeout){
+bool read_byte(){
     uint8_t reg, byte;
     read_port(LSR, &reg);
     if(reg & LSR_RECEIVER_DATA){
         read_port(RBR, &byte);
         if(OK == (reg & (LSR_OVERRUN_ERR | LSR_PARITY_ERR | LSR_FRAMING_ERR))){
-            if(byte != 0xFE && byte != 0xDE){
-                if(!in_timeout) send_byte(0xFE);
-                push(received_queue,byte);
-            }
-            else{
-                push(ack_queue, byte);
-            }
-            return OK;
-        }else{
-            if(byte != 0xFE && byte != 0xDE && !in_timeout)
-                send_byte(0xDE);
+            push(received_queue, byte);
             return OK;
         }
     }
@@ -235,22 +171,19 @@ bool handle_coop_start(){
         send_byte(0x56);
         send_byte(srandByte);
         srandom(srandByte);
-        printf("srandByte (sender) = %d\n", srandByte);
     }else if(front(received_queue) == 0x56){
         pop(received_queue);
         uint8_t srandByte = pop(received_queue);
         while(srandByte == 0){
-            read_byte(false);
+            read_byte();
             srandByte = pop(received_queue);
         }
         srandom(srandByte);
         swap_characters();
         swapped = true;
-        printf("swapped!");
         gs = GAME;
         set_power_up_alarm(1);
         set_enemy_throw(0xF);
-        printf("srandByte = %d\n", srandByte);
         in_coop=true;
         send_byte(0x57);
     }else if(front(received_queue) == 0x57){
@@ -299,22 +232,22 @@ void handle_received_info(){
     /*
     The communication protocol is as follows:
 
-    If bit 7 is up, it is a mouse packet (and it is expected that 4 bytes arrived.)
-    If bit 7 isn't up, it is a scancode.
+    If bit 7 is up, it is a mouse packet (and it is expected that 4 bytes arrive)
+    If bit 7 isn't up, it is a scancode or END code (0x40).
 
     The composition of the mouse packet is changed: 
     
     -The first byte has the following meaning:
 
         BIT(0) through BIT(4) -> the 5 most significant bits of the X position
-        BIT(5) -> if byte 3 is 0
-        BIT(6) -> if byte 4 is 0
+        BIT(5) -> if byte 3 is 0 (avoid queue pop unwanted events)
+        BIT(6) -> if byte 4 is 0 (avoid queue pop unwanted events)
         BIT(7) -> if it is mouse info
 
     -The second byte has the following meaning:
 
         BIT(0) through BIT(4) -> the 5 most sigifnicant bits of the Y position
-        BIT(5) -> if the 4 most significant bits are all 0
+        BIT(5) -> if bits 0 through 4 are all 0 (avoid queue pop unwanted events)
         BIT(6) and BIT(7) -> unused
 
     -The third and fourth bytes represent the same:
@@ -333,6 +266,10 @@ void handle_received_info(){
     BIT(3) up -> D break code
     BITS 4 through 6 -> unused
     BIT(7) -> it is a scancode
+
+    When a mouse byte is first received, the following 3 packets are, by the queue logic, also from the packet, so they aren't checked.
+
+    If the byte 0x40 == END is received at any given time, the game is finished.
     */
 
    if(is_empty(received_queue)) return;

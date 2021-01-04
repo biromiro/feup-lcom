@@ -1,4 +1,0 @@
-<map id="send_scancode" name="send_scancode">
-<area shape="rect" id="node1" title="Sends a scancode to the other player." alt="" coords="244,5,365,32"/>
-<area shape="rect" id="node2" href="$group__character__movement.html#ga49051feac2200ce74a86da120448128d" title="Updates the sprite position of a given player, depending on keyboard input and sends,..." alt="" coords="5,5,196,32"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="handle_button_presses" name="handle_button_presses">
-<area shape="rect" id="node1" title="Updates the sprites position, depending on keyboard input." alt="" coords="156,5,328,32"/>
-<area shape="rect" id="node2" href="$group__interrupt__handler.html#gac89c6cf4a316a1847cf32ec3ed53646b" title="Builds the keyboard packet and handles it." alt="" coords="5,5,108,32"/>
-</map>

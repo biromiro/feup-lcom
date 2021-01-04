@@ -1,0 +1,70 @@
+\hypertarget{character__movement_8c}{}\doxysection{game/character\+\_\+movement.c File Reference}
+\label{character__movement_8c}\index{game/character\_movement.c@{game/character\_movement.c}}
+{\ttfamily \#include \char`\"{}character\+\_\+movement.\+h\char`\"{}}\newline
+Include dependency graph for character\+\_\+movement.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character__movement_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__character__movement_ga4bddaae2a377242e52609042fb4c5113}{create\+\_\+game\+\_\+objects}} ()
+\begin{DoxyCompactList}\small\item\em Creates the game objects (sprites) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_gaca053f5df2289cdedde59b292cb57005}{free\+\_\+game\+\_\+objects}} ()
+\begin{DoxyCompactList}\small\item\em Free memory related to the game objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__character__movement_ga6e1b717308ebffc918149d6e179b2e7a}{update\+\_\+character\+\_\+movement}} (int \mbox{\hyperlink{timer_8c_a617a47c70795bcff659815ad0efd2266}{counter}})
+\begin{DoxyCompactList}\small\item\em Updates the character movement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__character__movement_gad596b8c7de75677690bccd82c144bf5f}{update\+\_\+character\+\_\+movement\+\_\+player}} (int \mbox{\hyperlink{timer_8c_a617a47c70795bcff659815ad0efd2266}{counter}}, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$player, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$current\+\_\+sprite, bool $\ast$attack\+Animation)
+\begin{DoxyCompactList}\small\item\em Updates the movement of a specific player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga7d698d007395c2e3925ff64652b6312c}{handle\+\_\+button\+\_\+presses}} (uint8\+\_\+t \mbox{\hyperlink{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}}, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Updates the sprites position, depending on keyboard input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga49051feac2200ce74a86da120448128d}{handle\+\_\+ingame\+\_\+scancode}} (uint8\+\_\+t \mbox{\hyperlink{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}}, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$player, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$current\+\_\+sprite, bool $\ast$attack\+Animation, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Updates the sprite position of a given player, depending on keyboard input and sends, if needed, the information to the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_gaa7ea37fd717f540a3fce04e13eacba9f}{handle\+\_\+mouse\+\_\+packet}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor, struct packet $\ast$pp, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Handles mouse movement and button presses for all characters and sends, if needed, the information to the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga2c8bba9c7268d1f82b329cacec9433dc}{handle\+\_\+mouse\+\_\+packet\+\_\+player}} (\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$cursor, struct packet $\ast$pp, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$$\ast$player, \mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$$\ast$current\+\_\+sprite, bool $\ast$attack\+Animation, bool $\ast$sent, bool player1\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Handles mouse movement and button presses for a given characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{group__character__movement_gaef9e9d58a14d833f17f0adeee6ba09fe}{get\+\_\+current\+\_\+character\+\_\+p1}} ()
+\begin{DoxyCompactList}\small\item\em Get the current character object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__video__gr_ga4bb142fc1ffcf3ff8a1937744def4061}{xpm\+\_\+object}} $\ast$ \mbox{\hyperlink{group__character__movement_gab47ab15f198e2708f3d1c69b1c73cfaf}{get\+\_\+current\+\_\+character\+\_\+p2}} ()
+\begin{DoxyCompactList}\small\item\em Get the current character p2 object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__character__movement_ga2f6b06535f1c7e2d3d259a34820afa12}{wall\+\_\+collision}} (\mbox{\hyperlink{group__video__gr_gadedd1e38a74898d59cf3b01d8f6ab818}{animated\+\_\+xpm\+\_\+object}} $\ast$current\+\_\+sprite)
+\begin{DoxyCompactList}\small\item\em Checks if the character has hit a wall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga756a0d449b2869df1eaf2bed0f952afe}{swap\+\_\+characters}} ()
+\begin{DoxyCompactList}\small\item\em swaps character animated\+\_\+xpm\+\_\+object pointers (for multiplayer) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__character__movement_ga1d1c21fe72062dbf77bd639f0cc8f886}{reset\+\_\+characters}} ()
+\begin{DoxyCompactList}\small\item\em resets character\textquotesingle{}s starting position, speed and current sprite \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__menu_gaaf29bbe309504beb4cfec2481eacee62}{game\+State}} \mbox{\hyperlink{character__movement_8c_a3ff300b00fcf14c8f695accf1af84918}{gs}}
+\item 
+bool \mbox{\hyperlink{character__movement_8c_a7a7c4e27f9873c2aee1f4f5af7581487}{in\+\_\+coop}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{character__movement_8c_a3ff300b00fcf14c8f695accf1af84918}\label{character__movement_8c_a3ff300b00fcf14c8f695accf1af84918}} 
+\index{character\_movement.c@{character\_movement.c}!gs@{gs}}
+\index{gs@{gs}!character\_movement.c@{character\_movement.c}}
+\doxysubsubsection{\texorpdfstring{gs}{gs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__menu_gaaf29bbe309504beb4cfec2481eacee62}{game\+State}} gs}
+
+
+
+Definition at line 5 of file character\+\_\+movement.\+c.
+
+\mbox{\Hypertarget{character__movement_8c_a7a7c4e27f9873c2aee1f4f5af7581487}\label{character__movement_8c_a7a7c4e27f9873c2aee1f4f5af7581487}} 
+\index{character\_movement.c@{character\_movement.c}!in\_coop@{in\_coop}}
+\index{in\_coop@{in\_coop}!character\_movement.c@{character\_movement.c}}
+\doxysubsubsection{\texorpdfstring{in\_coop}{in\_coop}}
+{\footnotesize\ttfamily bool in\+\_\+coop = false}
+
+
+
+Definition at line 7 of file character\+\_\+movement.\+c.
+

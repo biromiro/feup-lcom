@@ -1,0 +1,5 @@
+<map id="kbc_read_data" name="kbc_read_data">
+<area shape="rect" id="node1" title="Reads the value of the OBF of the KBC." alt="" coords="268,5,385,32"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#a5761bd4aad91ac1d68916ad88f583d9f" title=" " alt="" coords="156,5,220,32"/>
+<area shape="rect" id="node3" href="$group__interrupt__handler.html#gac89c6cf4a316a1847cf32ec3ed53646b" title="Builds the keyboard packet and handles it." alt="" coords="5,5,108,32"/>
+</map>

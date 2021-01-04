@@ -1,0 +1,4 @@
+<map id="handle_coop_start" name="handle_coop_start">
+<area shape="rect" id="node1" title="Handles the co&#45;op game start, syncing both players." alt="" coords="152,5,293,32"/>
+<area shape="rect" id="node2" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="5,5,104,32"/>
+</map>

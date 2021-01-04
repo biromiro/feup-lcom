@@ -1,0 +1,74 @@
+\hypertarget{interrupt__handler_8h}{}\doxysection{peripherals/interrupt\+\_\+handler.h File Reference}
+\label{interrupt__handler_8h}\index{peripherals/interrupt\_handler.h@{peripherals/interrupt\_handler.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}kbc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}video\+\_\+gr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}serial\+\_\+port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../game/game\+\_\+state.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../game/hud.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/cursor.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/background.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/mainmenu.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/mainmenu\+\_\+start.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/mainmenu\+\_\+instructions.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/mainmenu\+\_\+coop.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/mainmenu\+\_\+exit.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/instructionsmenu.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/gameover.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../img/coop.\+xpm\char`\"{}}\newline
+Include dependency graph for interrupt\+\_\+handler.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupt__handler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{interrupt__handler_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__interrupt__handler_ga3b84711f4729b8ef456ee80707f6b579}{irq\+\_\+type}} \{ \newline
+\mbox{\hyperlink{group__interrupt__handler_gga3b84711f4729b8ef456ee80707f6b579a6abd13b0a6bf7894c7ceb5ff45ddbc14}{M\+O\+U\+SE}}, 
+\mbox{\hyperlink{group__interrupt__handler_gga3b84711f4729b8ef456ee80707f6b579a17ba9bae1b8d7e8d6c12d46ec58e0769}{T\+I\+M\+ER}}, 
+\mbox{\hyperlink{group__interrupt__handler_gga3b84711f4729b8ef456ee80707f6b579a2432f9f5f09111d959b9d19d058e24c1}{K\+BD}}, 
+\mbox{\hyperlink{group__interrupt__handler_gga3b84711f4729b8ef456ee80707f6b579a24073a11916b946561b8cb5c9dfe9bce}{R\+TC}}, 
+\newline
+\mbox{\hyperlink{group__interrupt__handler_gga3b84711f4729b8ef456ee80707f6b579ac5a5cfdbc76418f74f2a427c51d1c774}{S\+ER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__interrupt__handler_gab570339ba658dea7f08a99b9374e605f}{subscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Subscribes all the peripherals Timer, Keyboard and Timer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__interrupt__handler_ga03aede8ff91764482bb5e9accfae9b4f}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Calls the functions to set up the program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__interrupt__handler_ga39ca4da537e3c0062ada871f99b91b8d}{unsubscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes all the peripherals. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__interrupt__handler_gaede67e93f7e68c80a15439bd673effc5}{finish}} ()
+\begin{DoxyCompactList}\small\item\em Calls the functions to terminate the program. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__interrupt__handler_ga2b32d4aa52316d13e9223c64d3acb774}{get\+\_\+irq\+\_\+set}} (\mbox{\hyperlink{group__interrupt__handler_ga3b84711f4729b8ef456ee80707f6b579}{irq\+\_\+type}} type)
+\begin{DoxyCompactList}\small\item\em Get the irq set, based on the type of interruption. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga50a518afed32147b41b66eceb5c99994}{interrupt\+\_\+call\+\_\+receiver}} ()
+\begin{DoxyCompactList}\small\item\em Interrupt receiver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga9e63ea32abae3f871fcbe66fd99003b2}{timer\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Updates the screen every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga6ca7c8595f4c1116a2e057ad74fe27a5}{mouse\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Builds the mouse packet and handles it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_gac89c6cf4a316a1847cf32ec3ed53646b}{kbd\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Builds the keyboard packet and handles it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga9a1321dd741df6d233bf497ab078e32b}{rtc\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles the real time clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga03156595467b344e4394ce04e43cd638}{ser\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Reads the information on the serial port and handles it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__interrupt__handler_ga6be2f294a4d060a7a6e445016a151100}{reset\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Resets all game assets for a possible restart. \end{DoxyCompactList}\end{DoxyCompactItemize}

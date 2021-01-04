@@ -1,5 +1,4 @@
 #include "rtc.h"
-#include "i8042.h"
 
 int hook_rtc = 3;
 

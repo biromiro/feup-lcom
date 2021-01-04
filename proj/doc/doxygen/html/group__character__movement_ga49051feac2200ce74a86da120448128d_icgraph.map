@@ -1,0 +1,4 @@
+<map id="handle_ingame_scancode" name="handle_ingame_scancode">
+<area shape="rect" id="node1" title="Updates the sprite position of a given player, depending on keyboard input and sends,..." alt="" coords="225,5,416,32"/>
+<area shape="rect" id="node2" href="$group__character__movement.html#ga7d698d007395c2e3925ff64652b6312c" title="Updates the sprites position, depending on keyboard input." alt="" coords="5,5,177,32"/>
+</map>

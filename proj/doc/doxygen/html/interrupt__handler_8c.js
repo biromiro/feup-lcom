@@ -1,0 +1,25 @@
+var interrupt__handler_8c =
+[
+    [ "finish", "group__interrupt__handler.html#gaede67e93f7e68c80a15439bd673effc5", null ],
+    [ "get_irq_set", "group__interrupt__handler.html#ga2b32d4aa52316d13e9223c64d3acb774", null ],
+    [ "initialize", "group__interrupt__handler.html#ga03aede8ff91764482bb5e9accfae9b4f", null ],
+    [ "interrupt_call_receiver", "group__interrupt__handler.html#ga50a518afed32147b41b66eceb5c99994", null ],
+    [ "kbd_handler", "group__interrupt__handler.html#gac89c6cf4a316a1847cf32ec3ed53646b", null ],
+    [ "mouse_handler", "group__interrupt__handler.html#ga6ca7c8595f4c1116a2e057ad74fe27a5", null ],
+    [ "reset_game", "group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100", null ],
+    [ "rtc_handler", "group__interrupt__handler.html#ga9a1321dd741df6d233bf497ab078e32b", null ],
+    [ "ser_handler", "group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638", null ],
+    [ "subscribe_interrupts", "group__interrupt__handler.html#gab570339ba658dea7f08a99b9374e605f", null ],
+    [ "timer_handler", "group__interrupt__handler.html#ga9e63ea32abae3f871fcbe66fd99003b2", null ],
+    [ "unsubscribe_interrupts", "group__interrupt__handler.html#ga39ca4da537e3c0062ada871f99b91b8d", null ],
+    [ "alarmInterrupt", "interrupt__handler_8c.html#ad1949c4e76775df4cd456939da7710cb", null ],
+    [ "cnt", "interrupt__handler_8c.html#a9cfbb269728dc4185236d28be58d9eab", null ],
+    [ "counter", "interrupt__handler_8c.html#a617a47c70795bcff659815ad0efd2266", null ],
+    [ "finished", "interrupt__handler_8c.html#a9324389a5cdc532c6417a87ccafe18ce", null ],
+    [ "gs", "interrupt__handler_8c.html#a3ff300b00fcf14c8f695accf1af84918", null ],
+    [ "in_coop", "interrupt__handler_8c.html#a7a7c4e27f9873c2aee1f4f5af7581487", null ],
+    [ "menu_index", "interrupt__handler_8c.html#a4a73346f34aa035bd18ffec354e317be", null ],
+    [ "packetByte", "interrupt__handler_8c.html#a1aa751d66941402c672b0b8ea786e050", null ],
+    [ "scancode", "interrupt__handler_8c.html#aa1de7a5557e9d96b83cf03f73c92163f", null ],
+    [ "swapped", "interrupt__handler_8c.html#af366811e52ea15aa1a7aa8ded3fa28c4", null ]
+];

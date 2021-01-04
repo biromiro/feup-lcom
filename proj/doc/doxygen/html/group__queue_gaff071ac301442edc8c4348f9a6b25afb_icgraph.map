@@ -1,0 +1,7 @@
+<map id="pop" name="pop">
+<area shape="rect" id="node1" title="Pops the front element of the queue." alt="" coords="315,31,361,57"/>
+<area shape="rect" id="node2" href="$group__serial__port.html#ga6e9c1eeb50ffac1b9bc3195d915447fe" title="Mounts the received packet bytes." alt="" coords="152,5,267,32"/>
+<area shape="rect" id="node3" href="$group__serial__port.html#ga04571865b824bc933dc2322a794aafea" title="clears all fifos (ser port queues and program queues)" alt="" coords="169,56,250,83"/>
+<area shape="rect" id="node4" href="$group__interrupt__handler.html#ga6be2f294a4d060a7a6e445016a151100" title="Resets all game assets for a possible restart." alt="" coords="5,31,104,57"/>
+<area shape="rect" id="node5" href="$group__interrupt__handler.html#ga03156595467b344e4394ce04e43cd638" title="Reads the information on the serial port and handles it." alt="" coords="5,81,104,108"/>
+</map>

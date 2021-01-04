@@ -1,0 +1,200 @@
+\hypertarget{kbc_8c}{}\doxysection{peripherals/kbc.c File Reference}
+\label{kbc_8c}\index{peripherals/kbc.c@{peripherals/kbc.c}}
+{\ttfamily \#include \char`\"{}kbc.\+h\char`\"{}}\newline
+Include dependency graph for kbc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{kbc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__kbc_ga02884ada1971dbade466081413210b18}{kbc\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables K\+BC interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga1102381e6a9e876e05dd78c58ccb5673}{kbc\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes K\+BC interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga478e9d9e6e396379599060715e26730a}{kbc\+\_\+get\+\_\+status}} (uint8\+\_\+t $\ast$st)
+\begin{DoxyCompactList}\small\item\em Reads the K\+BC configuration (status) \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_gaf18c2a348e2c55a40cacc74caee08323}{kbc\+\_\+read\+\_\+buffer}} (int port, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reads the output buffer of K\+BC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga60a70661919026cecb64ed6e2a581326}{kbc\+\_\+write\+\_\+cmd}} (int port, uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Writes (issues) a command to the K\+BC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga638e7f85ff3800aaf17c95cde1760865}{kbc\+\_\+read\+\_\+data}} (uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reads the value of the O\+BF of the K\+BC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga92ffdbe2b735528ea192bd5c3fe78a30}{kbc\+\_\+restore\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Restores the Minix Interrupt Handler for K\+BC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_gad4e8e035ef7ffd5bbba5480d4831c368}{kbc\+\_\+reset\+\_\+commannd}} ()
+\begin{DoxyCompactList}\small\item\em Resets the K\+BC to Minix\textquotesingle{}s default. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{kbc_8c_a5761bd4aad91ac1d68916ad88f583d9f}{kbc\+\_\+ih}} (void)
+\item 
+int() \mbox{\hyperlink{group__kbc_ga20285aed4b3ef45812cd967532dd09db}{mouse\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes mouse interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga3ecf823d80520009ae5e0d76ae40a3c3}{mouse\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes mouse interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga2b0cab3b65db905154df274d1841a214}{mouse\+\_\+read\+\_\+data}} (uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reads a data byte from the mouse controller. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{kbc_8c_a6c96b97b6d60426a8fc089131ca0c1db}{mouse\+\_\+get\+\_\+status}} (uint8\+\_\+t $\ast$st)
+\item 
+int() \mbox{\hyperlink{group__kbc_gadce7a7604f8b0782158b70bf728eb411}{mouse\+\_\+write\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Writes a mouse command to the controller. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__kbc_gaa147fdd58bbf8c430e7974a8e3d13812}{mouse\+\_\+parse\+\_\+packet}} (struct packet $\ast$pp)
+\begin{DoxyCompactList}\small\item\em Parses a given packet for clearer output. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{kbc_8c_aed4404005e4c565ac36656307386e0ac}{mouse\+\_\+ih}} (void)
+\item 
+bool() \mbox{\hyperlink{group__kbc_ga2e746af27c6176cedfe456087ebbdab1}{mouse\+\_\+handle\+\_\+gesture}} (struct mouse\+\_\+ev $\ast$event, uint8\+\_\+t x\+\_\+len, uint8\+\_\+t tolerance)
+\begin{DoxyCompactList}\small\item\em Handles a V shaped mouse gesture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kbc_8c_a4017d9521177279f305f29157dfe1657}{hook\+\_\+kbc}} = 1
+\item 
+int \mbox{\hyperlink{kbc_8c_abc3bcc5b60108e381a2d51468313a984}{hook\+\_\+mouse}} = 2
+\item 
+uint8\+\_\+t \mbox{\hyperlink{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{kbc_8c_a1aa751d66941402c672b0b8ea786e050}{packet\+Byte}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{kbc_8c_ada6da69ab3d4f4b471ffe88827e8754c}{delta\+\_\+x}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{kbc_8c_a7699dbabc822179a121331d93fee1301}{delta\+\_\+y}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kbc_8c_a5761bd4aad91ac1d68916ad88f583d9f}\label{kbc_8c_a5761bd4aad91ac1d68916ad88f583d9f}} 
+\index{kbc.c@{kbc.c}!kbc\_ih@{kbc\_ih}}
+\index{kbc\_ih@{kbc\_ih}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{kbc\_ih()}{kbc\_ih()}}
+{\footnotesize\ttfamily void() kbc\+\_\+ih (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 101 of file kbc.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8c_a5761bd4aad91ac1d68916ad88f583d9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{kbc_8c_a5761bd4aad91ac1d68916ad88f583d9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kbc_8c_a6c96b97b6d60426a8fc089131ca0c1db}\label{kbc_8c_a6c96b97b6d60426a8fc089131ca0c1db}} 
+\index{kbc.c@{kbc.c}!mouse\_get\_status@{mouse\_get\_status}}
+\index{mouse\_get\_status@{mouse\_get\_status}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_get\_status()}{mouse\_get\_status()}}
+{\footnotesize\ttfamily int() mouse\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{st }\end{DoxyParamCaption})}
+
+
+
+Definition at line 144 of file kbc.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{kbc_8c_a6c96b97b6d60426a8fc089131ca0c1db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8c_a6c96b97b6d60426a8fc089131ca0c1db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kbc_8c_aed4404005e4c565ac36656307386e0ac}\label{kbc_8c_aed4404005e4c565ac36656307386e0ac}} 
+\index{kbc.c@{kbc.c}!mouse\_ih@{mouse\_ih}}
+\index{mouse\_ih@{mouse\_ih}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_ih()}{mouse\_ih()}}
+{\footnotesize\ttfamily void() mouse\+\_\+ih (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 169 of file kbc.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8c_aed4404005e4c565ac36656307386e0ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{kbc_8c_aed4404005e4c565ac36656307386e0ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kbc_8c_ada6da69ab3d4f4b471ffe88827e8754c}\label{kbc_8c_ada6da69ab3d4f4b471ffe88827e8754c}} 
+\index{kbc.c@{kbc.c}!delta\_x@{delta\_x}}
+\index{delta\_x@{delta\_x}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{delta\_x}{delta\_x}}
+{\footnotesize\ttfamily int16\+\_\+t delta\+\_\+x = 0}
+
+
+
+Definition at line 12 of file kbc.\+c.
+
+\mbox{\Hypertarget{kbc_8c_a7699dbabc822179a121331d93fee1301}\label{kbc_8c_a7699dbabc822179a121331d93fee1301}} 
+\index{kbc.c@{kbc.c}!delta\_y@{delta\_y}}
+\index{delta\_y@{delta\_y}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{delta\_y}{delta\_y}}
+{\footnotesize\ttfamily int16\+\_\+t delta\+\_\+y = 0}
+
+
+
+Definition at line 12 of file kbc.\+c.
+
+\mbox{\Hypertarget{kbc_8c_a4017d9521177279f305f29157dfe1657}\label{kbc_8c_a4017d9521177279f305f29157dfe1657}} 
+\index{kbc.c@{kbc.c}!hook\_kbc@{hook\_kbc}}
+\index{hook\_kbc@{hook\_kbc}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{hook\_kbc}{hook\_kbc}}
+{\footnotesize\ttfamily int hook\+\_\+kbc = 1}
+
+
+
+Definition at line 7 of file kbc.\+c.
+
+\mbox{\Hypertarget{kbc_8c_abc3bcc5b60108e381a2d51468313a984}\label{kbc_8c_abc3bcc5b60108e381a2d51468313a984}} 
+\index{kbc.c@{kbc.c}!hook\_mouse@{hook\_mouse}}
+\index{hook\_mouse@{hook\_mouse}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{hook\_mouse}{hook\_mouse}}
+{\footnotesize\ttfamily int hook\+\_\+mouse = 2}
+
+
+
+Definition at line 8 of file kbc.\+c.
+
+\mbox{\Hypertarget{kbc_8c_a1aa751d66941402c672b0b8ea786e050}\label{kbc_8c_a1aa751d66941402c672b0b8ea786e050}} 
+\index{kbc.c@{kbc.c}!packetByte@{packetByte}}
+\index{packetByte@{packetByte}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{packetByte}{packetByte}}
+{\footnotesize\ttfamily uint8\+\_\+t packet\+Byte = 0}
+
+
+
+Definition at line 10 of file kbc.\+c.
+
+\mbox{\Hypertarget{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}\label{kbc_8c_aa1de7a5557e9d96b83cf03f73c92163f}} 
+\index{kbc.c@{kbc.c}!scancode@{scancode}}
+\index{scancode@{scancode}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{scancode}{scancode}}
+{\footnotesize\ttfamily uint8\+\_\+t scancode = 0}
+
+
+
+Definition at line 9 of file kbc.\+c.
+

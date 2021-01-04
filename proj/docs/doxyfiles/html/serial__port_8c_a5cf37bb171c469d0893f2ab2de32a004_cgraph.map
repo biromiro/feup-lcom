@@ -1,4 +1,0 @@
-<map id="send_bytes_in_queue" name="send_bytes_in_queue">
-<area shape="rect" id="node1" title="Tries to send all bytes in queue to serial port transmitter holding register until not possible." alt="" coords="5,5,168,32"/>
-<area shape="rect" id="node2" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title="Checks if the given queue is empty." alt="" coords="216,5,299,32"/>
-</map>

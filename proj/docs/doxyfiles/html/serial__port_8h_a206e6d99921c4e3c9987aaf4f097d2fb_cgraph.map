@@ -1,5 +1,0 @@
-<map id="pack_byte_send_queue" name="pack_byte_send_queue">
-<area shape="rect" id="node1" title="Adds a byte to the send queue stack." alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node2" href="$queue_8c.html#aa94c11a51084b7b7d018502f796751c7" title="Pushes an element onto the queue." alt="" coords="228,5,281,32"/>
-<area shape="rect" id="node3" href="$queue_8c.html#ab2a149bb751500c47d4f8de95dec4cce" title="Checks if the given queue is full." alt="" coords="329,5,391,32"/>
-</map>
